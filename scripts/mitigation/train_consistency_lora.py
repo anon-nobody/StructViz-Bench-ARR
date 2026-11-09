@@ -132,6 +132,9 @@ def main():
     rng = random.Random(args.seed)
 
     import torch
+    # Fix LoRA initialisation and dropout as well (added for the multi-seed rerun).
+    torch.manual_seed(args.seed)
+    torch.cuda.manual_seed_all(args.seed)
     from transformers import AutoProcessor
     try:
         from transformers import Qwen2_5_VLForConditionalGeneration as VLModel

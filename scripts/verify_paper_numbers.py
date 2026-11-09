@@ -467,7 +467,7 @@ def main() -> int:
         _skipped.append("answerability audit")
         print("  SKIP  answerability audit (script or results missing)")
 
-    section("Section 5(iv) — corrected suite (v2), no-image and calculation-aid runs (Qwen2.5-VL-7B)")
+    section("Expressive suite (v2), no-image and calculation-aid runs (Qwen2.5-VL-7B)")
     V2 = os.path.join(ROOT, "results", "v2")
     def _load_v2(name):
         p = os.path.join(V2, name)

@@ -1,0 +1,2435 @@
+{
+  "definition": "ACL 2027 mock review, round 3: TTA paired effects, sample, generation cap, ties, test\nbookkeeping, latency. CPU only; no inference. Reads existing results, writes only\nscripts/analysis/review_acl_r3_tta.json.\n\n    python scripts/analysis/review_acl_r3_tta.py\n\nConventions: canonical_em (scoring.py), cluster = data_id, percentile 95% CIs from the\nobject-cluster bootstrap (B=5000, random.Random(0)), two-sided object sign-flip p (B=10000)\nvia v2_analysis.contrast.\n\nTTA rows. results/review/tta_qwen.jsonl was at one point re-merged from three shards only (695\nrows; 2026-11-08 00:48, results/review/logs/merge_tta.log \"inputs=3\"), after\ntta_analysis_results.json / tab_tta.tex had been written from the 750-row merge. The 750 rows are\ntherefore rebuilt here from tta_qwen_shard0..3.jsonl; the merged file, whatever it holds, must\nagree row for row, and every stored per-format accuracy of tta_analysis_results.json is asserted\nto reproduce.\n\n1. Paired effects on the TTA sample (same 50 questions per modality): raw text (true data as\n   text, results/v2/rawtext_qwen.jsonl) minus the best image format (best = highest image\n   accuracy on the sample; for graphs also the best drawing, i.e. excluding the listings), and\n   own transcript minus image, per format and pooled per modality, with sign-flip p.\n2. Sample: unique data objects per modality; the selection rule is re-run\n   (build_review_manifests.build_tta) and checked against tta_qids.txt.\n3. Generation cap: fidelity, TTA accuracy and image accuracy per format on transcripts that did\n   NOT hit the 2,560-token cap; Spearman of fidelity vs image accuracy across the five tabular\n   formats (and all 15 cells) on that subset; questions whose answer is recomputable.\n4. Ties in argmax / argmin keys, recomputed from benchmark/realworld_test.jsonl with the\n   generator's own definitions (src/generation/*_generator.py); a key is tied when another\n   candidate attains the same extreme value (floats: math.isclose, rel 1e-9, abs 1e-12).\n   v1 (seven models, canonical_rescore.canon_v1 scoring and gap definition) and v2 (three Qwen\n   models, v2_multimodel.analyse with canonical_em on the raw response) are rescored accepting\n   any tied candidate under canonical_em.\n5. Which test produces the p-values of h1_bound.py, and the paper sentences that rely on it.\n6. Latency / token fields stored in the Qwen2.5-VL-7B v2, TTA and raw-text result files.\n",
+  "tta_rows": {
+    "rows_from_shards": 750,
+    "rows_in_merged_file": 750,
+    "merged_rows_identical_to_shards": true,
+    "reproduces_tta_analysis_results_accuracy": true
+  },
+  "paired_effects": {
+    "tabular": {
+      "image_acc_by_format": {
+        "table_image": 80.0,
+        "text_only": 78.0,
+        "heatmap": 76.0,
+        "bar_chart": 74.0,
+        "scatter_plot": 34.0
+      },
+      "rawtext_acc": 70.0,
+      "best_image_format": "table_image",
+      "raw_minus_best_image": {
+        "est": -10.0,
+        "lo": -19.680327868852455,
+        "hi": 0.0,
+        "n": 50,
+        "n_obj": 41,
+        "p": 0.12388761123887611
+      },
+      "tta_minus_image_pooled": {
+        "est": -20.8,
+        "lo": -28.77263157894737,
+        "hi": -13.68421052631579,
+        "n": 250,
+        "n_obj": 41,
+        "p": 9.999000099990002e-05
+      },
+      "tta_minus_image_by_format": {
+        "table_image": {
+          "est": -26.0,
+          "lo": -38.775510204081634,
+          "hi": -14.814814814814815,
+          "n": 50,
+          "n_obj": 41,
+          "p": 0.0004999500049995
+        },
+        "text_only": {
+          "est": -20.0,
+          "lo": -31.818181818181817,
+          "hi": -9.803921568627452,
+          "n": 50,
+          "n_obj": 41,
+          "p": 0.0016998300169983002
+        },
+        "heatmap": {
+          "est": -26.0,
+          "lo": -39.53488372093023,
+          "hi": -14.285714285714286,
+          "n": 50,
+          "n_obj": 41,
+          "p": 0.00019998000199980003
+        },
+        "bar_chart": {
+          "est": -12.0,
+          "lo": -25.0,
+          "hi": 0.0,
+          "n": 50,
+          "n_obj": 41,
+          "p": 0.1105889411058894
+        },
+        "scatter_plot": {
+          "est": -20.0,
+          "lo": -31.818181818181817,
+          "hi": -9.615384615384615,
+          "n": 50,
+          "n_obj": 41,
+          "p": 0.0014998500149985001
+        }
+      },
+      "raw_minus_tta_pooled": {
+        "est": 22.4,
+        "lo": 11.020408163265307,
+        "hi": 34.40111111111109,
+        "n": 250,
+        "n_obj": 41,
+        "p": 0.0005999400059994001
+      }
+    },
+    "timeseries": {
+      "image_acc_by_format": {
+        "line_plot": 20.0,
+        "heatmap": 6.0,
+        "gaf": 28.0,
+        "recurrence_plot": 2.0,
+        "text_only": 50.0
+      },
+      "rawtext_acc": 20.0,
+      "best_image_format": "text_only",
+      "raw_minus_best_image": {
+        "est": -30.0,
+        "lo": -43.13725490196079,
+        "hi": -16.3265306122449,
+        "n": 50,
+        "n_obj": 46,
+        "p": 0.00029997000299970003
+      },
+      "tta_minus_image_pooled": {
+        "est": 26.0,
+        "lo": 20.0,
+        "hi": 32.4,
+        "n": 250,
+        "n_obj": 46,
+        "p": 9.999000099990002e-05
+      },
+      "tta_minus_image_by_format": {
+        "line_plot": {
+          "est": 36.0,
+          "lo": 23.529411764705884,
+          "hi": 48.98059223689474,
+          "n": 50,
+          "n_obj": 46,
+          "p": 9.999000099990002e-05
+        },
+        "heatmap": {
+          "est": 42.0,
+          "lo": 26.923076923076923,
+          "hi": 57.69230769230769,
+          "n": 50,
+          "n_obj": 46,
+          "p": 9.999000099990002e-05
+        },
+        "gaf": {
+          "est": 28.0,
+          "lo": 16.3265306122449,
+          "hi": 40.0,
+          "n": 50,
+          "n_obj": 46,
+          "p": 9.999000099990002e-05
+        },
+        "recurrence_plot": {
+          "est": 70.0,
+          "lo": 55.76923076923077,
+          "hi": 83.6734693877551,
+          "n": 50,
+          "n_obj": 46,
+          "p": 9.999000099990002e-05
+        },
+        "text_only": {
+          "est": -46.0,
+          "lo": -59.57446808510638,
+          "hi": -31.914893617021278,
+          "n": 50,
+          "n_obj": 46,
+          "p": 9.999000099990002e-05
+        }
+      },
+      "raw_minus_tta_pooled": {
+        "est": -27.2,
+        "lo": -38.4,
+        "hi": -15.319148936170214,
+        "n": 250,
+        "n_obj": 46,
+        "p": 0.00029997000299970003
+      }
+    },
+    "graph": {
+      "image_acc_by_format": {
+        "node_link": 24.0,
+        "circular_layout": 14.0,
+        "adjacency_matrix": 12.0,
+        "text_only": 14.0,
+        "text_only_deg": 20.0
+      },
+      "rawtext_acc": 28.0,
+      "best_image_format": "node_link",
+      "raw_minus_best_image": {
+        "est": 4.0,
+        "lo": -6.122448979591836,
+        "hi": 16.327458256029672,
+        "n": 50,
+        "n_obj": 28,
+        "p": 0.7502249775022498
+      },
+      "best_drawing": "node_link",
+      "raw_minus_best_drawing": {
+        "est": 4.0,
+        "lo": -6.122448979591836,
+        "hi": 16.327458256029672,
+        "n": 50,
+        "n_obj": 28,
+        "p": 0.7502249775022498
+      },
+      "raw_minus_mean_main4_image": {
+        "est": 12.0,
+        "lo": 3.407998251748252,
+        "hi": 22.728535353535335,
+        "n": 50,
+        "n_obj": 28,
+        "p": 0.024297570242975703
+      },
+      "tta_minus_image_pooled": {
+        "est": 5.2,
+        "lo": -1.1538461538461537,
+        "hi": 12.0,
+        "n": 250,
+        "n_obj": 28,
+        "p": 0.15748425157484253
+      },
+      "tta_minus_image_by_format": {
+        "node_link": {
+          "est": -6.0,
+          "lo": -20.833333333333332,
+          "hi": 9.526098901098868,
+          "n": 50,
+          "n_obj": 28,
+          "p": 0.6065393460653935
+        },
+        "circular_layout": {
+          "est": 8.0,
+          "lo": -4.0,
+          "hi": 21.27659574468085,
+          "n": 50,
+          "n_obj": 28,
+          "p": 0.3447655234476552
+        },
+        "adjacency_matrix": {
+          "est": 10.0,
+          "lo": 0.0,
+          "hi": 22.22222222222222,
+          "n": 50,
+          "n_obj": 28,
+          "p": 0.18468153184681532
+        },
+        "text_only": {
+          "est": 4.0,
+          "lo": -6.779661016949152,
+          "hi": 15.217391304347826,
+          "n": 50,
+          "n_obj": 28,
+          "p": 0.718928107189281
+        },
+        "text_only_deg": {
+          "est": 10.0,
+          "lo": -2.380952380952381,
+          "hi": 22.9539722572509,
+          "n": 50,
+          "n_obj": 28,
+          "p": 0.27377262273772623
+        }
+      },
+      "raw_minus_tta_pooled": {
+        "est": 6.0,
+        "lo": -5.855465221318879,
+        "hi": 18.696345975948187,
+        "n": 250,
+        "n_obj": 28,
+        "p": 0.3805619438056194
+      }
+    }
+  },
+  "sample": {
+    "n_questions": 150,
+    "unique_objects": {
+      "tabular": 41,
+      "timeseries": 46,
+      "graph": 28
+    },
+    "questions_per_object_max": {
+      "tabular": 4,
+      "timeseries": 2,
+      "graph": 4
+    },
+    "pool_size_fully_answerable": {
+      "tabular": 354,
+      "timeseries": 214,
+      "graph": 528
+    },
+    "selection_reproduced": true,
+    "rule": "scripts/build_review_manifests.py build_tta: from the questions answerable in every expressive format (benchmark/render_v2/fully_answerable_qids.txt), 50 per modality drawn uniformly without replacement with random.Random(0).sample(sorted(pool), 50); not stratified by template or object.",
+    "tasks": {
+      "graph|bipartite_check": 2,
+      "graph|centrality": 2,
+      "graph|clustering": 3,
+      "graph|community": 7,
+      "graph|counterfactual": 1,
+      "graph|cycle_detection": 2,
+      "graph|degree_query": 23,
+      "graph|diameter": 2,
+      "graph|edge_count": 5,
+      "graph|shortest_path": 3,
+      "tabular|correlation": 6,
+      "tabular|outlier_detection": 10,
+      "tabular|ranking": 6,
+      "tabular|value_extraction": 28,
+      "timeseries|change_point": 24,
+      "timeseries|seasonality_detection": 26
+    }
+  },
+  "generation_cap": {
+    "n_truncated": 257,
+    "by_format": {
+      "tabular|table_image": {
+        "n": 50,
+        "n_not_truncated": 50,
+        "truncated_pct": 0.0,
+        "fidelity_all": 79.62104619625627,
+        "fidelity_not_truncated": 79.62104619625627,
+        "fidelity_truncated": null,
+        "tta_acc_all": 54.0,
+        "tta_acc_not_truncated": 54.0,
+        "image_acc_all": 80.0,
+        "image_acc_not_truncated_rows": 80.0
+      },
+      "tabular|text_only": {
+        "n": 50,
+        "n_not_truncated": 50,
+        "truncated_pct": 0.0,
+        "fidelity_all": 73.66309320829781,
+        "fidelity_not_truncated": 73.66309320829781,
+        "fidelity_truncated": null,
+        "tta_acc_all": 58.0,
+        "tta_acc_not_truncated": 58.0,
+        "image_acc_all": 78.0,
+        "image_acc_not_truncated_rows": 78.0
+      },
+      "tabular|heatmap": {
+        "n": 50,
+        "n_not_truncated": 50,
+        "truncated_pct": 0.0,
+        "fidelity_all": 46.89714285714286,
+        "fidelity_not_truncated": 46.89714285714286,
+        "fidelity_truncated": null,
+        "tta_acc_all": 50.0,
+        "tta_acc_not_truncated": 50.0,
+        "image_acc_all": 76.0,
+        "image_acc_not_truncated_rows": 76.0
+      },
+      "tabular|bar_chart": {
+        "n": 50,
+        "n_not_truncated": 50,
+        "truncated_pct": 0.0,
+        "fidelity_all": 43.964116366725065,
+        "fidelity_not_truncated": 43.964116366725065,
+        "fidelity_truncated": null,
+        "tta_acc_all": 62.0,
+        "tta_acc_not_truncated": 62.0,
+        "image_acc_all": 74.0,
+        "image_acc_not_truncated_rows": 74.0
+      },
+      "tabular|scatter_plot": {
+        "n": 50,
+        "n_not_truncated": 32,
+        "truncated_pct": 36.0,
+        "fidelity_all": 9.294360769949005,
+        "fidelity_not_truncated": 12.491484788359788,
+        "fidelity_truncated": 3.610584737218724,
+        "tta_acc_all": 14.0,
+        "tta_acc_not_truncated": 12.5,
+        "image_acc_all": 34.0,
+        "image_acc_not_truncated_rows": 28.125
+      },
+      "timeseries|line_plot": {
+        "n": 50,
+        "n_not_truncated": 44,
+        "truncated_pct": 12.0,
+        "fidelity_all": 3.781304708899342,
+        "fidelity_not_truncated": 3.615823568502204,
+        "fidelity_truncated": 4.994833071811687,
+        "tta_acc_all": 56.0,
+        "tta_acc_not_truncated": 56.81818181818182,
+        "image_acc_all": 20.0,
+        "image_acc_not_truncated_rows": 15.909090909090908
+      },
+      "timeseries|heatmap": {
+        "n": 50,
+        "n_not_truncated": 47,
+        "truncated_pct": 6.0,
+        "fidelity_all": 0.7210588879582501,
+        "fidelity_not_truncated": 0.7245307318704789,
+        "fidelity_truncated": 0.6666666666666666,
+        "tta_acc_all": 48.0,
+        "tta_acc_not_truncated": 46.808510638297875,
+        "image_acc_all": 6.0,
+        "image_acc_not_truncated_rows": 6.382978723404255
+      },
+      "timeseries|gaf": {
+        "n": 50,
+        "n_not_truncated": 17,
+        "truncated_pct": 66.0,
+        "fidelity_all": 0.0,
+        "fidelity_not_truncated": 0.0,
+        "fidelity_truncated": 0.0,
+        "tta_acc_all": 56.0,
+        "tta_acc_not_truncated": 58.8235294117647,
+        "image_acc_all": 28.0,
+        "image_acc_not_truncated_rows": 11.764705882352942
+      },
+      "timeseries|recurrence_plot": {
+        "n": 50,
+        "n_not_truncated": 7,
+        "truncated_pct": 86.0,
+        "fidelity_all": 0.59,
+        "fidelity_not_truncated": 0.0,
+        "fidelity_truncated": 0.686046511627907,
+        "tta_acc_all": 72.0,
+        "tta_acc_not_truncated": 57.142857142857146,
+        "image_acc_all": 2.0,
+        "image_acc_not_truncated_rows": 0.0
+      },
+      "timeseries|text_only": {
+        "n": 50,
+        "n_not_truncated": 50,
+        "truncated_pct": 0.0,
+        "fidelity_all": 99.88573313782992,
+        "fidelity_not_truncated": 99.88573313782992,
+        "fidelity_truncated": null,
+        "tta_acc_all": 4.0,
+        "tta_acc_not_truncated": 4.0,
+        "image_acc_all": 50.0,
+        "image_acc_not_truncated_rows": 50.0
+      },
+      "graph|node_link": {
+        "n": 50,
+        "n_not_truncated": 17,
+        "truncated_pct": 66.0,
+        "fidelity_all": 24.228827452872153,
+        "fidelity_not_truncated": 39.88574806193235,
+        "fidelity_truncated": 16.16314107850781,
+        "tta_acc_all": 18.0,
+        "tta_acc_not_truncated": 17.647058823529413,
+        "image_acc_all": 24.0,
+        "image_acc_not_truncated_rows": 17.647058823529413
+      },
+      "graph|circular_layout": {
+        "n": 50,
+        "n_not_truncated": 11,
+        "truncated_pct": 78.0,
+        "fidelity_all": 20.191357389141913,
+        "fidelity_not_truncated": 39.18402160579524,
+        "fidelity_truncated": 14.834452097265334,
+        "tta_acc_all": 22.0,
+        "tta_acc_not_truncated": 27.272727272727273,
+        "image_acc_all": 14.0,
+        "image_acc_not_truncated_rows": 9.090909090909092
+      },
+      "graph|adjacency_matrix": {
+        "n": 50,
+        "n_not_truncated": 8,
+        "truncated_pct": 84.0,
+        "fidelity_all": 15.286125758108861,
+        "fidelity_not_truncated": 10.73724321544089,
+        "fidelity_truncated": 16.152579575759905,
+        "tta_acc_all": 22.0,
+        "tta_acc_not_truncated": 37.5,
+        "image_acc_all": 12.0,
+        "image_acc_not_truncated_rows": 25.0
+      },
+      "graph|text_only": {
+        "n": 50,
+        "n_not_truncated": 35,
+        "truncated_pct": 30.0,
+        "fidelity_all": 71.65373038367198,
+        "fidelity_not_truncated": 90.62872972023072,
+        "fidelity_truncated": 27.378731931701566,
+        "tta_acc_all": 18.0,
+        "tta_acc_not_truncated": 14.285714285714286,
+        "image_acc_all": 14.0,
+        "image_acc_not_truncated_rows": 11.428571428571429
+      },
+      "graph|text_only_deg": {
+        "n": 50,
+        "n_not_truncated": 25,
+        "truncated_pct": 50.0,
+        "fidelity_all": 63.07822105291238,
+        "fidelity_not_truncated": 99.02829429502644,
+        "fidelity_truncated": 27.128147810798332,
+        "tta_acc_all": 30.0,
+        "tta_acc_not_truncated": 20.0,
+        "image_acc_all": 20.0,
+        "image_acc_not_truncated_rows": 12.0
+      }
+    },
+    "spearman": {
+      "tabular5": {
+        "n_cells": 5,
+        "fidelity_nt_vs_image_full": {
+          "rho": 1.0,
+          "p": 0.016998300169983
+        },
+        "fidelity_nt_vs_image_on_nt_rows": {
+          "rho": 1.0,
+          "p": 0.016998300169983
+        },
+        "order_fidelity_nt": [
+          "table_image",
+          "text_only",
+          "heatmap",
+          "bar_chart",
+          "scatter_plot"
+        ],
+        "order_image_full": [
+          "table_image",
+          "text_only",
+          "heatmap",
+          "bar_chart",
+          "scatter_plot"
+        ],
+        "order_image_nt_rows": [
+          "table_image",
+          "text_only",
+          "heatmap",
+          "bar_chart",
+          "scatter_plot"
+        ]
+      },
+      "all_cells": {
+        "n_cells": 15,
+        "fidelity_nt_vs_image_full": {
+          "rho": 0.5156671717340119,
+          "p": 0.0514948505149485
+        },
+        "fidelity_nt_vs_image_on_nt_rows": {
+          "rho": 0.5218947571018668,
+          "p": 0.048995100489951
+        },
+        "order_fidelity_nt": [
+          "text_only",
+          "text_only_deg",
+          "text_only",
+          "table_image",
+          "text_only",
+          "heatmap",
+          "bar_chart",
+          "node_link",
+          "circular_layout",
+          "scatter_plot",
+          "adjacency_matrix",
+          "line_plot",
+          "heatmap",
+          "gaf",
+          "recurrence_plot"
+        ],
+        "order_image_full": [
+          "table_image",
+          "text_only",
+          "heatmap",
+          "bar_chart",
+          "text_only",
+          "scatter_plot",
+          "gaf",
+          "node_link",
+          "line_plot",
+          "text_only_deg",
+          "circular_layout",
+          "text_only",
+          "adjacency_matrix",
+          "heatmap",
+          "recurrence_plot"
+        ],
+        "order_image_nt_rows": [
+          "table_image",
+          "text_only",
+          "heatmap",
+          "bar_chart",
+          "text_only",
+          "scatter_plot",
+          "adjacency_matrix",
+          "node_link",
+          "line_plot",
+          "text_only_deg",
+          "gaf",
+          "text_only",
+          "circular_layout",
+          "heatmap",
+          "recurrence_plot"
+        ]
+      },
+      "tabular5_full_sample_check": {
+        "rho": 1.0,
+        "p": 0.016998300169983
+      }
+    },
+    "recomputable": {
+      "questions_template_defined": 95,
+      "questions_recomputation_matches_key_on_true_data": 92,
+      "of_those_with_a_parseable_transcript_implied_answer": {
+        "all_formats": 58,
+        "any_format": 91,
+        "n_formats_0": 1,
+        "n_formats_1": 5,
+        "n_formats_2": 12,
+        "n_formats_3": 10,
+        "n_formats_4": 6,
+        "n_formats_5": 58
+      },
+      "of_those_with_a_parseable_non_truncated_transcript": {
+        "any_format": 82
+      },
+      "note": "the paper's 92 = questions whose template answer can be recomputed from the TRUE data object and reproduces the key (tta_analysis error_source n_questions_used); whether a given transcript yields an answer is counted separately here"
+    },
+    "error_source_wrong_tta_answers": {
+      "tabular": {
+        "all": {
+          "wrong_answers": 131,
+          "transcript_right": 59,
+          "share_transcript_right": 45.038167938931295
+        },
+        "not_truncated": {
+          "wrong_answers": 116,
+          "transcript_right": 56,
+          "share_transcript_right": 48.275862068965516
+        }
+      },
+      "graph": {
+        "all": {
+          "wrong_answers": 171,
+          "transcript_right": 56,
+          "share_transcript_right": 32.748538011695906
+        },
+        "not_truncated": {
+          "wrong_answers": 65,
+          "transcript_right": 41,
+          "share_transcript_right": 63.07692307692308
+        }
+      }
+    }
+  },
+  "ties": {
+    "templates": {
+      "graph|centrality_highest_betweenness": {
+        "n": 36,
+        "key_in_argmax_set": 36,
+        "tied": 6,
+        "tied_size": {
+          "2": 1,
+          "4": 1,
+          "6": 1,
+          "7": 1,
+          "8": 1,
+          "10": 1
+        },
+        "examples": [
+          {
+            "question_id": "graph_000291::difficulty=3-hop",
+            "question": "Which node has the highest betweenness centrality?",
+            "key": "35",
+            "tied_candidates": [
+              "27",
+              "28",
+              "35",
+              "36"
+            ]
+          },
+          {
+            "question_id": "graph_000316::difficulty=3-hop",
+            "question": "Which node has the highest betweenness centrality?",
+            "key": "25",
+            "tied_candidates": [
+              "24",
+              "25"
+            ]
+          },
+          {
+            "question_id": "graph_001537::difficulty=3-hop",
+            "question": "Which node has the highest betweenness centrality?",
+            "key": "0",
+            "tied_candidates": [
+              "0",
+              "12",
+              "13",
+              "14",
+              "2",
+              "8",
+              "9"
+            ]
+          }
+        ]
+      },
+      "graph|degree_query_highest_degree": {
+        "n": 36,
+        "key_in_argmax_set": 36,
+        "tied": 17,
+        "tied_size": {
+          "2": 6,
+          "3": 2,
+          "4": 1,
+          "5": 1,
+          "6": 1,
+          "7": 2,
+          "8": 1,
+          "10": 1,
+          "24": 1,
+          "36": 1
+        },
+        "examples": [
+          {
+            "question_id": "graph_000008::difficulty=2-hop",
+            "question": "Which node has the highest degree?",
+            "key": "4",
+            "tied_candidates": [
+              "4",
+              "6"
+            ]
+          },
+          {
+            "question_id": "graph_000158::difficulty=2-hop",
+            "question": "Which node has the highest degree?",
+            "key": "18",
+            "tied_candidates": [
+              "18",
+              "24"
+            ]
+          },
+          {
+            "question_id": "graph_000183::difficulty=2-hop",
+            "question": "Which node has the highest degree?",
+            "key": "2",
+            "tied_candidates": [
+              "2",
+              "46",
+              "52"
+            ]
+          }
+        ]
+      },
+      "tabular|comparison_higher_average": {
+        "n": 112,
+        "key_in_argmax_set": 112,
+        "tied": 0,
+        "tied_size": {},
+        "examples": []
+      },
+      "tabular|outlier_detection": {
+        "n": 230,
+        "key_in_argmax_set": 230,
+        "tied": 83,
+        "tied_size": {
+          "2": 81,
+          "3": 1,
+          "4": 1
+        },
+        "examples": [
+          {
+            "question_id": "tabular_000269::difficulty=3-hop",
+            "question": "Which 'player_role' entry deviates most from the mean of 'assists'?",
+            "key": "forward",
+            "tied_candidates": [
+              "forward",
+              "guard"
+            ]
+          },
+          {
+            "question_id": "tabular_000271::difficulty=3-hop",
+            "question": "Which 'player_role' entry deviates most from the mean of 'rebounds'?",
+            "key": "forward",
+            "tied_candidates": [
+              "center",
+              "forward"
+            ]
+          },
+          {
+            "question_id": "tabular_000290::difficulty=3-hop",
+            "question": "Which 'team' entry deviates most from the mean of 'goals_for'?",
+            "key": "lynx",
+            "tied_candidates": [
+              "lynx",
+              "orcas",
+              "rangers"
+            ]
+          }
+        ]
+      },
+      "tabular|ranking_highest": {
+        "n": 50,
+        "key_in_argmax_set": 50,
+        "tied": 6,
+        "tied_size": {
+          "2": 6
+        },
+        "examples": [
+          {
+            "question_id": "tabular_000080::difficulty=1-hop",
+            "question": "Which 'clinic' has the highest 'creatinine_mg_dl' value?",
+            "key": "west",
+            "tied_candidates": [
+              "north",
+              "west"
+            ]
+          },
+          {
+            "question_id": "tabular_000128::difficulty=1-hop",
+            "question": "Which 'school' has the highest 'attendance_pct' value?",
+            "key": "central_high",
+            "tied_candidates": [
+              "central_high",
+              "north_high"
+            ]
+          },
+          {
+            "question_id": "tabular_000130::difficulty=1-hop",
+            "question": "Which 'school' has the highest 'disciplinary_events' value?",
+            "key": "central_high",
+            "tied_candidates": [
+              "central_high",
+              "north_high"
+            ]
+          }
+        ]
+      },
+      "tabular|ranking_lowest": {
+        "n": 40,
+        "key_in_argmax_set": 40,
+        "tied": 1,
+        "tied_size": {
+          "2": 1
+        },
+        "examples": [
+          {
+            "question_id": "tabular_000254::difficulty=1-hop",
+            "question": "Which 'player_role' has the lowest 'assists' value?",
+            "key": "forward",
+            "tied_candidates": [
+              "forward",
+              "guard"
+            ]
+          }
+        ]
+      },
+      "timeseries|anomaly_detection": {
+        "n": 20,
+        "key_in_argmax_set": 20,
+        "tied": 0,
+        "tied_size": {},
+        "examples": []
+      },
+      "timeseries|change_volatility": {
+        "n": 20,
+        "key_in_argmax_set": 20,
+        "tied": 0,
+        "tied_size": {},
+        "examples": []
+      },
+      "timeseries|half_change_intensity": {
+        "n": 20,
+        "key_in_argmax_set": 20,
+        "tied": 0,
+        "tied_size": {},
+        "examples": []
+      },
+      "timeseries|peak_identification_max": {
+        "n": 107,
+        "key_in_argmax_set": 107,
+        "tied": 9,
+        "tied_size": {
+          "2": 4,
+          "3": 2,
+          "7": 1,
+          "15": 1,
+          "28": 1
+        },
+        "examples": []
+      },
+      "timeseries|peak_identification_min": {
+        "n": 107,
+        "key_in_argmax_set": 107,
+        "tied": 24,
+        "tied_size": {
+          "2": 8,
+          "3": 3,
+          "4": 4,
+          "9": 1,
+          "13": 1,
+          "17": 1,
+          "23": 1,
+          "27": 1,
+          "30": 1,
+          "32": 1,
+          "57": 1,
+          "175": 1
+        },
+        "examples": []
+      },
+      "timeseries|volatility": {
+        "n": 107,
+        "key_in_argmax_set": 107,
+        "tied": 0,
+        "tied_size": {},
+        "examples": []
+      }
+    },
+    "tied_questions_total": 146,
+    "tied_questions_by_modality": {
+      "graph": 23,
+      "tabular": 90,
+      "timeseries": 33
+    },
+    "tied_question_ids": [
+      "graph_000008::difficulty=2-hop",
+      "graph_000158::difficulty=2-hop",
+      "graph_000183::difficulty=2-hop",
+      "graph_000208::difficulty=2-hop",
+      "graph_000233::difficulty=2-hop",
+      "graph_000258::difficulty=2-hop",
+      "graph_000283::difficulty=2-hop",
+      "graph_000291::difficulty=3-hop",
+      "graph_000308::difficulty=2-hop",
+      "graph_000316::difficulty=3-hop",
+      "graph_000483::difficulty=2-hop",
+      "graph_001534::difficulty=2-hop",
+      "graph_001537::difficulty=3-hop",
+      "graph_001544::difficulty=2-hop",
+      "graph_001604::difficulty=2-hop",
+      "graph_001607::difficulty=3-hop",
+      "graph_001614::difficulty=2-hop",
+      "graph_001617::difficulty=3-hop",
+      "graph_001624::difficulty=2-hop",
+      "graph_001627::difficulty=3-hop",
+      "graph_001634::difficulty=2-hop",
+      "graph_001644::difficulty=2-hop",
+      "graph_001654::difficulty=2-hop",
+      "tabular_000080::difficulty=1-hop",
+      "tabular_000128::difficulty=1-hop",
+      "tabular_000130::difficulty=1-hop",
+      "tabular_000254::difficulty=1-hop",
+      "tabular_000255::difficulty=1-hop",
+      "tabular_000257::difficulty=1-hop",
+      "tabular_000269::difficulty=3-hop",
+      "tabular_000271::difficulty=3-hop",
+      "tabular_000278::difficulty=1-hop",
+      "tabular_000290::difficulty=3-hop",
+      "tabular_000517::difficulty=3-hop",
+      "tabular_000536::difficulty=3-hop",
+      "tabular_000537::difficulty=3-hop",
+      "tabular_000572::difficulty=3-hop",
+      "tabular_000573::difficulty=3-hop",
+      "tabular_000600::difficulty=3-hop",
+      "tabular_000601::difficulty=3-hop",
+      "tabular_000636::difficulty=3-hop",
+      "tabular_000637::difficulty=3-hop",
+      "tabular_000651::difficulty=3-hop",
+      "tabular_000711::difficulty=3-hop",
+      "tabular_000750::difficulty=3-hop",
+      "tabular_000751::difficulty=3-hop",
+      "tabular_000806::difficulty=3-hop",
+      "tabular_000807::difficulty=3-hop",
+      "tabular_000825::difficulty=3-hop",
+      "tabular_000834::difficulty=3-hop",
+      "tabular_000835::difficulty=3-hop",
+      "tabular_000883::difficulty=3-hop",
+      "tabular_000902::difficulty=3-hop",
+      "tabular_000903::difficulty=3-hop",
+      "tabular_000910::difficulty=3-hop",
+      "tabular_000911::difficulty=3-hop",
+      "tabular_000918::difficulty=3-hop",
+      "tabular_000919::difficulty=3-hop",
+      "tabular_000967::difficulty=3-hop",
+      "tabular_000976::difficulty=3-hop",
+      "tabular_000977::difficulty=3-hop",
+      "tabular_001014::difficulty=3-hop",
+      "tabular_001015::difficulty=3-hop",
+      "tabular_001022::difficulty=3-hop",
+      "tabular_001023::difficulty=3-hop",
+      "tabular_001040::difficulty=3-hop",
+      "tabular_001041::difficulty=3-hop",
+      "tabular_001048::difficulty=3-hop",
+      "tabular_001049::difficulty=3-hop",
+      "tabular_001056::difficulty=3-hop",
+      "tabular_001057::difficulty=3-hop",
+      "tabular_001111::difficulty=3-hop",
+      "tabular_001121::difficulty=3-hop",
+      "tabular_001171::difficulty=3-hop",
+      "tabular_001180::difficulty=3-hop",
+      "tabular_001181::difficulty=3-hop",
+      "tabular_001237::difficulty=3-hop",
+      "tabular_001238::difficulty=3-hop",
+      "tabular_001245::difficulty=3-hop",
+      "tabular_001246::difficulty=3-hop",
+      "tabular_001253::difficulty=3-hop",
+      "tabular_001254::difficulty=3-hop",
+      "tabular_001261::difficulty=3-hop",
+      "tabular_001262::difficulty=3-hop",
+      "tabular_001289::difficulty=3-hop",
+      "tabular_001290::difficulty=3-hop",
+      "tabular_001348::difficulty=3-hop",
+      "tabular_001367::difficulty=3-hop",
+      "tabular_001368::difficulty=3-hop",
+      "tabular_001431::difficulty=3-hop",
+      "tabular_001432::difficulty=3-hop",
+      "tabular_001459::difficulty=3-hop",
+      "tabular_001460::difficulty=3-hop",
+      "tabular_001507::difficulty=3-hop",
+      "tabular_001508::difficulty=3-hop",
+      "tabular_001515::difficulty=3-hop",
+      "tabular_001516::difficulty=3-hop",
+      "tabular_001523::difficulty=3-hop",
+      "tabular_001524::difficulty=3-hop",
+      "tabular_001551::difficulty=3-hop",
+      "tabular_001552::difficulty=3-hop",
+      "tabular_001595::difficulty=3-hop",
+      "tabular_001596::difficulty=3-hop",
+      "tabular_001613::difficulty=3-hop",
+      "tabular_001614::difficulty=3-hop",
+      "tabular_001661::difficulty=3-hop",
+      "tabular_001662::difficulty=3-hop",
+      "tabular_001670::difficulty=3-hop",
+      "tabular_001679::difficulty=3-hop",
+      "tabular_001680::difficulty=3-hop",
+      "tabular_001744::difficulty=3-hop",
+      "tabular_001763::difficulty=3-hop",
+      "tabular_001764::difficulty=3-hop",
+      "timeseries_001012::difficulty=1-hop",
+      "timeseries_001042::difficulty=1-hop",
+      "timeseries_001171::difficulty=1-hop",
+      "timeseries_001172::difficulty=1-hop",
+      "timeseries_001192::difficulty=1-hop",
+      "timeseries_001251::difficulty=1-hop",
+      "timeseries_001362::difficulty=1-hop",
+      "timeseries_001371::difficulty=1-hop",
+      "timeseries_001381::difficulty=1-hop",
+      "timeseries_001391::difficulty=1-hop",
+      "timeseries_001392::difficulty=1-hop",
+      "timeseries_001402::difficulty=1-hop",
+      "timeseries_001511::difficulty=1-hop",
+      "timeseries_001532::difficulty=1-hop",
+      "timeseries_001552::difficulty=1-hop",
+      "timeseries_001582::difficulty=1-hop",
+      "timeseries_001591::difficulty=1-hop",
+      "timeseries_001592::difficulty=1-hop",
+      "timeseries_001611::difficulty=1-hop",
+      "timeseries_001622::difficulty=1-hop",
+      "timeseries_001662::difficulty=1-hop",
+      "timeseries_001672::difficulty=1-hop",
+      "timeseries_001682::difficulty=1-hop",
+      "timeseries_001752::difficulty=1-hop",
+      "timeseries_001781::difficulty=1-hop",
+      "timeseries_001782::difficulty=1-hop",
+      "timeseries_001792::difficulty=1-hop",
+      "timeseries_001802::difficulty=1-hop",
+      "timeseries_001812::difficulty=1-hop",
+      "timeseries_001822::difficulty=1-hop",
+      "timeseries_001832::difficulty=1-hop",
+      "timeseries_001852::difficulty=1-hop",
+      "timeseries_001862::difficulty=1-hop"
+    ],
+    "tied_in_tta_sample": [
+      "graph_000283::difficulty=2-hop",
+      "graph_001537::difficulty=3-hop",
+      "graph_001604::difficulty=2-hop",
+      "graph_001654::difficulty=2-hop",
+      "tabular_001744::difficulty=3-hop"
+    ],
+    "outlier_ties_on_two_row_tables": 9,
+    "v1": {
+      "models": {
+        "GPT-4o": {
+          "overall_acc": 35.04231504231504,
+          "overall_acc_tie_aware": 35.32623532623533,
+          "delta_pp": 0.28392028392028834,
+          "n_pairs": 18315,
+          "gaps": {
+            "tabular": {
+              "canonical": 37.960339943342774,
+              "tie_aware": 38.86685552407932,
+              "tie_aware_ci": [
+                35.85118376550169,
+                42.005734885175514
+              ],
+              "best_worst_canonical": [
+                "table_image",
+                "bar_chart"
+              ],
+              "best_worst_tie_aware": [
+                "table_image",
+                "bar_chart"
+              ]
+            },
+            "timeseries": {
+              "canonical": 25.693430656934307,
+              "tie_aware": 25.912408759124087,
+              "tie_aware_ci": [
+                23.571303696303698,
+                28.359776906588444
+              ],
+              "best_worst_canonical": [
+                "text_only",
+                "recurrence_plot"
+              ],
+              "best_worst_tie_aware": [
+                "text_only",
+                "recurrence_plot"
+              ]
+            },
+            "graph": {
+              "canonical": 23.03030303030303,
+              "tie_aware": 23.636363636363637,
+              "tie_aware_ci": [
+                19.693907156673113,
+                28.10830395613004
+              ],
+              "best_worst_canonical": [
+                "text_only",
+                "adjacency_matrix"
+              ],
+              "best_worst_tie_aware": [
+                "text_only",
+                "adjacency_matrix"
+              ]
+            }
+          }
+        },
+        "Gemini-2.0-Flash": {
+          "overall_acc": 36.87141687141687,
+          "overall_acc_tie_aware": 37.14441714441715,
+          "delta_pp": 0.27300027300027807,
+          "n_pairs": 18315,
+          "gaps": {
+            "tabular": {
+              "canonical": 39.49008498583569,
+              "tie_aware": 40.56657223796034,
+              "tie_aware_ci": [
+                36.5087457978238,
+                44.78996070093443
+              ],
+              "best_worst_canonical": [
+                "text_only",
+                "scatter_plot"
+              ],
+              "best_worst_tie_aware": [
+                "text_only",
+                "scatter_plot"
+              ]
+            },
+            "timeseries": {
+              "canonical": 19.197080291970803,
+              "tie_aware": 19.27007299270073,
+              "tie_aware_ci": [
+                16.262441652539422,
+                22.34817813765182
+              ],
+              "best_worst_canonical": [
+                "text_only",
+                "gaf"
+              ],
+              "best_worst_tie_aware": [
+                "text_only",
+                "gaf"
+              ]
+            },
+            "graph": {
+              "canonical": 21.666666666666668,
+              "tie_aware": 21.666666666666668,
+              "tie_aware_ci": [
+                18.13953488372093,
+                25.303030303030305
+              ],
+              "best_worst_canonical": [
+                "text_only",
+                "adjacency_matrix"
+              ],
+              "best_worst_tie_aware": [
+                "text_only",
+                "adjacency_matrix"
+              ]
+            }
+          }
+        },
+        "Qwen2.5-VL-7B": {
+          "overall_acc": 33.28965328965329,
+          "overall_acc_tie_aware": 33.52989352989353,
+          "delta_pp": 0.24024024024024015,
+          "n_pairs": 18315,
+          "gaps": {
+            "tabular": {
+              "canonical": 36.60056657223796,
+              "tie_aware": 36.94050991501416,
+              "tie_aware_ci": [
+                33.78802347956117,
+                40.368328099666854
+              ],
+              "best_worst_canonical": [
+                "table_image",
+                "scatter_plot"
+              ],
+              "best_worst_tie_aware": [
+                "table_image",
+                "scatter_plot"
+              ]
+            },
+            "timeseries": {
+              "canonical": 12.992700729927007,
+              "tie_aware": 12.992700729927007,
+              "tie_aware_ci": [
+                10.173010380622838,
+                15.984555984555984
+              ],
+              "best_worst_canonical": [
+                "text_only",
+                "recurrence_plot"
+              ],
+              "best_worst_tie_aware": [
+                "text_only",
+                "recurrence_plot"
+              ]
+            },
+            "graph": {
+              "canonical": 14.848484848484848,
+              "tie_aware": 14.696969696969697,
+              "tie_aware_ci": [
+                11.904761904761905,
+                17.895781119465315
+              ],
+              "best_worst_canonical": [
+                "text_only",
+                "adjacency_matrix"
+              ],
+              "best_worst_tie_aware": [
+                "text_only",
+                "adjacency_matrix"
+              ]
+            }
+          }
+        },
+        "Claude Sonnet 4": {
+          "overall_acc": 27.354627354627354,
+          "overall_acc_tie_aware": 27.48020748020748,
+          "delta_pp": 0.1255801255801252,
+          "n_pairs": 18315,
+          "gaps": {
+            "tabular": {
+              "canonical": 27.592067988668557,
+              "tie_aware": 27.592067988668557,
+              "tie_aware_ci": [
+                23.522766357195668,
+                31.935398456098742
+              ],
+              "best_worst_canonical": [
+                "table_image",
+                "scatter_plot"
+              ],
+              "best_worst_tie_aware": [
+                "table_image",
+                "scatter_plot"
+              ]
+            },
+            "timeseries": {
+              "canonical": 11.897810218978103,
+              "tie_aware": 12.408759124087592,
+              "tie_aware_ci": [
+                10.763358778625955,
+                14.179521970566741
+              ],
+              "best_worst_canonical": [
+                "line_plot",
+                "recurrence_plot"
+              ],
+              "best_worst_tie_aware": [
+                "line_plot",
+                "recurrence_plot"
+              ]
+            },
+            "graph": {
+              "canonical": 14.545454545454545,
+              "tie_aware": 14.696969696969697,
+              "tie_aware_ci": [
+                11.44927536231884,
+                18.074603174603165
+              ],
+              "best_worst_canonical": [
+                "text_only",
+                "node_link"
+              ],
+              "best_worst_tie_aware": [
+                "text_only",
+                "node_link"
+              ]
+            }
+          }
+        },
+        "Gemini-2.5-Flash": {
+          "overall_acc": 35.97597597597598,
+          "overall_acc_tie_aware": 36.08517608517609,
+          "delta_pp": 0.10920010920010981,
+          "n_pairs": 18315,
+          "gaps": {
+            "tabular": {
+              "canonical": 39.26345609065156,
+              "tie_aware": 39.54674220963173,
+              "tie_aware_ci": [
+                35.89998561696675,
+                43.34872328578247
+              ],
+              "best_worst_canonical": [
+                "text_only",
+                "bar_chart"
+              ],
+              "best_worst_tie_aware": [
+                "text_only",
+                "bar_chart"
+              ]
+            },
+            "timeseries": {
+              "canonical": 26.277372262773724,
+              "tie_aware": 26.277372262773724,
+              "tie_aware_ci": [
+                23.903979773502794,
+                28.726005589811557
+              ],
+              "best_worst_canonical": [
+                "text_only",
+                "recurrence_plot"
+              ],
+              "best_worst_tie_aware": [
+                "text_only",
+                "recurrence_plot"
+              ]
+            },
+            "graph": {
+              "canonical": 30.0,
+              "tie_aware": 30.303030303030305,
+              "tie_aware_ci": [
+                24.70565953654189,
+                34.8936170212766
+              ],
+              "best_worst_canonical": [
+                "text_only",
+                "node_link"
+              ],
+              "best_worst_tie_aware": [
+                "text_only",
+                "node_link"
+              ]
+            }
+          }
+        },
+        "Qwen2.5-VL-32B": {
+          "overall_acc": 33.67731367731368,
+          "overall_acc_tie_aware": 34.01583401583402,
+          "delta_pp": 0.3385203385203397,
+          "n_pairs": 18315,
+          "gaps": {
+            "tabular": {
+              "canonical": 33.654390934844194,
+              "tie_aware": 34.05099150141643,
+              "tie_aware_ci": [
+                30.159490731008468,
+                38.292993079584775
+              ],
+              "best_worst_canonical": [
+                "table_image",
+                "scatter_plot"
+              ],
+              "best_worst_tie_aware": [
+                "table_image",
+                "scatter_plot"
+              ]
+            },
+            "timeseries": {
+              "canonical": 18.029197080291972,
+              "tie_aware": 18.1021897810219,
+              "tie_aware_ci": [
+                15.932112590799031,
+                20.29520295202952
+              ],
+              "best_worst_canonical": [
+                "text_only",
+                "recurrence_plot"
+              ],
+              "best_worst_tie_aware": [
+                "text_only",
+                "recurrence_plot"
+              ]
+            },
+            "graph": {
+              "canonical": 22.424242424242426,
+              "tie_aware": 22.575757575757574,
+              "tie_aware_ci": [
+                18.333333333333332,
+                27.207207207207208
+              ],
+              "best_worst_canonical": [
+                "text_only",
+                "adjacency_matrix"
+              ],
+              "best_worst_tie_aware": [
+                "text_only",
+                "adjacency_matrix"
+              ]
+            }
+          }
+        },
+        "InternVL2.5-8B": {
+          "overall_acc": 20.884520884520885,
+          "overall_acc_tie_aware": 21.03194103194103,
+          "delta_pp": 0.14742014742014575,
+          "n_pairs": 18315,
+          "gaps": {
+            "tabular": {
+              "canonical": 18.980169971671387,
+              "tie_aware": 19.43342776203966,
+              "tie_aware_ci": [
+                16.335230465796958,
+                22.663073776019417
+              ],
+              "best_worst_canonical": [
+                "table_image",
+                "scatter_plot"
+              ],
+              "best_worst_tie_aware": [
+                "table_image",
+                "scatter_plot"
+              ]
+            },
+            "timeseries": {
+              "canonical": 8.613138686131387,
+              "tie_aware": 8.613138686131387,
+              "tie_aware_ci": [
+                6.644295302013423,
+                10.714285714285714
+              ],
+              "best_worst_canonical": [
+                "line_plot",
+                "gaf"
+              ],
+              "best_worst_tie_aware": [
+                "line_plot",
+                "gaf"
+              ]
+            },
+            "graph": {
+              "canonical": 7.575757575757576,
+              "tie_aware": 7.424242424242424,
+              "tie_aware_ci": [
+                3.8095238095238093,
+                11.4079365079365
+              ],
+              "best_worst_canonical": [
+                "text_only",
+                "node_link"
+              ],
+              "best_worst_tie_aware": [
+                "text_only",
+                "node_link"
+              ]
+            }
+          }
+        }
+      },
+      "max_gap_all7": {
+        "canonical": [
+          "Gemini-2.0-Flash",
+          "tabular",
+          39.49008498583569
+        ],
+        "tie_aware": [
+          "Gemini-2.0-Flash",
+          "tabular",
+          40.56657223796034
+        ]
+      },
+      "max_gap_core4": {
+        "canonical": [
+          "Gemini-2.0-Flash",
+          "tabular",
+          39.49008498583569
+        ],
+        "tie_aware": [
+          "Gemini-2.0-Flash",
+          "tabular",
+          40.56657223796034
+        ]
+      }
+    },
+    "v2": {
+      "Qwen2.5-VL-7B": {
+        "overall_acc": 40.12012012012012,
+        "overall_acc_tie_aware": 40.82992082992083,
+        "delta_pp": 0.7098007098007102,
+        "n_pairs": 18315,
+        "tabular_residual_gap": {
+          "canonical": 6.929133858267717,
+          "tie_aware": 7.874015748031496,
+          "tie_aware_ci": [
+            3.8639876352395675,
+            12.12133142448103
+          ],
+          "tie_aware_p": 0.00029997000299970003,
+          "n_q": 635,
+          "best_worst": [
+            "bar_chart",
+            "scatter_plot"
+          ]
+        },
+        "graph_residual_gap": {
+          "canonical": 4.924242424242424,
+          "tie_aware": 4.734848484848484,
+          "tie_aware_ci": [
+            1.5873015873015872,
+            7.765151515151516
+          ],
+          "tie_aware_p": 0.0064993500649935,
+          "n_q": 528,
+          "best_worst": [
+            "node_link",
+            "adjacency_matrix"
+          ]
+        },
+        "series_nonlossy3_gap": {
+          "canonical": 21.78030303030303,
+          "tie_aware": 21.78030303030303,
+          "tie_aware_ci": [
+            18.75571614429722,
+            24.8771134614001
+          ],
+          "tie_aware_p": 9.999000099990002e-05,
+          "n_q": 1056,
+          "best_worst": [
+            "text_only",
+            "heatmap"
+          ]
+        }
+      },
+      "Qwen2.5-VL-32B": {
+        "overall_acc": 41.39230139230139,
+        "overall_acc_tie_aware": 42.16762216762217,
+        "delta_pp": 0.7753207753207789,
+        "n_pairs": 18315,
+        "tabular_residual_gap": {
+          "canonical": 6.141732283464567,
+          "tie_aware": 5.196850393700787,
+          "tie_aware_ci": [
+            -0.15581860595591382,
+            10.638387722829211
+          ],
+          "tie_aware_p": 0.0685931406859314,
+          "n_q": 635,
+          "best_worst": [
+            "bar_chart",
+            "scatter_plot"
+          ]
+        },
+        "graph_residual_gap": {
+          "canonical": 13.068181818181818,
+          "tie_aware": 13.257575757575758,
+          "tie_aware_ci": [
+            9.280303030303031,
+            17.291666666666668
+          ],
+          "tie_aware_p": 9.999000099990002e-05,
+          "n_q": 528,
+          "best_worst": [
+            "text_only",
+            "adjacency_matrix"
+          ]
+        },
+        "series_nonlossy3_gap": {
+          "canonical": 20.549242424242426,
+          "tie_aware": 20.643939393939394,
+          "tie_aware_ci": [
+            17.20422919901098,
+            24.356468615462877
+          ],
+          "tie_aware_p": 9.999000099990002e-05,
+          "n_q": 1056,
+          "best_worst": [
+            "text_only",
+            "heatmap"
+          ]
+        }
+      },
+      "Qwen3-VL-8B": {
+        "overall_acc": 39.53589953589954,
+        "overall_acc_tie_aware": 40.06552006552007,
+        "delta_pp": 0.5296205296205301,
+        "n_pairs": 18315,
+        "tabular_residual_gap": {
+          "canonical": 24.724409448818896,
+          "tie_aware": 23.62204724409449,
+          "tie_aware_ci": [
+            18.042774047101105,
+            29.28082191780822
+          ],
+          "tie_aware_p": 9.999000099990002e-05,
+          "n_q": 635,
+          "best_worst": [
+            "table_image",
+            "scatter_plot"
+          ]
+        },
+        "graph_residual_gap": {
+          "canonical": 17.803030303030305,
+          "tie_aware": 17.803030303030305,
+          "tie_aware_ci": [
+            14.492753623188406,
+            21.54471544715447
+          ],
+          "tie_aware_p": 9.999000099990002e-05,
+          "n_q": 528,
+          "best_worst": [
+            "node_link",
+            "adjacency_matrix"
+          ]
+        },
+        "series_nonlossy3_gap": {
+          "canonical": 19.03409090909091,
+          "tie_aware": 19.12878787878788,
+          "tie_aware_ci": [
+            16.330071613929487,
+            22.16651196133131
+          ],
+          "tie_aware_p": 9.999000099990002e-05,
+          "n_q": 1056,
+          "best_worst": [
+            "text_only",
+            "heatmap"
+          ]
+        }
+      }
+    },
+    "note_release": "ETT-derived examples removed (CC BY-ND 4.0); counts unchanged."
+  },
+  "h1_test_bookkeeping": {
+    "test_in_h1_bound_py": "h1_bound.boot: object-cluster bootstrap of mean(EM - CV prior) over absent (A) pairs, B=10000, random.Random(0); 95% CI = percentile; p = ONE-SIDED bootstrap p = (#{d* <= 0} + 1) / (B + 1); Holm step-down over the 31 tested cells. No sign-flip permutation test is run in h1_bound.py.",
+    "n_cells_tested": 31,
+    "n_above_raw_p05": 4,
+    "n_above_holm_p05": 1,
+    "cells_above_raw": [
+      {
+        "suite": "v1",
+        "model": "GPT-4o",
+        "modality": "graph",
+        "n": 1241,
+        "diff": 3.4649476228847704,
+        "lo": 0.007746490423606641,
+        "hi": 6.724632704187723,
+        "p_one_sided": 0.024997500249975,
+        "p_holm": 0.6999300069993001
+      },
+      {
+        "suite": "v2",
+        "model": "InternVL2-4B",
+        "modality": "tabular",
+        "n": 169,
+        "diff": 4.378698224852071,
+        "lo": 1.2352852586817857,
+        "hi": 8.160992596921878,
+        "p_one_sided": 0.0012998700129987,
+        "p_holm": 0.0402959704029597
+      },
+      {
+        "suite": "v2",
+        "model": "InternVL2-8B",
+        "modality": "tabular",
+        "n": 169,
+        "diff": 3.195266272189349,
+        "lo": 0.28895751260999236,
+        "hi": 6.382432671863924,
+        "p_one_sided": 0.0170982901709829,
+        "p_holm": 0.4958504149585041
+      },
+      {
+        "suite": "v2",
+        "model": "InternVL2.5-8B (6 tiles)",
+        "modality": "tabular",
+        "n": 169,
+        "diff": 4.970414201183432,
+        "lo": 1.347305389221557,
+        "hi": 9.058823529411764,
+        "p_one_sided": 0.0030996900309969004,
+        "p_holm": 0.09299070092990701
+      }
+    ],
+    "tex_hits": [
+      {
+        "file": "acl2027/app_stats.tex",
+        "line": 13,
+        "pattern": "sign-flip",
+        "text": "objects ($B{=}5000$). Its $p$-value is a two-sided sign-flip permutation test over objects"
+      },
+      {
+        "file": "acl2027/app_stats.tex",
+        "line": 42,
+        "pattern": "sign-flip",
+        "text": "bootstrap over source objects ($B{=}5000$) and $p$ a two-sided sign-flip permutation over"
+      },
+      {
+        "file": "acl2027/appendix_acl.tex",
+        "line": 382,
+        "pattern": "above the question-only prior",
+        "text": "After the correction, one cell remains above the question-only prior on unanswerable pairs"
+      },
+      {
+        "file": "acl2027/appendix_acl.tex",
+        "line": 383,
+        "pattern": "Holm \\$p",
+        "text": "(InternVL2-4B, $+$\\num{4.4} points, Holm $p{=}0.04$), driven by eight value lookups on two- to"
+      },
+      {
+        "file": "acl2027/main.tex",
+        "line": 190,
+        "pattern": "sign-flip",
+        "text": "all intervals are object-cluster bootstraps and all tests are object-level sign-flip permutation"
+      },
+      {
+        "file": "acl2027/main.tex",
+        "line": 218,
+        "pattern": "at or below the question-only prior",
+        "text": "every model scores at or below the question-only prior. For example, a bar chart of column means"
+      }
+    ]
+  },
+  "latency": {
+    "fields_v2_qwen": [
+      "answer",
+      "difficulty",
+      "exact_match",
+      "f1",
+      "image_h",
+      "image_path",
+      "image_sha256",
+      "image_w",
+      "latency_s",
+      "modality",
+      "model_id",
+      "model_input_h",
+      "model_input_w",
+      "model_revision",
+      "n_visual_tokens",
+      "numeric_accuracy",
+      "prediction",
+      "prompt_sha256",
+      "question",
+      "question_id",
+      "raw_response",
+      "source",
+      "suite",
+      "task",
+      "timestamp_utc",
+      "viz_type"
+    ],
+    "generated_tokens_logged": {
+      "v2_direct_answer": false,
+      "tta_stage1_transcript": true,
+      "tta_stage2_answer": false,
+      "rawtext": false,
+      "note": "v2 rows store n_visual_tokens (input image tokens) only; ['n_visual_tokens']"
+    },
+    "v2_qwen7b_direct_by_format": {
+      "tabular|table_image": {
+        "latency_s": {
+          "mean": 2.9327495750708215,
+          "median": 2.822,
+          "n": 1765
+        },
+        "n_visual_tokens": {
+          "mean": 1016.1059490084986,
+          "median": 999.0,
+          "n": 1765
+        }
+      },
+      "tabular|text_only": {
+        "latency_s": {
+          "mean": 2.850785269121813,
+          "median": 2.797,
+          "n": 1765
+        },
+        "n_visual_tokens": {
+          "mean": 1000.1320113314448,
+          "median": 999.0,
+          "n": 1765
+        }
+      },
+      "tabular|heatmap": {
+        "latency_s": {
+          "mean": 2.851067988668555,
+          "median": 2.786,
+          "n": 1765
+        },
+        "n_visual_tokens": {
+          "mean": 1005.2679886685553,
+          "median": 999.0,
+          "n": 1765
+        }
+      },
+      "tabular|bar_chart": {
+        "latency_s": {
+          "mean": 4.091593767705382,
+          "median": 4.274,
+          "n": 1765
+        },
+        "n_visual_tokens": {
+          "mean": 1262.7167138810198,
+          "median": 1369.0,
+          "n": 1765
+        }
+      },
+      "tabular|scatter_plot": {
+        "latency_s": {
+          "mean": 4.082383002832861,
+          "median": 4.282,
+          "n": 1765
+        },
+        "n_visual_tokens": {
+          "mean": 1262.7167138810198,
+          "median": 1369.0,
+          "n": 1765
+        }
+      },
+      "timeseries|line_plot": {
+        "latency_s": {
+          "mean": 2.766961313868613,
+          "median": 2.7504999999999997,
+          "n": 1370
+        },
+        "n_visual_tokens": {
+          "mean": 999.0,
+          "median": 999.0,
+          "n": 1370
+        }
+      },
+      "timeseries|heatmap": {
+        "latency_s": {
+          "mean": 2.770098540145985,
+          "median": 2.7595,
+          "n": 1370
+        },
+        "n_visual_tokens": {
+          "mean": 999.0,
+          "median": 999.0,
+          "n": 1370
+        }
+      },
+      "timeseries|gaf": {
+        "latency_s": {
+          "mean": 2.78651897810219,
+          "median": 2.7565,
+          "n": 1370
+        },
+        "n_visual_tokens": {
+          "mean": 999.0,
+          "median": 999.0,
+          "n": 1370
+        }
+      },
+      "timeseries|recurrence_plot": {
+        "latency_s": {
+          "mean": 2.764353284671533,
+          "median": 2.7439999999999998,
+          "n": 1370
+        },
+        "n_visual_tokens": {
+          "mean": 999.0,
+          "median": 999.0,
+          "n": 1370
+        }
+      },
+      "timeseries|text_only": {
+        "latency_s": {
+          "mean": 3.805819708029197,
+          "median": 3.8865,
+          "n": 1370
+        },
+        "n_visual_tokens": {
+          "mean": 1200.7445255474452,
+          "median": 1295.0,
+          "n": 1370
+        }
+      },
+      "graph|node_link": {
+        "latency_s": {
+          "mean": 3.4378242424242424,
+          "median": 3.216,
+          "n": 660
+        },
+        "n_visual_tokens": {
+          "mean": 1161.5757575757575,
+          "median": 999.0,
+          "n": 660
+        }
+      },
+      "graph|circular_layout": {
+        "latency_s": {
+          "mean": 3.4360939393939396,
+          "median": 3.216,
+          "n": 660
+        },
+        "n_visual_tokens": {
+          "mean": 1161.5757575757575,
+          "median": 999.0,
+          "n": 660
+        }
+      },
+      "graph|adjacency_matrix": {
+        "latency_s": {
+          "mean": 4.4167348484848485,
+          "median": 4.448,
+          "n": 660
+        },
+        "n_visual_tokens": {
+          "mean": 1369.0,
+          "median": 1369.0,
+          "n": 660
+        }
+      },
+      "graph|text_only": {
+        "latency_s": {
+          "mean": 2.7354863636363635,
+          "median": 2.748,
+          "n": 660
+        },
+        "n_visual_tokens": {
+          "mean": 1011.8939393939394,
+          "median": 999.0,
+          "n": 660
+        }
+      },
+      "graph|text_only_deg": {
+        "latency_s": {
+          "mean": 2.74645,
+          "median": 2.745,
+          "n": 660
+        },
+        "n_visual_tokens": {
+          "mean": 1012.7348484848485,
+          "median": 999.0,
+          "n": 660
+        }
+      }
+    },
+    "tta_by_format": {
+      "tabular|table_image": {
+        "latency_s": {
+          "mean": 35.62582,
+          "median": 18.858,
+          "n": 50
+        },
+        "latency_stage1_s": {
+          "mean": 35.22814,
+          "median": 18.6405,
+          "n": 50
+        },
+        "latency_stage2_s": {
+          "mean": 0.39738,
+          "median": 0.302,
+          "n": 50
+        },
+        "transcript_n_tokens": {
+          "mean": 629.32,
+          "median": 308.0,
+          "n": 50
+        }
+      },
+      "tabular|text_only": {
+        "latency_s": {
+          "mean": 35.50432,
+          "median": 18.631,
+          "n": 50
+        },
+        "latency_stage1_s": {
+          "mean": 35.09256,
+          "median": 18.1735,
+          "n": 50
+        },
+        "latency_stage2_s": {
+          "mean": 0.41148,
+          "median": 0.2995,
+          "n": 50
+        },
+        "transcript_n_tokens": {
+          "mean": 620.68,
+          "median": 302.0,
+          "n": 50
+        }
+      },
+      "tabular|heatmap": {
+        "latency_s": {
+          "mean": 17.7595,
+          "median": 11.4085,
+          "n": 50
+        },
+        "latency_stage1_s": {
+          "mean": 17.4416,
+          "median": 11.213000000000001,
+          "n": 50
+        },
+        "latency_stage2_s": {
+          "mean": 0.31768,
+          "median": 0.217,
+          "n": 50
+        },
+        "transcript_n_tokens": {
+          "mean": 289.5,
+          "median": 215.5,
+          "n": 50
+        }
+      },
+      "tabular|bar_chart": {
+        "latency_s": {
+          "mean": 19.33654,
+          "median": 11.7105,
+          "n": 50
+        },
+        "latency_stage1_s": {
+          "mean": 19.00058,
+          "median": 11.505500000000001,
+          "n": 50
+        },
+        "latency_stage2_s": {
+          "mean": 0.33576,
+          "median": 0.228,
+          "n": 50
+        },
+        "transcript_n_tokens": {
+          "mean": 295.6,
+          "median": 198.0,
+          "n": 50
+        }
+      },
+      "tabular|scatter_plot": {
+        "latency_s": {
+          "mean": 63.584559999999996,
+          "median": 21.168,
+          "n": 50
+        },
+        "latency_stage1_s": {
+          "mean": 63.12946,
+          "median": 20.948999999999998,
+          "n": 50
+        },
+        "latency_stage2_s": {
+          "mean": 0.45482,
+          "median": 0.3375,
+          "n": 50
+        },
+        "transcript_n_tokens": {
+          "mean": 1119.94,
+          "median": 391.0,
+          "n": 50
+        }
+      },
+      "timeseries|line_plot": {
+        "latency_s": {
+          "mean": 90.7518,
+          "median": 69.08099999999999,
+          "n": 50
+        },
+        "latency_stage1_s": {
+          "mean": 90.23604,
+          "median": 68.7715,
+          "n": 50
+        },
+        "latency_stage2_s": {
+          "mean": 0.51544,
+          "median": 0.412,
+          "n": 50
+        },
+        "transcript_n_tokens": {
+          "mean": 1610.48,
+          "median": 1659.5,
+          "n": 50
+        }
+      },
+      "timeseries|heatmap": {
+        "latency_s": {
+          "mean": 51.32102,
+          "median": 40.9885,
+          "n": 50
+        },
+        "latency_stage1_s": {
+          "mean": 50.95446,
+          "median": 40.7655,
+          "n": 50
+        },
+        "latency_stage2_s": {
+          "mean": 0.3661,
+          "median": 0.295,
+          "n": 50
+        },
+        "transcript_n_tokens": {
+          "mean": 919.08,
+          "median": 1279.0,
+          "n": 50
+        }
+      },
+      "timeseries|gaf": {
+        "latency_s": {
+          "mean": 120.38584,
+          "median": 92.6175,
+          "n": 50
+        },
+        "latency_stage1_s": {
+          "mean": 119.79654,
+          "median": 92.266,
+          "n": 50
+        },
+        "latency_stage2_s": {
+          "mean": 0.58882,
+          "median": 0.4275,
+          "n": 50
+        },
+        "transcript_n_tokens": {
+          "mean": 2109.44,
+          "median": 2560.0,
+          "n": 50
+        }
+      },
+      "timeseries|recurrence_plot": {
+        "latency_s": {
+          "mean": 133.35656,
+          "median": 97.91999999999999,
+          "n": 50
+        },
+        "latency_stage1_s": {
+          "mean": 132.71824,
+          "median": 97.49549999999999,
+          "n": 50
+        },
+        "latency_stage2_s": {
+          "mean": 0.63802,
+          "median": 0.5205,
+          "n": 50
+        },
+        "transcript_n_tokens": {
+          "mean": 2306.4,
+          "median": 2560.0,
+          "n": 50
+        }
+      },
+      "timeseries|text_only": {
+        "latency_s": {
+          "mean": 124.8866,
+          "median": 95.423,
+          "n": 50
+        },
+        "latency_stage1_s": {
+          "mean": 124.24788,
+          "median": 94.897,
+          "n": 50
+        },
+        "latency_stage2_s": {
+          "mean": 0.63832,
+          "median": 0.501,
+          "n": 50
+        },
+        "transcript_n_tokens": {
+          "mean": 2053.26,
+          "median": 2090.0,
+          "n": 50
+        }
+      },
+      "graph|node_link": {
+        "latency_s": {
+          "mean": 117.1907,
+          "median": 86.8415,
+          "n": 50
+        },
+        "latency_stage1_s": {
+          "mean": 116.57696,
+          "median": 86.4745,
+          "n": 50
+        },
+        "latency_stage2_s": {
+          "mean": 0.61332,
+          "median": 0.4155,
+          "n": 50
+        },
+        "transcript_n_tokens": {
+          "mean": 2000.4,
+          "median": 2560.0,
+          "n": 50
+        }
+      },
+      "graph|circular_layout": {
+        "latency_s": {
+          "mean": 130.32804,
+          "median": 90.01,
+          "n": 50
+        },
+        "latency_stage1_s": {
+          "mean": 129.66666,
+          "median": 89.62700000000001,
+          "n": 50
+        },
+        "latency_stage2_s": {
+          "mean": 0.66094,
+          "median": 0.4235,
+          "n": 50
+        },
+        "transcript_n_tokens": {
+          "mean": 2207.2,
+          "median": 2560.0,
+          "n": 50
+        }
+      },
+      "graph|adjacency_matrix": {
+        "latency_s": {
+          "mean": 140.57878,
+          "median": 92.47200000000001,
+          "n": 50
+        },
+        "latency_stage1_s": {
+          "mean": 139.33438,
+          "median": 92.059,
+          "n": 50
+        },
+        "latency_stage2_s": {
+          "mean": 1.24396,
+          "median": 0.429,
+          "n": 50
+        },
+        "transcript_n_tokens": {
+          "mean": 2302.9,
+          "median": 2560.0,
+          "n": 50
+        }
+      },
+      "graph|text_only": {
+        "latency_s": {
+          "mean": 82.5403,
+          "median": 61.028,
+          "n": 50
+        },
+        "latency_stage1_s": {
+          "mean": 82.07798,
+          "median": 60.671,
+          "n": 50
+        },
+        "latency_stage2_s": {
+          "mean": 0.462,
+          "median": 0.326,
+          "n": 50
+        },
+        "transcript_n_tokens": {
+          "mean": 1462.74,
+          "median": 1376.5,
+          "n": 50
+        }
+      },
+      "graph|text_only_deg": {
+        "latency_s": {
+          "mean": 99.72478,
+          "median": 66.5815,
+          "n": 50
+        },
+        "latency_stage1_s": {
+          "mean": 99.1841,
+          "median": 66.08250000000001,
+          "n": 50
+        },
+        "latency_stage2_s": {
+          "mean": 0.54042,
+          "median": 0.3985,
+          "n": 50
+        },
+        "transcript_n_tokens": {
+          "mean": 1796.96,
+          "median": 2378.0,
+          "n": 50
+        }
+      }
+    },
+    "direct_on_tta_rows_by_format": {
+      "tabular|table_image": {
+        "latency_s": {
+          "mean": 3.20716,
+          "median": 2.9044999999999996,
+          "n": 50
+        }
+      },
+      "tabular|text_only": {
+        "latency_s": {
+          "mean": 3.06796,
+          "median": 2.8739999999999997,
+          "n": 50
+        }
+      },
+      "tabular|heatmap": {
+        "latency_s": {
+          "mean": 3.19486,
+          "median": 2.8659999999999997,
+          "n": 50
+        }
+      },
+      "tabular|bar_chart": {
+        "latency_s": {
+          "mean": 4.76598,
+          "median": 4.596,
+          "n": 50
+        }
+      },
+      "tabular|scatter_plot": {
+        "latency_s": {
+          "mean": 4.6847199999999996,
+          "median": 4.527,
+          "n": 50
+        }
+      },
+      "timeseries|line_plot": {
+        "latency_s": {
+          "mean": 2.90014,
+          "median": 2.7735,
+          "n": 50
+        }
+      },
+      "timeseries|heatmap": {
+        "latency_s": {
+          "mean": 2.89022,
+          "median": 2.746,
+          "n": 50
+        }
+      },
+      "timeseries|gaf": {
+        "latency_s": {
+          "mean": 2.92034,
+          "median": 2.782,
+          "n": 50
+        }
+      },
+      "timeseries|recurrence_plot": {
+        "latency_s": {
+          "mean": 2.8829,
+          "median": 2.737,
+          "n": 50
+        }
+      },
+      "timeseries|text_only": {
+        "latency_s": {
+          "mean": 4.23084,
+          "median": 4.2035,
+          "n": 50
+        }
+      },
+      "graph|node_link": {
+        "latency_s": {
+          "mean": 3.57668,
+          "median": 3.4699999999999998,
+          "n": 50
+        }
+      },
+      "graph|circular_layout": {
+        "latency_s": {
+          "mean": 3.55386,
+          "median": 3.4555,
+          "n": 50
+        }
+      },
+      "graph|adjacency_matrix": {
+        "latency_s": {
+          "mean": 4.40834,
+          "median": 4.423500000000001,
+          "n": 50
+        }
+      },
+      "graph|text_only": {
+        "latency_s": {
+          "mean": 2.78394,
+          "median": 2.759,
+          "n": 50
+        }
+      },
+      "graph|text_only_deg": {
+        "latency_s": {
+          "mean": 2.80264,
+          "median": 2.798,
+          "n": 50
+        }
+      }
+    },
+    "tta_all": {
+      "latency_s": {
+        "mean": 84.19167733333333,
+        "median": 63.519999999999996,
+        "n": 750
+      },
+      "latency_stage1_s": {
+        "mean": 83.64570533333334,
+        "median": 63.2395,
+        "n": 750
+      },
+      "latency_stage2_s": {
+        "mean": 0.5456306666666667,
+        "median": 0.3775,
+        "n": 750
+      },
+      "transcript_n_tokens": {
+        "mean": 1448.26,
+        "median": 1532.5,
+        "n": 750
+      }
+    },
+    "direct_on_tta_rows_all": {
+      "latency_s": {
+        "mean": 3.4580386666666665,
+        "median": 3.0575,
+        "n": 750
+      }
+    },
+    "rawtext_by_modality": {
+      "tabular": {
+        "latency_s": {
+          "mean": 0.5200895184135977,
+          "median": 0.467,
+          "n": 1765
+        },
+        "n_prompt_tokens": {
+          "mean": 719.7915014164306,
+          "median": 543.0,
+          "n": 1765
+        }
+      },
+      "timeseries": {
+        "latency_s": {
+          "mean": 1.5309058394160584,
+          "median": 1.5150000000000001,
+          "n": 1370
+        },
+        "n_prompt_tokens": {
+          "mean": 3842.1905109489053,
+          "median": 5047.0,
+          "n": 1370
+        }
+      },
+      "graph": {
+        "latency_s": {
+          "mean": 0.5391742424242424,
+          "median": 0.465,
+          "n": 660
+        },
+        "n_prompt_tokens": {
+          "mean": 1109.419696969697,
+          "median": 978.0,
+          "n": 660
+        }
+      }
+    },
+    "caveat": "wall-clock seconds per query on shared GPUs; the v2 and TTA runs were on different dates and GPUs (TTA shards on GPUs 0-3, some shared), so latencies compare formats within a run, not runs."
+  }
+}

@@ -1,0 +1,833 @@
+{
+  "A_rendering_completeness": {
+    "tabular_total": 1765,
+    "tabular_rows_le12": 1057,
+    "tabular_rows_13_14": 70,
+    "tabular_rows_15_20": 287,
+    "tabular_rows_gt20": 351,
+    "timeseries_total": 1370,
+    "timeseries_points_le43": 20,
+    "timeseries_points_gt43": 1350,
+    "graph_total": 660,
+    "graph_edges_le43": 60,
+    "graph_edges_gt43": 600,
+    "graph_degree_query": 208
+  },
+  "B_tabular_subsets": {
+    "rows<=12": {
+      "n": 1057,
+      "models": {
+        "GPT-4o": {
+          "per_format_em": {
+            "bar_chart": 26.96310312204352,
+            "heatmap": 55.91296121097446,
+            "table_image": 71.7123935666982,
+            "scatter_plot": 28.66603595080416,
+            "text_only": 69.91485335856197
+          },
+          "best": "table_image",
+          "worst": "bar_chart",
+          "gap_pp": 44.74929044465468,
+          "p": 9.999000099990002e-05,
+          "n": 1057,
+          "table_image_minus_text_only": {
+            "diff_pp": 1.7975402081362346,
+            "p": 0.18288171182881713,
+            "n": 1057
+          }
+        },
+        "Gemini Flash": {
+          "per_format_em": {
+            "bar_chart": 28.855250709555346,
+            "heatmap": 56.66982024597919,
+            "table_image": 74.17218543046357,
+            "scatter_plot": 24.408703878902553,
+            "text_only": 72.28003784295176
+          },
+          "best": "table_image",
+          "worst": "scatter_plot",
+          "gap_pp": 49.76348155156102,
+          "p": 9.999000099990002e-05,
+          "n": 1057,
+          "table_image_minus_text_only": {
+            "diff_pp": 1.8921475875118259,
+            "p": 0.20017998200179982,
+            "n": 1057
+          }
+        },
+        "Qwen2.5-VL-7B": {
+          "per_format_em": {
+            "bar_chart": 29.99053926206244,
+            "heatmap": 52.12866603595081,
+            "table_image": 64.80605487228004,
+            "scatter_plot": 21.475875118259225,
+            "text_only": 54.966887417218544
+          },
+          "best": "table_image",
+          "worst": "scatter_plot",
+          "gap_pp": 43.33017975402081,
+          "p": 9.999000099990002e-05,
+          "n": 1057,
+          "table_image_minus_text_only": {
+            "diff_pp": 9.839167455061494,
+            "p": 9.999000099990002e-05,
+            "n": 1057
+          }
+        },
+        "Claude Sonnet": {
+          "per_format_em": {
+            "bar_chart": 21.09744560075686,
+            "heatmap": 45.97918637653737,
+            "table_image": 57.71050141911069,
+            "scatter_plot": 19.867549668874172,
+            "text_only": 44.84389782403027
+          },
+          "best": "table_image",
+          "worst": "scatter_plot",
+          "gap_pp": 37.842951750236516,
+          "p": 9.999000099990002e-05,
+          "n": 1057,
+          "table_image_minus_text_only": {
+            "diff_pp": 12.866603595080417,
+            "p": 9.999000099990002e-05,
+            "n": 1057
+          }
+        }
+      }
+    },
+    "rows>12": {
+      "n": 708,
+      "models": {
+        "GPT-4o": {
+          "per_format_em": {
+            "bar_chart": 16.52542372881356,
+            "heatmap": 25.282485875706215,
+            "table_image": 41.24293785310734,
+            "scatter_plot": 15.96045197740113,
+            "text_only": 39.12429378531073
+          },
+          "best": "table_image",
+          "worst": "scatter_plot",
+          "gap_pp": 25.282485875706215,
+          "p": 9.999000099990002e-05,
+          "n": 708
+        },
+        "Gemini Flash": {
+          "per_format_em": {
+            "bar_chart": 19.350282485875706,
+            "heatmap": 26.836158192090394,
+            "table_image": 39.68926553672316,
+            "scatter_plot": 14.971751412429379,
+            "text_only": 44.49152542372882
+          },
+          "best": "text_only",
+          "worst": "scatter_plot",
+          "gap_pp": 29.519774011299436,
+          "p": 9.999000099990002e-05,
+          "n": 708
+        },
+        "Qwen2.5-VL-7B": {
+          "per_format_em": {
+            "bar_chart": 19.915254237288135,
+            "heatmap": 26.129943502824858,
+            "table_image": 39.26553672316384,
+            "scatter_plot": 11.581920903954803,
+            "text_only": 40.112994350282484
+          },
+          "best": "text_only",
+          "worst": "scatter_plot",
+          "gap_pp": 28.531073446327685,
+          "p": 9.999000099990002e-05,
+          "n": 708
+        },
+        "Claude Sonnet": {
+          "per_format_em": {
+            "bar_chart": 15.536723163841808,
+            "heatmap": 18.220338983050848,
+            "table_image": 24.858757062146893,
+            "scatter_plot": 10.59322033898305,
+            "text_only": 24.01129943502825
+          },
+          "best": "table_image",
+          "worst": "scatter_plot",
+          "gap_pp": 14.265536723163843,
+          "p": 9.999000099990002e-05,
+          "n": 708
+        }
+      }
+    }
+  },
+  "C_visual_only": {
+    "GPT-4o": {
+      "tabular": {
+        "per_format_em": {
+          "bar_chart": 22.776203966005667,
+          "heatmap": 43.626062322946176,
+          "table_image": 59.49008498583569,
+          "scatter_plot": 23.569405099150142
+        },
+        "best": "table_image",
+        "worst": "bar_chart",
+        "gap_pp": 36.713881019830026,
+        "p": 9.999000099990002e-05,
+        "n": 1765
+      },
+      "timeseries": {
+        "per_format_em": {
+          "line_plot": 27.59124087591241,
+          "gaf": 17.153284671532848,
+          "recurrence_plot": 10.145985401459853,
+          "heatmap": 18.467153284671532
+        },
+        "best": "line_plot",
+        "worst": "recurrence_plot",
+        "gap_pp": 17.445255474452555,
+        "p": 9.999000099990002e-05,
+        "n": 1370
+      },
+      "graph": {
+        "per_format_em": {
+          "node_link": 43.63636363636363,
+          "adjacency_matrix": 33.333333333333336,
+          "circular_layout": 41.21212121212121
+        },
+        "best": "node_link",
+        "worst": "adjacency_matrix",
+        "gap_pp": 10.303030303030303,
+        "p": 9.999000099990002e-05,
+        "n": 660
+      }
+    },
+    "Gemini Flash": {
+      "tabular": {
+        "per_format_em": {
+          "bar_chart": 25.042492917847024,
+          "heatmap": 44.70254957507082,
+          "table_image": 60.3399433427762,
+          "scatter_plot": 20.623229461756374
+        },
+        "best": "table_image",
+        "worst": "scatter_plot",
+        "gap_pp": 39.71671388101983,
+        "p": 9.999000099990002e-05,
+        "n": 1765
+      },
+      "timeseries": {
+        "per_format_em": {
+          "line_plot": 32.99270072992701,
+          "gaf": 19.48905109489051,
+          "recurrence_plot": 19.708029197080293,
+          "heatmap": 24.89051094890511
+        },
+        "best": "line_plot",
+        "worst": "gaf",
+        "gap_pp": 13.503649635036496,
+        "p": 9.999000099990002e-05,
+        "n": 1370
+      },
+      "graph": {
+        "per_format_em": {
+          "node_link": 35.75757575757576,
+          "adjacency_matrix": 31.818181818181817,
+          "circular_layout": 36.21212121212121
+        },
+        "best": "circular_layout",
+        "worst": "adjacency_matrix",
+        "gap_pp": 4.393939393939394,
+        "p": 0.023297670232976703,
+        "n": 660
+      }
+    },
+    "Qwen2.5-VL-7B": {
+      "tabular": {
+        "per_format_em": {
+          "bar_chart": 25.94900849858357,
+          "heatmap": 41.69971671388102,
+          "table_image": 54.56090651558074,
+          "scatter_plot": 17.507082152974505
+        },
+        "best": "table_image",
+        "worst": "scatter_plot",
+        "gap_pp": 37.053824362606235,
+        "p": 9.999000099990002e-05,
+        "n": 1765
+      },
+      "timeseries": {
+        "per_format_em": {
+          "line_plot": 27.2992700729927,
+          "gaf": 21.240875912408757,
+          "recurrence_plot": 19.197080291970803,
+          "heatmap": 21.021897810218977
+        },
+        "best": "line_plot",
+        "worst": "recurrence_plot",
+        "gap_pp": 8.102189781021897,
+        "p": 9.999000099990002e-05,
+        "n": 1370
+      },
+      "graph": {
+        "per_format_em": {
+          "node_link": 36.21212121212121,
+          "adjacency_matrix": 28.181818181818183,
+          "circular_layout": 33.93939393939394
+        },
+        "best": "node_link",
+        "worst": "adjacency_matrix",
+        "gap_pp": 8.030303030303031,
+        "p": 9.999000099990002e-05,
+        "n": 660
+      }
+    },
+    "Claude Sonnet": {
+      "tabular": {
+        "per_format_em": {
+          "bar_chart": 18.86685552407932,
+          "heatmap": 34.844192634560905,
+          "table_image": 44.53257790368272,
+          "scatter_plot": 16.14730878186969
+        },
+        "best": "table_image",
+        "worst": "scatter_plot",
+        "gap_pp": 28.38526912181303,
+        "p": 9.999000099990002e-05,
+        "n": 1765
+      },
+      "timeseries": {
+        "per_format_em": {
+          "line_plot": 23.284671532846716,
+          "gaf": 14.087591240875913,
+          "recurrence_plot": 11.313868613138686,
+          "heatmap": 17.00729927007299
+        },
+        "best": "line_plot",
+        "worst": "recurrence_plot",
+        "gap_pp": 11.97080291970803,
+        "p": 9.999000099990002e-05,
+        "n": 1370
+      },
+      "graph": {
+        "per_format_em": {
+          "node_link": 34.84848484848485,
+          "adjacency_matrix": 36.515151515151516,
+          "circular_layout": 37.878787878787875
+        },
+        "best": "circular_layout",
+        "worst": "node_link",
+        "gap_pp": 3.0303030303030303,
+        "p": 0.07039296070392961,
+        "n": 660
+      }
+    }
+  },
+  "C_graph_extra": {
+    "GPT-4o": {
+      "i_visual_gap_excl_degree": {
+        "per_format_em": {
+          "node_link": 57.30088495575221,
+          "adjacency_matrix": 42.47787610619469,
+          "circular_layout": 54.86725663716814
+        },
+        "best": "node_link",
+        "worst": "adjacency_matrix",
+        "gap_pp": 14.823008849557523,
+        "p": 9.999000099990002e-05,
+        "n": 452
+      },
+      "ii_text_minus_adj": {
+        "degree_query": {
+          "diff_pp": 41.34615384615385,
+          "p": 9.999000099990002e-05,
+          "n": 208
+        },
+        "other_tasks": {
+          "diff_pp": 14.601769911504425,
+          "p": 9.999000099990002e-05,
+          "n": 452
+        }
+      },
+      "iii_text_minus_best_visual_nondeg": {
+        "best_visual": "node_link",
+        "diff_pp": -0.22123893805309736,
+        "p": 1.0,
+        "n": 452
+      }
+    },
+    "Gemini Flash": {
+      "i_visual_gap_excl_degree": {
+        "per_format_em": {
+          "node_link": 49.11504424778761,
+          "adjacency_matrix": 41.150442477876105,
+          "circular_layout": 48.67256637168141
+        },
+        "best": "node_link",
+        "worst": "adjacency_matrix",
+        "gap_pp": 7.964601769911504,
+        "p": 0.00029997000299970003,
+        "n": 452
+      },
+      "ii_text_minus_adj": {
+        "degree_query": {
+          "diff_pp": 46.63461538461539,
+          "p": 9.999000099990002e-05,
+          "n": 208
+        },
+        "other_tasks": {
+          "diff_pp": 10.176991150442477,
+          "p": 9.999000099990002e-05,
+          "n": 452
+        }
+      },
+      "iii_text_minus_best_visual_nondeg": {
+        "best_visual": "node_link",
+        "diff_pp": 2.2123893805309733,
+        "p": 0.38146185381461856,
+        "n": 452
+      }
+    },
+    "Qwen2.5-VL-7B": {
+      "i_visual_gap_excl_degree": {
+        "per_format_em": {
+          "node_link": 48.67256637168141,
+          "adjacency_matrix": 38.05309734513274,
+          "circular_layout": 47.56637168141593
+        },
+        "best": "node_link",
+        "worst": "adjacency_matrix",
+        "gap_pp": 10.619469026548673,
+        "p": 9.999000099990002e-05,
+        "n": 452
+      },
+      "ii_text_minus_adj": {
+        "degree_query": {
+          "diff_pp": 34.61538461538461,
+          "p": 9.999000099990002e-05,
+          "n": 208
+        },
+        "other_tasks": {
+          "diff_pp": 5.752212389380531,
+          "p": 0.0022997700229977,
+          "n": 452
+        }
+      },
+      "iii_text_minus_best_visual_nondeg": {
+        "best_visual": "node_link",
+        "diff_pp": -4.867256637168142,
+        "p": 0.0207979202079792,
+        "n": 452
+      }
+    },
+    "Claude Sonnet": {
+      "i_visual_gap_excl_degree": {
+        "per_format_em": {
+          "node_link": 47.34513274336283,
+          "adjacency_matrix": 46.68141592920354,
+          "circular_layout": 52.21238938053097
+        },
+        "best": "circular_layout",
+        "worst": "adjacency_matrix",
+        "gap_pp": 5.530973451327434,
+        "p": 0.0173982601739826,
+        "n": 452
+      },
+      "ii_text_minus_adj": {
+        "degree_query": {
+          "diff_pp": 31.25,
+          "p": 9.999000099990002e-05,
+          "n": 208
+        },
+        "other_tasks": {
+          "diff_pp": 4.646017699115045,
+          "p": 0.028497150284971504,
+          "n": 452
+        }
+      },
+      "iii_text_minus_best_visual_nondeg": {
+        "best_visual": "circular_layout",
+        "diff_pp": -0.8849557522123894,
+        "p": 0.7735226477352265,
+        "n": 452
+      }
+    }
+  },
+  "D_split_half": [
+    {
+      "model": "GPT-4o",
+      "modality": "tabular",
+      "select_half": 0,
+      "test_half": 1,
+      "n_select": 905,
+      "best": "table_image",
+      "worst": "bar_chart",
+      "full_best": "table_image",
+      "full_worst": "bar_chart",
+      "held_out_gap_pp": 36.51162790697674,
+      "p": 9.999000099990002e-05,
+      "n_test": 860,
+      "pair_equals_full": true
+    },
+    {
+      "model": "GPT-4o",
+      "modality": "tabular",
+      "select_half": 1,
+      "test_half": 0,
+      "n_select": 860,
+      "best": "table_image",
+      "worst": "bar_chart",
+      "full_best": "table_image",
+      "full_worst": "bar_chart",
+      "held_out_gap_pp": 36.9060773480663,
+      "p": 9.999000099990002e-05,
+      "n_test": 905,
+      "pair_equals_full": true
+    },
+    {
+      "model": "GPT-4o",
+      "modality": "timeseries",
+      "select_half": 0,
+      "test_half": 1,
+      "n_select": 695,
+      "best": "text_only",
+      "worst": "recurrence_plot",
+      "full_best": "text_only",
+      "full_worst": "recurrence_plot",
+      "held_out_gap_pp": 24.74074074074074,
+      "p": 9.999000099990002e-05,
+      "n_test": 675,
+      "pair_equals_full": true
+    },
+    {
+      "model": "GPT-4o",
+      "modality": "timeseries",
+      "select_half": 1,
+      "test_half": 0,
+      "n_select": 675,
+      "best": "text_only",
+      "worst": "recurrence_plot",
+      "full_best": "text_only",
+      "full_worst": "recurrence_plot",
+      "held_out_gap_pp": 26.618705035971225,
+      "p": 9.999000099990002e-05,
+      "n_test": 695,
+      "pair_equals_full": true
+    },
+    {
+      "model": "GPT-4o",
+      "modality": "graph",
+      "select_half": 0,
+      "test_half": 1,
+      "n_select": 291,
+      "best": "text_only",
+      "worst": "adjacency_matrix",
+      "full_best": "text_only",
+      "full_worst": "adjacency_matrix",
+      "held_out_gap_pp": 22.493224932249323,
+      "p": 9.999000099990002e-05,
+      "n_test": 369,
+      "pair_equals_full": true
+    },
+    {
+      "model": "GPT-4o",
+      "modality": "graph",
+      "select_half": 1,
+      "test_half": 0,
+      "n_select": 369,
+      "best": "text_only",
+      "worst": "adjacency_matrix",
+      "full_best": "text_only",
+      "full_worst": "adjacency_matrix",
+      "held_out_gap_pp": 23.711340206185568,
+      "p": 9.999000099990002e-05,
+      "n_test": 291,
+      "pair_equals_full": true
+    },
+    {
+      "model": "Gemini Flash",
+      "modality": "tabular",
+      "select_half": 0,
+      "test_half": 1,
+      "n_select": 905,
+      "best": "text_only",
+      "worst": "scatter_plot",
+      "full_best": "text_only",
+      "full_worst": "scatter_plot",
+      "held_out_gap_pp": 40.0,
+      "p": 9.999000099990002e-05,
+      "n_test": 860,
+      "pair_equals_full": true
+    },
+    {
+      "model": "Gemini Flash",
+      "modality": "tabular",
+      "select_half": 1,
+      "test_half": 0,
+      "n_select": 860,
+      "best": "text_only",
+      "worst": "scatter_plot",
+      "full_best": "text_only",
+      "full_worst": "scatter_plot",
+      "held_out_gap_pp": 40.994475138121544,
+      "p": 9.999000099990002e-05,
+      "n_test": 905,
+      "pair_equals_full": true
+    },
+    {
+      "model": "Gemini Flash",
+      "modality": "timeseries",
+      "select_half": 0,
+      "test_half": 1,
+      "n_select": 695,
+      "best": "text_only",
+      "worst": "recurrence_plot",
+      "full_best": "text_only",
+      "full_worst": "gaf",
+      "held_out_gap_pp": 16.88888888888889,
+      "p": 9.999000099990002e-05,
+      "n_test": 675,
+      "pair_equals_full": false
+    },
+    {
+      "model": "Gemini Flash",
+      "modality": "timeseries",
+      "select_half": 1,
+      "test_half": 0,
+      "n_select": 675,
+      "best": "text_only",
+      "worst": "gaf",
+      "full_best": "text_only",
+      "full_worst": "gaf",
+      "held_out_gap_pp": 20.575539568345324,
+      "p": 9.999000099990002e-05,
+      "n_test": 695,
+      "pair_equals_full": true
+    },
+    {
+      "model": "Gemini Flash",
+      "modality": "graph",
+      "select_half": 0,
+      "test_half": 1,
+      "n_select": 291,
+      "best": "text_only",
+      "worst": "adjacency_matrix",
+      "full_best": "text_only",
+      "full_worst": "adjacency_matrix",
+      "held_out_gap_pp": 21.951219512195124,
+      "p": 9.999000099990002e-05,
+      "n_test": 369,
+      "pair_equals_full": true
+    },
+    {
+      "model": "Gemini Flash",
+      "modality": "graph",
+      "select_half": 1,
+      "test_half": 0,
+      "n_select": 369,
+      "best": "text_only",
+      "worst": "adjacency_matrix",
+      "full_best": "text_only",
+      "full_worst": "adjacency_matrix",
+      "held_out_gap_pp": 21.305841924398624,
+      "p": 9.999000099990002e-05,
+      "n_test": 291,
+      "pair_equals_full": true
+    },
+    {
+      "model": "Qwen2.5-VL-7B",
+      "modality": "tabular",
+      "select_half": 0,
+      "test_half": 1,
+      "n_select": 905,
+      "best": "table_image",
+      "worst": "scatter_plot",
+      "full_best": "table_image",
+      "full_worst": "scatter_plot",
+      "held_out_gap_pp": 37.2093023255814,
+      "p": 9.999000099990002e-05,
+      "n_test": 860,
+      "pair_equals_full": true
+    },
+    {
+      "model": "Qwen2.5-VL-7B",
+      "modality": "tabular",
+      "select_half": 1,
+      "test_half": 0,
+      "n_select": 860,
+      "best": "table_image",
+      "worst": "scatter_plot",
+      "full_best": "table_image",
+      "full_worst": "scatter_plot",
+      "held_out_gap_pp": 36.9060773480663,
+      "p": 9.999000099990002e-05,
+      "n_test": 905,
+      "pair_equals_full": true
+    },
+    {
+      "model": "Qwen2.5-VL-7B",
+      "modality": "timeseries",
+      "select_half": 0,
+      "test_half": 1,
+      "n_select": 695,
+      "best": "text_only",
+      "worst": "recurrence_plot",
+      "full_best": "text_only",
+      "full_worst": "recurrence_plot",
+      "held_out_gap_pp": 12.592592592592593,
+      "p": 9.999000099990002e-05,
+      "n_test": 675,
+      "pair_equals_full": true
+    },
+    {
+      "model": "Qwen2.5-VL-7B",
+      "modality": "timeseries",
+      "select_half": 1,
+      "test_half": 0,
+      "n_select": 675,
+      "best": "text_only",
+      "worst": "recurrence_plot",
+      "full_best": "text_only",
+      "full_worst": "recurrence_plot",
+      "held_out_gap_pp": 14.676258992805755,
+      "p": 9.999000099990002e-05,
+      "n_test": 695,
+      "pair_equals_full": true
+    },
+    {
+      "model": "Qwen2.5-VL-7B",
+      "modality": "graph",
+      "select_half": 0,
+      "test_half": 1,
+      "n_select": 291,
+      "best": "text_only",
+      "worst": "adjacency_matrix",
+      "full_best": "text_only",
+      "full_worst": "adjacency_matrix",
+      "held_out_gap_pp": 13.550135501355014,
+      "p": 9.999000099990002e-05,
+      "n_test": 369,
+      "pair_equals_full": true
+    },
+    {
+      "model": "Qwen2.5-VL-7B",
+      "modality": "graph",
+      "select_half": 1,
+      "test_half": 0,
+      "n_select": 369,
+      "best": "text_only",
+      "worst": "adjacency_matrix",
+      "full_best": "text_only",
+      "full_worst": "adjacency_matrix",
+      "held_out_gap_pp": 16.49484536082474,
+      "p": 9.999000099990002e-05,
+      "n_test": 291,
+      "pair_equals_full": true
+    },
+    {
+      "model": "Claude Sonnet",
+      "modality": "tabular",
+      "select_half": 0,
+      "test_half": 1,
+      "n_select": 905,
+      "best": "table_image",
+      "worst": "scatter_plot",
+      "full_best": "table_image",
+      "full_worst": "scatter_plot",
+      "held_out_gap_pp": 28.13953488372093,
+      "p": 9.999000099990002e-05,
+      "n_test": 860,
+      "pair_equals_full": true
+    },
+    {
+      "model": "Claude Sonnet",
+      "modality": "tabular",
+      "select_half": 1,
+      "test_half": 0,
+      "n_select": 860,
+      "best": "table_image",
+      "worst": "scatter_plot",
+      "full_best": "table_image",
+      "full_worst": "scatter_plot",
+      "held_out_gap_pp": 28.61878453038674,
+      "p": 9.999000099990002e-05,
+      "n_test": 905,
+      "pair_equals_full": true
+    },
+    {
+      "model": "Claude Sonnet",
+      "modality": "timeseries",
+      "select_half": 0,
+      "test_half": 1,
+      "n_select": 695,
+      "best": "line_plot",
+      "worst": "recurrence_plot",
+      "full_best": "line_plot",
+      "full_worst": "recurrence_plot",
+      "held_out_gap_pp": 11.407407407407407,
+      "p": 9.999000099990002e-05,
+      "n_test": 675,
+      "pair_equals_full": true
+    },
+    {
+      "model": "Claude Sonnet",
+      "modality": "timeseries",
+      "select_half": 1,
+      "test_half": 0,
+      "n_select": 675,
+      "best": "line_plot",
+      "worst": "recurrence_plot",
+      "full_best": "line_plot",
+      "full_worst": "recurrence_plot",
+      "held_out_gap_pp": 12.517985611510792,
+      "p": 9.999000099990002e-05,
+      "n_test": 695,
+      "pair_equals_full": true
+    },
+    {
+      "model": "Claude Sonnet",
+      "modality": "graph",
+      "select_half": 0,
+      "test_half": 1,
+      "n_select": 291,
+      "best": "text_only",
+      "worst": "node_link",
+      "full_best": "text_only",
+      "full_worst": "node_link",
+      "held_out_gap_pp": 13.008130081300813,
+      "p": 9.999000099990002e-05,
+      "n_test": 369,
+      "pair_equals_full": true
+    },
+    {
+      "model": "Claude Sonnet",
+      "modality": "graph",
+      "select_half": 1,
+      "test_half": 0,
+      "n_select": 369,
+      "best": "text_only",
+      "worst": "adjacency_matrix",
+      "full_best": "text_only",
+      "full_worst": "node_link",
+      "held_out_gap_pp": 12.027491408934708,
+      "p": 9.999000099990002e-05,
+      "n_test": 291,
+      "pair_equals_full": false
+    }
+  ],
+  "E_bonferroni": {
+    "select_half_0": {
+      "n_contrasts": 12,
+      "p_x12_lt_0.05": 12,
+      "p_x12_lt_0.01": 12
+    },
+    "select_half_1": {
+      "n_contrasts": 12,
+      "p_x12_lt_0.05": 12,
+      "p_x12_lt_0.01": 12
+    },
+    "p_floor": 9.999000099990002e-05
+  },
+  "settings": {
+    "B": 10000,
+    "seed": 0,
+    "estimator": "(hits+1)/(B+1)",
+    "split": "int(md5(question_id).hexdigest(),16) % 2"
+  }
+}

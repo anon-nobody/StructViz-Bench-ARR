@@ -1,0 +1,9 @@
+model_type: internvl
+name: internvl3-8b
+checkpoint: OpenGVLab/InternVL3-8B
+max_tokens: 256
+temperature: 0.0
+system_prompt: "Answer concisely. Give only the final answer."
+device: cuda
+dtype: bfloat16
+use_vllm: false

@@ -1,0 +1,2337 @@
+{
+ "templates": [
+  {
+   "modality": "tabular",
+   "task": "aggregation",
+   "n": 207,
+   "distinct": 179,
+   "entropy": 7.341936716276296,
+   "maj_share": 3.3816425120772946,
+   "majority": "15",
+   "depths": {
+    "2-hop": 207
+   },
+   "cv_prior": 1.8115942028985508,
+   "em_all": 25.838509316770185,
+   "n_pairs_vd": 450,
+   "em_vd": 55.23809523809524,
+   "prior_vd": 2.388888888888889,
+   "near_constant": false,
+   "em_minus_prior_vd": 52.849206349206355,
+   "em_minus_prior_all": 24.026915113871635
+  },
+  {
+   "modality": "tabular",
+   "task": "comparison",
+   "n": 224,
+   "distinct": 101,
+   "entropy": 4.69668240083694,
+   "maj_share": 36.607142857142854,
+   "majority": "yes",
+   "depths": {
+    "3-hop": 112,
+    "counterfactual": 112
+   },
+   "cv_prior": 36.607142857142854,
+   "em_all": 69.6938775510204,
+   "n_pairs_vd": 760,
+   "em_vd": 74.43609022556392,
+   "prior_vd": 37.23684210526316,
+   "near_constant": false,
+   "em_minus_prior_vd": 37.19924812030076,
+   "em_minus_prior_all": 33.08673469387755
+  },
+  {
+   "modality": "tabular",
+   "task": "correlation",
+   "n": 49,
+   "distinct": 2,
+   "entropy": 0.9113423759758417,
+   "maj_share": 67.3469387755102,
+   "majority": "positive",
+   "depths": {
+    "3-hop": 49
+   },
+   "cv_prior": 65.61224489795919,
+   "em_all": 3.381924198250729,
+   "n_pairs_vd": 54,
+   "em_vd": 3.7037037037037037,
+   "prior_vd": 58.24074074074074,
+   "near_constant": false,
+   "em_minus_prior_vd": -54.53703703703704,
+   "em_minus_prior_all": -62.23032069970846
+  },
+  {
+   "modality": "tabular",
+   "task": "counterfactual",
+   "n": 146,
+   "distinct": 2,
+   "entropy": 0.409855370318405,
+   "maj_share": 91.78082191780823,
+   "majority": "yes",
+   "depths": {
+    "counterfactual": 146
+   },
+   "cv_prior": 91.78082191780823,
+   "em_all": 55.205479452054796,
+   "n_pairs_vd": 423,
+   "em_vd": 64.84295845997974,
+   "prior_vd": 90.78014184397163,
+   "near_constant": true,
+   "em_minus_prior_vd": -25.937183383991893,
+   "em_minus_prior_all": -36.57534246575343
+  },
+  {
+   "modality": "tabular",
+   "task": "filtering",
+   "n": 104,
+   "distinct": 19,
+   "entropy": 3.987432132175973,
+   "maj_share": 10.576923076923077,
+   "majority": "10",
+   "depths": {
+    "2-hop": 104
+   },
+   "cv_prior": 6.153846153846154,
+   "em_all": 23.956043956043956,
+   "n_pairs_vd": 153,
+   "em_vd": 68.62745098039215,
+   "prior_vd": 4.836601307189542,
+   "near_constant": false,
+   "em_minus_prior_vd": 63.790849673202615,
+   "em_minus_prior_all": 17.802197802197803
+  },
+  {
+   "modality": "tabular",
+   "task": "outlier_detection",
+   "n": 230,
+   "distinct": 155,
+   "entropy": 7.099625376937268,
+   "maj_share": 2.608695652173913,
+   "majority": "baselines",
+   "depths": {
+    "3-hop": 230
+   },
+   "cv_prior": 0.8043478260869565,
+   "em_all": 10.571428571428571,
+   "n_pairs_vd": 276,
+   "em_vd": 27.950310559006212,
+   "prior_vd": 1.0144927536231885,
+   "near_constant": false,
+   "em_minus_prior_vd": 26.935817805383024,
+   "em_minus_prior_all": 9.767080745341614
+  },
+  {
+   "modality": "tabular",
+   "task": "ranking",
+   "n": 90,
+   "distinct": 49,
+   "entropy": 5.430198929422623,
+   "maj_share": 6.666666666666667,
+   "majority": "west",
+   "depths": {
+    "1-hop": 90
+   },
+   "cv_prior": 0.0,
+   "em_all": 19.936507936507937,
+   "n_pairs_vd": 0,
+   "em_vd": NaN,
+   "prior_vd": NaN,
+   "near_constant": false,
+   "em_minus_prior_vd": NaN,
+   "em_minus_prior_all": 19.936507936507937
+  },
+  {
+   "modality": "tabular",
+   "task": "trend_analysis",
+   "n": 247,
+   "distinct": 2,
+   "entropy": 0.9462529148006447,
+   "maj_share": 63.56275303643725,
+   "majority": "increasing",
+   "depths": {
+    "2-hop": 247
+   },
+   "cv_prior": 63.56275303643725,
+   "em_all": 52.608444187391555,
+   "n_pairs_vd": 577,
+   "em_vd": 69.24981431047289,
+   "prior_vd": 63.77816291161179,
+   "near_constant": false,
+   "em_minus_prior_vd": 5.471651398861098,
+   "em_minus_prior_all": -10.954308849045695
+  },
+  {
+   "modality": "tabular",
+   "task": "value_extraction",
+   "n": 468,
+   "distinct": 384,
+   "entropy": 8.394110797912916,
+   "maj_share": 2.3504273504273505,
+   "majority": "empty",
+   "depths": {
+    "1-hop": 468
+   },
+   "cv_prior": 1.314102564102564,
+   "em_all": 30.94017094017094,
+   "n_pairs_vd": 1115,
+   "em_vd": 62.690582959641254,
+   "prior_vd": 1.1659192825112108,
+   "near_constant": false,
+   "em_minus_prior_vd": 61.52466367713004,
+   "em_minus_prior_all": 29.626068376068375
+  },
+  {
+   "modality": "timeseries",
+   "task": "anomaly_detection",
+   "n": 20,
+   "distinct": 17,
+   "entropy": 4.021928094887363,
+   "maj_share": 10.0,
+   "majority": "19",
+   "depths": {
+    "3-hop": 20
+   },
+   "cv_prior": 0.0,
+   "em_all": 7.285714285714286,
+   "n_pairs_vd": 40,
+   "em_vd": 6.785714285714286,
+   "prior_vd": 0.0,
+   "near_constant": false,
+   "em_minus_prior_vd": 6.785714285714286,
+   "em_minus_prior_all": 7.285714285714286
+  },
+  {
+   "modality": "timeseries",
+   "task": "change_point",
+   "n": 107,
+   "distinct": 8,
+   "entropy": 0.5322555940883201,
+   "maj_share": 93.45794392523365,
+   "majority": "none",
+   "depths": {
+    "1-hop": 107
+   },
+   "cv_prior": 93.45794392523365,
+   "em_all": 2.05607476635514,
+   "n_pairs_vd": 430,
+   "em_vd": 1.9601328903654485,
+   "prior_vd": 93.48837209302326,
+   "near_constant": true,
+   "em_minus_prior_vd": -91.52823920265782,
+   "em_minus_prior_all": -91.40186915887851
+  },
+  {
+   "modality": "timeseries",
+   "task": "change_volatility",
+   "n": 20,
+   "distinct": 2,
+   "entropy": 0.9709505944546686,
+   "maj_share": 60.0,
+   "majority": "first half",
+   "depths": {
+    "2-hop": 20
+   },
+   "cv_prior": 56.25,
+   "em_all": 33.714285714285715,
+   "n_pairs_vd": 40,
+   "em_vd": 35.357142857142854,
+   "prior_vd": 56.25,
+   "near_constant": false,
+   "em_minus_prior_vd": -20.892857142857146,
+   "em_minus_prior_all": -22.535714285714285
+  },
+  {
+   "modality": "timeseries",
+   "task": "counterfactual_half_shift",
+   "n": 20,
+   "distinct": 2,
+   "entropy": 0.4689955935892812,
+   "maj_share": 90.0,
+   "majority": "yes",
+   "depths": {
+    "counterfactual": 20
+   },
+   "cv_prior": 90.0,
+   "em_all": 76.0,
+   "n_pairs_vd": 20,
+   "em_vd": 88.57142857142857,
+   "prior_vd": 90.0,
+   "near_constant": true,
+   "em_minus_prior_vd": -1.4285714285714306,
+   "em_minus_prior_all": -14.0
+  },
+  {
+   "modality": "timeseries",
+   "task": "counterfactual_scale_peak",
+   "n": 20,
+   "distinct": 1,
+   "entropy": 0.0,
+   "maj_share": 100.0,
+   "majority": "no",
+   "depths": {
+    "counterfactual": 20
+   },
+   "cv_prior": 100.0,
+   "em_all": 81.57142857142857,
+   "n_pairs_vd": 0,
+   "em_vd": NaN,
+   "prior_vd": NaN,
+   "near_constant": true,
+   "em_minus_prior_vd": NaN,
+   "em_minus_prior_all": -18.42857142857143
+  },
+  {
+   "modality": "timeseries",
+   "task": "counterfactual_sign_flip",
+   "n": 15,
+   "distinct": 1,
+   "entropy": 0.0,
+   "maj_share": 100.0,
+   "majority": "yes",
+   "depths": {
+    "counterfactual": 15
+   },
+   "cv_prior": 100.0,
+   "em_all": 92.0,
+   "n_pairs_vd": 0,
+   "em_vd": NaN,
+   "prior_vd": NaN,
+   "near_constant": true,
+   "em_minus_prior_vd": NaN,
+   "em_minus_prior_all": -8.0
+  },
+  {
+   "modality": "timeseries",
+   "task": "endpoint_comparison",
+   "n": 55,
+   "distinct": 2,
+   "entropy": 0.9997615248696312,
+   "maj_share": 50.90909090909091,
+   "majority": "lower",
+   "depths": {
+    "1-hop": 55
+   },
+   "cv_prior": 44.90909090909091,
+   "em_all": 60.72727272727273,
+   "n_pairs_vd": 111,
+   "em_vd": 73.74517374517374,
+   "prior_vd": 44.86486486486486,
+   "near_constant": false,
+   "em_minus_prior_vd": 28.88030888030888,
+   "em_minus_prior_all": 15.81818181818182
+  },
+  {
+   "modality": "timeseries",
+   "task": "forecasting",
+   "n": 20,
+   "distinct": 20,
+   "entropy": 4.321928094887363,
+   "maj_share": 5.0,
+   "majority": "102.111",
+   "depths": {
+    "3-hop": 20
+   },
+   "cv_prior": 0.0,
+   "em_all": 0.0,
+   "n_pairs_vd": 20,
+   "em_vd": 0.0,
+   "prior_vd": 0.0,
+   "near_constant": false,
+   "em_minus_prior_vd": 0.0,
+   "em_minus_prior_all": 0.0
+  },
+  {
+   "modality": "timeseries",
+   "task": "half_change_intensity",
+   "n": 20,
+   "distinct": 2,
+   "entropy": 0.9709505944546686,
+   "maj_share": 60.0,
+   "majority": "first half",
+   "depths": {
+    "3-hop": 20
+   },
+   "cv_prior": 56.25,
+   "em_all": 30.857142857142858,
+   "n_pairs_vd": 40,
+   "em_vd": 26.428571428571427,
+   "prior_vd": 56.25,
+   "near_constant": false,
+   "em_minus_prior_vd": -29.821428571428573,
+   "em_minus_prior_all": -25.392857142857142
+  },
+  {
+   "modality": "timeseries",
+   "task": "local_peak_median_relation",
+   "n": 5,
+   "distinct": 1,
+   "entropy": 0.0,
+   "maj_share": 100.0,
+   "majority": "yes",
+   "depths": {
+    "3-hop": 5
+   },
+   "cv_prior": 100.0,
+   "em_all": 62.285714285714285,
+   "n_pairs_vd": 5,
+   "em_vd": 77.14285714285714,
+   "prior_vd": 100.0,
+   "near_constant": true,
+   "em_minus_prior_vd": -22.85714285714286,
+   "em_minus_prior_all": -37.714285714285715
+  },
+  {
+   "modality": "timeseries",
+   "task": "mean_half_comparison",
+   "n": 62,
+   "distinct": 2,
+   "entropy": 0.9514122535330207,
+   "maj_share": 62.903225806451616,
+   "majority": "yes",
+   "depths": {
+    "2-hop": 62
+   },
+   "cv_prior": 62.903225806451616,
+   "em_all": 40.87557603686636,
+   "n_pairs_vd": 125,
+   "em_vd": 50.74285714285714,
+   "prior_vd": 62.4,
+   "near_constant": false,
+   "em_minus_prior_vd": -11.657142857142858,
+   "em_minus_prior_all": -22.027649769585253
+  },
+  {
+   "modality": "timeseries",
+   "task": "mean_shift_magnitude",
+   "n": 20,
+   "distinct": 20,
+   "entropy": 4.321928094887363,
+   "maj_share": 5.0,
+   "majority": "-0.42",
+   "depths": {
+    "2-hop": 20
+   },
+   "cv_prior": 0.0,
+   "em_all": 0.0,
+   "n_pairs_vd": 20,
+   "em_vd": 0.0,
+   "prior_vd": 0.0,
+   "near_constant": false,
+   "em_minus_prior_vd": 0.0,
+   "em_minus_prior_all": 0.0
+  },
+  {
+   "modality": "timeseries",
+   "task": "median_mean_relation",
+   "n": 20,
+   "distinct": 2,
+   "entropy": 0.9927744539878083,
+   "maj_share": 55.00000000000001,
+   "majority": "above",
+   "depths": {
+    "2-hop": 20
+   },
+   "cv_prior": 49.74999999999999,
+   "em_all": 36.142857142857146,
+   "n_pairs_vd": 20,
+   "em_vd": 39.285714285714285,
+   "prior_vd": 49.75000000000001,
+   "near_constant": false,
+   "em_minus_prior_vd": -10.464285714285722,
+   "em_minus_prior_all": -13.607142857142847
+  },
+  {
+   "modality": "timeseries",
+   "task": "normalized_amplitude",
+   "n": 20,
+   "distinct": 1,
+   "entropy": 0.0,
+   "maj_share": 100.0,
+   "majority": "no",
+   "depths": {
+    "3-hop": 20
+   },
+   "cv_prior": 100.0,
+   "em_all": 46.142857142857146,
+   "n_pairs_vd": 20,
+   "em_vd": 41.42857142857143,
+   "prior_vd": 100.0,
+   "near_constant": true,
+   "em_minus_prior_vd": -58.57142857142857,
+   "em_minus_prior_all": -53.857142857142854
+  },
+  {
+   "modality": "timeseries",
+   "task": "oscillation_count",
+   "n": 10,
+   "distinct": 10,
+   "entropy": 3.3219280948873626,
+   "maj_share": 10.0,
+   "majority": "108",
+   "depths": {
+    "2-hop": 10
+   },
+   "cv_prior": 0.0,
+   "em_all": 0.0,
+   "n_pairs_vd": 20,
+   "em_vd": 0.0,
+   "prior_vd": 0.0,
+   "near_constant": false,
+   "em_minus_prior_vd": 0.0,
+   "em_minus_prior_all": 0.0
+  },
+  {
+   "modality": "timeseries",
+   "task": "pattern_classification",
+   "n": 20,
+   "distinct": 1,
+   "entropy": 0.0,
+   "maj_share": 100.0,
+   "majority": "no",
+   "depths": {
+    "counterfactual": 20
+   },
+   "cv_prior": 100.0,
+   "em_all": 80.71428571428571,
+   "n_pairs_vd": 0,
+   "em_vd": NaN,
+   "prior_vd": NaN,
+   "near_constant": true,
+   "em_minus_prior_vd": NaN,
+   "em_minus_prior_all": -19.285714285714292
+  },
+  {
+   "modality": "timeseries",
+   "task": "pattern_label_lookup",
+   "n": 107,
+   "distinct": 10,
+   "entropy": 1.4262417431840142,
+   "maj_share": 78.50467289719626,
+   "majority": "real world measurement",
+   "depths": {
+    "1-hop": 107
+   },
+   "cv_prior": 78.50467289719626,
+   "em_all": 0.13351134846461948,
+   "n_pairs_vd": 0,
+   "em_vd": NaN,
+   "prior_vd": NaN,
+   "near_constant": false,
+   "em_minus_prior_vd": NaN,
+   "em_minus_prior_all": -78.37116154873164
+  },
+  {
+   "modality": "timeseries",
+   "task": "peak_identification",
+   "n": 214,
+   "distinct": 129,
+   "entropy": 6.796168185439283,
+   "maj_share": 3.2710280373831773,
+   "majority": "0",
+   "depths": {
+    "1-hop": 214
+   },
+   "cv_prior": 1.8457943925233644,
+   "em_all": 8.344459279038718,
+   "n_pairs_vd": 432,
+   "em_vd": 9.854497354497354,
+   "prior_vd": 1.9328703703703705,
+   "near_constant": false,
+   "em_minus_prior_vd": 7.921626984126984,
+   "em_minus_prior_all": 6.498664886515353
+  },
+  {
+   "modality": "timeseries",
+   "task": "peak_trough_order",
+   "n": 20,
+   "distinct": 2,
+   "entropy": 0.934068055375491,
+   "maj_share": 65.0,
+   "majority": "yes",
+   "depths": {
+    "3-hop": 20
+   },
+   "cv_prior": 58.25,
+   "em_all": 49.0,
+   "n_pairs_vd": 40,
+   "em_vd": 61.07142857142857,
+   "prior_vd": 58.25,
+   "near_constant": false,
+   "em_minus_prior_vd": 2.8214285714285694,
+   "em_minus_prior_all": -9.25
+  },
+  {
+   "modality": "timeseries",
+   "task": "range_query",
+   "n": 107,
+   "distinct": 105,
+   "entropy": 6.704083808831053,
+   "maj_share": 1.8691588785046727,
+   "majority": "3.447",
+   "depths": {
+    "2-hop": 107
+   },
+   "cv_prior": 0.0,
+   "em_all": 1.4152202937249667,
+   "n_pairs_vd": 109,
+   "em_vd": 3.145478374836173,
+   "prior_vd": 0.0,
+   "near_constant": false,
+   "em_minus_prior_vd": 3.145478374836173,
+   "em_minus_prior_all": 1.4152202937249667
+  },
+  {
+   "modality": "timeseries",
+   "task": "seasonality_detection",
+   "n": 107,
+   "distinct": 2,
+   "entropy": 0.38346413230879783,
+   "maj_share": 92.5233644859813,
+   "majority": "no",
+   "depths": {
+    "1-hop": 107
+   },
+   "cv_prior": 92.5233644859813,
+   "em_all": 37.543391188251,
+   "n_pairs_vd": 430,
+   "em_vd": 30.132890365448507,
+   "prior_vd": 92.55813953488372,
+   "near_constant": true,
+   "em_minus_prior_vd": -62.42524916943522,
+   "em_minus_prior_all": -54.979973297730304
+  },
+  {
+   "modality": "timeseries",
+   "task": "split_trend_consistency",
+   "n": 20,
+   "distinct": 2,
+   "entropy": 0.934068055375491,
+   "maj_share": 65.0,
+   "majority": "yes",
+   "depths": {
+    "3-hop": 20
+   },
+   "cv_prior": 54.25,
+   "em_all": 44.714285714285715,
+   "n_pairs_vd": 40,
+   "em_vd": 50.357142857142854,
+   "prior_vd": 54.25,
+   "near_constant": false,
+   "em_minus_prior_vd": -3.892857142857146,
+   "em_minus_prior_all": -9.535714285714285
+  },
+  {
+   "modality": "timeseries",
+   "task": "threshold_count",
+   "n": 20,
+   "distinct": 14,
+   "entropy": 3.7219280948873625,
+   "maj_share": 10.0,
+   "majority": "10",
+   "depths": {
+    "2-hop": 20
+   },
+   "cv_prior": 0.5,
+   "em_all": 2.142857142857143,
+   "n_pairs_vd": 20,
+   "em_vd": 2.142857142857143,
+   "prior_vd": 0.5,
+   "near_constant": false,
+   "em_minus_prior_vd": 1.6428571428571428,
+   "em_minus_prior_all": 1.6428571428571428
+  },
+  {
+   "modality": "timeseries",
+   "task": "value_lookup",
+   "n": 214,
+   "distinct": 202,
+   "entropy": 7.592988306444056,
+   "maj_share": 2.803738317757009,
+   "majority": "0",
+   "depths": {
+    "1-hop": 214
+   },
+   "cv_prior": 1.5654205607476634,
+   "em_all": 9.31909212283044,
+   "n_pairs_vd": 323,
+   "em_vd": 27.0234409553295,
+   "prior_vd": 1.5479876160990713,
+   "near_constant": false,
+   "em_minus_prior_vd": 25.47545333923043,
+   "em_minus_prior_all": 7.753671562082777
+  },
+  {
+   "modality": "timeseries",
+   "task": "volatility",
+   "n": 107,
+   "distinct": 2,
+   "entropy": 0.9969105350354788,
+   "maj_share": 53.271028037383175,
+   "majority": "second half",
+   "depths": {
+    "2-hop": 107
+   },
+   "cv_prior": 48.73831775700935,
+   "em_all": 51.96261682242991,
+   "n_pairs_vd": 216,
+   "em_vd": 57.473544973544975,
+   "prior_vd": 48.75,
+   "near_constant": false,
+   "em_minus_prior_vd": 8.723544973544975,
+   "em_minus_prior_all": 3.22429906542056
+  },
+  {
+   "modality": "graph",
+   "task": "bipartite_check",
+   "n": 20,
+   "distinct": 2,
+   "entropy": 0.9709505944546686,
+   "maj_share": 60.0,
+   "majority": "no",
+   "depths": {
+    "2-hop": 20
+   },
+   "cv_prior": 54.75,
+   "em_all": 56.785714285714285,
+   "n_pairs_vd": 62,
+   "em_vd": 58.755760368663594,
+   "prior_vd": 54.596774193548384,
+   "near_constant": false,
+   "em_minus_prior_vd": 4.15898617511521,
+   "em_minus_prior_all": 2.0357142857142847
+  },
+  {
+   "modality": "graph",
+   "task": "centrality",
+   "n": 36,
+   "distinct": 19,
+   "entropy": 3.814536459234778,
+   "maj_share": 25.0,
+   "majority": "0",
+   "depths": {
+    "3-hop": 36
+   },
+   "cv_prior": 22.083333333333332,
+   "em_all": 10.714285714285714,
+   "n_pairs_vd": 19,
+   "em_vd": 36.8421052631579,
+   "prior_vd": 27.894736842105264,
+   "near_constant": false,
+   "em_minus_prior_vd": 8.947368421052634,
+   "em_minus_prior_all": -11.369047619047619
+  },
+  {
+   "modality": "graph",
+   "task": "clustering",
+   "n": 36,
+   "distinct": 28,
+   "entropy": 4.44770277922009,
+   "maj_share": 22.22222222222222,
+   "majority": "0",
+   "depths": {
+    "2-hop": 36
+   },
+   "cv_prior": 22.22222222222222,
+   "em_all": 6.051587301587301,
+   "n_pairs_vd": 111,
+   "em_vd": 6.563706563706564,
+   "prior_vd": 22.52252252252252,
+   "near_constant": false,
+   "em_minus_prior_vd": -15.958815958815958,
+   "em_minus_prior_all": -16.17063492063492
+  },
+  {
+   "modality": "graph",
+   "task": "community",
+   "n": 92,
+   "distinct": 25,
+   "entropy": 2.8173256886384093,
+   "maj_share": 36.95652173913043,
+   "majority": "1",
+   "depths": {
+    "3-hop": 56,
+    "counterfactual": 36
+   },
+   "cv_prior": 36.141304347826086,
+   "em_all": 42.89596273291925,
+   "n_pairs_vd": 284,
+   "em_vd": 42.00201207243461,
+   "prior_vd": 35.75704225352113,
+   "near_constant": false,
+   "em_minus_prior_vd": 6.244969818913482,
+   "em_minus_prior_all": 6.754658385093165
+  },
+  {
+   "modality": "graph",
+   "task": "connectivity",
+   "n": 96,
+   "distinct": 1,
+   "entropy": 0.0,
+   "maj_share": 100.0,
+   "majority": "yes",
+   "depths": {
+    "1-hop": 36,
+    "2-hop": 60
+   },
+   "cv_prior": 100.0,
+   "em_all": 71.05654761904762,
+   "n_pairs_vd": 0,
+   "em_vd": NaN,
+   "prior_vd": NaN,
+   "near_constant": true,
+   "em_minus_prior_vd": NaN,
+   "em_minus_prior_all": -28.94345238095238
+  },
+  {
+   "modality": "graph",
+   "task": "counterfactual",
+   "n": 76,
+   "distinct": 2,
+   "entropy": 0.7897492536625221,
+   "maj_share": 76.31578947368422,
+   "majority": "yes",
+   "depths": {
+    "counterfactual": 76
+   },
+   "cv_prior": 76.3157894736842,
+   "em_all": 80.87406015037594,
+   "n_pairs_vd": 10,
+   "em_vd": 80.0,
+   "prior_vd": 60.0,
+   "near_constant": false,
+   "em_minus_prior_vd": 20.0,
+   "em_minus_prior_all": 4.558270676691734
+  },
+  {
+   "modality": "graph",
+   "task": "cycle_detection",
+   "n": 20,
+   "distinct": 2,
+   "entropy": 0.7219280948873623,
+   "maj_share": 80.0,
+   "majority": "yes",
+   "depths": {
+    "2-hop": 20
+   },
+   "cv_prior": 80.0,
+   "em_all": 74.10714285714286,
+   "n_pairs_vd": 62,
+   "em_vd": 74.42396313364056,
+   "prior_vd": 79.03225806451613,
+   "near_constant": false,
+   "em_minus_prior_vd": -4.608294930875573,
+   "em_minus_prior_all": -5.892857142857139
+  },
+  {
+   "modality": "graph",
+   "task": "degree_query",
+   "n": 208,
+   "distinct": 56,
+   "entropy": 4.8446123665209955,
+   "maj_share": 16.346153846153847,
+   "majority": "4",
+   "depths": {
+    "1-hop": 132,
+    "2-hop": 36,
+    "3-hop": 40
+   },
+   "cv_prior": 12.596153846153847,
+   "em_all": 18.956043956043956,
+   "n_pairs_vd": 180,
+   "em_vd": 55.55555555555556,
+   "prior_vd": 16.11111111111111,
+   "near_constant": false,
+   "em_minus_prior_vd": 39.44444444444444,
+   "em_minus_prior_all": 6.3598901098901095
+  },
+  {
+   "modality": "graph",
+   "task": "diameter",
+   "n": 20,
+   "distinct": 9,
+   "entropy": 2.984183719779189,
+   "maj_share": 20.0,
+   "majority": "4",
+   "depths": {
+    "3-hop": 20
+   },
+   "cv_prior": 9.25,
+   "em_all": 12.321428571428571,
+   "n_pairs_vd": 62,
+   "em_vd": 13.36405529953917,
+   "prior_vd": 9.03225806451613,
+   "near_constant": false,
+   "em_minus_prior_vd": 4.331797235023041,
+   "em_minus_prior_all": 3.071428571428571
+  },
+  {
+   "modality": "graph",
+   "task": "edge_count",
+   "n": 20,
+   "distinct": 18,
+   "entropy": 4.1219280948873624,
+   "maj_share": 10.0,
+   "majority": "120",
+   "depths": {
+    "1-hop": 20
+   },
+   "cv_prior": 2.0,
+   "em_all": 1.4285714285714286,
+   "n_pairs_vd": 62,
+   "em_vd": 1.152073732718894,
+   "prior_vd": 1.935483870967742,
+   "near_constant": false,
+   "em_minus_prior_vd": -0.7834101382488481,
+   "em_minus_prior_all": -0.5714285714285714
+  },
+  {
+   "modality": "graph",
+   "task": "shortest_path",
+   "n": 36,
+   "distinct": 8,
+   "entropy": 2.29022391407644,
+   "maj_share": 36.11111111111111,
+   "majority": "2",
+   "depths": {
+    "2-hop": 36
+   },
+   "cv_prior": 30.833333333333332,
+   "em_all": 21.52777777777778,
+   "n_pairs_vd": 19,
+   "em_vd": 30.827067669172934,
+   "prior_vd": 33.1578947368421,
+   "near_constant": false,
+   "em_minus_prior_vd": -2.330827067669169,
+   "em_minus_prior_all": -9.305555555555554
+  }
+ ],
+ "spearman": {
+  "all_templates|entropy|em_vd": {
+   "rho": -0.35282799536155046,
+   "p": 0.024897510248975102,
+   "n_templates": 39
+  },
+  "all_templates|entropy|em_minus_prior_vd": {
+   "rho": 0.6880348451453426,
+   "p": 9.999000099990002e-05,
+   "n_templates": 39
+  },
+  "all_templates|entropy|prior_vd": {
+   "rho": -0.8879430876678786,
+   "p": 9.999000099990002e-05,
+   "n_templates": 39
+  },
+  "all_templates|maj_share|em_vd": {
+   "rho": 0.4587872721012575,
+   "p": 0.0030996900309969004,
+   "n_templates": 39
+  },
+  "all_templates|maj_share|em_minus_prior_vd": {
+   "rho": -0.6335682006292322,
+   "p": 9.999000099990002e-05,
+   "n_templates": 39
+  },
+  "all_templates|maj_share|prior_vd": {
+   "rho": 0.9594848439816387,
+   "p": 9.999000099990002e-05,
+   "n_templates": 39
+  },
+  "all_templates|entropy|em_minus_prior_all_pairs": {
+   "rho": 0.7287486872784492,
+   "p": 9.999000099990002e-05,
+   "n_templates": 45
+  },
+  "noNC|entropy|em_vd": {
+   "rho": -0.32413447518081245,
+   "p": 0.0688931106889311,
+   "n_templates": 33
+  },
+  "noNC|entropy|em_minus_prior_vd": {
+   "rho": 0.5350393117148705,
+   "p": 0.0015998400159984002,
+   "n_templates": 33
+  },
+  "noNC|entropy|prior_vd": {
+   "rho": -0.8168501545775863,
+   "p": 9.999000099990002e-05,
+   "n_templates": 33
+  },
+  "noNC|maj_share|em_vd": {
+   "rho": 0.5001676442975881,
+   "p": 0.0034996500349965005,
+   "n_templates": 33
+  },
+  "noNC|maj_share|em_minus_prior_vd": {
+   "rho": -0.4365586400027141,
+   "p": 0.0115988401159884,
+   "n_templates": 33
+  },
+  "noNC|maj_share|prior_vd": {
+   "rho": 0.9330316802890649,
+   "p": 9.999000099990002e-05,
+   "n_templates": 33
+  },
+  "noNC|entropy|em_minus_prior_all_pairs": {
+   "rho": 0.609390335347484,
+   "p": 9.999000099990002e-05,
+   "n_templates": 35
+  }
+ },
+ "depth": {
+  "all": {
+   "GPT-4o": {
+    "1-hop": {
+     "em": 21.19809574186723,
+     "prior": 24.3156572335361,
+     "n": 7562,
+     "em_minus_prior": -3.1175614916688694
+    },
+    "2-hop": {
+     "em": 37.47248716067498,
+     "prior": 33.741746148202495,
+     "n": 5452,
+     "em_minus_prior": 3.7307410124724854
+    },
+    "3-hop": {
+     "em": 31.085319949811794,
+     "prior": 19.45890840652447,
+     "n": 3188,
+     "em_minus_prior": 11.626411543287325
+    },
+    "counterfactual": {
+     "em": 78.7979176526266,
+     "prior": 80.10411736867013,
+     "n": 2113,
+     "em_minus_prior": -1.3061997160435368
+    }
+   },
+   "Gemini-2.0-Flash": {
+    "1-hop": {
+     "em": 23.221370007934407,
+     "prior": 24.3156572335361,
+     "n": 7562,
+     "em_minus_prior": -1.0942872256016933
+    },
+    "2-hop": {
+     "em": 41.47101980924431,
+     "prior": 33.741746148202495,
+     "n": 5452,
+     "em_minus_prior": 7.729273661041816
+    },
+    "3-hop": {
+     "em": 33.12421580928482,
+     "prior": 19.45890840652447,
+     "n": 3188,
+     "em_minus_prior": 13.665307402760352
+    },
+    "counterfactual": {
+     "em": 74.01798390913393,
+     "prior": 80.10411736867013,
+     "n": 2113,
+     "em_minus_prior": -6.0861334595361996
+    }
+   },
+   "Qwen2.5-VL-7B": {
+    "1-hop": {
+     "em": 21.264215815921713,
+     "prior": 24.3156572335361,
+     "n": 7562,
+     "em_minus_prior": -3.051441417614388
+    },
+    "2-hop": {
+     "em": 35.58327219369039,
+     "prior": 33.741746148202495,
+     "n": 5452,
+     "em_minus_prior": 1.8415260454878961
+    },
+    "3-hop": {
+     "em": 26.3801756587202,
+     "prior": 19.45890840652447,
+     "n": 3188,
+     "em_minus_prior": 6.921267252195733
+    },
+    "counterfactual": {
+     "em": 72.92948414576432,
+     "prior": 80.10411736867013,
+     "n": 2113,
+     "em_minus_prior": -7.174633222905811
+    }
+   },
+   "Claude Sonnet 4": {
+    "1-hop": {
+     "em": 19.941814334832056,
+     "prior": 24.3156572335361,
+     "n": 7562,
+     "em_minus_prior": -4.373842898704044
+    },
+    "2-hop": {
+     "em": 35.308143800440206,
+     "prior": 33.741746148202495,
+     "n": 5452,
+     "em_minus_prior": 1.5663976522377112
+    },
+    "3-hop": {
+     "em": 15.15056461731493,
+     "prior": 19.45890840652447,
+     "n": 3188,
+     "em_minus_prior": -4.3083437892095375
+    },
+    "counterfactual": {
+     "em": 47.18409843823947,
+     "prior": 80.10411736867013,
+     "n": 2113,
+     "em_minus_prior": -32.920018930430665
+    }
+   },
+   "Gemini-2.5-Flash": {
+    "1-hop": {
+     "em": 24.10737900026448,
+     "prior": 24.3156572335361,
+     "n": 7562,
+     "em_minus_prior": -0.20827823327162065
+    },
+    "2-hop": {
+     "em": 34.99633162142333,
+     "prior": 33.741746148202495,
+     "n": 5452,
+     "em_minus_prior": 1.2545854732208355
+    },
+    "3-hop": {
+     "em": 35.88456712672522,
+     "prior": 19.45890840652447,
+     "n": 3188,
+     "em_minus_prior": 16.425658720200754
+    },
+    "counterfactual": {
+     "em": 77.14150496923806,
+     "prior": 80.10411736867013,
+     "n": 2113,
+     "em_minus_prior": -2.962612399432075
+    }
+   },
+   "Qwen2.5-VL-32B": {
+    "1-hop": {
+     "em": 20.629463104998678,
+     "prior": 24.3156572335361,
+     "n": 7562,
+     "em_minus_prior": -3.686194128537423
+    },
+    "2-hop": {
+     "em": 35.39985326485694,
+     "prior": 33.741746148202495,
+     "n": 5452,
+     "em_minus_prior": 1.6581071166544419
+    },
+    "3-hop": {
+     "em": 31.58720200752823,
+     "prior": 19.45890840652447,
+     "n": 3188,
+     "em_minus_prior": 12.128293601003762
+    },
+    "counterfactual": {
+     "em": 75.67439659252248,
+     "prior": 80.10411736867013,
+     "n": 2113,
+     "em_minus_prior": -4.429720776147647
+    }
+   },
+   "InternVL2.5-8B": {
+    "1-hop": {
+     "em": 14.387728114255488,
+     "prior": 24.3156572335361,
+     "n": 7562,
+     "em_minus_prior": -9.927929119280613
+    },
+    "2-hop": {
+     "em": 25.770359501100515,
+     "prior": 33.741746148202495,
+     "n": 5452,
+     "em_minus_prior": -7.97138664710198
+    },
+    "3-hop": {
+     "em": 15.683814303638645,
+     "prior": 19.45890840652447,
+     "n": 3188,
+     "em_minus_prior": -3.7750941028858236
+    },
+    "counterfactual": {
+     "em": 33.98012304779934,
+     "prior": 80.10411736867013,
+     "n": 2113,
+     "em_minus_prior": -46.12399432087079
+    }
+   },
+   "Qwen2.5-VL-7B (v2)": {
+    "1-hop": {
+     "em": 29.555673102353875,
+     "prior": 24.3156572335361,
+     "n": 7562,
+     "em_minus_prior": 5.240015868817775
+    },
+    "2-hop": {
+     "em": 39.691856199559794,
+     "prior": 33.741746148202495,
+     "n": 5452,
+     "em_minus_prior": 5.950110051357299
+    },
+    "3-hop": {
+     "em": 31.524466750313675,
+     "prior": 19.45890840652447,
+     "n": 3188,
+     "em_minus_prior": 12.065558343789206
+    },
+    "counterfactual": {
+     "em": 76.81022243256034,
+     "prior": 80.10411736867013,
+     "n": 2113,
+     "em_minus_prior": -3.293894936109794
+    }
+   },
+   "pooled7": {
+    "1-hop": {
+     "em": 20.678580874296294,
+     "n_pairs": 52934,
+     "em_minus_prior": -3.6370763592398068,
+     "ci_lo": -6.936914291411345,
+     "ci_hi": -0.3110968120655095,
+     "n_obj": 299,
+     "n_templates": 11
+    },
+    "2-hop": {
+     "em": 35.143066764490094,
+     "n_pairs": 38164,
+     "em_minus_prior": 1.401320616287601,
+     "ci_lo": -1.0288900033065402,
+     "ci_hi": 4.030290909917501,
+     "n_obj": 299,
+     "n_templates": 17
+    },
+    "3-hop": {
+     "em": 26.98512278186055,
+     "n_pairs": 22316,
+     "em_minus_prior": 7.526214375336082,
+     "ci_lo": 3.863830963879949,
+     "ci_hi": 11.341094690948752,
+     "n_obj": 210,
+     "n_templates": 14
+    },
+    "counterfactual": {
+     "em": 65.67507267933203,
+     "n_pairs": 14791,
+     "em_minus_prior": -14.42904468933811,
+     "ci_lo": -18.283600210678014,
+     "ci_hi": -10.502747891944278,
+     "n_obj": 168,
+     "n_templates": 8
+    }
+   },
+   "monotone_1>2>3_hop": {
+    "GPT-4o": false,
+    "Gemini-2.0-Flash": false,
+    "Qwen2.5-VL-7B": false,
+    "Claude Sonnet 4": false,
+    "Gemini-2.5-Flash": false,
+    "Qwen2.5-VL-32B": false,
+    "InternVL2.5-8B": false,
+    "Qwen2.5-VL-7B (v2)": false
+   }
+  },
+  "all_noNC": {
+   "GPT-4o": {
+    "1-hop": {
+     "em": 22.038437303087587,
+     "prior": 11.023156899810964,
+     "n": 6348,
+     "em_minus_prior": 11.015280403276623
+    },
+    "2-hop": {
+     "em": 34.88104374520338,
+     "prior": 30.690713737528778,
+     "n": 5212,
+     "em_minus_prior": 4.1903300076746
+    },
+    "3-hop": {
+     "em": 30.852105778648383,
+     "prior": 16.17205354227881,
+     "n": 3063,
+     "em_minus_prior": 14.680052236369573
+    },
+    "counterfactual": {
+     "em": 86.9047619047619,
+     "prior": 65.23809523809524,
+     "n": 1008,
+     "em_minus_prior": 21.666666666666657
+    }
+   },
+   "Gemini-2.0-Flash": {
+    "1-hop": {
+     "em": 23.235664776307498,
+     "prior": 11.023156899810964,
+     "n": 6348,
+     "em_minus_prior": 12.212507876496534
+    },
+    "2-hop": {
+     "em": 39.082885648503456,
+     "prior": 30.690713737528778,
+     "n": 5212,
+     "em_minus_prior": 8.392171910974678
+    },
+    "3-hop": {
+     "em": 31.733594515181196,
+     "prior": 16.17205354227881,
+     "n": 3063,
+     "em_minus_prior": 15.561540972902385
+    },
+    "counterfactual": {
+     "em": 74.8015873015873,
+     "prior": 65.23809523809524,
+     "n": 1008,
+     "em_minus_prior": 9.563492063492063
+    }
+   },
+   "Qwen2.5-VL-7B": {
+    "1-hop": {
+     "em": 20.5419029615627,
+     "prior": 11.023156899810964,
+     "n": 6348,
+     "em_minus_prior": 9.518746061751735
+    },
+    "2-hop": {
+     "em": 32.712970069071375,
+     "prior": 30.690713737528778,
+     "n": 5212,
+     "em_minus_prior": 2.0222563315425965
+    },
+    "3-hop": {
+     "em": 23.930786810316683,
+     "prior": 16.17205354227881,
+     "n": 3063,
+     "em_minus_prior": 7.758733268037872
+    },
+    "counterfactual": {
+     "em": 78.57142857142857,
+     "prior": 65.23809523809524,
+     "n": 1008,
+     "em_minus_prior": 13.333333333333329
+    }
+   },
+   "Claude Sonnet 4": {
+    "1-hop": {
+     "em": 22.2117202268431,
+     "prior": 11.023156899810964,
+     "n": 6348,
+     "em_minus_prior": 11.188563327032135
+    },
+    "2-hop": {
+     "em": 32.65541059094397,
+     "prior": 30.690713737528778,
+     "n": 5212,
+     "em_minus_prior": 1.9646968534151945
+    },
+    "3-hop": {
+     "em": 15.768854064642507,
+     "prior": 16.17205354227881,
+     "n": 3063,
+     "em_minus_prior": -0.4031994776363028
+    },
+    "counterfactual": {
+     "em": 39.08730158730159,
+     "prior": 65.23809523809524,
+     "n": 1008,
+     "em_minus_prior": -26.150793650793652
+    }
+   },
+   "Gemini-2.5-Flash": {
+    "1-hop": {
+     "em": 23.34593572778828,
+     "prior": 11.023156899810964,
+     "n": 6348,
+     "em_minus_prior": 12.322778827977316
+    },
+    "2-hop": {
+     "em": 33.80660015349194,
+     "prior": 30.690713737528778,
+     "n": 5212,
+     "em_minus_prior": 3.115886415963164
+    },
+    "3-hop": {
+     "em": 34.73718576558929,
+     "prior": 16.17205354227881,
+     "n": 3063,
+     "em_minus_prior": 18.565132223310478
+    },
+    "counterfactual": {
+     "em": 87.59920634920636,
+     "prior": 65.23809523809524,
+     "n": 1008,
+     "em_minus_prior": 22.361111111111114
+    }
+   },
+   "Qwen2.5-VL-32B": {
+    "1-hop": {
+     "em": 20.652173913043477,
+     "prior": 11.023156899810964,
+     "n": 6348,
+     "em_minus_prior": 9.629017013232513
+    },
+    "2-hop": {
+     "em": 32.63622409823484,
+     "prior": 30.690713737528778,
+     "n": 5212,
+     "em_minus_prior": 1.9455103607060629
+    },
+    "3-hop": {
+     "em": 29.317662422461638,
+     "prior": 16.17205354227881,
+     "n": 3063,
+     "em_minus_prior": 13.145608880182827
+    },
+    "counterfactual": {
+     "em": 82.93650793650794,
+     "prior": 65.23809523809524,
+     "n": 1008,
+     "em_minus_prior": 17.698412698412696
+    }
+   },
+   "InternVL2.5-8B": {
+    "1-hop": {
+     "em": 10.932577189666036,
+     "prior": 11.023156899810964,
+     "n": 6348,
+     "em_minus_prior": -0.09057971014492772
+    },
+    "2-hop": {
+     "em": 22.352264006139677,
+     "prior": 30.690713737528778,
+     "n": 5212,
+     "em_minus_prior": -8.338449731389101
+    },
+    "3-hop": {
+     "em": 16.16062683643487,
+     "prior": 16.17205354227881,
+     "n": 3063,
+     "em_minus_prior": -0.011426705843941676
+    },
+    "counterfactual": {
+     "em": 20.535714285714285,
+     "prior": 65.23809523809524,
+     "n": 1008,
+     "em_minus_prior": -44.702380952380956
+    }
+   },
+   "Qwen2.5-VL-7B (v2)": {
+    "1-hop": {
+     "em": 30.419029615626968,
+     "prior": 11.023156899810964,
+     "n": 6348,
+     "em_minus_prior": 19.395872715816004
+    },
+    "2-hop": {
+     "em": 37.01074443591711,
+     "prior": 30.690713737528778,
+     "n": 5212,
+     "em_minus_prior": 6.320030698388333
+    },
+    "3-hop": {
+     "em": 29.285014691478942,
+     "prior": 16.17205354227881,
+     "n": 3063,
+     "em_minus_prior": 13.112961149200132
+    },
+    "counterfactual": {
+     "em": 79.86111111111111,
+     "prior": 65.23809523809524,
+     "n": 1008,
+     "em_minus_prior": 14.623015873015873
+    }
+   },
+   "pooled7": {
+    "1-hop": {
+     "em": 20.422630299756953,
+     "n_pairs": 44436,
+     "em_minus_prior": 9.39947339994599,
+     "ci_lo": 7.053916249105109,
+     "ci_hi": 11.839767845065353,
+     "n_obj": 299,
+     "n_templates": 8
+    },
+    "2-hop": {
+     "em": 32.58962833022695,
+     "n_pairs": 36484,
+     "em_minus_prior": 1.898914592698169,
+     "ci_lo": -0.6242622034498493,
+     "ci_hi": 4.554187823697161,
+     "n_obj": 299,
+     "n_templates": 16
+    },
+    "3-hop": {
+     "em": 26.071545170467797,
+     "n_pairs": 21441,
+     "em_minus_prior": 9.899491628188985,
+     "ci_lo": 6.558539494607907,
+     "ci_hi": 13.420641968867141,
+     "n_obj": 210,
+     "n_templates": 12
+    },
+    "counterfactual": {
+     "em": 67.20521541950113,
+     "n_pairs": 7056,
+     "em_minus_prior": 1.9671201814058954,
+     "ci_lo": -4.464659862416257,
+     "ci_hi": 7.549449315520992,
+     "n_obj": 148,
+     "n_templates": 3
+    }
+   },
+   "monotone_1>2>3_hop": {
+    "GPT-4o": false,
+    "Gemini-2.0-Flash": false,
+    "Qwen2.5-VL-7B": false,
+    "Claude Sonnet 4": false,
+    "Gemini-2.5-Flash": false,
+    "Qwen2.5-VL-32B": false,
+    "InternVL2.5-8B": false,
+    "Qwen2.5-VL-7B (v2)": false
+   }
+  },
+  "vd": {
+   "GPT-4o": {
+    "1-hop": {
+     "em": 38.9235313423039,
+     "prior": 29.548736462093864,
+     "n": 3047,
+     "em_minus_prior": 9.37479488021004
+    },
+    "2-hop": {
+     "em": 58.72466633712308,
+     "prior": 35.69698467622343,
+     "n": 2023,
+     "em_minus_prior": 23.027681660899653
+    },
+    "3-hop": {
+     "em": 51.68634064080944,
+     "prior": 19.165261382799326,
+     "n": 1186,
+     "em_minus_prior": 32.52107925801012
+    },
+    "counterfactual": {
+     "em": 78.17796610169492,
+     "prior": 74.45974576271186,
+     "n": 944,
+     "em_minus_prior": 3.718220338983059
+    }
+   },
+   "Gemini-2.0-Flash": {
+    "1-hop": {
+     "em": 41.220872989826056,
+     "prior": 29.548736462093864,
+     "n": 3047,
+     "em_minus_prior": 11.672136527732192
+    },
+    "2-hop": {
+     "em": 64.65645081562036,
+     "prior": 35.69698467622343,
+     "n": 2023,
+     "em_minus_prior": 28.95946613939693
+    },
+    "3-hop": {
+     "em": 55.05902192242833,
+     "prior": 19.165261382799326,
+     "n": 1186,
+     "em_minus_prior": 35.893760539629
+    },
+    "counterfactual": {
+     "em": 77.22457627118644,
+     "prior": 74.45974576271186,
+     "n": 944,
+     "em_minus_prior": 2.7648305084745743
+    }
+   },
+   "Qwen2.5-VL-7B": {
+    "1-hop": {
+     "em": 38.299967180833605,
+     "prior": 29.548736462093864,
+     "n": 3047,
+     "em_minus_prior": 8.751230718739741
+    },
+    "2-hop": {
+     "em": 49.925852694018786,
+     "prior": 35.69698467622343,
+     "n": 2023,
+     "em_minus_prior": 14.228868017795357
+    },
+    "3-hop": {
+     "em": 40.55649241146712,
+     "prior": 19.165261382799326,
+     "n": 1186,
+     "em_minus_prior": 21.391231028667793
+    },
+    "counterfactual": {
+     "em": 79.13135593220339,
+     "prior": 74.45974576271186,
+     "n": 944,
+     "em_minus_prior": 4.6716101694915295
+    }
+   },
+   "Claude Sonnet 4": {
+    "1-hop": {
+     "em": 36.52773219560223,
+     "prior": 29.548736462093864,
+     "n": 3047,
+     "em_minus_prior": 6.97899573350837
+    },
+    "2-hop": {
+     "em": 57.142857142857146,
+     "prior": 35.69698467622343,
+     "n": 2023,
+     "em_minus_prior": 21.445872466633716
+    },
+    "3-hop": {
+     "em": 30.522765598650928,
+     "prior": 19.165261382799326,
+     "n": 1186,
+     "em_minus_prior": 11.357504215851602
+    },
+    "counterfactual": {
+     "em": 33.36864406779661,
+     "prior": 74.45974576271186,
+     "n": 944,
+     "em_minus_prior": -41.09110169491525
+    }
+   },
+   "Gemini-2.5-Flash": {
+    "1-hop": {
+     "em": 45.027896291434196,
+     "prior": 29.548736462093864,
+     "n": 3047,
+     "em_minus_prior": 15.479159829340333
+    },
+    "2-hop": {
+     "em": 57.29115175481957,
+     "prior": 35.69698467622343,
+     "n": 2023,
+     "em_minus_prior": 21.594167078596143
+    },
+    "3-hop": {
+     "em": 59.27487352445194,
+     "prior": 19.165261382799326,
+     "n": 1186,
+     "em_minus_prior": 40.10961214165262
+    },
+    "counterfactual": {
+     "em": 79.23728813559322,
+     "prior": 74.45974576271186,
+     "n": 944,
+     "em_minus_prior": 4.777542372881356
+    }
+   },
+   "Qwen2.5-VL-32B": {
+    "1-hop": {
+     "em": 38.72661634394486,
+     "prior": 29.548736462093864,
+     "n": 3047,
+     "em_minus_prior": 9.177879881850998
+    },
+    "2-hop": {
+     "em": 52.10084033613445,
+     "prior": 35.69698467622343,
+     "n": 2023,
+     "em_minus_prior": 16.403855659911024
+    },
+    "3-hop": {
+     "em": 49.156829679595276,
+     "prior": 19.165261382799326,
+     "n": 1186,
+     "em_minus_prior": 29.99156829679595
+    },
+    "counterfactual": {
+     "em": 78.17796610169492,
+     "prior": 74.45974576271186,
+     "n": 944,
+     "em_minus_prior": 3.718220338983059
+    }
+   },
+   "InternVL2.5-8B": {
+    "1-hop": {
+     "em": 23.334427305546438,
+     "prior": 29.548736462093864,
+     "n": 3047,
+     "em_minus_prior": -6.214309156547426
+    },
+    "2-hop": {
+     "em": 30.44982698961938,
+     "prior": 35.69698467622343,
+     "n": 2023,
+     "em_minus_prior": -5.2471576866040515
+    },
+    "3-hop": {
+     "em": 30.101180438448566,
+     "prior": 19.165261382799326,
+     "n": 1186,
+     "em_minus_prior": 10.93591905564924
+    },
+    "counterfactual": {
+     "em": 30.190677966101696,
+     "prior": 74.45974576271186,
+     "n": 944,
+     "em_minus_prior": -44.269067796610166
+    }
+   },
+   "Qwen2.5-VL-7B (v2)": {
+    "1-hop": {
+     "em": 40.694195092758825,
+     "prior": 23.758228605625373,
+     "n": 5013,
+     "em_minus_prior": 16.935966487133452
+    },
+    "2-hop": {
+     "em": 40.53262316910786,
+     "prior": 31.89081225033289,
+     "n": 3755,
+     "em_minus_prior": 8.641810918774969
+    },
+    "3-hop": {
+     "em": 31.814580031695723,
+     "prior": 18.86093502377179,
+     "n": 2524,
+     "em_minus_prior": 12.953645007923932
+    },
+    "counterfactual": {
+     "em": 73.54651162790698,
+     "prior": 72.93604651162791,
+     "n": 1376,
+     "em_minus_prior": 0.6104651162790731
+    }
+   },
+   "pooled7": {
+    "1-hop": {
+     "em": 37.43729194992733,
+     "n_pairs": 21329,
+     "em_minus_prior": 7.888555487833466,
+     "ci_lo": 2.5450197477266276,
+     "ci_hi": 13.497651067791638,
+     "n_obj": 299,
+     "n_templates": 8
+    },
+    "2-hop": {
+     "em": 52.898806581456114,
+     "n_pairs": 14161,
+     "em_minus_prior": 17.20182190523268,
+     "ci_lo": 12.90685657133599,
+     "ci_hi": 21.521883401501,
+     "n_obj": 296,
+     "n_templates": 16
+    },
+    "3-hop": {
+     "em": 45.193929173693085,
+     "n_pairs": 8302,
+     "em_minus_prior": 26.02866779089376,
+     "ci_lo": 20.05736797817081,
+     "ci_hi": 32.279295435614735,
+     "n_obj": 199,
+     "n_templates": 14
+    },
+    "counterfactual": {
+     "em": 65.0726392251816,
+     "n_pairs": 6608,
+     "em_minus_prior": -9.387106537530267,
+     "ci_lo": -12.735022579314133,
+     "ci_hi": -5.693495736477453,
+     "n_obj": 168,
+     "n_templates": 5
+    }
+   },
+   "monotone_1>2>3_hop": {
+    "GPT-4o": false,
+    "Gemini-2.0-Flash": false,
+    "Qwen2.5-VL-7B": false,
+    "Claude Sonnet 4": false,
+    "Gemini-2.5-Flash": false,
+    "Qwen2.5-VL-32B": false,
+    "InternVL2.5-8B": false,
+    "Qwen2.5-VL-7B (v2)": true
+   }
+  },
+  "vd_noNC": {
+   "GPT-4o": {
+    "1-hop": {
+     "em": 50.114311842706904,
+     "prior": 4.588477366255144,
+     "n": 2187,
+     "em_minus_prior": 45.52583447645176
+    },
+    "2-hop": {
+     "em": 58.72466633712308,
+     "prior": 35.69698467622343,
+     "n": 2023,
+     "em_minus_prior": 23.027681660899653
+    },
+    "3-hop": {
+     "em": 51.76571920757967,
+     "prior": 17.424633936261845,
+     "n": 1161,
+     "em_minus_prior": 34.34108527131782
+    },
+    "counterfactual": {
+     "em": 83.03393213572855,
+     "prior": 60.05988023952095,
+     "n": 501,
+     "em_minus_prior": 22.974051896207598
+    }
+   },
+   "Gemini-2.0-Flash": {
+    "1-hop": {
+     "em": 51.120256058527666,
+     "prior": 4.588477366255144,
+     "n": 2187,
+     "em_minus_prior": 46.531778692272525
+    },
+    "2-hop": {
+     "em": 64.65645081562036,
+     "prior": 35.69698467622343,
+     "n": 2023,
+     "em_minus_prior": 28.95946613939693
+    },
+    "3-hop": {
+     "em": 54.34969853574505,
+     "prior": 17.424633936261845,
+     "n": 1161,
+     "em_minus_prior": 36.92506459948321
+    },
+    "counterfactual": {
+     "em": 84.03193612774452,
+     "prior": 60.05988023952095,
+     "n": 501,
+     "em_minus_prior": 23.972055888223565
+    }
+   },
+   "Qwen2.5-VL-7B": {
+    "1-hop": {
+     "em": 47.005029721079104,
+     "prior": 4.588477366255144,
+     "n": 2187,
+     "em_minus_prior": 42.41655235482396
+    },
+    "2-hop": {
+     "em": 49.925852694018786,
+     "prior": 35.69698467622343,
+     "n": 2023,
+     "em_minus_prior": 14.228868017795357
+    },
+    "3-hop": {
+     "em": 40.22394487510766,
+     "prior": 17.424633936261845,
+     "n": 1161,
+     "em_minus_prior": 22.799310938845817
+    },
+    "counterfactual": {
+     "em": 88.02395209580838,
+     "prior": 60.05988023952095,
+     "n": 501,
+     "em_minus_prior": 27.964071856287433
+    }
+   },
+   "Claude Sonnet 4": {
+    "1-hop": {
+     "em": 49.01691815272062,
+     "prior": 4.588477366255144,
+     "n": 2187,
+     "em_minus_prior": 44.42844078646548
+    },
+    "2-hop": {
+     "em": 57.142857142857146,
+     "prior": 35.69698467622343,
+     "n": 2023,
+     "em_minus_prior": 21.445872466633716
+    },
+    "3-hop": {
+     "em": 31.180017226528854,
+     "prior": 17.424633936261845,
+     "n": 1161,
+     "em_minus_prior": 13.755383290267009
+    },
+    "counterfactual": {
+     "em": 15.968063872255488,
+     "prior": 60.05988023952095,
+     "n": 501,
+     "em_minus_prior": -44.091816367265466
+    }
+   },
+   "Gemini-2.5-Flash": {
+    "1-hop": {
+     "em": 53.406492912665755,
+     "prior": 4.588477366255144,
+     "n": 2187,
+     "em_minus_prior": 48.818015546410614
+    },
+    "2-hop": {
+     "em": 57.29115175481957,
+     "prior": 35.69698467622343,
+     "n": 2023,
+     "em_minus_prior": 21.594167078596143
+    },
+    "3-hop": {
+     "em": 58.57019810508183,
+     "prior": 17.424633936261845,
+     "n": 1161,
+     "em_minus_prior": 41.14556416881999
+    },
+    "counterfactual": {
+     "em": 92.01596806387225,
+     "prior": 60.05988023952095,
+     "n": 501,
+     "em_minus_prior": 31.9560878243513
+    }
+   },
+   "Qwen2.5-VL-32B": {
+    "1-hop": {
+     "em": 46.776406035665296,
+     "prior": 4.588477366255144,
+     "n": 2187,
+     "em_minus_prior": 42.187928669410155
+    },
+    "2-hop": {
+     "em": 52.10084033613445,
+     "prior": 35.69698467622343,
+     "n": 2023,
+     "em_minus_prior": 16.403855659911024
+    },
+    "3-hop": {
+     "em": 49.181739879414295,
+     "prior": 17.424633936261845,
+     "n": 1161,
+     "em_minus_prior": 31.75710594315245
+    },
+    "counterfactual": {
+     "em": 86.02794411177645,
+     "prior": 60.05988023952095,
+     "n": 501,
+     "em_minus_prior": 25.9680638722555
+    }
+   },
+   "InternVL2.5-8B": {
+    "1-hop": {
+     "em": 23.502514860539552,
+     "prior": 4.588477366255144,
+     "n": 2187,
+     "em_minus_prior": 18.914037494284408
+    },
+    "2-hop": {
+     "em": 30.44982698961938,
+     "prior": 35.69698467622343,
+     "n": 2023,
+     "em_minus_prior": -5.2471576866040515
+    },
+    "3-hop": {
+     "em": 30.5770887166236,
+     "prior": 17.424633936261845,
+     "n": 1161,
+     "em_minus_prior": 13.152454780361754
+    },
+    "counterfactual": {
+     "em": 1.1976047904191616,
+     "prior": 60.05988023952095,
+     "n": 501,
+     "em_minus_prior": -58.86227544910179
+    }
+   },
+   "Qwen2.5-VL-7B (v2)": {
+    "1-hop": {
+     "em": 45.726604108546795,
+     "prior": 4.970834390058331,
+     "n": 3943,
+     "em_minus_prior": 40.755769718488466
+    },
+    "2-hop": {
+     "em": 40.53262316910786,
+     "prior": 31.89081225033289,
+     "n": 3755,
+     "em_minus_prior": 8.641810918774969
+    },
+    "3-hop": {
+     "em": 30.921584478577202,
+     "prior": 17.221099434114794,
+     "n": 2474,
+     "em_minus_prior": 13.700485044462408
+    },
+    "counterfactual": {
+     "em": 80.05319148936171,
+     "prior": 57.3936170212766,
+     "n": 752,
+     "em_minus_prior": 22.65957446808511
+    }
+   },
+   "pooled7": {
+    "1-hop": {
+     "em": 45.84884708341499,
+     "n_pairs": 15309,
+     "em_minus_prior": 41.26036971715984,
+     "ci_lo": 38.022060072397515,
+     "ci_hi": 44.440876743307506,
+     "n_obj": 299,
+     "n_templates": 6
+    },
+    "2-hop": {
+     "em": 52.898806581456114,
+     "n_pairs": 14161,
+     "em_minus_prior": 17.20182190523268,
+     "ci_lo": 12.90685657133599,
+     "ci_hi": 21.521883401501,
+     "n_obj": 296,
+     "n_templates": 16
+    },
+    "3-hop": {
+     "em": 45.12120093515443,
+     "n_pairs": 8127,
+     "em_minus_prior": 27.696566998892582,
+     "ci_lo": 21.955992777560283,
+     "ci_hi": 33.70816080136499,
+     "n_obj": 199,
+     "n_templates": 12
+    },
+    "counterfactual": {
+     "em": 64.32848588537212,
+     "n_pairs": 3507,
+     "em_minus_prior": 4.268605645851154,
+     "ci_lo": -3.4541494282459024,
+     "ci_hi": 12.10654608493506,
+     "n_obj": 148,
+     "n_templates": 3
+    }
+   },
+   "monotone_1>2>3_hop": {
+    "GPT-4o": false,
+    "Gemini-2.0-Flash": false,
+    "Qwen2.5-VL-7B": false,
+    "Claude Sonnet 4": false,
+    "Gemini-2.5-Flash": false,
+    "Qwen2.5-VL-32B": false,
+    "InternVL2.5-8B": false,
+    "Qwen2.5-VL-7B (v2)": true
+   }
+  },
+  "strict_noNC": {
+   "GPT-4o": {
+    "1-hop": {
+     "em": 55.04308160162189,
+     "prior": 4.91637100861632,
+     "n": 1973,
+     "em_minus_prior": 50.12671059300557
+    },
+    "2-hop": {
+     "em": 63.166311300639656,
+     "prior": 38.48880597014925,
+     "n": 1876,
+     "em_minus_prior": 24.677505330490405
+    },
+    "3-hop": {
+     "em": 54.405086285195274,
+     "prior": 18.374205267938237,
+     "n": 1101,
+     "em_minus_prior": 36.03088101725704
+    },
+    "counterfactual": {
+     "em": 83.03393213572855,
+     "prior": 60.05988023952095,
+     "n": 501,
+     "em_minus_prior": 22.974051896207598
+    }
+   },
+   "Gemini-2.0-Flash": {
+    "1-hop": {
+     "em": 56.158134820070956,
+     "prior": 4.91637100861632,
+     "n": 1973,
+     "em_minus_prior": 51.24176381145463
+    },
+    "2-hop": {
+     "em": 69.66950959488273,
+     "prior": 38.48880597014925,
+     "n": 1876,
+     "em_minus_prior": 31.180703624733475
+    },
+    "3-hop": {
+     "em": 56.857402361489555,
+     "prior": 18.374205267938237,
+     "n": 1101,
+     "em_minus_prior": 38.48319709355132
+    },
+    "counterfactual": {
+     "em": 84.03193612774452,
+     "prior": 60.05988023952095,
+     "n": 501,
+     "em_minus_prior": 23.972055888223565
+    }
+   },
+   "Qwen2.5-VL-7B": {
+    "1-hop": {
+     "em": 51.59655347187025,
+     "prior": 4.91637100861632,
+     "n": 1973,
+     "em_minus_prior": 46.68018246325393
+    },
+    "2-hop": {
+     "em": 53.73134328358209,
+     "prior": 38.48880597014925,
+     "n": 1876,
+     "em_minus_prior": 15.242537313432841
+    },
+    "3-hop": {
+     "em": 42.23433242506812,
+     "prior": 18.374205267938237,
+     "n": 1101,
+     "em_minus_prior": 23.86012715712988
+    },
+    "counterfactual": {
+     "em": 88.02395209580838,
+     "prior": 60.05988023952095,
+     "n": 501,
+     "em_minus_prior": 27.964071856287433
+    }
+   },
+   "Claude Sonnet 4": {
+    "1-hop": {
+     "em": 53.775975671566144,
+     "prior": 4.91637100861632,
+     "n": 1973,
+     "em_minus_prior": 48.85960466294982
+    },
+    "2-hop": {
+     "em": 61.46055437100213,
+     "prior": 38.48880597014925,
+     "n": 1876,
+     "em_minus_prior": 22.97174840085288
+    },
+    "3-hop": {
+     "em": 32.69754768392371,
+     "prior": 18.374205267938237,
+     "n": 1101,
+     "em_minus_prior": 14.323342415985472
+    },
+    "counterfactual": {
+     "em": 15.968063872255488,
+     "prior": 60.05988023952095,
+     "n": 501,
+     "em_minus_prior": -44.091816367265466
+    }
+   },
+   "Gemini-2.5-Flash": {
+    "1-hop": {
+     "em": 58.641662442980234,
+     "prior": 4.91637100861632,
+     "n": 1973,
+     "em_minus_prior": 53.72529143436391
+    },
+    "2-hop": {
+     "em": 61.67377398720682,
+     "prior": 38.48880597014925,
+     "n": 1876,
+     "em_minus_prior": 23.18496801705757
+    },
+    "3-hop": {
+     "em": 61.48955495004542,
+     "prior": 18.374205267938237,
+     "n": 1101,
+     "em_minus_prior": 43.11534968210718
+    },
+    "counterfactual": {
+     "em": 92.01596806387225,
+     "prior": 60.05988023952095,
+     "n": 501,
+     "em_minus_prior": 31.9560878243513
+    }
+   },
+   "Qwen2.5-VL-32B": {
+    "1-hop": {
+     "em": 51.3431322858591,
+     "prior": 4.91637100861632,
+     "n": 1973,
+     "em_minus_prior": 46.426761277242775
+    },
+    "2-hop": {
+     "em": 56.07675906183369,
+     "prior": 38.48880597014925,
+     "n": 1876,
+     "em_minus_prior": 17.58795309168444
+    },
+    "3-hop": {
+     "em": 51.58946412352407,
+     "prior": 18.374205267938237,
+     "n": 1101,
+     "em_minus_prior": 33.21525885558583
+    },
+    "counterfactual": {
+     "em": 86.02794411177645,
+     "prior": 60.05988023952095,
+     "n": 501,
+     "em_minus_prior": 25.9680638722555
+    }
+   },
+   "InternVL2.5-8B": {
+    "1-hop": {
+     "em": 25.646224024328433,
+     "prior": 4.91637100861632,
+     "n": 1973,
+     "em_minus_prior": 20.729853015712113
+    },
+    "2-hop": {
+     "em": 32.67590618336887,
+     "prior": 38.48880597014925,
+     "n": 1876,
+     "em_minus_prior": -5.8128997867803776
+    },
+    "3-hop": {
+     "em": 32.061762034514075,
+     "prior": 18.374205267938237,
+     "n": 1101,
+     "em_minus_prior": 13.687556766575838
+    },
+    "counterfactual": {
+     "em": 1.1976047904191616,
+     "prior": 60.05988023952095,
+     "n": 501,
+     "em_minus_prior": -58.86227544910179
+    }
+   },
+   "Qwen2.5-VL-7B (v2)": {
+    "1-hop": {
+     "em": 49.53664700926706,
+     "prior": 5.391743892165122,
+     "n": 3561,
+     "em_minus_prior": 44.14490311710193
+    },
+    "2-hop": {
+     "em": 42.12860310421286,
+     "prior": 33.18736141906874,
+     "n": 3608,
+     "em_minus_prior": 8.941241685144114
+    },
+    "3-hop": {
+     "em": 31.6072908036454,
+     "prior": 17.649130074565036,
+     "n": 2414,
+     "em_minus_prior": 13.958160729080365
+    },
+    "counterfactual": {
+     "em": 80.05319148936171,
+     "prior": 57.3936170212766,
+     "n": 752,
+     "em_minus_prior": 22.65957446808511
+    }
+   },
+   "pooled7": {
+    "1-hop": {
+     "em": 50.31496633118529,
+     "n_pairs": 13811,
+     "em_minus_prior": 45.398595322568966,
+     "ci_lo": 42.30742330588603,
+     "ci_hi": 48.4885078217049,
+     "n_obj": 299,
+     "n_templates": 6
+    },
+    "2-hop": {
+     "em": 56.92202254035943,
+     "n_pairs": 13132,
+     "em_minus_prior": 18.433216570210174,
+     "ci_lo": 13.947290569084391,
+     "ci_hi": 22.99997977493321,
+     "n_obj": 296,
+     "n_templates": 14
+    },
+    "3-hop": {
+     "em": 47.33359283768003,
+     "n_pairs": 7707,
+     "em_minus_prior": 28.959387569741793,
+     "ci_lo": 22.993457312234217,
+     "ci_hi": 34.97933368379551,
+     "n_obj": 199,
+     "n_templates": 10
+    },
+    "counterfactual": {
+     "em": 64.32848588537212,
+     "n_pairs": 3507,
+     "em_minus_prior": 4.268605645851154,
+     "ci_lo": -3.4541494282459024,
+     "ci_hi": 12.10654608493506,
+     "n_obj": 148,
+     "n_templates": 3
+    }
+   },
+   "monotone_1>2>3_hop": {
+    "GPT-4o": false,
+    "Gemini-2.0-Flash": false,
+    "Qwen2.5-VL-7B": false,
+    "Claude Sonnet 4": false,
+    "Gemini-2.5-Flash": false,
+    "Qwen2.5-VL-32B": false,
+    "InternVL2.5-8B": false,
+    "Qwen2.5-VL-7B (v2)": true
+   }
+  }
+ },
+ "within_template_depth": {
+  "tabular|comparison": {
+   "3-hop": {
+    "n_q": 112,
+    "em_vd": 84.17293233082707,
+    "em_all": 78.6734693877551,
+    "prior": 0.0
+   },
+   "counterfactual": {
+    "n_q": 112,
+    "em_vd": 64.69924812030075,
+    "em_all": 60.714285714285715,
+    "prior": 73.21428571428571
+   }
+  },
+  "graph|connectivity": {
+   "1-hop": {
+    "n_q": 36,
+    "em_vd": NaN,
+    "em_all": 38.492063492063494,
+    "prior": 100.0
+   },
+   "2-hop": {
+    "n_q": 60,
+    "em_vd": NaN,
+    "em_all": 90.5952380952381,
+    "prior": 100.0
+   }
+  },
+  "graph|degree_query": {
+   "1-hop": {
+    "n_q": 132,
+    "em_vd": 63.392857142857146,
+    "em_all": 23.647186147186147,
+    "prior": 16.553030303030305
+   },
+   "2-hop": {
+    "n_q": 36,
+    "em_vd": 41.35338345864662,
+    "em_all": 19.543650793650794,
+    "prior": 12.083333333333332
+   },
+   "3-hop": {
+    "n_q": 40,
+    "em_vd": 5.042016806722689,
+    "em_all": 2.9464285714285716,
+    "prior": 0.0
+   }
+  },
+  "graph|community": {
+   "3-hop": {
+    "n_q": 56,
+    "em_vd": 29.39719240297275,
+    "em_all": 29.591836734693878,
+    "prior": 52.410714285714285
+   },
+   "counterfactual": {
+    "n_q": 36,
+    "em_vd": 61.64736164736165,
+    "em_all": 63.59126984126984,
+    "prior": 10.833333333333334
+   }
+  }
+ }
+}

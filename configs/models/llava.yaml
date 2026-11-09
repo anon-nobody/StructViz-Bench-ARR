@@ -1,0 +1,9 @@
+model_type: llava
+name: llava-v1.6-mistral
+checkpoint: llava-hf/llava-v1.6-mistral-7b-hf
+max_tokens: 256
+temperature: 0.0
+system_prompt: "Answer concisely. Give only the final answer."
+device: cuda
+dtype: float16
+use_vllm: false

@@ -1,0 +1,27 @@
+# Ablation: Evaluate with different prompt templates
+# Purpose: Measure how prompt wording affects results independent of visualization
+# Run: python scripts/run_fullscale_eval.py --config configs/ablation_prompt_sensitivity.yaml
+
+ablation_type: prompt_sensitivity
+description: "Prompt variation ablation"
+
+prompt_variants:
+  concise:
+    system_prompt: "Answer concisely. Give only the final answer."
+    description: "Default concise prompt (baseline)"
+
+  detailed:
+    system_prompt: "Look at the provided visualization carefully. Answer the question based on what you see. Provide only the final answer without explanation."
+    description: "More detailed instruction prompt"
+
+  cot:
+    system_prompt: "Look at the visualization and think step by step. After your reasoning, provide the final answer on a new line starting with 'Answer:'"
+    description: "Chain-of-thought prompt"
+
+  minimal:
+    system_prompt: "Answer:"
+    description: "Minimal prompt"
+
+# Sample subset for efficiency
+sample_size: 500  # Random stratified sample per model
+seed: 42

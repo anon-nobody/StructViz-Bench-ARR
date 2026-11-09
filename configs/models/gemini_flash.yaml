@@ -1,0 +1,8 @@
+model_type: gemini
+name: gemini-1.5-flash
+api_key_env: GEMINI_API_KEY
+max_tokens: 256
+temperature: 0.0
+system_prompt: "Answer concisely. Give only the final answer."
+timeout_seconds: 30.0
+requests_per_minute: 60

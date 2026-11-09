@@ -1,0 +1,36 @@
+{
+ "qwen": {
+  "em": {
+   "bar_chart": 70.3,
+   "heatmap": 71.8,
+   "table_image": 63.5,
+   "text_only": 71.8
+  },
+  "best": "heatmap",
+  "worst": "table_image",
+  "gap": 8.3,
+  "ci": [
+   4.5,
+   12.1
+  ],
+  "n_q": 616,
+  "n_charts": 434
+ },
+ "qwen3vl8b": {
+  "em": {
+   "bar_chart": 62.5,
+   "heatmap": 65.1,
+   "table_image": 62.7,
+   "text_only": 64.6
+  },
+  "best": "heatmap",
+  "worst": "bar_chart",
+  "gap": 2.6,
+  "ci": [
+   -0.2,
+   5.4
+  ],
+  "n_q": 616,
+  "n_charts": 434
+ }
+}

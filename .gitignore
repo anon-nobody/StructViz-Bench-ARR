@@ -1,0 +1,123 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+*.egg
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Paper sources are not part of the public code repo (camera-ready PDF
+# is distributed separately via OpenReview / arXiv).
+paper/
+
+# Ruff / linting
+.ruff_cache/
+
+# Pytest
+.pytest_cache/
+
+# Environment
+.env
+*.env
+.env.*
+
+# Model weights (never commit)
+*.bin
+*.pt
+*.pth
+*.safetensors
+*.gguf
+*.ggml
+
+# Large data files (use HuggingFace for distribution)
+benchmark/rendered/
+data/
+results/*.jsonl
+results/*_extracted.jsonl
+results/*_v2.jsonl
+results/pilot/
+results/.archive/
+results/human_eval/images/
+
+# Explicitly include the per-model main evaluation results (critical reviewer
+# evidence; ~6 MB each). Anything else under results/*.jsonl stays ignored.
+!results/full_gpt4o.jsonl
+!results/full_gemini.jsonl
+!results/full_gemini25.jsonl
+!results/full_qwen.jsonl
+!results/full_qwen32b.jsonl
+!results/full_claude.jsonl
+!results/full_internvl.jsonl
+
+# Run logs
+logs/
+*.log
+nohup.out
+
+# OMC / agent state (developer tooling, not part of release)
+.omc/
+
+# Notebooks output
+notebooks/
+*.ipynb_checkpoints/
+
+# Obsolete arxiv staging area
+release/arxiv/
+release/structviz-bench-arxiv.zip
+
+# HuggingFace release staging area (uploaded to HF, not part of GitHub repo).
+# Includes hf_dataset cache, human_eval_space (Gradio app), and the
+# benchmark/ JSONL mirror — all of which live on HF, not here.
+release/huggingface/
+
+# Ablation per-condition output files (regenerable via run_ablation.py viz-removal)
+results/ablation/viz_removal_*.jsonl
+results/ablation/prompt_*.jsonl
+# Large mixed-eval per-model output (regenerable via run_mixed_eval.py)
+results/mixed_*.jsonl
+results/mixed_*.log
+
+# Sensitive credentials
+**/hf_token*
+**/openai_key*
+**/anthropic_key*
+**/gemini_key*
+**/api_key*
+**/credentials*
+*.pem
+*.key
+
+# Released for the reproducibility harness (verify_paper_numbers.py): the answer-extracted
+# predictions of the four core models, the prompt-style ablation, and the cross-modal pilot.
+!results/full_gpt4o_extracted.jsonl
+!results/full_gemini_extracted.jsonl
+!results/full_qwen_extracted.jsonl
+!results/full_claude_extracted.jsonl
+!results/ablation/prompt_*.jsonl
+!results/mixed_*_extracted.jsonl
+
+benchmark/render_v2/*/
+benchmark/render_assist/*/
+results/v2/queue/
+
+# ETT redaction tooling and its hash manifest are part of the release
+# (the generic data/ rule above would otherwise hide them)
+!scripts/data/
+!/data/
+/data/*
+!/data/ett_redaction_manifest.json
+
+# Outputs regenerated at run time by the analysis scripts
+paper_tables/
+scripts/acl_numbers/regen/
+scripts/acl_numbers/recomputed.json

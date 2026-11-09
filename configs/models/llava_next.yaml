@@ -1,0 +1,8 @@
+model_type: local
+name: llava-hf/llava-v1.6-mistral-7b-hf
+backend: vllm
+max_tokens: 256
+temperature: 0.0
+system_prompt: "Answer concisely. Give only the final answer."
+gpu_memory_utilization: 0.85
+tensor_parallel_size: 1

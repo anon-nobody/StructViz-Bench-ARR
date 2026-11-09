@@ -1,0 +1,2040 @@
+{
+ "branches": {
+  "tab.value_extraction row<12=True": 468,
+  "tab.value_extraction col_numeric=False": 289,
+  "tab.value_extraction col_numeric=True": 179,
+  "tab.ranking label_col_categorical=True": 90,
+  "tab.ranking value_col_numeric=True": 90,
+  "tab.trend_analysis col_numeric=True": 247,
+  "tab.aggregation average=False": 176,
+  "tab.aggregation col_numeric=True": 207,
+  "tab.filtering col_numeric=True": 104,
+  "tab.aggregation average=True": 31,
+  "tab.comparison-rule[comparison] both_numeric=True": 224,
+  "tab.comparison-rule[comparison] template=which-higher": 112,
+  "tab.outlier_detection label_col_categorical=True": 230,
+  "tab.outlier_detection value_col_numeric=True": 230,
+  "tab.correlation pair==first_two_numeric=True": 26,
+  "tab.correlation pair==first_two_numeric=False": 23,
+  "tab.comparison-rule[comparison] template=counterfactual%": 112,
+  "tab.counterfactual average=True": 146,
+  "tab.counterfactual cols_numeric=True": 146,
+  "ts.text_only len>43 other task -> A": 980,
+  "ts.text_only len>43 value_lookup first=True": 105,
+  "ts.text_only len>43 value_lookup first=False": 105,
+  "ts.C pattern_label_lookup": 107,
+  "ts.C pattern_classification": 20,
+  "ts.C counterfactual_scale_peak": 20,
+  "ts.C counterfactual_sign_flip": 15,
+  "g.C connectivity": 96,
+  "g.text_only edges<=43": 48,
+  "g.C counterfactual add-edge-directly-connected": 36,
+  "g.text_only edges>43 degree_query [1-node(s)] visible=True": 91,
+  "g.text_only edges>43 degree_query [1-node(s)] visible=False": 29,
+  "g.text_only edges>43 other task -> A": 291,
+  "g.text_only edges>43 degree_query [no-node-referenced] visible=False": 51,
+  "g.text_only edges>43 degree_query [3-node(s)] visible=False": 11,
+  "g.text_only edges>43 degree_query [3-node(s)] visible=True": 7,
+  "ts.text_only len<=43 (same as line_plot)": 18
+ },
+ "matrix_counts": {
+  "tabular|value_extraction|table_image": {
+   "V": 468
+  },
+  "tabular|value_extraction|text_only": {
+   "V": 468
+  },
+  "tabular|value_extraction|heatmap": {
+   "A": 289,
+   "V": 179
+  },
+  "tabular|value_extraction|bar_chart": {
+   "A": 468
+  },
+  "tabular|value_extraction|scatter_plot": {
+   "A": 468
+  },
+  "tabular|ranking|table_image": {
+   "A": 90
+  },
+  "tabular|ranking|text_only": {
+   "A": 90
+  },
+  "tabular|ranking|heatmap": {
+   "A": 90
+  },
+  "tabular|ranking|bar_chart": {
+   "A": 90
+  },
+  "tabular|ranking|scatter_plot": {
+   "A": 90
+  },
+  "tabular|trend_analysis|table_image": {
+   "A": 73,
+   "D": 174
+  },
+  "tabular|trend_analysis|text_only": {
+   "A": 61,
+   "D": 186
+  },
+  "tabular|trend_analysis|heatmap": {
+   "A": 30,
+   "D": 217
+  },
+  "tabular|trend_analysis|bar_chart": {
+   "A": 247
+  },
+  "tabular|trend_analysis|scatter_plot": {
+   "A": 247
+  },
+  "tabular|aggregation|bar_chart": {
+   "A": 176,
+   "V": 31
+  },
+  "tabular|aggregation|table_image": {
+   "A": 84,
+   "D": 123
+  },
+  "tabular|aggregation|text_only": {
+   "A": 76,
+   "D": 131
+  },
+  "tabular|aggregation|heatmap": {
+   "A": 42,
+   "D": 165
+  },
+  "tabular|aggregation|scatter_plot": {
+   "A": 207
+  },
+  "tabular|filtering|table_image": {
+   "A": 65,
+   "D": 39
+  },
+  "tabular|filtering|text_only": {
+   "A": 61,
+   "D": 43
+  },
+  "tabular|filtering|heatmap": {
+   "A": 33,
+   "D": 71
+  },
+  "tabular|filtering|bar_chart": {
+   "A": 104
+  },
+  "tabular|filtering|scatter_plot": {
+   "A": 104
+  },
+  "tabular|comparison|bar_chart": {
+   "V": 224
+  },
+  "tabular|comparison|heatmap": {
+   "A": 28,
+   "D": 196
+  },
+  "tabular|comparison|table_image": {
+   "A": 58,
+   "D": 166
+  },
+  "tabular|comparison|text_only": {
+   "A": 50,
+   "D": 174
+  },
+  "tabular|comparison|scatter_plot": {
+   "A": 224
+  },
+  "tabular|outlier_detection|table_image": {
+   "A": 97,
+   "D": 133
+  },
+  "tabular|outlier_detection|text_only": {
+   "A": 87,
+   "D": 143
+  },
+  "tabular|outlier_detection|heatmap": {
+   "A": 230
+  },
+  "tabular|outlier_detection|bar_chart": {
+   "A": 230
+  },
+  "tabular|outlier_detection|scatter_plot": {
+   "A": 230
+  },
+  "tabular|correlation|scatter_plot": {
+   "V": 26,
+   "A": 23
+  },
+  "tabular|correlation|table_image": {
+   "A": 45,
+   "D": 4
+  },
+  "tabular|correlation|text_only": {
+   "A": 45,
+   "D": 4
+  },
+  "tabular|correlation|heatmap": {
+   "A": 29,
+   "D": 20
+  },
+  "tabular|correlation|bar_chart": {
+   "A": 49
+  },
+  "tabular|counterfactual|bar_chart": {
+   "D": 146
+  },
+  "tabular|counterfactual|table_image": {
+   "A": 64,
+   "D": 82
+  },
+  "tabular|counterfactual|text_only": {
+   "A": 60,
+   "D": 86
+  },
+  "tabular|counterfactual|heatmap": {
+   "A": 37,
+   "D": 109
+  },
+  "tabular|counterfactual|scatter_plot": {
+   "A": 146
+  },
+  "timeseries|seasonality_detection|line_plot": {
+   "D": 107
+  },
+  "timeseries|seasonality_detection|heatmap": {
+   "D": 107
+  },
+  "timeseries|seasonality_detection|gaf": {
+   "D": 107
+  },
+  "timeseries|seasonality_detection|recurrence_plot": {
+   "D": 107
+  },
+  "timeseries|seasonality_detection|text_only": {
+   "A": 105,
+   "D": 2
+  },
+  "timeseries|peak_identification|line_plot": {
+   "D": 214
+  },
+  "timeseries|peak_identification|heatmap": {
+   "D": 214
+  },
+  "timeseries|peak_identification|gaf": {
+   "A": 214
+  },
+  "timeseries|peak_identification|recurrence_plot": {
+   "A": 214
+  },
+  "timeseries|peak_identification|text_only": {
+   "A": 210,
+   "D": 4
+  },
+  "timeseries|change_point|line_plot": {
+   "D": 107
+  },
+  "timeseries|change_point|heatmap": {
+   "D": 107
+  },
+  "timeseries|change_point|gaf": {
+   "D": 107
+  },
+  "timeseries|change_point|recurrence_plot": {
+   "D": 107
+  },
+  "timeseries|change_point|text_only": {
+   "A": 105,
+   "D": 2
+  },
+  "timeseries|value_lookup|line_plot": {
+   "V": 214
+  },
+  "timeseries|value_lookup|heatmap": {
+   "A": 214
+  },
+  "timeseries|value_lookup|gaf": {
+   "A": 214
+  },
+  "timeseries|value_lookup|recurrence_plot": {
+   "A": 214
+  },
+  "timeseries|value_lookup|text_only": {
+   "V": 109,
+   "A": 105
+  },
+  "timeseries|pattern_label_lookup|line_plot": {
+   "C": 107
+  },
+  "timeseries|pattern_label_lookup|heatmap": {
+   "C": 107
+  },
+  "timeseries|pattern_label_lookup|gaf": {
+   "C": 107
+  },
+  "timeseries|pattern_label_lookup|recurrence_plot": {
+   "C": 107
+  },
+  "timeseries|pattern_label_lookup|text_only": {
+   "C": 107
+  },
+  "timeseries|endpoint_comparison|line_plot": {
+   "D": 55
+  },
+  "timeseries|endpoint_comparison|heatmap": {
+   "D": 55
+  },
+  "timeseries|endpoint_comparison|gaf": {
+   "A": 55
+  },
+  "timeseries|endpoint_comparison|recurrence_plot": {
+   "A": 55
+  },
+  "timeseries|endpoint_comparison|text_only": {
+   "A": 54,
+   "D": 1
+  },
+  "timeseries|range_query|line_plot": {
+   "V": 107
+  },
+  "timeseries|range_query|heatmap": {
+   "A": 107
+  },
+  "timeseries|range_query|gaf": {
+   "A": 107
+  },
+  "timeseries|range_query|recurrence_plot": {
+   "A": 107
+  },
+  "timeseries|range_query|text_only": {
+   "A": 105,
+   "V": 2
+  },
+  "timeseries|volatility|line_plot": {
+   "D": 107
+  },
+  "timeseries|volatility|heatmap": {
+   "D": 107
+  },
+  "timeseries|volatility|gaf": {
+   "A": 107
+  },
+  "timeseries|volatility|recurrence_plot": {
+   "A": 107
+  },
+  "timeseries|volatility|text_only": {
+   "A": 105,
+   "D": 2
+  },
+  "timeseries|mean_half_comparison|line_plot": {
+   "D": 62
+  },
+  "timeseries|mean_half_comparison|heatmap": {
+   "D": 62
+  },
+  "timeseries|mean_half_comparison|gaf": {
+   "A": 62
+  },
+  "timeseries|mean_half_comparison|recurrence_plot": {
+   "A": 62
+  },
+  "timeseries|mean_half_comparison|text_only": {
+   "A": 61,
+   "D": 1
+  },
+  "timeseries|mean_shift_magnitude|line_plot": {
+   "V": 20
+  },
+  "timeseries|mean_shift_magnitude|heatmap": {
+   "A": 20
+  },
+  "timeseries|mean_shift_magnitude|gaf": {
+   "A": 20
+  },
+  "timeseries|mean_shift_magnitude|recurrence_plot": {
+   "A": 20
+  },
+  "timeseries|mean_shift_magnitude|text_only": {
+   "A": 20
+  },
+  "timeseries|threshold_count|line_plot": {
+   "V": 20
+  },
+  "timeseries|threshold_count|heatmap": {
+   "A": 20
+  },
+  "timeseries|threshold_count|gaf": {
+   "A": 20
+  },
+  "timeseries|threshold_count|recurrence_plot": {
+   "A": 20
+  },
+  "timeseries|threshold_count|text_only": {
+   "A": 20
+  },
+  "timeseries|median_mean_relation|line_plot": {
+   "V": 20
+  },
+  "timeseries|median_mean_relation|heatmap": {
+   "A": 20
+  },
+  "timeseries|median_mean_relation|gaf": {
+   "A": 20
+  },
+  "timeseries|median_mean_relation|recurrence_plot": {
+   "A": 20
+  },
+  "timeseries|median_mean_relation|text_only": {
+   "A": 20
+  },
+  "timeseries|change_volatility|line_plot": {
+   "D": 20
+  },
+  "timeseries|change_volatility|heatmap": {
+   "D": 20
+  },
+  "timeseries|change_volatility|gaf": {
+   "A": 20
+  },
+  "timeseries|change_volatility|recurrence_plot": {
+   "A": 20
+  },
+  "timeseries|change_volatility|text_only": {
+   "A": 20
+  },
+  "timeseries|oscillation_count|line_plot": {
+   "V": 10
+  },
+  "timeseries|oscillation_count|heatmap": {
+   "D": 10
+  },
+  "timeseries|oscillation_count|gaf": {
+   "A": 10
+  },
+  "timeseries|oscillation_count|recurrence_plot": {
+   "A": 10
+  },
+  "timeseries|oscillation_count|text_only": {
+   "A": 10
+  },
+  "timeseries|forecasting|line_plot": {
+   "V": 20
+  },
+  "timeseries|forecasting|heatmap": {
+   "A": 20
+  },
+  "timeseries|forecasting|gaf": {
+   "A": 20
+  },
+  "timeseries|forecasting|recurrence_plot": {
+   "A": 20
+  },
+  "timeseries|forecasting|text_only": {
+   "A": 20
+  },
+  "timeseries|anomaly_detection|line_plot": {
+   "D": 20
+  },
+  "timeseries|anomaly_detection|heatmap": {
+   "D": 20
+  },
+  "timeseries|anomaly_detection|gaf": {
+   "A": 20
+  },
+  "timeseries|anomaly_detection|recurrence_plot": {
+   "A": 20
+  },
+  "timeseries|anomaly_detection|text_only": {
+   "A": 20
+  },
+  "timeseries|split_trend_consistency|line_plot": {
+   "D": 20
+  },
+  "timeseries|split_trend_consistency|heatmap": {
+   "D": 20
+  },
+  "timeseries|split_trend_consistency|gaf": {
+   "A": 20
+  },
+  "timeseries|split_trend_consistency|recurrence_plot": {
+   "A": 20
+  },
+  "timeseries|split_trend_consistency|text_only": {
+   "A": 20
+  },
+  "timeseries|peak_trough_order|line_plot": {
+   "D": 20
+  },
+  "timeseries|peak_trough_order|heatmap": {
+   "D": 20
+  },
+  "timeseries|peak_trough_order|gaf": {
+   "A": 20
+  },
+  "timeseries|peak_trough_order|recurrence_plot": {
+   "A": 20
+  },
+  "timeseries|peak_trough_order|text_only": {
+   "A": 20
+  },
+  "timeseries|normalized_amplitude|line_plot": {
+   "V": 20
+  },
+  "timeseries|normalized_amplitude|heatmap": {
+   "A": 20
+  },
+  "timeseries|normalized_amplitude|gaf": {
+   "A": 20
+  },
+  "timeseries|normalized_amplitude|recurrence_plot": {
+   "A": 20
+  },
+  "timeseries|normalized_amplitude|text_only": {
+   "A": 20
+  },
+  "timeseries|half_change_intensity|line_plot": {
+   "D": 20
+  },
+  "timeseries|half_change_intensity|heatmap": {
+   "D": 20
+  },
+  "timeseries|half_change_intensity|gaf": {
+   "A": 20
+  },
+  "timeseries|half_change_intensity|recurrence_plot": {
+   "A": 20
+  },
+  "timeseries|half_change_intensity|text_only": {
+   "A": 20
+  },
+  "timeseries|pattern_classification|line_plot": {
+   "C": 20
+  },
+  "timeseries|pattern_classification|heatmap": {
+   "C": 20
+  },
+  "timeseries|pattern_classification|gaf": {
+   "C": 20
+  },
+  "timeseries|pattern_classification|recurrence_plot": {
+   "C": 20
+  },
+  "timeseries|pattern_classification|text_only": {
+   "C": 20
+  },
+  "timeseries|counterfactual_scale_peak|line_plot": {
+   "C": 20
+  },
+  "timeseries|counterfactual_scale_peak|heatmap": {
+   "C": 20
+  },
+  "timeseries|counterfactual_scale_peak|gaf": {
+   "C": 20
+  },
+  "timeseries|counterfactual_scale_peak|recurrence_plot": {
+   "C": 20
+  },
+  "timeseries|counterfactual_scale_peak|text_only": {
+   "C": 20
+  },
+  "timeseries|counterfactual_half_shift|line_plot": {
+   "D": 20
+  },
+  "timeseries|counterfactual_half_shift|heatmap": {
+   "A": 20
+  },
+  "timeseries|counterfactual_half_shift|gaf": {
+   "A": 20
+  },
+  "timeseries|counterfactual_half_shift|recurrence_plot": {
+   "A": 20
+  },
+  "timeseries|counterfactual_half_shift|text_only": {
+   "A": 20
+  },
+  "timeseries|local_peak_median_relation|line_plot": {
+   "V": 5
+  },
+  "timeseries|local_peak_median_relation|heatmap": {
+   "A": 5
+  },
+  "timeseries|local_peak_median_relation|gaf": {
+   "A": 5
+  },
+  "timeseries|local_peak_median_relation|recurrence_plot": {
+   "A": 5
+  },
+  "timeseries|local_peak_median_relation|text_only": {
+   "A": 5
+  },
+  "timeseries|counterfactual_sign_flip|line_plot": {
+   "C": 15
+  },
+  "timeseries|counterfactual_sign_flip|heatmap": {
+   "C": 15
+  },
+  "timeseries|counterfactual_sign_flip|gaf": {
+   "C": 15
+  },
+  "timeseries|counterfactual_sign_flip|recurrence_plot": {
+   "C": 15
+  },
+  "timeseries|counterfactual_sign_flip|text_only": {
+   "C": 15
+  },
+  "graph|connectivity|node_link": {
+   "C": 96
+  },
+  "graph|connectivity|circular_layout": {
+   "C": 96
+  },
+  "graph|connectivity|adjacency_matrix": {
+   "C": 96
+  },
+  "graph|connectivity|text_only": {
+   "C": 96
+  },
+  "graph|degree_query|node_link": {
+   "D": 23,
+   "A": 185
+  },
+  "graph|degree_query|circular_layout": {
+   "D": 23,
+   "A": 185
+  },
+  "graph|degree_query|adjacency_matrix": {
+   "D": 17,
+   "A": 191
+  },
+  "graph|degree_query|text_only": {
+   "V": 117,
+   "A": 91
+  },
+  "graph|edge_count|node_link": {
+   "D": 20
+  },
+  "graph|edge_count|circular_layout": {
+   "D": 20
+  },
+  "graph|edge_count|adjacency_matrix": {
+   "D": 20
+  },
+  "graph|edge_count|text_only": {
+   "D": 2,
+   "A": 18
+  },
+  "graph|shortest_path|node_link": {
+   "D": 6,
+   "A": 30
+  },
+  "graph|shortest_path|circular_layout": {
+   "D": 6,
+   "A": 30
+  },
+  "graph|shortest_path|adjacency_matrix": {
+   "D": 4,
+   "A": 32
+  },
+  "graph|shortest_path|text_only": {
+   "D": 3,
+   "A": 33
+  },
+  "graph|clustering|node_link": {
+   "D": 36
+  },
+  "graph|clustering|circular_layout": {
+   "D": 36
+  },
+  "graph|clustering|adjacency_matrix": {
+   "D": 36
+  },
+  "graph|clustering|text_only": {
+   "D": 3,
+   "A": 33
+  },
+  "graph|bipartite_check|node_link": {
+   "D": 20
+  },
+  "graph|bipartite_check|circular_layout": {
+   "D": 20
+  },
+  "graph|bipartite_check|adjacency_matrix": {
+   "D": 20
+  },
+  "graph|bipartite_check|text_only": {
+   "D": 2,
+   "A": 18
+  },
+  "graph|cycle_detection|node_link": {
+   "D": 20
+  },
+  "graph|cycle_detection|circular_layout": {
+   "D": 20
+  },
+  "graph|cycle_detection|adjacency_matrix": {
+   "D": 20
+  },
+  "graph|cycle_detection|text_only": {
+   "D": 2,
+   "A": 18
+  },
+  "graph|community|node_link": {
+   "D": 92
+  },
+  "graph|community|circular_layout": {
+   "D": 92
+  },
+  "graph|community|adjacency_matrix": {
+   "D": 92
+  },
+  "graph|community|text_only": {
+   "D": 8,
+   "A": 84
+  },
+  "graph|centrality|node_link": {
+   "D": 6,
+   "A": 30
+  },
+  "graph|centrality|circular_layout": {
+   "D": 6,
+   "A": 30
+  },
+  "graph|centrality|adjacency_matrix": {
+   "D": 4,
+   "A": 32
+  },
+  "graph|centrality|text_only": {
+   "D": 3,
+   "A": 33
+  },
+  "graph|diameter|node_link": {
+   "D": 20
+  },
+  "graph|diameter|circular_layout": {
+   "D": 20
+  },
+  "graph|diameter|adjacency_matrix": {
+   "D": 20
+  },
+  "graph|diameter|text_only": {
+   "D": 2,
+   "A": 18
+  },
+  "graph|counterfactual|node_link": {
+   "C": 36,
+   "D": 2,
+   "A": 38
+  },
+  "graph|counterfactual|circular_layout": {
+   "C": 36,
+   "D": 2,
+   "A": 38
+  },
+  "graph|counterfactual|adjacency_matrix": {
+   "C": 36,
+   "D": 2,
+   "A": 38
+  },
+  "graph|counterfactual|text_only": {
+   "C": 36,
+   "D": 4,
+   "A": 36
+  }
+ },
+ "category_fractions": {
+  "tabular": {
+   "n_pairs": 8825,
+   "V": 15.818696883852692,
+   "D": 27.3314447592068,
+   "A": 56.84985835694051,
+   "C": 0.0
+  },
+  "timeseries": {
+   "n_pairs": 6850,
+   "V": 7.985401459854015,
+   "D": 28.817518248175183,
+   "A": 51.372262773722625,
+   "C": 11.824817518248175
+  },
+  "graph": {
+   "n_pairs": 2640,
+   "V": 4.431818181818182,
+   "D": 28.560606060606062,
+   "A": 47.00757575757576,
+   "C": 20.0
+  }
+ },
+ "em_by_category": {
+  "GPT-4o|tabular": {
+   "table_image": {
+    "VD": {
+     "em": 70.31118587047939,
+     "n": 1189
+    },
+    "A": {
+     "em": 37.15277777777778,
+     "n": 576
+    },
+    "C": {
+     "em": NaN,
+     "n": 0
+    }
+   },
+   "text_only": {
+    "VD": {
+     "em": 68.25910931174089,
+     "n": 1235
+    },
+    "A": {
+     "em": 32.64150943396226,
+     "n": 530
+    },
+    "C": {
+     "em": NaN,
+     "n": 0
+    }
+   },
+   "heatmap": {
+    "VD": {
+     "em": 74.08568443051202,
+     "n": 957
+    },
+    "A": {
+     "em": 7.5495049504950495,
+     "n": 808
+    },
+    "C": {
+     "em": NaN,
+     "n": 0
+    }
+   },
+   "bar_chart": {
+    "VD": {
+     "em": 83.0423940149626,
+     "n": 401
+    },
+    "A": {
+     "em": 5.058651026392962,
+     "n": 1364
+    },
+    "C": {
+     "em": NaN,
+     "n": 0
+    }
+   },
+   "scatter_plot": {
+    "VD": {
+     "em": 0.0,
+     "n": 26
+    },
+    "A": {
+     "em": 23.92179413456009,
+     "n": 1739
+    },
+    "C": {
+     "em": NaN,
+     "n": 0
+    }
+   }
+  },
+  "GPT-4o|timeseries": {
+   "line_plot": {
+    "VD": {
+     "em": 26.73841059602649,
+     "n": 1208
+    },
+    "A": {
+     "em": NaN,
+     "n": 0
+    },
+    "C": {
+     "em": 33.95061728395062,
+     "n": 162
+    }
+   },
+   "heatmap": {
+    "VD": {
+     "em": 19.94750656167979,
+     "n": 762
+    },
+    "A": {
+     "em": 10.538116591928251,
+     "n": 446
+    },
+    "C": {
+     "em": 33.333333333333336,
+     "n": 162
+    }
+   },
+   "gaf": {
+    "VD": {
+     "em": 4.672897196261682,
+     "n": 214
+    },
+    "A": {
+     "em": 17.20321931589537,
+     "n": 994
+    },
+    "C": {
+     "em": 33.333333333333336,
+     "n": 162
+    }
+   },
+   "recurrence_plot": {
+    "VD": {
+     "em": 6.074766355140187,
+     "n": 214
+    },
+    "A": {
+     "em": 9.859154929577464,
+     "n": 994
+    },
+    "C": {
+     "em": 17.28395061728395,
+     "n": 162
+    }
+   },
+   "text_only": {
+    "VD": {
+     "em": 79.67479674796748,
+     "n": 123
+    },
+    "A": {
+     "em": 31.152073732718893,
+     "n": 1085
+    },
+    "C": {
+     "em": 33.95061728395062,
+     "n": 162
+    }
+   }
+  },
+  "GPT-4o|graph": {
+   "node_link": {
+    "VD": {
+     "em": 47.3469387755102,
+     "n": 245
+    },
+    "A": {
+     "em": 21.554770318021202,
+     "n": 283
+    },
+    "C": {
+     "em": 84.0909090909091,
+     "n": 132
+    }
+   },
+   "circular_layout": {
+    "VD": {
+     "em": 42.857142857142854,
+     "n": 245
+    },
+    "A": {
+     "em": 20.141342756183747,
+     "n": 283
+    },
+    "C": {
+     "em": 83.33333333333333,
+     "n": 132
+    }
+   },
+   "adjacency_matrix": {
+    "VD": {
+     "em": 34.04255319148936,
+     "n": 235
+    },
+    "A": {
+     "em": 19.795221843003414,
+     "n": 293
+    },
+    "C": {
+     "em": 62.121212121212125,
+     "n": 132
+    }
+   },
+   "text_only": {
+    "VD": {
+     "em": 73.28767123287672,
+     "n": 146
+    },
+    "A": {
+     "em": 40.575916230366495,
+     "n": 382
+    },
+    "C": {
+     "em": 83.33333333333333,
+     "n": 132
+    }
+   }
+  },
+  "Gemini Flash|tabular": {
+   "table_image": {
+    "VD": {
+     "em": 71.9932716568545,
+     "n": 1189
+    },
+    "A": {
+     "em": 36.28472222222222,
+     "n": 576
+    },
+    "C": {
+     "em": NaN,
+     "n": 0
+    }
+   },
+   "text_only": {
+    "VD": {
+     "em": 70.12145748987854,
+     "n": 1235
+    },
+    "A": {
+     "em": 40.18867924528302,
+     "n": 530
+    },
+    "C": {
+     "em": NaN,
+     "n": 0
+    }
+   },
+   "heatmap": {
+    "VD": {
+     "em": 76.07105538140021,
+     "n": 957
+    },
+    "A": {
+     "em": 7.5495049504950495,
+     "n": 808
+    },
+    "C": {
+     "em": NaN,
+     "n": 0
+    }
+   },
+   "bar_chart": {
+    "VD": {
+     "em": 82.29426433915212,
+     "n": 401
+    },
+    "A": {
+     "em": 8.211143695014663,
+     "n": 1364
+    },
+    "C": {
+     "em": NaN,
+     "n": 0
+    }
+   },
+   "scatter_plot": {
+    "VD": {
+     "em": 3.8461538461538463,
+     "n": 26
+    },
+    "A": {
+     "em": 20.87406555491662,
+     "n": 1739
+    },
+    "C": {
+     "em": NaN,
+     "n": 0
+    }
+   }
+  },
+  "Gemini Flash|timeseries": {
+   "line_plot": {
+    "VD": {
+     "em": 32.86423841059602,
+     "n": 1208
+    },
+    "A": {
+     "em": NaN,
+     "n": 0
+    },
+    "C": {
+     "em": 33.95061728395062,
+     "n": 162
+    }
+   },
+   "heatmap": {
+    "VD": {
+     "em": 30.57742782152231,
+     "n": 762
+    },
+    "A": {
+     "em": 11.883408071748878,
+     "n": 446
+    },
+    "C": {
+     "em": 33.95061728395062,
+     "n": 162
+    }
+   },
+   "gaf": {
+    "VD": {
+     "em": 4.672897196261682,
+     "n": 214
+    },
+    "A": {
+     "em": 20.321931589537222,
+     "n": 994
+    },
+    "C": {
+     "em": 33.95061728395062,
+     "n": 162
+    }
+   },
+   "recurrence_plot": {
+    "VD": {
+     "em": 9.813084112149532,
+     "n": 214
+    },
+    "A": {
+     "em": 19.919517102615693,
+     "n": 994
+    },
+    "C": {
+     "em": 31.48148148148148,
+     "n": 162
+    }
+   },
+   "text_only": {
+    "VD": {
+     "em": 81.30081300813008,
+     "n": 123
+    },
+    "A": {
+     "em": 34.56221198156682,
+     "n": 1085
+    },
+    "C": {
+     "em": 33.95061728395062,
+     "n": 162
+    }
+   }
+  },
+  "Gemini Flash|graph": {
+   "node_link": {
+    "VD": {
+     "em": 43.265306122448976,
+     "n": 245
+    },
+    "A": {
+     "em": 14.840989399293287,
+     "n": 283
+    },
+    "C": {
+     "em": 66.66666666666667,
+     "n": 132
+    }
+   },
+   "circular_layout": {
+    "VD": {
+     "em": 39.59183673469388,
+     "n": 245
+    },
+    "A": {
+     "em": 16.607773851590107,
+     "n": 283
+    },
+    "C": {
+     "em": 71.96969696969697,
+     "n": 132
+    }
+   },
+   "adjacency_matrix": {
+    "VD": {
+     "em": 37.02127659574468,
+     "n": 235
+    },
+    "A": {
+     "em": 19.112627986348123,
+     "n": 293
+    },
+    "C": {
+     "em": 50.75757575757576,
+     "n": 132
+    }
+   },
+   "text_only": {
+    "VD": {
+     "em": 78.08219178082192,
+     "n": 146
+    },
+    "A": {
+     "em": 39.26701570680628,
+     "n": 382
+    },
+    "C": {
+     "em": 67.42424242424242,
+     "n": 132
+    }
+   }
+  },
+  "Qwen2.5-VL-7B|tabular": {
+   "table_image": {
+    "VD": {
+     "em": 64.17157275021026,
+     "n": 1189
+    },
+    "A": {
+     "em": 34.72222222222222,
+     "n": 576
+    },
+    "C": {
+     "em": NaN,
+     "n": 0
+    }
+   },
+   "text_only": {
+    "VD": {
+     "em": 54.493927125506076,
+     "n": 1235
+    },
+    "A": {
+     "em": 36.22641509433962,
+     "n": 530
+    },
+    "C": {
+     "em": NaN,
+     "n": 0
+    }
+   },
+   "heatmap": {
+    "VD": {
+     "em": 69.90595611285266,
+     "n": 957
+    },
+    "A": {
+     "em": 8.292079207920793,
+     "n": 808
+    },
+    "C": {
+     "em": NaN,
+     "n": 0
+    }
+   },
+   "bar_chart": {
+    "VD": {
+     "em": 84.53865336658355,
+     "n": 401
+    },
+    "A": {
+     "em": 8.72434017595308,
+     "n": 1364
+    },
+    "C": {
+     "em": NaN,
+     "n": 0
+    }
+   },
+   "scatter_plot": {
+    "VD": {
+     "em": 0.0,
+     "n": 26
+    },
+    "A": {
+     "em": 17.768832662449682,
+     "n": 1739
+    },
+    "C": {
+     "em": NaN,
+     "n": 0
+    }
+   }
+  },
+  "Qwen2.5-VL-7B|timeseries": {
+   "line_plot": {
+    "VD": {
+     "em": 26.40728476821192,
+     "n": 1208
+    },
+    "A": {
+     "em": NaN,
+     "n": 0
+    },
+    "C": {
+     "em": 33.95061728395062,
+     "n": 162
+    }
+   },
+   "heatmap": {
+    "VD": {
+     "em": 22.440944881889763,
+     "n": 762
+    },
+    "A": {
+     "em": 13.90134529147982,
+     "n": 446
+    },
+    "C": {
+     "em": 33.95061728395062,
+     "n": 162
+    }
+   },
+   "gaf": {
+    "VD": {
+     "em": 23.83177570093458,
+     "n": 214
+    },
+    "A": {
+     "em": 18.611670020120723,
+     "n": 994
+    },
+    "C": {
+     "em": 33.95061728395062,
+     "n": 162
+    }
+   },
+   "recurrence_plot": {
+    "VD": {
+     "em": 7.009345794392523,
+     "n": 214
+    },
+    "A": {
+     "em": 19.41649899396378,
+     "n": 994
+    },
+    "C": {
+     "em": 33.95061728395062,
+     "n": 162
+    }
+   },
+   "text_only": {
+    "VD": {
+     "em": 79.67479674796748,
+     "n": 123
+    },
+    "A": {
+     "em": 29.032258064516128,
+     "n": 1085
+    },
+    "C": {
+     "em": 22.839506172839506,
+     "n": 162
+    }
+   }
+  },
+  "Qwen2.5-VL-7B|graph": {
+   "node_link": {
+    "VD": {
+     "em": 33.87755102040816,
+     "n": 245
+    },
+    "A": {
+     "em": 10.60070671378092,
+     "n": 283
+    },
+    "C": {
+     "em": 95.45454545454545,
+     "n": 132
+    }
+   },
+   "circular_layout": {
+    "VD": {
+     "em": 28.571428571428573,
+     "n": 245
+    },
+    "A": {
+     "em": 9.89399293286219,
+     "n": 283
+    },
+    "C": {
+     "em": 95.45454545454545,
+     "n": 132
+    }
+   },
+   "adjacency_matrix": {
+    "VD": {
+     "em": 29.78723404255319,
+     "n": 235
+    },
+    "A": {
+     "em": 11.945392491467576,
+     "n": 293
+    },
+    "C": {
+     "em": 61.36363636363637,
+     "n": 132
+    }
+   },
+   "text_only": {
+    "VD": {
+     "em": 57.534246575342465,
+     "n": 146
+    },
+    "A": {
+     "em": 30.89005235602094,
+     "n": 382
+    },
+    "C": {
+     "em": 62.121212121212125,
+     "n": 132
+    }
+   }
+  },
+  "Claude Sonnet|tabular": {
+   "table_image": {
+    "VD": {
+     "em": 57.695542472666105,
+     "n": 1189
+    },
+    "A": {
+     "em": 17.36111111111111,
+     "n": 576
+    },
+    "C": {
+     "em": NaN,
+     "n": 0
+    }
+   },
+   "text_only": {
+    "VD": {
+     "em": 45.020242914979754,
+     "n": 1235
+    },
+    "A": {
+     "em": 16.60377358490566,
+     "n": 530
+    },
+    "C": {
+     "em": NaN,
+     "n": 0
+    }
+   },
+   "heatmap": {
+    "VD": {
+     "em": 61.337513061650995,
+     "n": 957
+    },
+    "A": {
+     "em": 3.4653465346534653,
+     "n": 808
+    },
+    "C": {
+     "em": NaN,
+     "n": 0
+    }
+   },
+   "bar_chart": {
+    "VD": {
+     "em": 61.596009975062344,
+     "n": 401
+    },
+    "A": {
+     "em": 6.3049853372434015,
+     "n": 1364
+    },
+    "C": {
+     "em": NaN,
+     "n": 0
+    }
+   },
+   "scatter_plot": {
+    "VD": {
+     "em": 0.0,
+     "n": 26
+    },
+    "A": {
+     "em": 16.3887291546866,
+     "n": 1739
+    },
+    "C": {
+     "em": NaN,
+     "n": 0
+    }
+   }
+  },
+  "Claude Sonnet|timeseries": {
+   "line_plot": {
+    "VD": {
+     "em": 21.93708609271523,
+     "n": 1208
+    },
+    "A": {
+     "em": NaN,
+     "n": 0
+    },
+    "C": {
+     "em": 33.333333333333336,
+     "n": 162
+    }
+   },
+   "heatmap": {
+    "VD": {
+     "em": 19.816272965879264,
+     "n": 762
+    },
+    "A": {
+     "em": 6.278026905829597,
+     "n": 446
+    },
+    "C": {
+     "em": 33.333333333333336,
+     "n": 162
+    }
+   },
+   "gaf": {
+    "VD": {
+     "em": 4.672897196261682,
+     "n": 214
+    },
+    "A": {
+     "em": 12.877263581488934,
+     "n": 994
+    },
+    "C": {
+     "em": 33.95061728395062,
+     "n": 162
+    }
+   },
+   "recurrence_plot": {
+    "VD": {
+     "em": 4.205607476635514,
+     "n": 214
+    },
+    "A": {
+     "em": 10.060362173038229,
+     "n": 994
+    },
+    "C": {
+     "em": 28.395061728395063,
+     "n": 162
+    }
+   },
+   "text_only": {
+    "VD": {
+     "em": 79.67479674796748,
+     "n": 123
+    },
+    "A": {
+     "em": 15.576036866359447,
+     "n": 1085
+    },
+    "C": {
+     "em": 21.604938271604937,
+     "n": 162
+    }
+   }
+  },
+  "Claude Sonnet|graph": {
+   "node_link": {
+    "VD": {
+     "em": 37.142857142857146,
+     "n": 245
+    },
+    "A": {
+     "em": 17.314487632508833,
+     "n": 283
+    },
+    "C": {
+     "em": 68.18181818181819,
+     "n": 132
+    }
+   },
+   "circular_layout": {
+    "VD": {
+     "em": 29.79591836734694,
+     "n": 245
+    },
+    "A": {
+     "em": 21.908127208480565,
+     "n": 283
+    },
+    "C": {
+     "em": 87.12121212121212,
+     "n": 132
+    }
+   },
+   "adjacency_matrix": {
+    "VD": {
+     "em": 31.914893617021278,
+     "n": 235
+    },
+    "A": {
+     "em": 22.525597269624573,
+     "n": 293
+    },
+    "C": {
+     "em": 75.75757575757575,
+     "n": 132
+    }
+   },
+   "text_only": {
+    "VD": {
+     "em": 67.12328767123287,
+     "n": 146
+    },
+    "A": {
+     "em": 33.246073298429316,
+     "n": 382
+    },
+    "C": {
+     "em": 77.27272727272727,
+     "n": 132
+    }
+   }
+  }
+ },
+ "fully_answerable": {
+  "GPT-4o|timeseries": {
+   "n": 4,
+   "per_format": {
+    "line_plot": 50.0,
+    "heatmap": 0.0,
+    "gaf": 0.0,
+    "recurrence_plot": 0.0,
+    "text_only": 50.0
+   },
+   "best": "line_plot",
+   "worst": "heatmap",
+   "gap": 50.0,
+   "p": 0.5018498150184981,
+   "p_bonf12": 1.0,
+   "sig_bonf12_p<0.01": false
+  },
+  "Gemini Flash|timeseries": {
+   "n": 4,
+   "per_format": {
+    "line_plot": 25.0,
+    "heatmap": 0.0,
+    "gaf": 0.0,
+    "recurrence_plot": 25.0,
+    "text_only": 25.0
+   },
+   "best": "line_plot",
+   "worst": "heatmap",
+   "gap": 25.0,
+   "p": 1.0,
+   "p_bonf12": 1.0,
+   "sig_bonf12_p<0.01": false
+  },
+  "Qwen2.5-VL-7B|timeseries": {
+   "n": 4,
+   "per_format": {
+    "line_plot": 50.0,
+    "heatmap": 50.0,
+    "gaf": 25.0,
+    "recurrence_plot": 0.0,
+    "text_only": 25.0
+   },
+   "best": "line_plot",
+   "worst": "recurrence_plot",
+   "gap": 50.0,
+   "p": 0.5018498150184981,
+   "p_bonf12": 1.0,
+   "sig_bonf12_p<0.01": false
+  },
+  "Claude Sonnet|timeseries": {
+   "n": 4,
+   "per_format": {
+    "line_plot": 0.0,
+    "heatmap": 0.0,
+    "gaf": 0.0,
+    "recurrence_plot": 0.0,
+    "text_only": 0.0
+   },
+   "best": "line_plot",
+   "worst": "line_plot",
+   "gap": 0.0,
+   "p": 1.0,
+   "p_bonf12": 1.0,
+   "sig_bonf12_p<0.01": false
+  },
+  "GPT-4o|graph": {
+   "n": 40,
+   "per_format": {
+    "node_link": 50.0,
+    "circular_layout": 47.5,
+    "adjacency_matrix": 37.5,
+    "text_only": 60.0
+   },
+   "best": "text_only",
+   "worst": "adjacency_matrix",
+   "gap": 22.5,
+   "p": 0.013398660133986601,
+   "p_bonf12": 0.16078392160783922,
+   "sig_bonf12_p<0.01": false
+  },
+  "Gemini Flash|graph": {
+   "n": 40,
+   "per_format": {
+    "node_link": 42.5,
+    "circular_layout": 42.5,
+    "adjacency_matrix": 47.5,
+    "text_only": 65.0
+   },
+   "best": "text_only",
+   "worst": "node_link",
+   "gap": 22.5,
+   "p": 0.0244975502449755,
+   "p_bonf12": 0.293970602939706,
+   "sig_bonf12_p<0.01": false
+  },
+  "Qwen2.5-VL-7B|graph": {
+   "n": 40,
+   "per_format": {
+    "node_link": 37.5,
+    "circular_layout": 25.0,
+    "adjacency_matrix": 30.0,
+    "text_only": 40.0
+   },
+   "best": "text_only",
+   "worst": "circular_layout",
+   "gap": 15.0,
+   "p": 0.07139286071392861,
+   "p_bonf12": 0.8567143285671434,
+   "sig_bonf12_p<0.01": false
+  },
+  "Claude Sonnet|graph": {
+   "n": 40,
+   "per_format": {
+    "node_link": 37.5,
+    "circular_layout": 25.0,
+    "adjacency_matrix": 37.5,
+    "text_only": 50.0
+   },
+   "best": "text_only",
+   "worst": "circular_layout",
+   "gap": 25.0,
+   "p": 0.031996800319968,
+   "p_bonf12": 0.38396160383961603,
+   "sig_bonf12_p<0.01": false
+  }
+ },
+ "fully_answerable_nsig": 0,
+ "best_worst_answerable": {
+  "GPT-4o|tabular": {
+   "best_full": "table_image",
+   "worst_full": "bar_chart",
+   "gap_full": 36.713881019830026,
+   "n": 259,
+   "per_format": {
+    "table_image": 84.16988416988417,
+    "text_only": 81.85328185328186,
+    "heatmap": 86.48648648648648,
+    "bar_chart": 86.48648648648648,
+    "scatter_plot": 75.2895752895753
+   },
+   "gap_subset": -2.3166023166023137,
+   "p": 0.412958704129587,
+   "p_bonf12": 1.0,
+   "sig_bonf12_p<0.01": false
+  },
+  "Gemini Flash|tabular": {
+   "best_full": "text_only",
+   "worst_full": "scatter_plot",
+   "gap_full": 40.50991501416431,
+   "n": 4,
+   "per_format": {
+    "table_image": 0.0,
+    "text_only": 0.0,
+    "heatmap": 0.0,
+    "bar_chart": 0.0,
+    "scatter_plot": 0.0
+   },
+   "gap_subset": 0.0,
+   "p": 1.0,
+   "p_bonf12": 1.0,
+   "sig_bonf12_p<0.01": false
+  },
+  "Qwen2.5-VL-7B|tabular": {
+   "best_full": "table_image",
+   "worst_full": "scatter_plot",
+   "gap_full": 37.053824362606235,
+   "n": 4,
+   "per_format": {
+    "table_image": 25.0,
+    "text_only": 25.0,
+    "heatmap": 50.0,
+    "bar_chart": 0.0,
+    "scatter_plot": 0.0
+   },
+   "gap_subset": 25.0,
+   "p": 1.0,
+   "p_bonf12": 1.0,
+   "sig_bonf12_p<0.01": false
+  },
+  "Claude Sonnet|tabular": {
+   "best_full": "table_image",
+   "worst_full": "scatter_plot",
+   "gap_full": 28.38526912181303,
+   "n": 4,
+   "per_format": {
+    "table_image": 0.0,
+    "text_only": 0.0,
+    "heatmap": 0.0,
+    "bar_chart": 0.0,
+    "scatter_plot": 0.0
+   },
+   "gap_subset": 0.0,
+   "p": 1.0,
+   "p_bonf12": 1.0,
+   "sig_bonf12_p<0.01": false
+  },
+  "GPT-4o|timeseries": {
+   "best_full": "text_only",
+   "worst_full": "recurrence_plot",
+   "gap_full": 25.69343065693431,
+   "n": 4,
+   "per_format": {
+    "line_plot": 50.0,
+    "heatmap": 0.0,
+    "gaf": 0.0,
+    "recurrence_plot": 0.0,
+    "text_only": 50.0
+   },
+   "gap_subset": 50.0,
+   "p": 0.5018498150184981,
+   "p_bonf12": 1.0,
+   "sig_bonf12_p<0.01": false
+  },
+  "Gemini Flash|timeseries": {
+   "best_full": "text_only",
+   "worst_full": "gaf",
+   "gap_full": 19.197080291970803,
+   "n": 4,
+   "per_format": {
+    "line_plot": 25.0,
+    "heatmap": 0.0,
+    "gaf": 0.0,
+    "recurrence_plot": 25.0,
+    "text_only": 25.0
+   },
+   "gap_subset": 25.0,
+   "p": 1.0,
+   "p_bonf12": 1.0,
+   "sig_bonf12_p<0.01": false
+  },
+  "Qwen2.5-VL-7B|timeseries": {
+   "best_full": "text_only",
+   "worst_full": "recurrence_plot",
+   "gap_full": 13.649635036496353,
+   "n": 4,
+   "per_format": {
+    "line_plot": 50.0,
+    "heatmap": 50.0,
+    "gaf": 25.0,
+    "recurrence_plot": 0.0,
+    "text_only": 25.0
+   },
+   "gap_subset": 25.0,
+   "p": 1.0,
+   "p_bonf12": 1.0,
+   "sig_bonf12_p<0.01": false
+  },
+  "Claude Sonnet|timeseries": {
+   "best_full": "line_plot",
+   "worst_full": "recurrence_plot",
+   "gap_full": 11.97080291970803,
+   "n": 214,
+   "per_format": {
+    "line_plot": 5.140186915887851,
+    "heatmap": 5.140186915887851,
+    "gaf": 4.672897196261682,
+    "recurrence_plot": 4.205607476635514,
+    "text_only": 7.94392523364486
+   },
+   "gap_subset": 0.934579439252337,
+   "p": 0.6194380561943805,
+   "p_bonf12": 1.0,
+   "sig_bonf12_p<0.01": false
+  },
+  "GPT-4o|graph": {
+   "best_full": "text_only",
+   "worst_full": "adjacency_matrix",
+   "gap_full": 23.03030303030303,
+   "n": 40,
+   "per_format": {
+    "node_link": 50.0,
+    "circular_layout": 47.5,
+    "adjacency_matrix": 37.5,
+    "text_only": 60.0
+   },
+   "gap_subset": 22.5,
+   "p": 0.013398660133986601,
+   "p_bonf12": 0.16078392160783922,
+   "sig_bonf12_p<0.01": false
+  },
+  "Gemini Flash|graph": {
+   "best_full": "text_only",
+   "worst_full": "adjacency_matrix",
+   "gap_full": 21.666666666666668,
+   "n": 40,
+   "per_format": {
+    "node_link": 42.5,
+    "circular_layout": 42.5,
+    "adjacency_matrix": 47.5,
+    "text_only": 65.0
+   },
+   "gap_subset": 17.5,
+   "p": 0.09559044095590441,
+   "p_bonf12": 1.0,
+   "sig_bonf12_p<0.01": false
+  },
+  "Qwen2.5-VL-7B|graph": {
+   "best_full": "text_only",
+   "worst_full": "adjacency_matrix",
+   "gap_full": 14.848484848484848,
+   "n": 40,
+   "per_format": {
+    "node_link": 37.5,
+    "circular_layout": 25.0,
+    "adjacency_matrix": 30.0,
+    "text_only": 40.0
+   },
+   "gap_subset": 10.0,
+   "p": 0.294970502949705,
+   "p_bonf12": 1.0,
+   "sig_bonf12_p<0.01": false
+  },
+  "Claude Sonnet|graph": {
+   "best_full": "text_only",
+   "worst_full": "node_link",
+   "gap_full": 14.696969696969695,
+   "n": 43,
+   "per_format": {
+    "node_link": 37.2093023255814,
+    "circular_layout": 25.58139534883721,
+    "adjacency_matrix": 37.2093023255814,
+    "text_only": 53.48837209302326
+   },
+   "gap_subset": 16.27906976744186,
+   "p": 0.09559044095590441,
+   "p_bonf12": 1.0,
+   "sig_bonf12_p<0.01": false
+  }
+ },
+ "best_worst_answerable_nsig": 0,
+ "flip_rate_fully_answerable": {
+  "GPT-4o|tabular": {
+   "n": 0,
+   "flip_rate": NaN,
+   "flip_rate_full_sample": 61.41643059490085
+  },
+  "GPT-4o|timeseries": {
+   "n": 4,
+   "flip_rate": 50.0,
+   "flip_rate_full_sample": 40.72992700729927
+  },
+  "GPT-4o|graph": {
+   "n": 40,
+   "flip_rate": 45.0,
+   "flip_rate_full_sample": 44.54545454545455
+  },
+  "Gemini Flash|tabular": {
+   "n": 0,
+   "flip_rate": NaN,
+   "flip_rate_full_sample": 67.36543909348443
+  },
+  "Gemini Flash|timeseries": {
+   "n": 4,
+   "flip_rate": 50.0,
+   "flip_rate_full_sample": 45.32846715328467
+  },
+  "Gemini Flash|graph": {
+   "n": 40,
+   "flip_rate": 47.5,
+   "flip_rate_full_sample": 47.27272727272727
+  },
+  "Qwen2.5-VL-7B|tabular": {
+   "n": 0,
+   "flip_rate": NaN,
+   "flip_rate_full_sample": 60.05665722379604
+  },
+  "Qwen2.5-VL-7B|timeseries": {
+   "n": 4,
+   "flip_rate": 50.0,
+   "flip_rate_full_sample": 32.262773722627735
+  },
+  "Qwen2.5-VL-7B|graph": {
+   "n": 40,
+   "flip_rate": 37.5,
+   "flip_rate_full_sample": 32.57575757575758
+  },
+  "Claude Sonnet|tabular": {
+   "n": 0,
+   "flip_rate": NaN,
+   "flip_rate_full_sample": 58.35694050991501
+  },
+  "Claude Sonnet|timeseries": {
+   "n": 4,
+   "flip_rate": 0.0,
+   "flip_rate_full_sample": 31.094890510948904
+  },
+  "Claude Sonnet|graph": {
+   "n": 40,
+   "flip_rate": 52.5,
+   "flip_rate_full_sample": 43.333333333333336
+  }
+ },
+ "tabular_visible_vs_table": {
+  "GPT-4o|bar_chart": {
+   "n": 255,
+   "em_format": 95.68627450980392,
+   "em_table_image": 81.17647058823529,
+   "table_image_categories": {
+    "A": 78,
+    "D": 177
+   }
+  },
+  "Gemini Flash|bar_chart": {
+   "n": 255,
+   "em_format": 94.90196078431373,
+   "em_table_image": 82.3529411764706,
+   "table_image_categories": {
+    "A": 78,
+    "D": 177
+   }
+  },
+  "Qwen2.5-VL-7B|bar_chart": {
+   "n": 255,
+   "em_format": 96.86274509803921,
+   "em_table_image": 74.50980392156863,
+   "table_image_categories": {
+    "A": 78,
+    "D": 177
+   }
+  },
+  "Claude Sonnet|bar_chart": {
+   "n": 255,
+   "em_format": 63.529411764705884,
+   "em_table_image": 24.313725490196077,
+   "table_image_categories": {
+    "A": 78,
+    "D": 177
+   }
+  },
+  "GPT-4o|scatter_plot": {
+   "n": 26,
+   "em_format": 0.0,
+   "em_table_image": 0.0,
+   "table_image_categories": {
+    "A": 22,
+    "D": 4
+   }
+  },
+  "Gemini Flash|scatter_plot": {
+   "n": 26,
+   "em_format": 3.8461538461538463,
+   "em_table_image": 0.0,
+   "table_image_categories": {
+    "A": 22,
+    "D": 4
+   }
+  },
+  "Qwen2.5-VL-7B|scatter_plot": {
+   "n": 26,
+   "em_format": 0.0,
+   "em_table_image": 15.384615384615385,
+   "table_image_categories": {
+    "A": 22,
+    "D": 4
+   }
+  },
+  "Claude Sonnet|scatter_plot": {
+   "n": 26,
+   "em_format": 0.0,
+   "em_table_image": 0.0,
+   "table_image_categories": {
+    "A": 22,
+    "D": 4
+   }
+  }
+ }
+}

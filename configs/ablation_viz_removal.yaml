@@ -1,0 +1,30 @@
+# Ablation: Evaluate with one visualization type removed at a time
+# Purpose: Measure how much each viz type contributes to the sensitivity signal
+# Run: python scripts/run_fullscale_eval.py --config configs/ablation_viz_removal.yaml
+
+ablation_type: viz_removal
+description: "Leave-one-out ablation over visualization types"
+
+# For each modality, systematically exclude one viz type and re-evaluate
+tabular_viz_types:
+  - bar_chart
+  - heatmap
+  - scatter_plot
+  - table_image
+  - text_only
+
+timeseries_viz_types:
+  - gaf
+  - heatmap
+  - line_plot
+  - recurrence_plot
+  - text_only
+
+graph_viz_types:
+  - adjacency_matrix
+  - circular_layout
+  - node_link
+  - text_only
+
+# Each ablation run excludes one viz type per modality
+# Total runs per model: 5 + 5 + 4 = 14 ablation conditions

@@ -1,0 +1,2961 @@
+{
+ "per_style": {
+  "GPT-4o": {
+   "minimal": {
+    "1-hop": {
+     "n": 1000,
+     "em": 15.5,
+     "wrong_type": 27.5,
+     "em_right_type": 21.379310344827587,
+     "n_right_type": 725,
+     "n_questions": 205
+    },
+    "2-hop": {
+     "n": 718,
+     "em": 30.08356545961003,
+     "wrong_type": 23.955431754874652,
+     "em_right_type": 39.56043956043956,
+     "n_right_type": 546,
+     "n_questions": 149
+    },
+    "3-hop": {
+     "n": 415,
+     "em": 9.879518072289157,
+     "wrong_type": 40.48192771084337,
+     "em_right_type": 16.59919028340081,
+     "n_right_type": 247,
+     "n_questions": 87
+    },
+    "counterfactual": {
+     "n": 280,
+     "em": 18.928571428571427,
+     "wrong_type": 52.142857142857146,
+     "em_right_type": 39.55223880597015,
+     "n_right_type": 134,
+     "n_questions": 59
+    },
+    "overall": {
+     "n": 2413,
+     "em": 19.2706174886034,
+     "wrong_type": 31.537505180273513,
+     "em_right_type": 28.14769975786925,
+     "n_right_type": 1652,
+     "n_questions": 500
+    },
+    "per_format": {
+     "graph|adjacency_matrix": {
+      "n": 87,
+      "em": 17.24137931034483,
+      "wrong_type": 17.241379310344826,
+      "em_right_type": 20.833333333333332
+     },
+     "graph|circular_layout": {
+      "n": 87,
+      "em": 21.839080459770116,
+      "wrong_type": 34.48275862068965,
+      "em_right_type": 33.333333333333336
+     },
+     "graph|node_link": {
+      "n": 87,
+      "em": 22.988505747126435,
+      "wrong_type": 33.33333333333333,
+      "em_right_type": 34.48275862068966
+     },
+     "graph|text_only": {
+      "n": 87,
+      "em": 39.08045977011494,
+      "wrong_type": 14.94252873563218,
+      "em_right_type": 45.945945945945944
+     },
+     "tabular|bar_chart": {
+      "n": 233,
+      "em": 12.017167381974248,
+      "wrong_type": 34.33476394849785,
+      "em_right_type": 18.30065359477124
+     },
+     "tabular|heatmap": {
+      "n": 233,
+      "em": 30.472103004291846,
+      "wrong_type": 19.742489270386272,
+      "em_right_type": 37.967914438502675
+     },
+     "tabular|scatter_plot": {
+      "n": 233,
+      "em": 10.729613733905579,
+      "wrong_type": 42.06008583690987,
+      "em_right_type": 18.51851851851852
+     },
+     "tabular|table_image": {
+      "n": 233,
+      "em": 30.042918454935624,
+      "wrong_type": 14.592274678111593,
+      "em_right_type": 35.175879396984925
+     },
+     "tabular|text_only": {
+      "n": 233,
+      "em": 30.901287553648068,
+      "wrong_type": 16.30901287553648,
+      "em_right_type": 36.92307692307692
+     },
+     "timeseries|gaf": {
+      "n": 180,
+      "em": 5.0,
+      "wrong_type": 61.111111111111114,
+      "em_right_type": 12.857142857142858
+     },
+     "timeseries|heatmap": {
+      "n": 180,
+      "em": 12.777777777777779,
+      "wrong_type": 30.555555555555557,
+      "em_right_type": 18.4
+     },
+     "timeseries|line_plot": {
+      "n": 180,
+      "em": 17.22222222222222,
+      "wrong_type": 24.444444444444443,
+      "em_right_type": 22.794117647058822
+     },
+     "timeseries|recurrence_plot": {
+      "n": 180,
+      "em": 6.666666666666667,
+      "wrong_type": 66.11111111111111,
+      "em_right_type": 19.672131147540984
+     },
+     "timeseries|text_only": {
+      "n": 180,
+      "em": 20.0,
+      "wrong_type": 27.77777777777777,
+      "em_right_type": 27.692307692307693
+     }
+    }
+   },
+   "concise": {
+    "1-hop": {
+     "n": 1000,
+     "em": 18.5,
+     "wrong_type": 21.400000000000006,
+     "em_right_type": 23.536895674300254,
+     "n_right_type": 786,
+     "n_questions": 205
+    },
+    "2-hop": {
+     "n": 718,
+     "em": 35.23676880222841,
+     "wrong_type": 20.473537604456823,
+     "em_right_type": 44.30823117338004,
+     "n_right_type": 571,
+     "n_questions": 149
+    },
+    "3-hop": {
+     "n": 415,
+     "em": 16.3855421686747,
+     "wrong_type": 34.93975903614458,
+     "em_right_type": 25.185185185185187,
+     "n_right_type": 270,
+     "n_questions": 87
+    },
+    "counterfactual": {
+     "n": 280,
+     "em": 22.5,
+     "wrong_type": 46.785714285714285,
+     "em_right_type": 42.281879194630875,
+     "n_right_type": 149,
+     "n_questions": 59
+    },
+    "overall": {
+     "n": 2413,
+     "em": 23.580605055946954,
+     "wrong_type": 26.398673849979275,
+     "em_right_type": 32.038288288288285,
+     "n_right_type": 1776,
+     "n_questions": 500
+    },
+    "per_format": {
+     "graph|adjacency_matrix": {
+      "n": 87,
+      "em": 33.333333333333336,
+      "wrong_type": 14.94252873563218,
+      "em_right_type": 39.189189189189186
+     },
+     "graph|circular_layout": {
+      "n": 87,
+      "em": 34.48275862068966,
+      "wrong_type": 19.54022988505747,
+      "em_right_type": 42.857142857142854
+     },
+     "graph|node_link": {
+      "n": 87,
+      "em": 27.586206896551722,
+      "wrong_type": 27.58620689655173,
+      "em_right_type": 38.095238095238095
+     },
+     "graph|text_only": {
+      "n": 87,
+      "em": 48.275862068965516,
+      "wrong_type": 10.34482758620689,
+      "em_right_type": 53.84615384615385
+     },
+     "tabular|bar_chart": {
+      "n": 233,
+      "em": 15.021459227467812,
+      "wrong_type": 34.33476394849785,
+      "em_right_type": 22.875816993464053
+     },
+     "tabular|heatmap": {
+      "n": 233,
+      "em": 32.18884120171674,
+      "wrong_type": 17.167381974248926,
+      "em_right_type": 38.86010362694301
+     },
+     "tabular|scatter_plot": {
+      "n": 233,
+      "em": 12.446351931330472,
+      "wrong_type": 39.05579399141631,
+      "em_right_type": 20.422535211267604
+     },
+     "tabular|table_image": {
+      "n": 233,
+      "em": 36.90987124463519,
+      "wrong_type": 12.017167381974247,
+      "em_right_type": 41.951219512195124
+     },
+     "tabular|text_only": {
+      "n": 233,
+      "em": 37.76824034334764,
+      "wrong_type": 12.87553648068669,
+      "em_right_type": 43.34975369458128
+     },
+     "timeseries|gaf": {
+      "n": 180,
+      "em": 7.777777777777778,
+      "wrong_type": 47.22222222222222,
+      "em_right_type": 14.736842105263158
+     },
+     "timeseries|heatmap": {
+      "n": 180,
+      "em": 14.444444444444445,
+      "wrong_type": 23.888888888888886,
+      "em_right_type": 18.978102189781023
+     },
+     "timeseries|line_plot": {
+      "n": 180,
+      "em": 18.88888888888889,
+      "wrong_type": 20.0,
+      "em_right_type": 23.61111111111111
+     },
+     "timeseries|recurrence_plot": {
+      "n": 180,
+      "em": 6.111111111111111,
+      "wrong_type": 52.77777777777778,
+      "em_right_type": 12.941176470588236
+     },
+     "timeseries|text_only": {
+      "n": 180,
+      "em": 25.555555555555557,
+      "wrong_type": 25.555555555555557,
+      "em_right_type": 34.32835820895522
+     }
+    }
+   },
+   "detailed": {
+    "1-hop": {
+     "n": 1000,
+     "em": 22.8,
+     "wrong_type": 16.0,
+     "em_right_type": 27.142857142857142,
+     "n_right_type": 840,
+     "n_questions": 205
+    },
+    "2-hop": {
+     "n": 718,
+     "em": 42.200557103064064,
+     "wrong_type": 11.97771587743732,
+     "em_right_type": 47.94303797468354,
+     "n_right_type": 632,
+     "n_questions": 149
+    },
+    "3-hop": {
+     "n": 415,
+     "em": 24.57831325301205,
+     "wrong_type": 29.156626506024097,
+     "em_right_type": 34.69387755102041,
+     "n_right_type": 294,
+     "n_questions": 87
+    },
+    "counterfactual": {
+     "n": 280,
+     "em": 78.92857142857143,
+     "wrong_type": 3.214285714285708,
+     "em_right_type": 81.54981549815498,
+     "n_right_type": 271,
+     "n_questions": 59
+    },
+    "overall": {
+     "n": 2413,
+     "em": 35.3916286779942,
+     "wrong_type": 15.582262743472853,
+     "em_right_type": 41.92439862542955,
+     "n_right_type": 2037,
+     "n_questions": 500
+    },
+    "per_format": {
+     "graph|adjacency_matrix": {
+      "n": 87,
+      "em": 36.7816091954023,
+      "wrong_type": 10.34482758620689,
+      "em_right_type": 41.02564102564103
+     },
+     "graph|circular_layout": {
+      "n": 87,
+      "em": 48.275862068965516,
+      "wrong_type": 12.643678160919535,
+      "em_right_type": 55.26315789473684
+     },
+     "graph|node_link": {
+      "n": 87,
+      "em": 42.52873563218391,
+      "wrong_type": 11.494252873563212,
+      "em_right_type": 48.05194805194805
+     },
+     "graph|text_only": {
+      "n": 87,
+      "em": 56.32183908045977,
+      "wrong_type": 10.34482758620689,
+      "em_right_type": 62.82051282051282
+     },
+     "tabular|bar_chart": {
+      "n": 233,
+      "em": 26.180257510729614,
+      "wrong_type": 27.467811158798284,
+      "em_right_type": 36.094674556213015
+     },
+     "tabular|heatmap": {
+      "n": 233,
+      "em": 45.92274678111588,
+      "wrong_type": 12.446351931330469,
+      "em_right_type": 52.450980392156865
+     },
+     "tabular|scatter_plot": {
+      "n": 233,
+      "em": 21.888412017167383,
+      "wrong_type": 24.463519313304715,
+      "em_right_type": 28.977272727272727
+     },
+     "tabular|table_image": {
+      "n": 233,
+      "em": 58.36909871244635,
+      "wrong_type": 4.721030042918457,
+      "em_right_type": 61.26126126126126
+     },
+     "tabular|text_only": {
+      "n": 233,
+      "em": 57.081545064377686,
+      "wrong_type": 6.8669527896995675,
+      "em_right_type": 61.29032258064516
+     },
+     "timeseries|gaf": {
+      "n": 180,
+      "em": 18.88888888888889,
+      "wrong_type": 23.33333333333333,
+      "em_right_type": 24.63768115942029
+     },
+     "timeseries|heatmap": {
+      "n": 180,
+      "em": 20.555555555555557,
+      "wrong_type": 11.666666666666671,
+      "em_right_type": 23.270440251572328
+     },
+     "timeseries|line_plot": {
+      "n": 180,
+      "em": 27.77777777777778,
+      "wrong_type": 7.2222222222222285,
+      "em_right_type": 29.940119760479043
+     },
+     "timeseries|recurrence_plot": {
+      "n": 180,
+      "em": 13.88888888888889,
+      "wrong_type": 36.111111111111114,
+      "em_right_type": 21.73913043478261
+     },
+     "timeseries|text_only": {
+      "n": 180,
+      "em": 33.333333333333336,
+      "wrong_type": 10.555555555555557,
+      "em_right_type": 37.267080745341616
+     }
+    }
+   },
+   "cot": {
+    "1-hop": {
+     "n": 1000,
+     "em": 18.4,
+     "wrong_type": 20.5,
+     "em_right_type": 23.144654088050313,
+     "n_right_type": 795,
+     "n_questions": 205
+    },
+    "2-hop": {
+     "n": 718,
+     "em": 30.779944289693592,
+     "wrong_type": 22.144846796657376,
+     "em_right_type": 39.53488372093023,
+     "n_right_type": 559,
+     "n_questions": 149
+    },
+    "3-hop": {
+     "n": 415,
+     "em": 13.734939759036145,
+     "wrong_type": 28.674698795180717,
+     "em_right_type": 19.256756756756758,
+     "n_right_type": 296,
+     "n_questions": 87
+    },
+    "counterfactual": {
+     "n": 280,
+     "em": 24.285714285714285,
+     "wrong_type": 43.92857142857143,
+     "em_right_type": 43.31210191082803,
+     "n_right_type": 157,
+     "n_questions": 59
+    },
+    "overall": {
+     "n": 2413,
+     "em": 21.96435971819312,
+     "wrong_type": 25.113966017405716,
+     "em_right_type": 29.33038184836746,
+     "n_right_type": 1807,
+     "n_questions": 500
+    },
+    "per_format": {
+     "graph|adjacency_matrix": {
+      "n": 87,
+      "em": 21.839080459770116,
+      "wrong_type": 13.793103448275858,
+      "em_right_type": 25.333333333333332
+     },
+     "graph|circular_layout": {
+      "n": 87,
+      "em": 22.988505747126435,
+      "wrong_type": 26.436781609195407,
+      "em_right_type": 31.25
+     },
+     "graph|node_link": {
+      "n": 87,
+      "em": 25.28735632183908,
+      "wrong_type": 29.885057471264375,
+      "em_right_type": 36.0655737704918
+     },
+     "graph|text_only": {
+      "n": 87,
+      "em": 44.827586206896555,
+      "wrong_type": 8.045977011494259,
+      "em_right_type": 48.75
+     },
+     "tabular|bar_chart": {
+      "n": 233,
+      "em": 13.304721030042918,
+      "wrong_type": 28.75536480686695,
+      "em_right_type": 18.674698795180724
+     },
+     "tabular|heatmap": {
+      "n": 233,
+      "em": 32.61802575107296,
+      "wrong_type": 15.450643776824037,
+      "em_right_type": 38.578680203045685
+     },
+     "tabular|scatter_plot": {
+      "n": 233,
+      "em": 15.021459227467812,
+      "wrong_type": 28.326180257510728,
+      "em_right_type": 20.95808383233533
+     },
+     "tabular|table_image": {
+      "n": 233,
+      "em": 34.33476394849785,
+      "wrong_type": 12.446351931330469,
+      "em_right_type": 39.21568627450981
+     },
+     "tabular|text_only": {
+      "n": 233,
+      "em": 35.1931330472103,
+      "wrong_type": 12.87553648068669,
+      "em_right_type": 40.39408866995074
+     },
+     "timeseries|gaf": {
+      "n": 180,
+      "em": 8.333333333333334,
+      "wrong_type": 42.77777777777778,
+      "em_right_type": 14.563106796116505
+     },
+     "timeseries|heatmap": {
+      "n": 180,
+      "em": 12.777777777777779,
+      "wrong_type": 27.77777777777777,
+      "em_right_type": 17.692307692307693
+     },
+     "timeseries|line_plot": {
+      "n": 180,
+      "em": 18.333333333333332,
+      "wrong_type": 21.111111111111114,
+      "em_right_type": 23.239436619718308
+     },
+     "timeseries|recurrence_plot": {
+      "n": 180,
+      "em": 5.0,
+      "wrong_type": 59.44444444444444,
+      "em_right_type": 12.32876712328767
+     },
+     "timeseries|text_only": {
+      "n": 180,
+      "em": 25.555555555555557,
+      "wrong_type": 21.111111111111114,
+      "em_right_type": 32.394366197183096
+     }
+    }
+   }
+  },
+  "Gemini-2.0-Flash": {
+   "minimal": {
+    "1-hop": {
+     "n": 1000,
+     "em": 19.1,
+     "wrong_type": 15.400000000000006,
+     "em_right_type": 22.576832151300238,
+     "n_right_type": 846,
+     "n_questions": 205
+    },
+    "2-hop": {
+     "n": 718,
+     "em": 34.401114206128135,
+     "wrong_type": 17.688022284122567,
+     "em_right_type": 41.793570219966156,
+     "n_right_type": 591,
+     "n_questions": 149
+    },
+    "3-hop": {
+     "n": 415,
+     "em": 11.566265060240964,
+     "wrong_type": 39.51807228915663,
+     "em_right_type": 19.12350597609562,
+     "n_right_type": 251,
+     "n_questions": 87
+    },
+    "counterfactual": {
+     "n": 280,
+     "em": 17.142857142857142,
+     "wrong_type": 72.5,
+     "em_right_type": 62.33766233766234,
+     "n_right_type": 77,
+     "n_questions": 59
+    },
+    "overall": {
+     "n": 2413,
+     "em": 22.13012847078326,
+     "wrong_type": 26.85453791960215,
+     "em_right_type": 30.254957507082153,
+     "n_right_type": 1765,
+     "n_questions": 500
+    },
+    "per_format": {
+     "graph|adjacency_matrix": {
+      "n": 87,
+      "em": 13.793103448275861,
+      "wrong_type": 17.241379310344826,
+      "em_right_type": 16.666666666666668
+     },
+     "graph|circular_layout": {
+      "n": 87,
+      "em": 31.03448275862069,
+      "wrong_type": 19.54022988505747,
+      "em_right_type": 38.57142857142857
+     },
+     "graph|node_link": {
+      "n": 87,
+      "em": 14.942528735632184,
+      "wrong_type": 31.034482758620683,
+      "em_right_type": 21.666666666666668
+     },
+     "graph|text_only": {
+      "n": 87,
+      "em": 36.7816091954023,
+      "wrong_type": 11.494252873563212,
+      "em_right_type": 41.55844155844156
+     },
+     "tabular|bar_chart": {
+      "n": 233,
+      "em": 18.025751072961373,
+      "wrong_type": 23.60515021459227,
+      "em_right_type": 23.59550561797753
+     },
+     "tabular|heatmap": {
+      "n": 233,
+      "em": 34.76394849785408,
+      "wrong_type": 31.330472103004297,
+      "em_right_type": 50.625
+     },
+     "tabular|scatter_plot": {
+      "n": 233,
+      "em": 15.021459227467812,
+      "wrong_type": 26.60944206008584,
+      "em_right_type": 20.46783625730994
+     },
+     "tabular|table_image": {
+      "n": 233,
+      "em": 31.330472103004293,
+      "wrong_type": 30.042918454935617,
+      "em_right_type": 44.785276073619634
+     },
+     "tabular|text_only": {
+      "n": 233,
+      "em": 30.472103004291846,
+      "wrong_type": 31.75965665236052,
+      "em_right_type": 44.65408805031446
+     },
+     "timeseries|gaf": {
+      "n": 180,
+      "em": 10.555555555555555,
+      "wrong_type": 28.888888888888886,
+      "em_right_type": 14.84375
+     },
+     "timeseries|heatmap": {
+      "n": 180,
+      "em": 15.0,
+      "wrong_type": 23.33333333333333,
+      "em_right_type": 19.565217391304348
+     },
+     "timeseries|line_plot": {
+      "n": 180,
+      "em": 21.666666666666668,
+      "wrong_type": 21.66666666666667,
+      "em_right_type": 27.659574468085108
+     },
+     "timeseries|recurrence_plot": {
+      "n": 180,
+      "em": 9.444444444444445,
+      "wrong_type": 33.888888888888886,
+      "em_right_type": 14.285714285714286
+     },
+     "timeseries|text_only": {
+      "n": 180,
+      "em": 25.555555555555557,
+      "wrong_type": 28.33333333333333,
+      "em_right_type": 35.65891472868217
+     }
+    }
+   },
+   "concise": {
+    "1-hop": {
+     "n": 1000,
+     "em": 23.9,
+     "wrong_type": 13.0,
+     "em_right_type": 27.471264367816094,
+     "n_right_type": 870,
+     "n_questions": 205
+    },
+    "2-hop": {
+     "n": 718,
+     "em": 44.7075208913649,
+     "wrong_type": 5.013927576601674,
+     "em_right_type": 47.06744868035191,
+     "n_right_type": 682,
+     "n_questions": 149
+    },
+    "3-hop": {
+     "n": 415,
+     "em": 25.06024096385542,
+     "wrong_type": 22.891566265060234,
+     "em_right_type": 32.5,
+     "n_right_type": 320,
+     "n_questions": 87
+    },
+    "counterfactual": {
+     "n": 280,
+     "em": 76.42857142857143,
+     "wrong_type": 0.0,
+     "em_right_type": 76.42857142857143,
+     "n_right_type": 280,
+     "n_questions": 59
+    },
+    "overall": {
+     "n": 2413,
+     "em": 36.38624119353502,
+     "wrong_type": 10.816411106506422,
+     "em_right_type": 40.79925650557621,
+     "n_right_type": 2152,
+     "n_questions": 500
+    },
+    "per_format": {
+     "graph|adjacency_matrix": {
+      "n": 87,
+      "em": 27.586206896551722,
+      "wrong_type": 5.747126436781613,
+      "em_right_type": 29.26829268292683
+     },
+     "graph|circular_layout": {
+      "n": 87,
+      "em": 42.52873563218391,
+      "wrong_type": 8.045977011494259,
+      "em_right_type": 46.25
+     },
+     "graph|node_link": {
+      "n": 87,
+      "em": 40.229885057471265,
+      "wrong_type": 8.045977011494259,
+      "em_right_type": 43.75
+     },
+     "graph|text_only": {
+      "n": 87,
+      "em": 51.724137931034484,
+      "wrong_type": 9.195402298850581,
+      "em_right_type": 56.962025316455694
+     },
+     "tabular|bar_chart": {
+      "n": 233,
+      "em": 25.751072961373392,
+      "wrong_type": 11.158798283261802,
+      "em_right_type": 28.985507246376812
+     },
+     "tabular|heatmap": {
+      "n": 233,
+      "em": 45.92274678111588,
+      "wrong_type": 13.733905579399135,
+      "em_right_type": 53.233830845771145
+     },
+     "tabular|scatter_plot": {
+      "n": 233,
+      "em": 23.605150214592275,
+      "wrong_type": 25.751072961373396,
+      "em_right_type": 31.791907514450866
+     },
+     "tabular|table_image": {
+      "n": 233,
+      "em": 57.081545064377686,
+      "wrong_type": 5.150214592274679,
+      "em_right_type": 60.18099547511312
+     },
+     "tabular|text_only": {
+      "n": 233,
+      "em": 56.652360515021456,
+      "wrong_type": 6.008583690987123,
+      "em_right_type": 60.273972602739725
+     },
+     "timeseries|gaf": {
+      "n": 180,
+      "em": 22.22222222222222,
+      "wrong_type": 10.0,
+      "em_right_type": 24.691358024691358
+     },
+     "timeseries|heatmap": {
+      "n": 180,
+      "em": 24.444444444444443,
+      "wrong_type": 8.333333333333329,
+      "em_right_type": 26.666666666666668
+     },
+     "timeseries|line_plot": {
+      "n": 180,
+      "em": 33.333333333333336,
+      "wrong_type": 7.2222222222222285,
+      "em_right_type": 35.92814371257485
+     },
+     "timeseries|recurrence_plot": {
+      "n": 180,
+      "em": 17.77777777777778,
+      "wrong_type": 17.22222222222223,
+      "em_right_type": 21.476510067114095
+     },
+     "timeseries|text_only": {
+      "n": 180,
+      "em": 41.111111111111114,
+      "wrong_type": 7.2222222222222285,
+      "em_right_type": 44.31137724550898
+     }
+    }
+   },
+   "detailed": {
+    "1-hop": {
+     "n": 1000,
+     "em": 25.2,
+     "wrong_type": 14.299999999999997,
+     "em_right_type": 29.4049008168028,
+     "n_right_type": 857,
+     "n_questions": 205
+    },
+    "2-hop": {
+     "n": 718,
+     "em": 42.75766016713092,
+     "wrong_type": 8.077994428969362,
+     "em_right_type": 46.515151515151516,
+     "n_right_type": 660,
+     "n_questions": 149
+    },
+    "3-hop": {
+     "n": 415,
+     "em": 25.301204819277107,
+     "wrong_type": 25.5421686746988,
+     "em_right_type": 33.980582524271846,
+     "n_right_type": 309,
+     "n_questions": 87
+    },
+    "counterfactual": {
+     "n": 280,
+     "em": 74.64285714285714,
+     "wrong_type": 0.3571428571428612,
+     "em_right_type": 74.91039426523298,
+     "n_right_type": 279,
+     "n_questions": 59
+    },
+    "overall": {
+     "n": 2413,
+     "em": 36.17903025279735,
+     "wrong_type": 12.764193949440525,
+     "em_right_type": 41.472684085510686,
+     "n_right_type": 2105,
+     "n_questions": 500
+    },
+    "per_format": {
+     "graph|adjacency_matrix": {
+      "n": 87,
+      "em": 31.03448275862069,
+      "wrong_type": 6.896551724137936,
+      "em_right_type": 33.333333333333336
+     },
+     "graph|circular_layout": {
+      "n": 87,
+      "em": 40.229885057471265,
+      "wrong_type": 9.195402298850581,
+      "em_right_type": 44.30379746835443
+     },
+     "graph|node_link": {
+      "n": 87,
+      "em": 29.885057471264368,
+      "wrong_type": 14.94252873563218,
+      "em_right_type": 35.13513513513514
+     },
+     "graph|text_only": {
+      "n": 87,
+      "em": 52.87356321839081,
+      "wrong_type": 10.34482758620689,
+      "em_right_type": 58.97435897435897
+     },
+     "tabular|bar_chart": {
+      "n": 233,
+      "em": 26.180257510729614,
+      "wrong_type": 11.587982832618025,
+      "em_right_type": 29.611650485436893
+     },
+     "tabular|heatmap": {
+      "n": 233,
+      "em": 49.78540772532189,
+      "wrong_type": 22.317596566523605,
+      "em_right_type": 64.08839779005525
+     },
+     "tabular|scatter_plot": {
+      "n": 233,
+      "em": 20.17167381974249,
+      "wrong_type": 29.613733905579394,
+      "em_right_type": 28.658536585365855
+     },
+     "tabular|table_image": {
+      "n": 233,
+      "em": 55.79399141630901,
+      "wrong_type": 9.012875536480692,
+      "em_right_type": 61.320754716981135
+     },
+     "tabular|text_only": {
+      "n": 233,
+      "em": 57.081545064377686,
+      "wrong_type": 6.8669527896995675,
+      "em_right_type": 61.29032258064516
+     },
+     "timeseries|gaf": {
+      "n": 180,
+      "em": 22.22222222222222,
+      "wrong_type": 7.7777777777777715,
+      "em_right_type": 24.096385542168676
+     },
+     "timeseries|heatmap": {
+      "n": 180,
+      "em": 23.88888888888889,
+      "wrong_type": 8.888888888888886,
+      "em_right_type": 26.21951219512195
+     },
+     "timeseries|line_plot": {
+      "n": 180,
+      "em": 38.333333333333336,
+      "wrong_type": 6.111111111111114,
+      "em_right_type": 40.828402366863905
+     },
+     "timeseries|recurrence_plot": {
+      "n": 180,
+      "em": 15.0,
+      "wrong_type": 18.33333333333333,
+      "em_right_type": 18.367346938775512
+     },
+     "timeseries|text_only": {
+      "n": 180,
+      "em": 40.55555555555556,
+      "wrong_type": 7.2222222222222285,
+      "em_right_type": 43.712574850299404
+     }
+    }
+   },
+   "cot": {
+    "1-hop": {
+     "n": 1000,
+     "em": 22.0,
+     "wrong_type": 10.099999999999994,
+     "em_right_type": 24.47163515016685,
+     "n_right_type": 899,
+     "n_questions": 205
+    },
+    "2-hop": {
+     "n": 718,
+     "em": 36.07242339832869,
+     "wrong_type": 18.384401114206128,
+     "em_right_type": 44.19795221843003,
+     "n_right_type": 586,
+     "n_questions": 149
+    },
+    "3-hop": {
+     "n": 415,
+     "em": 14.457831325301205,
+     "wrong_type": 22.891566265060234,
+     "em_right_type": 18.75,
+     "n_right_type": 320,
+     "n_questions": 87
+    },
+    "counterfactual": {
+     "n": 280,
+     "em": 30.0,
+     "wrong_type": 39.285714285714285,
+     "em_right_type": 49.411764705882355,
+     "n_right_type": 170,
+     "n_questions": 59
+    },
+    "overall": {
+     "n": 2413,
+     "em": 25.8184832159138,
+     "wrong_type": 18.151678408619972,
+     "em_right_type": 31.544303797468356,
+     "n_right_type": 1975,
+     "n_questions": 500
+    },
+    "per_format": {
+     "graph|adjacency_matrix": {
+      "n": 87,
+      "em": 28.735632183908045,
+      "wrong_type": 9.195402298850581,
+      "em_right_type": 31.645569620253166
+     },
+     "graph|circular_layout": {
+      "n": 87,
+      "em": 40.229885057471265,
+      "wrong_type": 16.091954022988503,
+      "em_right_type": 47.945205479452056
+     },
+     "graph|node_link": {
+      "n": 87,
+      "em": 32.18390804597701,
+      "wrong_type": 17.241379310344826,
+      "em_right_type": 38.888888888888886
+     },
+     "graph|text_only": {
+      "n": 87,
+      "em": 47.12643678160919,
+      "wrong_type": 11.494252873563212,
+      "em_right_type": 53.246753246753244
+     },
+     "tabular|bar_chart": {
+      "n": 233,
+      "em": 21.459227467811157,
+      "wrong_type": 14.592274678111593,
+      "em_right_type": 25.12562814070352
+     },
+     "tabular|heatmap": {
+      "n": 233,
+      "em": 34.33476394849785,
+      "wrong_type": 15.021459227467815,
+      "em_right_type": 40.4040404040404
+     },
+     "tabular|scatter_plot": {
+      "n": 233,
+      "em": 19.313304721030043,
+      "wrong_type": 15.450643776824037,
+      "em_right_type": 22.84263959390863
+     },
+     "tabular|table_image": {
+      "n": 233,
+      "em": 34.76394849785408,
+      "wrong_type": 14.592274678111593,
+      "em_right_type": 40.7035175879397
+     },
+     "tabular|text_only": {
+      "n": 233,
+      "em": 33.90557939914163,
+      "wrong_type": 13.733905579399135,
+      "em_right_type": 39.30348258706468
+     },
+     "timeseries|gaf": {
+      "n": 180,
+      "em": 7.777777777777778,
+      "wrong_type": 30.555555555555557,
+      "em_right_type": 11.2
+     },
+     "timeseries|heatmap": {
+      "n": 180,
+      "em": 13.333333333333334,
+      "wrong_type": 26.111111111111114,
+      "em_right_type": 18.045112781954888
+     },
+     "timeseries|line_plot": {
+      "n": 180,
+      "em": 25.0,
+      "wrong_type": 20.0,
+      "em_right_type": 31.25
+     },
+     "timeseries|recurrence_plot": {
+      "n": 180,
+      "em": 10.0,
+      "wrong_type": 25.0,
+      "em_right_type": 13.333333333333334
+     },
+     "timeseries|text_only": {
+      "n": 180,
+      "em": 32.22222222222222,
+      "wrong_type": 20.555555555555557,
+      "em_right_type": 40.55944055944056
+     }
+    }
+   }
+  },
+  "Qwen2.5-VL-7B": {
+   "minimal": {
+    "1-hop": {
+     "n": 1000,
+     "em": 19.3,
+     "wrong_type": 12.5,
+     "em_right_type": 22.057142857142857,
+     "n_right_type": 875,
+     "n_questions": 205
+    },
+    "2-hop": {
+     "n": 718,
+     "em": 26.044568245125348,
+     "wrong_type": 26.183844011142057,
+     "em_right_type": 35.283018867924525,
+     "n_right_type": 530,
+     "n_questions": 149
+    },
+    "3-hop": {
+     "n": 415,
+     "em": 13.493975903614459,
+     "wrong_type": 23.855421686746993,
+     "em_right_type": 17.72151898734177,
+     "n_right_type": 316,
+     "n_questions": 87
+    },
+    "counterfactual": {
+     "n": 280,
+     "em": 10.0,
+     "wrong_type": 46.785714285714285,
+     "em_right_type": 18.79194630872483,
+     "n_right_type": 149,
+     "n_questions": 59
+    },
+    "overall": {
+     "n": 2413,
+     "em": 19.229175300455864,
+     "wrong_type": 22.50310816411107,
+     "em_right_type": 24.81283422459893,
+     "n_right_type": 1870,
+     "n_questions": 500
+    },
+    "per_format": {
+     "graph|adjacency_matrix": {
+      "n": 87,
+      "em": 14.942528735632184,
+      "wrong_type": 19.54022988505747,
+      "em_right_type": 18.571428571428573
+     },
+     "graph|circular_layout": {
+      "n": 87,
+      "em": 14.942528735632184,
+      "wrong_type": 25.287356321839084,
+      "em_right_type": 20.0
+     },
+     "graph|node_link": {
+      "n": 87,
+      "em": 22.988505747126435,
+      "wrong_type": 22.98850574712644,
+      "em_right_type": 29.850746268656717
+     },
+     "graph|text_only": {
+      "n": 87,
+      "em": 34.48275862068966,
+      "wrong_type": 12.643678160919535,
+      "em_right_type": 39.473684210526315
+     },
+     "tabular|bar_chart": {
+      "n": 233,
+      "em": 17.59656652360515,
+      "wrong_type": 16.30901287553648,
+      "em_right_type": 21.025641025641026
+     },
+     "tabular|heatmap": {
+      "n": 233,
+      "em": 28.755364806866954,
+      "wrong_type": 14.163090128755371,
+      "em_right_type": 33.5
+     },
+     "tabular|scatter_plot": {
+      "n": 233,
+      "em": 12.446351931330472,
+      "wrong_type": 22.317596566523605,
+      "em_right_type": 16.022099447513813
+     },
+     "tabular|table_image": {
+      "n": 233,
+      "em": 30.042918454935624,
+      "wrong_type": 14.592274678111593,
+      "em_right_type": 35.175879396984925
+     },
+     "tabular|text_only": {
+      "n": 233,
+      "em": 29.184549356223176,
+      "wrong_type": 13.733905579399135,
+      "em_right_type": 33.830845771144276
+     },
+     "timeseries|gaf": {
+      "n": 180,
+      "em": 5.555555555555555,
+      "wrong_type": 37.22222222222222,
+      "em_right_type": 8.849557522123893
+     },
+     "timeseries|heatmap": {
+      "n": 180,
+      "em": 8.88888888888889,
+      "wrong_type": 32.22222222222223,
+      "em_right_type": 13.114754098360656
+     },
+     "timeseries|line_plot": {
+      "n": 180,
+      "em": 17.77777777777778,
+      "wrong_type": 23.888888888888886,
+      "em_right_type": 23.357664233576642
+     },
+     "timeseries|recurrence_plot": {
+      "n": 180,
+      "em": 10.555555555555555,
+      "wrong_type": 37.22222222222222,
+      "em_right_type": 16.8141592920354
+     },
+     "timeseries|text_only": {
+      "n": 180,
+      "em": 20.0,
+      "wrong_type": 27.22222222222223,
+      "em_right_type": 27.480916030534353
+     }
+    }
+   },
+   "concise": {
+    "1-hop": {
+     "n": 1000,
+     "em": 25.3,
+     "wrong_type": 10.700000000000003,
+     "em_right_type": 28.331466965285554,
+     "n_right_type": 893,
+     "n_questions": 205
+    },
+    "2-hop": {
+     "n": 718,
+     "em": 38.99721448467967,
+     "wrong_type": 0.8356545961002837,
+     "em_right_type": 39.325842696629216,
+     "n_right_type": 712,
+     "n_questions": 149
+    },
+    "3-hop": {
+     "n": 415,
+     "em": 24.57831325301205,
+     "wrong_type": 21.686746987951807,
+     "em_right_type": 31.384615384615383,
+     "n_right_type": 325,
+     "n_questions": 87
+    },
+    "counterfactual": {
+     "n": 280,
+     "em": 66.78571428571429,
+     "wrong_type": 0.0,
+     "em_right_type": 66.78571428571429,
+     "n_right_type": 280,
+     "n_questions": 59
+    },
+    "overall": {
+     "n": 2413,
+     "em": 34.065478657273104,
+     "wrong_type": 8.412764193949442,
+     "em_right_type": 37.19457013574661,
+     "n_right_type": 2210,
+     "n_questions": 500
+    },
+    "per_format": {
+     "graph|adjacency_matrix": {
+      "n": 87,
+      "em": 29.885057471264368,
+      "wrong_type": 0.0,
+      "em_right_type": 29.885057471264368
+     },
+     "graph|circular_layout": {
+      "n": 87,
+      "em": 43.67816091954023,
+      "wrong_type": 8.045977011494259,
+      "em_right_type": 47.5
+     },
+     "graph|node_link": {
+      "n": 87,
+      "em": 41.37931034482759,
+      "wrong_type": 8.045977011494259,
+      "em_right_type": 45.0
+     },
+     "graph|text_only": {
+      "n": 87,
+      "em": 43.67816091954023,
+      "wrong_type": 0.0,
+      "em_right_type": 43.67816091954023
+     },
+     "tabular|bar_chart": {
+      "n": 233,
+      "em": 30.042918454935624,
+      "wrong_type": 14.163090128755371,
+      "em_right_type": 35.0
+     },
+     "tabular|heatmap": {
+      "n": 233,
+      "em": 44.63519313304721,
+      "wrong_type": 16.30901287553648,
+      "em_right_type": 53.333333333333336
+     },
+     "tabular|scatter_plot": {
+      "n": 233,
+      "em": 15.879828326180258,
+      "wrong_type": 15.450643776824037,
+      "em_right_type": 18.781725888324875
+     },
+     "tabular|table_image": {
+      "n": 233,
+      "em": 48.497854077253216,
+      "wrong_type": 4.721030042918457,
+      "em_right_type": 50.9009009009009
+     },
+     "tabular|text_only": {
+      "n": 233,
+      "em": 48.497854077253216,
+      "wrong_type": 5.150214592274679,
+      "em_right_type": 51.13122171945702
+     },
+     "timeseries|gaf": {
+      "n": 180,
+      "em": 24.444444444444443,
+      "wrong_type": 6.666666666666671,
+      "em_right_type": 26.19047619047619
+     },
+     "timeseries|heatmap": {
+      "n": 180,
+      "em": 22.22222222222222,
+      "wrong_type": 6.111111111111114,
+      "em_right_type": 23.668639053254438
+     },
+     "timeseries|line_plot": {
+      "n": 180,
+      "em": 30.555555555555557,
+      "wrong_type": 5.555555555555557,
+      "em_right_type": 32.35294117647059
+     },
+     "timeseries|recurrence_plot": {
+      "n": 180,
+      "em": 22.77777777777778,
+      "wrong_type": 8.888888888888886,
+      "em_right_type": 25.0
+     },
+     "timeseries|text_only": {
+      "n": 180,
+      "em": 37.22222222222222,
+      "wrong_type": 5.555555555555557,
+      "em_right_type": 39.411764705882355
+     }
+    }
+   },
+   "detailed": {
+    "1-hop": {
+     "n": 1000,
+     "em": 24.3,
+     "wrong_type": 11.200000000000003,
+     "em_right_type": 27.364864864864863,
+     "n_right_type": 888,
+     "n_questions": 205
+    },
+    "2-hop": {
+     "n": 718,
+     "em": 36.629526462395546,
+     "wrong_type": 0.6963788300835603,
+     "em_right_type": 36.88639551192146,
+     "n_right_type": 713,
+     "n_questions": 149
+    },
+    "3-hop": {
+     "n": 415,
+     "em": 25.06024096385542,
+     "wrong_type": 22.65060240963855,
+     "em_right_type": 32.398753894081,
+     "n_right_type": 321,
+     "n_questions": 87
+    },
+    "counterfactual": {
+     "n": 280,
+     "em": 61.785714285714285,
+     "wrong_type": 0.0,
+     "em_right_type": 61.785714285714285,
+     "n_right_type": 280,
+     "n_questions": 59
+    },
+    "overall": {
+     "n": 2413,
+     "em": 32.44923331951927,
+     "wrong_type": 8.744301699129707,
+     "em_right_type": 35.55858310626703,
+     "n_right_type": 2202,
+     "n_questions": 500
+    },
+    "per_format": {
+     "graph|adjacency_matrix": {
+      "n": 87,
+      "em": 27.586206896551722,
+      "wrong_type": 0.0,
+      "em_right_type": 27.586206896551722
+     },
+     "graph|circular_layout": {
+      "n": 87,
+      "em": 33.333333333333336,
+      "wrong_type": 8.045977011494259,
+      "em_right_type": 36.25
+     },
+     "graph|node_link": {
+      "n": 87,
+      "em": 37.93103448275862,
+      "wrong_type": 6.896551724137936,
+      "em_right_type": 40.74074074074074
+     },
+     "graph|text_only": {
+      "n": 87,
+      "em": 43.67816091954023,
+      "wrong_type": 0.0,
+      "em_right_type": 43.67816091954023
+     },
+     "tabular|bar_chart": {
+      "n": 233,
+      "em": 28.755364806866954,
+      "wrong_type": 18.884120171673814,
+      "em_right_type": 35.44973544973545
+     },
+     "tabular|heatmap": {
+      "n": 233,
+      "em": 41.201716738197426,
+      "wrong_type": 14.592274678111593,
+      "em_right_type": 48.24120603015076
+     },
+     "tabular|scatter_plot": {
+      "n": 233,
+      "em": 14.592274678111588,
+      "wrong_type": 15.87982832618026,
+      "em_right_type": 17.346938775510203
+     },
+     "tabular|table_image": {
+      "n": 233,
+      "em": 47.21030042918455,
+      "wrong_type": 4.721030042918457,
+      "em_right_type": 49.549549549549546
+     },
+     "tabular|text_only": {
+      "n": 233,
+      "em": 48.06866952789699,
+      "wrong_type": 5.150214592274679,
+      "em_right_type": 50.678733031674206
+     },
+     "timeseries|gaf": {
+      "n": 180,
+      "em": 23.88888888888889,
+      "wrong_type": 7.2222222222222285,
+      "em_right_type": 25.748502994011975
+     },
+     "timeseries|heatmap": {
+      "n": 180,
+      "em": 20.0,
+      "wrong_type": 6.111111111111114,
+      "em_right_type": 21.301775147928993
+     },
+     "timeseries|line_plot": {
+      "n": 180,
+      "em": 31.11111111111111,
+      "wrong_type": 5.555555555555557,
+      "em_right_type": 32.94117647058823
+     },
+     "timeseries|recurrence_plot": {
+      "n": 180,
+      "em": 20.555555555555557,
+      "wrong_type": 8.888888888888886,
+      "em_right_type": 22.5609756097561
+     },
+     "timeseries|text_only": {
+      "n": 180,
+      "em": 37.77777777777778,
+      "wrong_type": 5.555555555555557,
+      "em_right_type": 40.0
+     }
+    }
+   },
+   "cot": {
+    "1-hop": {
+     "n": 1000,
+     "em": 19.9,
+     "wrong_type": 13.299999999999997,
+     "em_right_type": 22.952710495963093,
+     "n_right_type": 867,
+     "n_questions": 205
+    },
+    "2-hop": {
+     "n": 718,
+     "em": 23.955431754874652,
+     "wrong_type": 21.169916434540383,
+     "em_right_type": 30.3886925795053,
+     "n_right_type": 566,
+     "n_questions": 149
+    },
+    "3-hop": {
+     "n": 415,
+     "em": 13.734939759036145,
+     "wrong_type": 14.93975903614458,
+     "em_right_type": 16.14730878186969,
+     "n_right_type": 353,
+     "n_questions": 87
+    },
+    "counterfactual": {
+     "n": 280,
+     "em": 15.0,
+     "wrong_type": 50.357142857142854,
+     "em_right_type": 30.215827338129497,
+     "n_right_type": 139,
+     "n_questions": 59
+    },
+    "overall": {
+     "n": 2413,
+     "em": 19.47782842934107,
+     "wrong_type": 20.223787815996687,
+     "em_right_type": 24.415584415584416,
+     "n_right_type": 1925,
+     "n_questions": 500
+    },
+    "per_format": {
+     "graph|adjacency_matrix": {
+      "n": 87,
+      "em": 22.988505747126435,
+      "wrong_type": 10.34482758620689,
+      "em_right_type": 25.641025641025642
+     },
+     "graph|circular_layout": {
+      "n": 87,
+      "em": 24.137931034482758,
+      "wrong_type": 11.494252873563212,
+      "em_right_type": 27.272727272727273
+     },
+     "graph|node_link": {
+      "n": 87,
+      "em": 20.689655172413794,
+      "wrong_type": 9.195402298850581,
+      "em_right_type": 22.78481012658228
+     },
+     "graph|text_only": {
+      "n": 87,
+      "em": 29.885057471264368,
+      "wrong_type": 11.494252873563212,
+      "em_right_type": 33.76623376623377
+     },
+     "tabular|bar_chart": {
+      "n": 233,
+      "em": 18.025751072961373,
+      "wrong_type": 14.163090128755371,
+      "em_right_type": 21.0
+     },
+     "tabular|heatmap": {
+      "n": 233,
+      "em": 30.472103004291846,
+      "wrong_type": 12.87553648068669,
+      "em_right_type": 34.97536945812808
+     },
+     "tabular|scatter_plot": {
+      "n": 233,
+      "em": 13.304721030042918,
+      "wrong_type": 15.450643776824037,
+      "em_right_type": 15.736040609137056
+     },
+     "tabular|table_image": {
+      "n": 233,
+      "em": 27.467811158798284,
+      "wrong_type": 12.446351931330469,
+      "em_right_type": 31.372549019607842
+     },
+     "tabular|text_only": {
+      "n": 233,
+      "em": 24.892703862660944,
+      "wrong_type": 15.021459227467815,
+      "em_right_type": 29.292929292929294
+     },
+     "timeseries|gaf": {
+      "n": 180,
+      "em": 8.88888888888889,
+      "wrong_type": 33.888888888888886,
+      "em_right_type": 13.445378151260504
+     },
+     "timeseries|heatmap": {
+      "n": 180,
+      "em": 7.222222222222222,
+      "wrong_type": 35.55555555555556,
+      "em_right_type": 11.206896551724139
+     },
+     "timeseries|line_plot": {
+      "n": 180,
+      "em": 14.444444444444445,
+      "wrong_type": 30.0,
+      "em_right_type": 20.634920634920636
+     },
+     "timeseries|recurrence_plot": {
+      "n": 180,
+      "em": 9.444444444444445,
+      "wrong_type": 33.888888888888886,
+      "em_right_type": 14.285714285714286
+     },
+     "timeseries|text_only": {
+      "n": 180,
+      "em": 26.11111111111111,
+      "wrong_type": 26.66666666666667,
+      "em_right_type": 35.60606060606061
+     }
+    }
+   }
+  },
+  "Claude Sonnet 4": {
+   "minimal": {
+    "1-hop": {
+     "n": 1000,
+     "em": 15.9,
+     "wrong_type": 15.900000000000006,
+     "em_right_type": 18.906064209274675,
+     "n_right_type": 841,
+     "n_questions": 205
+    },
+    "2-hop": {
+     "n": 718,
+     "em": 26.740947075208915,
+     "wrong_type": 21.448467966573816,
+     "em_right_type": 34.04255319148936,
+     "n_right_type": 564,
+     "n_questions": 149
+    },
+    "3-hop": {
+     "n": 415,
+     "em": 11.08433734939759,
+     "wrong_type": 35.903614457831324,
+     "em_right_type": 17.293233082706767,
+     "n_right_type": 266,
+     "n_questions": 87
+    },
+    "counterfactual": {
+     "n": 280,
+     "em": 25.0,
+     "wrong_type": 49.642857142857146,
+     "em_right_type": 49.645390070921984,
+     "n_right_type": 141,
+     "n_questions": 59
+    },
+    "overall": {
+     "n": 2413,
+     "em": 19.353501864898465,
+     "wrong_type": 24.90675507666805,
+     "em_right_type": 25.77262693156733,
+     "n_right_type": 1812,
+     "n_questions": 500
+    },
+    "per_format": {
+     "graph|adjacency_matrix": {
+      "n": 87,
+      "em": 26.436781609195403,
+      "wrong_type": 11.494252873563212,
+      "em_right_type": 29.87012987012987
+     },
+     "graph|circular_layout": {
+      "n": 87,
+      "em": 22.988505747126435,
+      "wrong_type": 10.34482758620689,
+      "em_right_type": 25.641025641025642
+     },
+     "graph|node_link": {
+      "n": 87,
+      "em": 18.39080459770115,
+      "wrong_type": 9.195402298850581,
+      "em_right_type": 20.253164556962027
+     },
+     "graph|text_only": {
+      "n": 87,
+      "em": 33.333333333333336,
+      "wrong_type": 18.39080459770115,
+      "em_right_type": 40.84507042253521
+     },
+     "tabular|bar_chart": {
+      "n": 233,
+      "em": 14.592274678111588,
+      "wrong_type": 21.03004291845494,
+      "em_right_type": 18.47826086956522
+     },
+     "tabular|heatmap": {
+      "n": 233,
+      "em": 29.613733905579398,
+      "wrong_type": 27.038626609442062,
+      "em_right_type": 40.588235294117645
+     },
+     "tabular|scatter_plot": {
+      "n": 233,
+      "em": 12.875536480686696,
+      "wrong_type": 30.47210300429184,
+      "em_right_type": 18.51851851851852
+     },
+     "tabular|table_image": {
+      "n": 233,
+      "em": 30.042918454935624,
+      "wrong_type": 22.317596566523605,
+      "em_right_type": 38.67403314917127
+     },
+     "tabular|text_only": {
+      "n": 233,
+      "em": 31.330472103004293,
+      "wrong_type": 28.75536480686695,
+      "em_right_type": 43.975903614457835
+     },
+     "timeseries|gaf": {
+      "n": 180,
+      "em": 8.333333333333334,
+      "wrong_type": 28.33333333333333,
+      "em_right_type": 11.627906976744185
+     },
+     "timeseries|heatmap": {
+      "n": 180,
+      "em": 7.777777777777778,
+      "wrong_type": 25.555555555555557,
+      "em_right_type": 10.447761194029852
+     },
+     "timeseries|line_plot": {
+      "n": 180,
+      "em": 13.333333333333334,
+      "wrong_type": 24.444444444444443,
+      "em_right_type": 17.647058823529413
+     },
+     "timeseries|recurrence_plot": {
+      "n": 180,
+      "em": 5.555555555555555,
+      "wrong_type": 35.0,
+      "em_right_type": 8.547008547008547
+     },
+     "timeseries|text_only": {
+      "n": 180,
+      "em": 22.22222222222222,
+      "wrong_type": 28.888888888888886,
+      "em_right_type": 31.25
+     }
+    }
+   },
+   "concise": {
+    "1-hop": {
+     "n": 1000,
+     "em": 19.2,
+     "wrong_type": 15.799999999999997,
+     "em_right_type": 22.802850356294538,
+     "n_right_type": 842,
+     "n_questions": 205
+    },
+    "2-hop": {
+     "n": 718,
+     "em": 32.86908077994429,
+     "wrong_type": 18.80222841225627,
+     "em_right_type": 40.480274442538594,
+     "n_right_type": 583,
+     "n_questions": 149
+    },
+    "3-hop": {
+     "n": 415,
+     "em": 10.843373493975903,
+     "wrong_type": 46.024096385542165,
+     "em_right_type": 20.089285714285715,
+     "n_right_type": 224,
+     "n_questions": 87
+    },
+    "counterfactual": {
+     "n": 280,
+     "em": 28.571428571428573,
+     "wrong_type": 49.642857142857146,
+     "em_right_type": 56.737588652482266,
+     "n_right_type": 141,
+     "n_questions": 59
+    },
+    "overall": {
+     "n": 2413,
+     "em": 22.917530045586407,
+     "wrong_type": 25.8184832159138,
+     "em_right_type": 30.893854748603353,
+     "n_right_type": 1790,
+     "n_questions": 500
+    },
+    "per_format": {
+     "graph|adjacency_matrix": {
+      "n": 87,
+      "em": 27.586206896551722,
+      "wrong_type": 11.494252873563212,
+      "em_right_type": 31.16883116883117
+     },
+     "graph|circular_layout": {
+      "n": 87,
+      "em": 31.03448275862069,
+      "wrong_type": 12.643678160919535,
+      "em_right_type": 35.526315789473685
+     },
+     "graph|node_link": {
+      "n": 87,
+      "em": 29.885057471264368,
+      "wrong_type": 21.839080459770116,
+      "em_right_type": 38.23529411764706
+     },
+     "graph|text_only": {
+      "n": 87,
+      "em": 39.08045977011494,
+      "wrong_type": 10.34482758620689,
+      "em_right_type": 43.58974358974359
+     },
+     "tabular|bar_chart": {
+      "n": 233,
+      "em": 15.021459227467812,
+      "wrong_type": 27.896995708154506,
+      "em_right_type": 20.833333333333332
+     },
+     "tabular|heatmap": {
+      "n": 233,
+      "em": 31.330472103004293,
+      "wrong_type": 28.326180257510728,
+      "em_right_type": 43.712574850299404
+     },
+     "tabular|scatter_plot": {
+      "n": 233,
+      "em": 16.738197424892704,
+      "wrong_type": 28.75536480686695,
+      "em_right_type": 23.49397590361446
+     },
+     "tabular|table_image": {
+      "n": 233,
+      "em": 36.05150214592275,
+      "wrong_type": 29.184549356223172,
+      "em_right_type": 50.90909090909091
+     },
+     "tabular|text_only": {
+      "n": 233,
+      "em": 35.622317596566525,
+      "wrong_type": 38.62660944206009,
+      "em_right_type": 58.04195804195804
+     },
+     "timeseries|gaf": {
+      "n": 180,
+      "em": 8.88888888888889,
+      "wrong_type": 27.22222222222223,
+      "em_right_type": 12.213740458015268
+     },
+     "timeseries|heatmap": {
+      "n": 180,
+      "em": 11.11111111111111,
+      "wrong_type": 23.888888888888886,
+      "em_right_type": 14.598540145985401
+     },
+     "timeseries|line_plot": {
+      "n": 180,
+      "em": 18.333333333333332,
+      "wrong_type": 19.444444444444443,
+      "em_right_type": 22.75862068965517
+     },
+     "timeseries|recurrence_plot": {
+      "n": 180,
+      "em": 8.333333333333334,
+      "wrong_type": 28.33333333333333,
+      "em_right_type": 11.627906976744185
+     },
+     "timeseries|text_only": {
+      "n": 180,
+      "em": 24.444444444444443,
+      "wrong_type": 22.22222222222223,
+      "em_right_type": 31.428571428571427
+     }
+    }
+   },
+   "detailed": {
+    "1-hop": {
+     "n": 1000,
+     "em": 20.9,
+     "wrong_type": 14.200000000000003,
+     "em_right_type": 24.358974358974358,
+     "n_right_type": 858,
+     "n_questions": 205
+    },
+    "2-hop": {
+     "n": 718,
+     "em": 31.615598885793872,
+     "wrong_type": 18.80222841225627,
+     "em_right_type": 38.93653516295026,
+     "n_right_type": 583,
+     "n_questions": 149
+    },
+    "3-hop": {
+     "n": 415,
+     "em": 13.012048192771084,
+     "wrong_type": 42.16867469879518,
+     "em_right_type": 22.5,
+     "n_right_type": 240,
+     "n_questions": 87
+    },
+    "counterfactual": {
+     "n": 280,
+     "em": 28.571428571428573,
+     "wrong_type": 48.214285714285715,
+     "em_right_type": 55.172413793103445,
+     "n_right_type": 145,
+     "n_questions": 59
+    },
+    "overall": {
+     "n": 2413,
+     "em": 23.62204724409449,
+     "wrong_type": 24.326564442602574,
+     "em_right_type": 31.215772179627603,
+     "n_right_type": 1826,
+     "n_questions": 500
+    },
+    "per_format": {
+     "graph|adjacency_matrix": {
+      "n": 87,
+      "em": 32.18390804597701,
+      "wrong_type": 9.195402298850581,
+      "em_right_type": 35.44303797468354
+     },
+     "graph|circular_layout": {
+      "n": 87,
+      "em": 34.48275862068966,
+      "wrong_type": 12.643678160919535,
+      "em_right_type": 39.473684210526315
+     },
+     "graph|node_link": {
+      "n": 87,
+      "em": 29.885057471264368,
+      "wrong_type": 14.94252873563218,
+      "em_right_type": 35.13513513513514
+     },
+     "graph|text_only": {
+      "n": 87,
+      "em": 37.93103448275862,
+      "wrong_type": 13.793103448275858,
+      "em_right_type": 44.0
+     },
+     "tabular|bar_chart": {
+      "n": 233,
+      "em": 16.30901287553648,
+      "wrong_type": 26.180257510729618,
+      "em_right_type": 22.093023255813954
+     },
+     "tabular|heatmap": {
+      "n": 233,
+      "em": 31.759656652360515,
+      "wrong_type": 28.326180257510728,
+      "em_right_type": 44.31137724550898
+     },
+     "tabular|scatter_plot": {
+      "n": 233,
+      "em": 15.879828326180258,
+      "wrong_type": 28.75536480686695,
+      "em_right_type": 22.289156626506024
+     },
+     "tabular|table_image": {
+      "n": 233,
+      "em": 38.62660944206009,
+      "wrong_type": 25.321888412017174,
+      "em_right_type": 51.724137931034484
+     },
+     "tabular|text_only": {
+      "n": 233,
+      "em": 33.47639484978541,
+      "wrong_type": 31.75965665236052,
+      "em_right_type": 49.056603773584904
+     },
+     "timeseries|gaf": {
+      "n": 180,
+      "em": 11.666666666666666,
+      "wrong_type": 22.77777777777777,
+      "em_right_type": 15.107913669064748
+     },
+     "timeseries|heatmap": {
+      "n": 180,
+      "em": 11.666666666666666,
+      "wrong_type": 25.555555555555557,
+      "em_right_type": 15.671641791044776
+     },
+     "timeseries|line_plot": {
+      "n": 180,
+      "em": 15.555555555555555,
+      "wrong_type": 23.33333333333333,
+      "em_right_type": 20.28985507246377
+     },
+     "timeseries|recurrence_plot": {
+      "n": 180,
+      "em": 7.777777777777778,
+      "wrong_type": 27.22222222222223,
+      "em_right_type": 10.687022900763358
+     },
+     "timeseries|text_only": {
+      "n": 180,
+      "em": 28.88888888888889,
+      "wrong_type": 21.111111111111114,
+      "em_right_type": 36.61971830985915
+     }
+    }
+   },
+   "cot": {
+    "1-hop": {
+     "n": 1000,
+     "em": 16.7,
+     "wrong_type": 15.5,
+     "em_right_type": 19.763313609467456,
+     "n_right_type": 845,
+     "n_questions": 205
+    },
+    "2-hop": {
+     "n": 718,
+     "em": 27.855153203342617,
+     "wrong_type": 22.42339832869081,
+     "em_right_type": 35.90664272890485,
+     "n_right_type": 557,
+     "n_questions": 149
+    },
+    "3-hop": {
+     "n": 415,
+     "em": 11.566265060240964,
+     "wrong_type": 41.204819277108435,
+     "em_right_type": 19.672131147540984,
+     "n_right_type": 244,
+     "n_questions": 87
+    },
+    "counterfactual": {
+     "n": 280,
+     "em": 17.5,
+     "wrong_type": 60.357142857142854,
+     "em_right_type": 44.14414414414414,
+     "n_right_type": 111,
+     "n_questions": 59
+    },
+    "overall": {
+     "n": 2413,
+     "em": 19.229175300455864,
+     "wrong_type": 27.18607542478243,
+     "em_right_type": 26.40865110984633,
+     "n_right_type": 1757,
+     "n_questions": 500
+    },
+    "per_format": {
+     "graph|adjacency_matrix": {
+      "n": 87,
+      "em": 20.689655172413794,
+      "wrong_type": 12.643678160919535,
+      "em_right_type": 23.68421052631579
+     },
+     "graph|circular_layout": {
+      "n": 87,
+      "em": 20.689655172413794,
+      "wrong_type": 24.13793103448276,
+      "em_right_type": 27.272727272727273
+     },
+     "graph|node_link": {
+      "n": 87,
+      "em": 14.942528735632184,
+      "wrong_type": 13.793103448275858,
+      "em_right_type": 17.333333333333332
+     },
+     "graph|text_only": {
+      "n": 87,
+      "em": 21.839080459770116,
+      "wrong_type": 24.13793103448276,
+      "em_right_type": 28.78787878787879
+     },
+     "tabular|bar_chart": {
+      "n": 233,
+      "em": 15.879828326180258,
+      "wrong_type": 17.596566523605148,
+      "em_right_type": 19.270833333333332
+     },
+     "tabular|heatmap": {
+      "n": 233,
+      "em": 32.18884120171674,
+      "wrong_type": 25.321888412017174,
+      "em_right_type": 43.10344827586207
+     },
+     "tabular|scatter_plot": {
+      "n": 233,
+      "em": 11.587982832618026,
+      "wrong_type": 34.33476394849785,
+      "em_right_type": 17.647058823529413
+     },
+     "tabular|table_image": {
+      "n": 233,
+      "em": 32.18884120171674,
+      "wrong_type": 23.17596566523605,
+      "em_right_type": 41.899441340782126
+     },
+     "tabular|text_only": {
+      "n": 233,
+      "em": 31.759656652360515,
+      "wrong_type": 31.330472103004297,
+      "em_right_type": 46.25
+     },
+     "timeseries|gaf": {
+      "n": 180,
+      "em": 3.888888888888889,
+      "wrong_type": 38.888888888888886,
+      "em_right_type": 6.363636363636363
+     },
+     "timeseries|heatmap": {
+      "n": 180,
+      "em": 10.0,
+      "wrong_type": 28.33333333333333,
+      "em_right_type": 13.953488372093023
+     },
+     "timeseries|line_plot": {
+      "n": 180,
+      "em": 16.666666666666668,
+      "wrong_type": 27.22222222222223,
+      "em_right_type": 22.900763358778626
+     },
+     "timeseries|recurrence_plot": {
+      "n": 180,
+      "em": 7.222222222222222,
+      "wrong_type": 36.111111111111114,
+      "em_right_type": 11.304347826086957
+     },
+     "timeseries|text_only": {
+      "n": 180,
+      "em": 22.22222222222222,
+      "wrong_type": 27.22222222222223,
+      "em_right_type": 30.53435114503817
+     }
+    }
+   }
+  }
+ },
+ "deficit": {
+  "GPT-4o": {
+   "1-hop": {
+    "best": "detailed",
+    "n": 1000,
+    "em_best": 22.8,
+    "em_cot": 18.4,
+    "wt_best": 16.0,
+    "wt_cot": 20.5,
+    "d_all": -4.4,
+    "d_all_ci": [
+     -6.8277955525860285,
+     -1.9979023967059875
+    ],
+    "d_cot_rt": -4.0251572327044025,
+    "n_cot_rt": 795,
+    "d_both_rt": -4.421326397919376,
+    "d_both_rt_ci": [
+     -7.320265951684541,
+     -1.6774193548387097
+    ],
+    "d_both_rt_p": 0.0037996200379962005,
+    "n_both_rt": 769,
+    "d_impute": -3.2,
+    "attributable_pct": 27.27272727272727,
+    "d_vd": -2.493765586034913,
+    "n_vd": 401,
+    "d_vd_ci": [
+     -6.060805948668746,
+     0.744463168030813
+    ],
+    "d_vd_both_rt": -2.577319587628866,
+    "n_vd_both_rt": 388,
+    "d_vd_both_rt_ci": [
+     -6.199561242166233,
+     0.735430283224399
+    ]
+   },
+   "2-hop": {
+    "best": "detailed",
+    "n": 718,
+    "em_best": 42.200557103064064,
+    "em_cot": 30.779944289693592,
+    "wt_best": 11.97771587743732,
+    "wt_cot": 22.144846796657376,
+    "d_all": -11.420612813370473,
+    "d_all_ci": [
+     -16.111439842209073,
+     -6.827796312659237
+    ],
+    "d_cot_rt": -5.545617173524151,
+    "n_cot_rt": 559,
+    "d_both_rt": -6.946983546617916,
+    "d_both_rt_ci": [
+     -12.365591397849462,
+     -1.9572953736654803
+    ],
+    "d_both_rt_p": 0.011998800119988001,
+    "n_both_rt": 547,
+    "d_impute": -4.3175487465181055,
+    "attributable_pct": 62.19512195121952,
+    "d_vd": -15.708812260536398,
+    "n_vd": 261,
+    "d_vd_ci": [
+     -23.864211446448287,
+     -7.971014492753623
+    ],
+    "d_vd_both_rt": -11.057692307692308,
+    "n_vd_both_rt": 208,
+    "d_vd_both_rt_ci": [
+     -20.39826378312519,
+     -2.3696682464454977
+    ]
+   },
+   "3-hop": {
+    "best": "detailed",
+    "n": 415,
+    "em_best": 24.57831325301205,
+    "em_cot": 13.734939759036145,
+    "wt_best": 29.156626506024097,
+    "wt_cot": 28.674698795180717,
+    "d_all": -10.843373493975903,
+    "d_all_ci": [
+     -16.129420909444228,
+     -5.911204639170088
+    ],
+    "d_cot_rt": -6.756756756756757,
+    "n_cot_rt": 296,
+    "d_both_rt": -8.097165991902834,
+    "d_both_rt_ci": [
+     -15.4175160944206,
+     -0.8097165991902834
+    ],
+    "d_both_rt_p": 0.03899610038996101,
+    "n_both_rt": 247,
+    "d_impute": -4.819277108433735,
+    "attributable_pct": 55.55555555555556,
+    "d_vd": -24.603174603174605,
+    "n_vd": 126,
+    "d_vd_ci": [
+     -36.71958466880342,
+     -13.15741452170573
+    ],
+    "d_vd_both_rt": -15.384615384615385,
+    "n_vd_both_rt": 91,
+    "d_vd_both_rt_ci": [
+     -29.26829268292683,
+     -1.2195121951219512
+    ]
+   },
+   "counterfactual": {
+    "best": "detailed",
+    "n": 280,
+    "em_best": 78.92857142857143,
+    "em_cot": 24.285714285714285,
+    "wt_best": 3.214285714285708,
+    "wt_cot": 43.92857142857143,
+    "d_all": -54.642857142857146,
+    "d_all_ci": [
+     -64.41297799458862,
+     -44.852018984851476
+    ],
+    "d_cot_rt": -38.853503184713375,
+    "n_cot_rt": 157,
+    "d_both_rt": -39.61038961038961,
+    "d_both_rt_ci": [
+     -53.02085038467835,
+     -25.165456099124118
+    ],
+    "d_both_rt_p": 9.999000099990002e-05,
+    "n_both_rt": 154,
+    "d_impute": -21.785714285714285,
+    "attributable_pct": 60.13071895424837,
+    "d_vd": -68.33333333333333,
+    "n_vd": 120,
+    "d_vd_ci": [
+     -77.77989821882952,
+     -57.983193277310924
+    ],
+    "d_vd_both_rt": -63.013698630136986,
+    "n_vd_both_rt": 73,
+    "d_vd_both_rt_ci": [
+     -75.90361445783132,
+     -46.57534246575342
+    ]
+   },
+   "overall": {
+    "best": "detailed",
+    "n": 2413,
+    "em_best": 35.3916286779942,
+    "em_cot": 21.96435971819312,
+    "wt_best": 15.582262743472853,
+    "wt_cot": 25.113966017405716,
+    "d_all": -13.427268959801077,
+    "d_all_ci": [
+     -16.058509109718948,
+     -10.9843375516603
+    ],
+    "d_cot_rt": -7.969009407858329,
+    "n_cot_rt": 1807,
+    "d_both_rt": -8.910891089108912,
+    "d_both_rt_ci": [
+     -11.821516385017064,
+     -5.953809194322284
+    ],
+    "d_both_rt_p": 9.999000099990002e-05,
+    "n_both_rt": 1717,
+    "d_impute": -5.967675093244924,
+    "attributable_pct": 55.55555555555556,
+    "d_vd": -18.061674008810574,
+    "n_vd": 908,
+    "d_vd_ci": [
+     -22.69521217690441,
+     -13.743016759776536
+    ],
+    "d_vd_both_rt": -12.236842105263158,
+    "n_vd_both_rt": 760,
+    "d_vd_both_rt_ci": [
+     -17.08959418041536,
+     -7.614075259324655
+    ]
+   }
+  },
+  "Gemini-2.0-Flash": {
+   "1-hop": {
+    "best": "concise",
+    "n": 1000,
+    "em_best": 23.9,
+    "em_cot": 22.0,
+    "wt_best": 13.0,
+    "wt_cot": 10.099999999999994,
+    "d_all": -1.9,
+    "d_all_ci": [
+     -4.1580094293076035,
+     0.3798760737924235
+    ],
+    "d_cot_rt": -1.8909899888765296,
+    "n_cot_rt": 899,
+    "d_both_rt": -2.2222222222222223,
+    "d_both_rt_ci": [
+     -4.964667956157317,
+     0.34725246806039445
+    ],
+    "d_both_rt_p": 0.12068793120687932,
+    "n_both_rt": 855,
+    "d_impute": -1.7,
+    "attributable_pct": 10.526315789473683,
+    "d_vd": -2.9925187032418954,
+    "n_vd": 401,
+    "d_vd_ci": [
+     -7.792616703196048,
+     1.4053175368508035
+    ],
+    "d_vd_both_rt": -3.0927835051546393,
+    "n_vd_both_rt": 388,
+    "d_vd_both_rt_ci": [
+     -8.02168663990401,
+     1.4965413100414753
+    ]
+   },
+   "2-hop": {
+    "best": "concise",
+    "n": 718,
+    "em_best": 44.7075208913649,
+    "em_cot": 36.07242339832869,
+    "wt_best": 5.013927576601674,
+    "wt_cot": 18.384401114206128,
+    "d_all": -8.635097493036211,
+    "d_all_ci": [
+     -13.544853585039077,
+     -4.011442164779432
+    ],
+    "d_cot_rt": 1.3651877133105803,
+    "n_cot_rt": 586,
+    "d_both_rt": 0.17667844522968199,
+    "d_both_rt_ci": [
+     -3.5212820130660507,
+     3.8802419279451055
+    ],
+    "d_both_rt_p": 1.0,
+    "n_both_rt": 566,
+    "d_impute": 1.1142061281337048,
+    "attributable_pct": 112.90322580645163,
+    "d_vd": -14.559386973180077,
+    "n_vd": 261,
+    "d_vd_ci": [
+     -21.901866936203103,
+     -7.546982629529802
+    ],
+    "d_vd_both_rt": -4.3478260869565215,
+    "n_vd_both_rt": 207,
+    "d_vd_both_rt_ci": [
+     -11.214953271028037,
+     2.304147465437788
+    ]
+   },
+   "3-hop": {
+    "best": "concise",
+    "n": 415,
+    "em_best": 25.06024096385542,
+    "em_cot": 14.457831325301205,
+    "wt_best": 22.891566265060234,
+    "wt_cot": 22.891566265060234,
+    "d_all": -10.602409638554217,
+    "d_all_ci": [
+     -17.647396114409066,
+     -4.228593385430172
+    ],
+    "d_cot_rt": -5.625,
+    "n_cot_rt": 320,
+    "d_both_rt": -7.547169811320755,
+    "d_both_rt_ci": [
+     -15.948505135730008,
+     0.3413555704115493
+    ],
+    "d_both_rt_p": 0.08869113088691132,
+    "n_both_rt": 265,
+    "d_impute": -4.337349397590361,
+    "attributable_pct": 59.09090909090909,
+    "d_vd": -23.015873015873016,
+    "n_vd": 126,
+    "d_vd_ci": [
+     -37.81671759612936,
+     -9.022402317268584
+    ],
+    "d_vd_both_rt": -15.151515151515152,
+    "n_vd_both_rt": 99,
+    "d_vd_both_rt_ci": [
+     -31.858407079646017,
+     0.0
+    ]
+   },
+   "counterfactual": {
+    "best": "concise",
+    "n": 280,
+    "em_best": 76.42857142857143,
+    "em_cot": 30.0,
+    "wt_best": 0.0,
+    "wt_cot": 39.285714285714285,
+    "d_all": -46.42857142857143,
+    "d_all_ci": [
+     -58.334044368600686,
+     -34.373833955223894
+    ],
+    "d_cot_rt": -24.705882352941178,
+    "n_cot_rt": 170,
+    "d_both_rt": -24.705882352941178,
+    "d_both_rt_ci": [
+     -39.22799921073402,
+     -9.090909090909092
+    ],
+    "d_both_rt_p": 0.0052994700529947,
+    "n_both_rt": 170,
+    "d_impute": -15.0,
+    "attributable_pct": 67.6923076923077,
+    "d_vd": -69.16666666666667,
+    "n_vd": 120,
+    "d_vd_ci": [
+     -79.13134057971016,
+     -58.251034537641274
+    ],
+    "d_vd_both_rt": -62.5,
+    "n_vd_both_rt": 72,
+    "d_vd_both_rt_ci": [
+     -76.83161350844277,
+     -45.068661971831006
+    ]
+   },
+   "overall": {
+    "best": "concise",
+    "n": 2413,
+    "em_best": 36.38624119353502,
+    "em_cot": 25.8184832159138,
+    "wt_best": 10.816411106506422,
+    "wt_cot": 18.151678408619972,
+    "d_all": -10.567757977621218,
+    "d_all_ci": [
+     -13.224639392678379,
+     -8.006991601076365
+    ],
+    "d_cot_rt": -3.4936708860759493,
+    "n_cot_rt": 1975,
+    "d_both_rt": -4.310344827586207,
+    "d_both_rt_ci": [
+     -6.794547759024411,
+     -1.9078237080954492
+    ],
+    "d_both_rt_p": 0.0015998400159984002,
+    "n_both_rt": 1856,
+    "d_impute": -2.859510982179859,
+    "attributable_pct": 72.94117647058825,
+    "d_vd": -17.841409691629956,
+    "n_vd": 908,
+    "d_vd_ci": [
+     -22.505624468746017,
+     -13.325222764044467
+    ],
+    "d_vd_both_rt": -10.574412532637076,
+    "n_vd_both_rt": 766,
+    "d_vd_both_rt_ci": [
+     -14.944002450051437,
+     -6.224976838348834
+    ]
+   }
+  },
+  "Qwen2.5-VL-7B": {
+   "1-hop": {
+    "best": "concise",
+    "n": 1000,
+    "em_best": 25.3,
+    "em_cot": 19.9,
+    "wt_best": 10.700000000000003,
+    "wt_cot": 13.299999999999997,
+    "d_all": -5.4,
+    "d_all_ci": [
+     -8.292201382033564,
+     -2.697525313082872
+    ],
+    "d_cot_rt": -4.728950403690888,
+    "n_cot_rt": 867,
+    "d_both_rt": -4.875148632580261,
+    "d_both_rt_ci": [
+     -8.435425336443885,
+     -1.6278851471315892
+    ],
+    "d_both_rt_p": 0.0046995300469953,
+    "n_both_rt": 841,
+    "d_impute": -4.1,
+    "attributable_pct": 24.07407407407408,
+    "d_vd": -8.229426433915211,
+    "n_vd": 401,
+    "d_vd_ci": [
+     -13.533886511859759,
+     -3.411929804394891
+    ],
+    "d_vd_both_rt": -6.504065040650406,
+    "n_vd_both_rt": 369,
+    "d_vd_both_rt_ci": [
+     -11.940993172435695,
+     -1.4124127617148559
+    ]
+   },
+   "2-hop": {
+    "best": "concise",
+    "n": 718,
+    "em_best": 38.99721448467967,
+    "em_cot": 23.955431754874652,
+    "wt_best": 0.8356545961002837,
+    "wt_cot": 21.169916434540383,
+    "d_all": -15.041782729805014,
+    "d_all_ci": [
+     -21.545508432939286,
+     -8.894728960766699
+    ],
+    "d_cot_rt": -4.593639575971731,
+    "n_cot_rt": 566,
+    "d_both_rt": -4.642857142857143,
+    "d_both_rt_ci": [
+     -10.96660221689105,
+     1.4415717706856928
+    ],
+    "d_both_rt_p": 0.16418358164183583,
+    "n_both_rt": 560,
+    "d_impute": -3.6211699164345403,
+    "attributable_pct": 75.92592592592592,
+    "d_vd": -16.47509578544061,
+    "n_vd": 261,
+    "d_vd_ci": [
+     -26.642163261380343,
+     -7.010425710874765
+    ],
+    "d_vd_both_rt": -3.045685279187817,
+    "n_vd_both_rt": 197,
+    "d_vd_both_rt_ci": [
+     -13.830932505344599,
+     6.951871657754011
+    ]
+   },
+   "3-hop": {
+    "best": "concise",
+    "n": 415,
+    "em_best": 24.57831325301205,
+    "em_cot": 13.734939759036145,
+    "wt_best": 21.686746987951807,
+    "wt_cot": 14.93975903614458,
+    "d_all": -10.843373493975903,
+    "d_all_ci": [
+     -17.452253451922324,
+     -4.477611940298507
+    ],
+    "d_cot_rt": -4.2492917847025495,
+    "n_cot_rt": 353,
+    "d_both_rt": -5.673758865248227,
+    "d_both_rt_ci": [
+     -12.871727172717272,
+     1.2701465201465156
+    ],
+    "d_both_rt_p": 0.143985601439856,
+    "n_both_rt": 282,
+    "d_impute": -3.6144578313253013,
+    "attributable_pct": 66.66666666666666,
+    "d_vd": -15.873015873015873,
+    "n_vd": 126,
+    "d_vd_ci": [
+     -28.57419712070875,
+     -3.758697115924149
+    ],
+    "d_vd_both_rt": -8.571428571428571,
+    "n_vd_both_rt": 105,
+    "d_vd_both_rt_ci": [
+     -21.783078307830785,
+     4.238882813923797
+    ]
+   },
+   "counterfactual": {
+    "best": "concise",
+    "n": 280,
+    "em_best": 66.78571428571429,
+    "em_cot": 15.0,
+    "wt_best": 0.0,
+    "wt_cot": 50.357142857142854,
+    "d_all": -51.785714285714285,
+    "d_all_ci": [
+     -61.905585763717255,
+     -41.341795974804135
+    ],
+    "d_cot_rt": -33.093525179856115,
+    "n_cot_rt": 139,
+    "d_both_rt": -33.093525179856115,
+    "d_both_rt_ci": [
+     -46.57637243794417,
+     -17.82892640968462
+    ],
+    "d_both_rt_p": 0.0006999300069993001,
+    "n_both_rt": 139,
+    "d_impute": -16.428571428571427,
+    "attributable_pct": 68.27586206896552,
+    "d_vd": -75.83333333333333,
+    "n_vd": 120,
+    "d_vd_ci": [
+     -85.12396694214875,
+     -65.48672566371681
+    ],
+    "d_vd_both_rt": -70.14925373134328,
+    "n_vd_both_rt": 67,
+    "d_vd_both_rt_ci": [
+     -81.1616847826087,
+     -55.932203389830505
+    ]
+   },
+   "overall": {
+    "best": "concise",
+    "n": 2413,
+    "em_best": 34.065478657273104,
+    "em_cot": 19.47782842934107,
+    "wt_best": 8.412764193949442,
+    "wt_cot": 20.223787815996687,
+    "d_all": -14.587650227932034,
+    "d_all_ci": [
+     -17.400169406385672,
+     -11.786341955932949
+    ],
+    "d_cot_rt": -6.64935064935065,
+    "n_cot_rt": 1925,
+    "d_both_rt": -7.0801317233809,
+    "d_both_rt_ci": [
+     -10.203122121720236,
+     -4.231350944071423
+    ],
+    "d_both_rt_p": 9.999000099990002e-05,
+    "n_both_rt": 1822,
+    "d_impute": -5.3046000828843765,
+    "attributable_pct": 63.63636363636363,
+    "d_vd": -20.594713656387665,
+    "n_vd": 908,
+    "d_vd_ci": [
+     -25.680365980854766,
+     -15.696661875796602
+    ],
+    "d_vd_both_rt": -11.653116531165312,
+    "n_vd_both_rt": 738,
+    "d_vd_both_rt_ci": [
+     -16.997167138810198,
+     -6.5902301148352995
+    ]
+   }
+  },
+  "Claude Sonnet 4": {
+   "1-hop": {
+    "best": "detailed",
+    "n": 1000,
+    "em_best": 20.9,
+    "em_cot": 16.7,
+    "wt_best": 14.200000000000003,
+    "wt_cot": 15.5,
+    "d_all": -4.2,
+    "d_all_ci": [
+     -5.792468519838442,
+     -2.620683631894408
+    ],
+    "d_cot_rt": -3.5502958579881656,
+    "n_cot_rt": 845,
+    "d_both_rt": -4.071246819338422,
+    "d_both_rt_ci": [
+     -6.000130548302872,
+     -2.225130890052356
+    ],
+    "d_both_rt_p": 9.999000099990002e-05,
+    "n_both_rt": 786,
+    "d_impute": -3.0,
+    "attributable_pct": 28.57142857142857,
+    "d_vd": -3.9900249376558605,
+    "n_vd": 401,
+    "d_vd_ci": [
+     -7.088654018755222,
+     -1.1820330969267139
+    ],
+    "d_vd_both_rt": -3.977272727272727,
+    "n_vd_both_rt": 352,
+    "d_vd_both_rt_ci": [
+     -7.365668897858224,
+     -0.8263895195713385
+    ]
+   },
+   "2-hop": {
+    "best": "detailed",
+    "n": 718,
+    "em_best": 31.615598885793872,
+    "em_cot": 27.855153203342617,
+    "wt_best": 18.80222841225627,
+    "wt_cot": 22.42339832869081,
+    "d_all": -3.7604456824512535,
+    "d_all_ci": [
+     -7.240484725329924,
+     -0.4384229458538457
+    ],
+    "d_cot_rt": 0.718132854578097,
+    "n_cot_rt": 557,
+    "d_both_rt": -1.5065913370998116,
+    "d_both_rt_ci": [
+     -4.9620098620264566,
+     1.8552875695732838
+    ],
+    "d_both_rt_p": 0.45755424457554245,
+    "n_both_rt": 531,
+    "d_impute": 0.5571030640668524,
+    "attributable_pct": 114.81481481481481,
+    "d_vd": 1.5325670498084292,
+    "n_vd": 261,
+    "d_vd_ci": [
+     -3.448607427055703,
+     6.6148575188830385
+    ],
+    "d_vd_both_rt": 3.6649214659685865,
+    "n_vd_both_rt": 191,
+    "d_vd_both_rt_ci": [
+     -1.8190235690235688,
+     9.767821031344786
+    ]
+   },
+   "3-hop": {
+    "best": "detailed",
+    "n": 415,
+    "em_best": 13.012048192771084,
+    "em_cot": 11.566265060240964,
+    "wt_best": 42.16867469879518,
+    "wt_cot": 41.204819277108435,
+    "d_all": -1.4457831325301205,
+    "d_all_ci": [
+     -3.9260969976905313,
+     1.017876616295372
+    ],
+    "d_cot_rt": 2.0491803278688523,
+    "n_cot_rt": 244,
+    "d_both_rt": -1.0050251256281406,
+    "d_both_rt_ci": [
+     -4.0,
+     1.9356404635139346
+    ],
+    "d_both_rt_p": 0.7578242175782421,
+    "n_both_rt": 199,
+    "d_impute": 1.2048192771084338,
+    "attributable_pct": 183.33333333333334,
+    "d_vd": 2.380952380952381,
+    "n_vd": 126,
+    "d_vd_ci": [
+     -4.065040650406504,
+     9.302818289318086
+    ],
+    "d_vd_both_rt": 0.0,
+    "n_vd_both_rt": 76,
+    "d_vd_both_rt_ci": [
+     -5.085832246849195,
+     5.194805194805195
+    ]
+   },
+   "counterfactual": {
+    "best": "detailed",
+    "n": 280,
+    "em_best": 28.571428571428573,
+    "em_cot": 17.5,
+    "wt_best": 48.214285714285715,
+    "wt_cot": 60.357142857142854,
+    "d_all": -11.071428571428571,
+    "d_all_ci": [
+     -15.849509155468914,
+     -6.716351985654766
+    ],
+    "d_cot_rt": -5.405405405405405,
+    "n_cot_rt": 111,
+    "d_both_rt": -6.25,
+    "d_both_rt_ci": [
+     -10.891089108910892,
+     -2.1052631578947367
+    ],
+    "d_both_rt_p": 0.031196880311968805,
+    "n_both_rt": 96,
+    "d_impute": -2.142857142857143,
+    "attributable_pct": 80.64516129032258,
+    "d_vd": -5.833333333333333,
+    "n_vd": 120,
+    "d_vd_ci": [
+     -12.844036697247706,
+     -0.8130081300813008
+    ],
+    "d_vd_both_rt": 0.0,
+    "n_vd_both_rt": 46,
+    "d_vd_both_rt_ci": [
+     0.0,
+     0.0
+    ]
+   },
+   "overall": {
+    "best": "detailed",
+    "n": 2413,
+    "em_best": 23.62204724409449,
+    "em_cot": 19.229175300455864,
+    "wt_best": 24.326564442602574,
+    "wt_cot": 27.18607542478243,
+    "d_all": -4.3928719436386245,
+    "d_all_ci": [
+     -5.960037673506083,
+     -2.894783405227583
+    ],
+    "d_cot_rt": -1.5367103016505408,
+    "n_cot_rt": 1757,
+    "d_both_rt": -2.977667493796526,
+    "d_both_rt_ci": [
+     -4.635056646985854,
+     -1.3923390933734228
+    ],
+    "d_both_rt_p": 0.00029997000299970003,
+    "n_both_rt": 1612,
+    "d_impute": -1.1189390799834231,
+    "attributable_pct": 74.52830188679245,
+    "d_vd": -1.7621145374449338,
+    "n_vd": 908,
+    "d_vd_ci": [
+     -4.064311030966298,
+     0.5348602019177563
+    ],
+    "d_vd_both_rt": -1.0526315789473684,
+    "n_vd_both_rt": 665,
+    "d_vd_both_rt_ci": [
+     -3.257905892753099,
+     1.263823064770932
+    ]
+   }
+  }
+ },
+ "best_style": {
+  "GPT-4o": "detailed",
+  "Gemini-2.0-Flash": "concise",
+  "Qwen2.5-VL-7B": "concise",
+  "Claude Sonnet 4": "detailed"
+ },
+ "wrong_type_breakdown": {
+  "GPT-4o|minimal": {
+   "refusal/empty": 241,
+   "out_of_vocab_label": 41,
+   "free_text": 165,
+   "label_for_yesno": 17,
+   "number_for_yesno": 193,
+   "number_for_label": 102,
+   "label_for_number": 2
+  },
+  "GPT-4o|concise": {
+   "refusal/empty": 301,
+   "out_of_vocab_label": 24,
+   "free_text": 104,
+   "number_for_yesno": 129,
+   "number_for_label": 59,
+   "label_for_yesno": 20
+  },
+  "GPT-4o|detailed": {
+   "refusal/empty": 187,
+   "free_text": 48,
+   "number_for_label": 40,
+   "label_for_yesno": 39,
+   "label_for_number": 20,
+   "out_of_vocab_label": 39,
+   "number_for_yesno": 3
+  },
+  "GPT-4o|cot": {
+   "refusal/empty": 188,
+   "out_of_vocab_label": 57,
+   "number_for_label": 91,
+   "number_for_yesno": 166,
+   "free_text": 87,
+   "label_for_yesno": 13,
+   "label_for_number": 4
+  },
+  "Gemini-2.0-Flash|minimal": {
+   "out_of_vocab_label": 53,
+   "number_for_yesno": 158,
+   "free_text": 324,
+   "refusal/empty": 22,
+   "number_for_label": 61,
+   "label_for_yesno": 28,
+   "label_for_number": 2
+  },
+  "Gemini-2.0-Flash|concise": {
+   "refusal/empty": 35,
+   "number_for_label": 81,
+   "free_text": 31,
+   "label_for_number": 36,
+   "out_of_vocab_label": 77,
+   "number_for_yesno": 1
+  },
+  "Gemini-2.0-Flash|detailed": {
+   "refusal/empty": 60,
+   "out_of_vocab_label": 88,
+   "number_for_label": 111,
+   "label_for_number": 28,
+   "yesno_for_number": 6,
+   "free_text": 13,
+   "label_for_yesno": 2
+  },
+  "Gemini-2.0-Flash|cot": {
+   "out_of_vocab_label": 59,
+   "number_for_yesno": 115,
+   "free_text": 134,
+   "number_for_label": 90,
+   "label_for_number": 11,
+   "label_for_yesno": 16,
+   "refusal/empty": 13
+  },
+  "Qwen2.5-VL-7B|minimal": {
+   "out_of_vocab_label": 97,
+   "number_for_label": 84,
+   "number_for_yesno": 182,
+   "label_for_yesno": 21,
+   "label_for_number": 14,
+   "refusal/empty": 88,
+   "free_text": 57
+  },
+  "Qwen2.5-VL-7B|concise": {
+   "number_for_label": 87,
+   "refusal/empty": 23,
+   "free_text": 18,
+   "label_for_number": 7,
+   "out_of_vocab_label": 67,
+   "yesno_for_label": 1
+  },
+  "Qwen2.5-VL-7B|detailed": {
+   "number_for_label": 84,
+   "refusal/empty": 30,
+   "free_text": 24,
+   "label_for_number": 8,
+   "out_of_vocab_label": 64,
+   "yesno_for_label": 1
+  },
+  "Qwen2.5-VL-7B|cot": {
+   "out_of_vocab_label": 98,
+   "number_for_yesno": 221,
+   "number_for_label": 85,
+   "free_text": 43,
+   "refusal/empty": 31,
+   "label_for_yesno": 10
+  },
+  "Claude Sonnet 4|minimal": {
+   "out_of_vocab_label": 93,
+   "number_for_yesno": 182,
+   "free_text": 216,
+   "number_for_label": 91,
+   "refusal/empty": 16,
+   "label_for_yesno": 3
+  },
+  "Claude Sonnet 4|concise": {
+   "refusal/empty": 40,
+   "out_of_vocab_label": 43,
+   "number_for_yesno": 154,
+   "free_text": 282,
+   "number_for_label": 100,
+   "label_for_number": 1,
+   "label_for_yesno": 3
+  },
+  "Claude Sonnet 4|detailed": {
+   "out_of_vocab_label": 50,
+   "number_for_yesno": 147,
+   "free_text": 271,
+   "number_for_label": 94,
+   "refusal/empty": 22,
+   "label_for_number": 1,
+   "label_for_yesno": 2
+  },
+  "Claude Sonnet 4|cot": {
+   "out_of_vocab_label": 59,
+   "number_for_yesno": 258,
+   "free_text": 213,
+   "number_for_label": 106,
+   "label_for_yesno": 6,
+   "refusal/empty": 13,
+   "label_for_number": 1
+  }
+ },
+ "verdict": {
+  "deficit_range_all_pp": [
+   4.3928719436386245,
+   14.587650227932034
+  ],
+  "deficit_range_both_right_type_pp": [
+   2.977667493796526,
+   8.910891089108912
+  ],
+  "cot_better_on_both_right_type": {
+   "GPT-4o": false,
+   "Gemini-2.0-Flash": false,
+   "Qwen2.5-VL-7B": false,
+   "Claude Sonnet 4": false
+  },
+  "both_right_type_ci_excludes_zero_below": {
+   "GPT-4o": true,
+   "Gemini-2.0-Flash": true,
+   "Qwen2.5-VL-7B": true,
+   "Claude Sonnet 4": true
+  },
+  "mean_d_all": -10.743887277248238,
+  "mean_d_both_rt": -5.819758783468136,
+  "mean_attributable_pct": 66.66534938732497
+ }
+}

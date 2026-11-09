@@ -1,0 +1,8 @@
+model_type: claude
+name: claude-3-5-sonnet-20241022
+api_key_env: ANTHROPIC_API_KEY
+max_tokens: 256
+temperature: 0.0
+system_prompt: "Answer concisely. Give only the final answer."
+timeout_seconds: 60.0
+requests_per_minute: 40

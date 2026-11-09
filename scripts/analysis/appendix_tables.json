@@ -1,0 +1,5667 @@
+{
+ "config": {
+  "score_field": "exact_match",
+  "seed": 0,
+  "B_boot": 5000,
+  "B_perm": 10000,
+  "n_questions": 3795,
+  "n_objects": 299,
+  "formats": {
+   "tabular": [
+    "table_image",
+    "text_only",
+    "heatmap",
+    "bar_chart",
+    "scatter_plot"
+   ],
+   "timeseries": [
+    "line_plot",
+    "heatmap",
+    "gaf",
+    "recurrence_plot",
+    "text_only"
+   ],
+   "graph": [
+    "node_link",
+    "circular_layout",
+    "adjacency_matrix",
+    "text_only"
+   ]
+  },
+  "models": [
+   [
+    "GPT-4o",
+    "gpt4o"
+   ],
+   [
+    "Gemini-2.0-Flash",
+    "gemini20"
+   ],
+   [
+    "Qwen2.5-VL-7B",
+    "qwen7b"
+   ],
+   [
+    "Claude Sonnet 4",
+    "claude"
+   ],
+   [
+    "Gemini-2.5-Flash",
+    "gemini25"
+   ],
+   [
+    "Qwen2.5-VL-32B",
+    "qwen32b"
+   ],
+   [
+    "InternVL2.5-8B",
+    "internvl"
+   ]
+  ],
+  "loading": {
+   "gpt4o": {
+    "file": "full_gpt4o_extracted.jsonl",
+    "rows_raw": 18315,
+    "rows_dedup": 18315,
+    "rows_with_exact_field": 0
+   },
+   "gemini20": {
+    "file": "full_gemini_extracted.jsonl",
+    "rows_raw": 18315,
+    "rows_dedup": 18315,
+    "rows_with_exact_field": 0
+   },
+   "qwen7b": {
+    "file": "full_qwen_extracted.jsonl",
+    "rows_raw": 18315,
+    "rows_dedup": 18315,
+    "rows_with_exact_field": 0
+   },
+   "claude": {
+    "file": "full_claude_extracted.jsonl",
+    "rows_raw": 18315,
+    "rows_dedup": 18315,
+    "rows_with_exact_field": 0
+   },
+   "gemini25": {
+    "file": "full_gemini25.jsonl",
+    "rows_raw": 18315,
+    "rows_dedup": 18315,
+    "rows_with_exact_field": 0
+   },
+   "qwen32b": {
+    "file": "full_qwen32b.jsonl",
+    "rows_raw": 18315,
+    "rows_dedup": 18315,
+    "rows_with_exact_field": 0
+   },
+   "internvl": {
+    "file": "full_internvl.jsonl",
+    "rows_raw": 18315,
+    "rows_dedup": 18315,
+    "rows_with_exact_field": 0
+   }
+  }
+ },
+ "task_format": {
+  "tabular": {
+   "tasks": [
+    [
+     "value_extraction",
+     468
+    ],
+    [
+     "trend_analysis",
+     247
+    ],
+    [
+     "outlier_detection",
+     230
+    ],
+    [
+     "comparison",
+     224
+    ],
+    [
+     "aggregation",
+     207
+    ],
+    [
+     "counterfactual",
+     146
+    ],
+    [
+     "filtering",
+     104
+    ],
+    [
+     "ranking",
+     90
+    ],
+    [
+     "correlation",
+     49
+    ]
+   ],
+   "models": {
+    "gpt4o": {
+     "value_extraction": {
+      "n": 468,
+      "em": {
+       "table_image": 72.00854700854701,
+       "text_only": 69.87179487179488,
+       "heatmap": 29.700854700854702,
+       "bar_chart": 1.7094017094017093,
+       "scatter_plot": 2.7777777777777777
+      },
+      "n_rows": {
+       "table_image": 468,
+       "text_only": 468,
+       "heatmap": 468,
+       "bar_chart": 468,
+       "scatter_plot": 468
+      },
+      "best": [
+       "table_image"
+      ]
+     },
+     "trend_analysis": {
+      "n": 247,
+      "em": {
+       "table_image": 62.34817813765182,
+       "text_only": 72.46963562753037,
+       "heatmap": 67.20647773279352,
+       "bar_chart": 19.4331983805668,
+       "scatter_plot": 48.178137651821864
+      },
+      "n_rows": {
+       "table_image": 247,
+       "text_only": 247,
+       "heatmap": 247,
+       "bar_chart": 247,
+       "scatter_plot": 247
+      },
+      "best": [
+       "text_only"
+      ]
+     },
+     "outlier_detection": {
+      "n": 230,
+      "em": {
+       "table_image": 37.82608695652174,
+       "text_only": 33.47826086956522,
+       "heatmap": 0.0,
+       "bar_chart": 0.0,
+       "scatter_plot": 0.0
+      },
+      "n_rows": {
+       "table_image": 230,
+       "text_only": 230,
+       "heatmap": 230,
+       "bar_chart": 230,
+       "scatter_plot": 230
+      },
+      "best": [
+       "table_image"
+      ]
+     },
+     "comparison": {
+      "n": 224,
+      "em": {
+       "table_image": 87.5,
+       "text_only": 82.14285714285714,
+       "heatmap": 87.94642857142857,
+       "bar_chart": 95.08928571428571,
+       "scatter_plot": 80.80357142857143
+      },
+      "n_rows": {
+       "table_image": 224,
+       "text_only": 224,
+       "heatmap": 224,
+       "bar_chart": 224,
+       "scatter_plot": 224
+      },
+      "best": [
+       "bar_chart"
+      ]
+     },
+     "aggregation": {
+      "n": 207,
+      "em": {
+       "table_image": 44.44444444444444,
+       "text_only": 35.265700483091784,
+       "heatmap": 54.589371980676326,
+       "bar_chart": 16.908212560386474,
+       "scatter_plot": 4.3478260869565215
+      },
+      "n_rows": {
+       "table_image": 207,
+       "text_only": 207,
+       "heatmap": 207,
+       "bar_chart": 207,
+       "scatter_plot": 207
+      },
+      "best": [
+       "heatmap"
+      ]
+     },
+     "counterfactual": {
+      "n": 146,
+      "em": {
+       "table_image": 67.12328767123287,
+       "text_only": 73.28767123287672,
+       "heatmap": 71.23287671232876,
+       "bar_chart": 60.95890410958904,
+       "scatter_plot": 58.21917808219178
+      },
+      "n_rows": {
+       "table_image": 146,
+       "text_only": 146,
+       "heatmap": 146,
+       "bar_chart": 146,
+       "scatter_plot": 146
+      },
+      "best": [
+       "text_only"
+      ]
+     },
+     "filtering": {
+      "n": 104,
+      "em": {
+       "table_image": 29.807692307692307,
+       "text_only": 27.884615384615383,
+       "heatmap": 49.03846153846154,
+       "bar_chart": 8.653846153846153,
+       "scatter_plot": 8.653846153846153
+      },
+      "n_rows": {
+       "table_image": 104,
+       "text_only": 104,
+       "heatmap": 104,
+       "bar_chart": 104,
+       "scatter_plot": 104
+      },
+      "best": [
+       "heatmap"
+      ]
+     },
+     "ranking": {
+      "n": 90,
+      "em": {
+       "table_image": 61.111111111111114,
+       "text_only": 44.44444444444444,
+       "heatmap": 0.0,
+       "bar_chart": 0.0,
+       "scatter_plot": 0.0
+      },
+      "n_rows": {
+       "table_image": 90,
+       "text_only": 90,
+       "heatmap": 90,
+       "bar_chart": 90,
+       "scatter_plot": 90
+      },
+      "best": [
+       "table_image"
+      ]
+     },
+     "correlation": {
+      "n": 49,
+      "em": {
+       "table_image": 0.0,
+       "text_only": 0.0,
+       "heatmap": 0.0,
+       "bar_chart": 0.0,
+       "scatter_plot": 0.0
+      },
+      "n_rows": {
+       "table_image": 49,
+       "text_only": 49,
+       "heatmap": 49,
+       "bar_chart": 49,
+       "scatter_plot": 49
+      },
+      "best": [
+       "table_image",
+       "text_only",
+       "heatmap",
+       "bar_chart",
+       "scatter_plot"
+      ]
+     }
+    },
+    "gemini20": {
+     "value_extraction": {
+      "n": 468,
+      "em": {
+       "table_image": 68.80341880341881,
+       "text_only": 62.39316239316239,
+       "heatmap": 29.914529914529915,
+       "bar_chart": 1.7094017094017093,
+       "scatter_plot": 5.982905982905983
+      },
+      "n_rows": {
+       "table_image": 468,
+       "text_only": 468,
+       "heatmap": 468,
+       "bar_chart": 468,
+       "scatter_plot": 468
+      },
+      "best": [
+       "table_image"
+      ]
+     },
+     "trend_analysis": {
+      "n": 247,
+      "em": {
+       "table_image": 69.63562753036437,
+       "text_only": 75.30364372469636,
+       "heatmap": 75.30364372469636,
+       "bar_chart": 35.22267206477733,
+       "scatter_plot": 46.963562753036435
+      },
+      "n_rows": {
+       "table_image": 247,
+       "text_only": 247,
+       "heatmap": 247,
+       "bar_chart": 247,
+       "scatter_plot": 247
+      },
+      "best": [
+       "text_only",
+       "heatmap"
+      ]
+     },
+     "outlier_detection": {
+      "n": 230,
+      "em": {
+       "table_image": 37.391304347826086,
+       "text_only": 47.391304347826086,
+       "heatmap": 0.0,
+       "bar_chart": 0.0,
+       "scatter_plot": 0.0
+      },
+      "n_rows": {
+       "table_image": 230,
+       "text_only": 230,
+       "heatmap": 230,
+       "bar_chart": 230,
+       "scatter_plot": 230
+      },
+      "best": [
+       "text_only"
+      ]
+     },
+     "comparison": {
+      "n": 224,
+      "em": {
+       "table_image": 89.28571428571429,
+       "text_only": 88.39285714285714,
+       "heatmap": 93.30357142857143,
+       "bar_chart": 94.19642857142857,
+       "scatter_plot": 53.57142857142857
+      },
+      "n_rows": {
+       "table_image": 224,
+       "text_only": 224,
+       "heatmap": 224,
+       "bar_chart": 224,
+       "scatter_plot": 224
+      },
+      "best": [
+       "bar_chart"
+      ]
+     },
+     "aggregation": {
+      "n": 207,
+      "em": {
+       "table_image": 48.792270531400966,
+       "text_only": 47.34299516908212,
+       "heatmap": 53.14009661835749,
+       "bar_chart": 16.908212560386474,
+       "scatter_plot": 9.178743961352657
+      },
+      "n_rows": {
+       "table_image": 207,
+       "text_only": 207,
+       "heatmap": 207,
+       "bar_chart": 207,
+       "scatter_plot": 207
+      },
+      "best": [
+       "heatmap"
+      ]
+     },
+     "counterfactual": {
+      "n": 146,
+      "em": {
+       "table_image": 67.8082191780822,
+       "text_only": 71.91780821917808,
+       "heatmap": 65.06849315068493,
+       "bar_chart": 60.273972602739725,
+       "scatter_plot": 43.15068493150685
+      },
+      "n_rows": {
+       "table_image": 146,
+       "text_only": 146,
+       "heatmap": 146,
+       "bar_chart": 146,
+       "scatter_plot": 146
+      },
+      "best": [
+       "text_only"
+      ]
+     },
+     "filtering": {
+      "n": 104,
+      "em": {
+       "table_image": 35.57692307692308,
+       "text_only": 31.73076923076923,
+       "heatmap": 46.15384615384615,
+       "bar_chart": 7.6923076923076925,
+       "scatter_plot": 16.346153846153847
+      },
+      "n_rows": {
+       "table_image": 104,
+       "text_only": 104,
+       "heatmap": 104,
+       "bar_chart": 104,
+       "scatter_plot": 104
+      },
+      "best": [
+       "heatmap"
+      ]
+     },
+     "ranking": {
+      "n": 90,
+      "em": {
+       "table_image": 53.333333333333336,
+       "text_only": 64.44444444444444,
+       "heatmap": 0.0,
+       "bar_chart": 0.0,
+       "scatter_plot": 0.0
+      },
+      "n_rows": {
+       "table_image": 90,
+       "text_only": 90,
+       "heatmap": 90,
+       "bar_chart": 90,
+       "scatter_plot": 90
+      },
+      "best": [
+       "text_only"
+      ]
+     },
+     "correlation": {
+      "n": 49,
+      "em": {
+       "table_image": 0.0,
+       "text_only": 0.0,
+       "heatmap": 2.0408163265306123,
+       "bar_chart": 10.204081632653061,
+       "scatter_plot": 2.0408163265306123
+      },
+      "n_rows": {
+       "table_image": 49,
+       "text_only": 49,
+       "heatmap": 49,
+       "bar_chart": 49,
+       "scatter_plot": 49
+      },
+      "best": [
+       "bar_chart"
+      ]
+     }
+    },
+    "qwen7b": {
+     "value_extraction": {
+      "n": 468,
+      "em": {
+       "table_image": 68.58974358974359,
+       "text_only": 56.623931623931625,
+       "heatmap": 29.914529914529915,
+       "bar_chart": 1.7094017094017093,
+       "scatter_plot": 2.7777777777777777
+      },
+      "n_rows": {
+       "table_image": 468,
+       "text_only": 468,
+       "heatmap": 468,
+       "bar_chart": 468,
+       "scatter_plot": 468
+      },
+      "best": [
+       "table_image"
+      ]
+     },
+     "trend_analysis": {
+      "n": 247,
+      "em": {
+       "table_image": 74.89878542510121,
+       "text_only": 71.25506072874494,
+       "heatmap": 69.63562753036437,
+       "bar_chart": 38.05668016194332,
+       "scatter_plot": 46.15384615384615
+      },
+      "n_rows": {
+       "table_image": 247,
+       "text_only": 247,
+       "heatmap": 247,
+       "bar_chart": 247,
+       "scatter_plot": 247
+      },
+      "best": [
+       "table_image"
+      ]
+     },
+     "outlier_detection": {
+      "n": 230,
+      "em": {
+       "table_image": 22.17391304347826,
+       "text_only": 24.347826086956523,
+       "heatmap": 1.3043478260869565,
+       "bar_chart": 0.0,
+       "scatter_plot": 0.0
+      },
+      "n_rows": {
+       "table_image": 230,
+       "text_only": 230,
+       "heatmap": 230,
+       "bar_chart": 230,
+       "scatter_plot": 230
+      },
+      "best": [
+       "text_only"
+      ]
+     },
+     "comparison": {
+      "n": 224,
+      "em": {
+       "table_image": 82.14285714285714,
+       "text_only": 79.01785714285714,
+       "heatmap": 91.51785714285714,
+       "bar_chart": 96.42857142857143,
+       "scatter_plot": 62.5
+      },
+      "n_rows": {
+       "table_image": 224,
+       "text_only": 224,
+       "heatmap": 224,
+       "bar_chart": 224,
+       "scatter_plot": 224
+      },
+      "best": [
+       "bar_chart"
+      ]
+     },
+     "aggregation": {
+      "n": 207,
+      "em": {
+       "table_image": 26.570048309178745,
+       "text_only": 10.144927536231885,
+       "heatmap": 34.78260869565217,
+       "bar_chart": 16.908212560386474,
+       "scatter_plot": 1.4492753623188406
+      },
+      "n_rows": {
+       "table_image": 207,
+       "text_only": 207,
+       "heatmap": 207,
+       "bar_chart": 207,
+       "scatter_plot": 207
+      },
+      "best": [
+       "heatmap"
+      ]
+     },
+     "counterfactual": {
+      "n": 146,
+      "em": {
+       "table_image": 61.64383561643836,
+       "text_only": 61.64383561643836,
+       "heatmap": 65.75342465753425,
+       "bar_chart": 63.013698630136986,
+       "scatter_plot": 23.28767123287671
+      },
+      "n_rows": {
+       "table_image": 146,
+       "text_only": 146,
+       "heatmap": 146,
+       "bar_chart": 146,
+       "scatter_plot": 146
+      },
+      "best": [
+       "heatmap"
+      ]
+     },
+     "filtering": {
+      "n": 104,
+      "em": {
+       "table_image": 24.03846153846154,
+       "text_only": 19.23076923076923,
+       "heatmap": 40.38461538461539,
+       "bar_chart": 9.615384615384615,
+       "scatter_plot": 2.8846153846153846
+      },
+      "n_rows": {
+       "table_image": 104,
+       "text_only": 104,
+       "heatmap": 104,
+       "bar_chart": 104,
+       "scatter_plot": 104
+      },
+      "best": [
+       "heatmap"
+      ]
+     },
+     "ranking": {
+      "n": 90,
+      "em": {
+       "table_image": 48.888888888888886,
+       "text_only": 54.44444444444444,
+       "heatmap": 1.1111111111111112,
+       "bar_chart": 1.1111111111111112,
+       "scatter_plot": 1.1111111111111112
+      },
+      "n_rows": {
+       "table_image": 90,
+       "text_only": 90,
+       "heatmap": 90,
+       "bar_chart": 90,
+       "scatter_plot": 90
+      },
+      "best": [
+       "text_only"
+      ]
+     },
+     "correlation": {
+      "n": 49,
+      "em": {
+       "table_image": 16.3265306122449,
+       "text_only": 22.448979591836736,
+       "heatmap": 10.204081632653061,
+       "bar_chart": 4.081632653061225,
+       "scatter_plot": 2.0408163265306123
+      },
+      "n_rows": {
+       "table_image": 49,
+       "text_only": 49,
+       "heatmap": 49,
+       "bar_chart": 49,
+       "scatter_plot": 49
+      },
+      "best": [
+       "text_only"
+      ]
+     }
+    },
+    "claude": {
+     "value_extraction": {
+      "n": 468,
+      "em": {
+       "table_image": 68.16239316239316,
+       "text_only": 60.47008547008547,
+       "heatmap": 29.914529914529915,
+       "bar_chart": 1.7094017094017093,
+       "scatter_plot": 4.914529914529915
+      },
+      "n_rows": {
+       "table_image": 468,
+       "text_only": 468,
+       "heatmap": 468,
+       "bar_chart": 468,
+       "scatter_plot": 468
+      },
+      "best": [
+       "table_image"
+      ]
+     },
+     "trend_analysis": {
+      "n": 247,
+      "em": {
+       "table_image": 71.25506072874494,
+       "text_only": 64.77732793522267,
+       "heatmap": 76.11336032388664,
+       "bar_chart": 22.267206477732792,
+       "scatter_plot": 50.202429149797574
+      },
+      "n_rows": {
+       "table_image": 247,
+       "text_only": 247,
+       "heatmap": 247,
+       "bar_chart": 247,
+       "scatter_plot": 247
+      },
+      "best": [
+       "heatmap"
+      ]
+     },
+     "outlier_detection": {
+      "n": 230,
+      "em": {
+       "table_image": 3.9130434782608696,
+       "text_only": 1.3043478260869565,
+       "heatmap": 0.0,
+       "bar_chart": 0.0,
+       "scatter_plot": 0.0
+      },
+      "n_rows": {
+       "table_image": 230,
+       "text_only": 230,
+       "heatmap": 230,
+       "bar_chart": 230,
+       "scatter_plot": 230
+      },
+      "best": [
+       "table_image"
+      ]
+     },
+     "comparison": {
+      "n": 224,
+      "em": {
+       "table_image": 24.107142857142858,
+       "text_only": 8.928571428571429,
+       "heatmap": 33.482142857142854,
+       "bar_chart": 58.482142857142854,
+       "scatter_plot": 17.410714285714285
+      },
+      "n_rows": {
+       "table_image": 224,
+       "text_only": 224,
+       "heatmap": 224,
+       "bar_chart": 224,
+       "scatter_plot": 224
+      },
+      "best": [
+       "bar_chart"
+      ]
+     },
+     "aggregation": {
+      "n": 207,
+      "em": {
+       "table_image": 41.06280193236715,
+       "text_only": 23.18840579710145,
+       "heatmap": 50.72463768115942,
+       "bar_chart": 20.28985507246377,
+       "scatter_plot": 11.11111111111111
+      },
+      "n_rows": {
+       "table_image": 207,
+       "text_only": 207,
+       "heatmap": 207,
+       "bar_chart": 207,
+       "scatter_plot": 207
+      },
+      "best": [
+       "heatmap"
+      ]
+     },
+     "counterfactual": {
+      "n": 146,
+      "em": {
+       "table_image": 35.61643835616438,
+       "text_only": 30.136986301369863,
+       "heatmap": 34.24657534246575,
+       "bar_chart": 58.21917808219178,
+       "scatter_plot": 43.15068493150685
+      },
+      "n_rows": {
+       "table_image": 146,
+       "text_only": 146,
+       "heatmap": 146,
+       "bar_chart": 146,
+       "scatter_plot": 146
+      },
+      "best": [
+       "bar_chart"
+      ]
+     },
+     "filtering": {
+      "n": 104,
+      "em": {
+       "table_image": 33.65384615384615,
+       "text_only": 35.57692307692308,
+       "heatmap": 54.80769230769231,
+       "bar_chart": 11.538461538461538,
+       "scatter_plot": 12.5
+      },
+      "n_rows": {
+       "table_image": 104,
+       "text_only": 104,
+       "heatmap": 104,
+       "bar_chart": 104,
+       "scatter_plot": 104
+      },
+      "best": [
+       "heatmap"
+      ]
+     },
+     "ranking": {
+      "n": 90,
+      "em": {
+       "table_image": 62.22222222222222,
+       "text_only": 54.44444444444444,
+       "heatmap": 0.0,
+       "bar_chart": 0.0,
+       "scatter_plot": 0.0
+      },
+      "n_rows": {
+       "table_image": 90,
+       "text_only": 90,
+       "heatmap": 90,
+       "bar_chart": 90,
+       "scatter_plot": 90
+      },
+      "best": [
+       "table_image"
+      ]
+     },
+     "correlation": {
+      "n": 49,
+      "em": {
+       "table_image": 0.0,
+       "text_only": 0.0,
+       "heatmap": 0.0,
+       "bar_chart": 0.0,
+       "scatter_plot": 0.0
+      },
+      "n_rows": {
+       "table_image": 49,
+       "text_only": 49,
+       "heatmap": 49,
+       "bar_chart": 49,
+       "scatter_plot": 49
+      },
+      "best": [
+       "table_image",
+       "text_only",
+       "heatmap",
+       "bar_chart",
+       "scatter_plot"
+      ]
+     }
+    }
+   },
+   "split": false
+  },
+  "timeseries": {
+   "tasks": [
+    [
+     "peak_identification",
+     214
+    ],
+    [
+     "value_lookup",
+     214
+    ],
+    [
+     "change_point",
+     107
+    ],
+    [
+     "pattern_label_lookup",
+     107
+    ],
+    [
+     "range_query",
+     107
+    ],
+    [
+     "seasonality_detection",
+     107
+    ],
+    [
+     "volatility",
+     107
+    ],
+    [
+     "mean_half_comparison",
+     62
+    ],
+    [
+     "endpoint_comparison",
+     55
+    ],
+    [
+     "anomaly_detection",
+     20
+    ],
+    [
+     "change_volatility",
+     20
+    ],
+    [
+     "counterfactual_half_shift",
+     20
+    ],
+    [
+     "counterfactual_scale_peak",
+     20
+    ],
+    [
+     "forecasting",
+     20
+    ],
+    [
+     "half_change_intensity",
+     20
+    ],
+    [
+     "mean_shift_magnitude",
+     20
+    ],
+    [
+     "median_mean_relation",
+     20
+    ],
+    [
+     "normalized_amplitude",
+     20
+    ],
+    [
+     "pattern_classification",
+     20
+    ],
+    [
+     "peak_trough_order",
+     20
+    ],
+    [
+     "split_trend_consistency",
+     20
+    ],
+    [
+     "threshold_count",
+     20
+    ],
+    [
+     "counterfactual_sign_flip",
+     15
+    ],
+    [
+     "oscillation_count",
+     10
+    ],
+    [
+     "local_peak_median_relation",
+     5
+    ]
+   ],
+   "models": {
+    "gpt4o": {
+     "peak_identification": {
+      "n": 214,
+      "em": {
+       "line_plot": 7.4766355140186915,
+       "heatmap": 0.9345794392523364,
+       "gaf": 2.336448598130841,
+       "recurrence_plot": 0.4672897196261682,
+       "text_only": 23.83177570093458
+      },
+      "n_rows": {
+       "line_plot": 214,
+       "heatmap": 214,
+       "gaf": 214,
+       "recurrence_plot": 214,
+       "text_only": 214
+      },
+      "best": [
+       "text_only"
+      ]
+     },
+     "value_lookup": {
+      "n": 214,
+      "em": {
+       "line_plot": 4.672897196261682,
+       "heatmap": 3.2710280373831777,
+       "gaf": 1.4018691588785046,
+       "recurrence_plot": 0.0,
+       "text_only": 41.58878504672897
+      },
+      "n_rows": {
+       "line_plot": 214,
+       "heatmap": 214,
+       "gaf": 214,
+       "recurrence_plot": 214,
+       "text_only": 214
+      },
+      "best": [
+       "text_only"
+      ]
+     },
+     "change_point": {
+      "n": 107,
+      "em": {
+       "line_plot": 0.0,
+       "heatmap": 0.9345794392523364,
+       "gaf": 0.9345794392523364,
+       "recurrence_plot": 0.9345794392523364,
+       "text_only": 1.8691588785046729
+      },
+      "n_rows": {
+       "line_plot": 107,
+       "heatmap": 107,
+       "gaf": 107,
+       "recurrence_plot": 107,
+       "text_only": 107
+      },
+      "best": [
+       "text_only"
+      ]
+     },
+     "pattern_label_lookup": {
+      "n": 107,
+      "em": {
+       "line_plot": 0.0,
+       "heatmap": 0.0,
+       "gaf": 0.0,
+       "recurrence_plot": 0.0,
+       "text_only": 0.0
+      },
+      "n_rows": {
+       "line_plot": 107,
+       "heatmap": 107,
+       "gaf": 107,
+       "recurrence_plot": 107,
+       "text_only": 107
+      },
+      "best": [
+       "line_plot",
+       "heatmap",
+       "gaf",
+       "recurrence_plot",
+       "text_only"
+      ]
+     },
+     "range_query": {
+      "n": 107,
+      "em": {
+       "line_plot": 1.8691588785046729,
+       "heatmap": 2.803738317757009,
+       "gaf": 0.0,
+       "recurrence_plot": 0.0,
+       "text_only": 4.672897196261682
+      },
+      "n_rows": {
+       "line_plot": 107,
+       "heatmap": 107,
+       "gaf": 107,
+       "recurrence_plot": 107,
+       "text_only": 107
+      },
+      "best": [
+       "text_only"
+      ]
+     },
+     "seasonality_detection": {
+      "n": 107,
+      "em": {
+       "line_plot": 51.401869158878505,
+       "heatmap": 8.411214953271028,
+       "gaf": 8.411214953271028,
+       "recurrence_plot": 11.214953271028037,
+       "text_only": 65.42056074766356
+      },
+      "n_rows": {
+       "line_plot": 107,
+       "heatmap": 107,
+       "gaf": 107,
+       "recurrence_plot": 107,
+       "text_only": 107
+      },
+      "best": [
+       "text_only"
+      ]
+     },
+     "volatility": {
+      "n": 107,
+      "em": {
+       "line_plot": 48.598130841121495,
+       "heatmap": 52.33644859813084,
+       "gaf": 43.925233644859816,
+       "recurrence_plot": 41.12149532710281,
+       "text_only": 45.794392523364486
+      },
+      "n_rows": {
+       "line_plot": 107,
+       "heatmap": 107,
+       "gaf": 107,
+       "recurrence_plot": 107,
+       "text_only": 107
+      },
+      "best": [
+       "heatmap"
+      ]
+     },
+     "mean_half_comparison": {
+      "n": 62,
+      "em": {
+       "line_plot": 75.80645161290323,
+       "heatmap": 35.483870967741936,
+       "gaf": 35.483870967741936,
+       "recurrence_plot": 37.096774193548384,
+       "text_only": 61.29032258064516
+      },
+      "n_rows": {
+       "line_plot": 62,
+       "heatmap": 62,
+       "gaf": 62,
+       "recurrence_plot": 62,
+       "text_only": 62
+      },
+      "best": [
+       "line_plot"
+      ]
+     },
+     "endpoint_comparison": {
+      "n": 55,
+      "em": {
+       "line_plot": 87.27272727272727,
+       "heatmap": 34.54545454545455,
+       "gaf": 50.90909090909091,
+       "recurrence_plot": 0.0,
+       "text_only": 70.9090909090909
+      },
+      "n_rows": {
+       "line_plot": 55,
+       "heatmap": 55,
+       "gaf": 55,
+       "recurrence_plot": 55,
+       "text_only": 55
+      },
+      "best": [
+       "line_plot"
+      ]
+     },
+     "anomaly_detection": {
+      "n": 20,
+      "em": {
+       "line_plot": 10.0,
+       "heatmap": 0.0,
+       "gaf": 0.0,
+       "recurrence_plot": 0.0,
+       "text_only": 25.0
+      },
+      "n_rows": {
+       "line_plot": 20,
+       "heatmap": 20,
+       "gaf": 20,
+       "recurrence_plot": 20,
+       "text_only": 20
+      },
+      "best": [
+       "text_only"
+      ]
+     },
+     "change_volatility": {
+      "n": 20,
+      "em": {
+       "line_plot": 55.0,
+       "heatmap": 45.0,
+       "gaf": 50.0,
+       "recurrence_plot": 30.0,
+       "text_only": 45.0
+      },
+      "n_rows": {
+       "line_plot": 20,
+       "heatmap": 20,
+       "gaf": 20,
+       "recurrence_plot": 20,
+       "text_only": 20
+      },
+      "best": [
+       "line_plot"
+      ]
+     },
+     "counterfactual_half_shift": {
+      "n": 20,
+      "em": {
+       "line_plot": 90.0,
+       "heatmap": 85.0,
+       "gaf": 35.0,
+       "recurrence_plot": 0.0,
+       "text_only": 90.0
+      },
+      "n_rows": {
+       "line_plot": 20,
+       "heatmap": 20,
+       "gaf": 20,
+       "recurrence_plot": 20,
+       "text_only": 20
+      },
+      "best": [
+       "line_plot",
+       "text_only"
+      ]
+     },
+     "counterfactual_scale_peak": {
+      "n": 20,
+      "em": {
+       "line_plot": 100.0,
+       "heatmap": 100.0,
+       "gaf": 100.0,
+       "recurrence_plot": 100.0,
+       "text_only": 100.0
+      },
+      "n_rows": {
+       "line_plot": 20,
+       "heatmap": 20,
+       "gaf": 20,
+       "recurrence_plot": 20,
+       "text_only": 20
+      },
+      "best": [
+       "line_plot",
+       "heatmap",
+       "gaf",
+       "recurrence_plot",
+       "text_only"
+      ]
+     },
+     "forecasting": {
+      "n": 20,
+      "em": {
+       "line_plot": 0.0,
+       "heatmap": 0.0,
+       "gaf": 0.0,
+       "recurrence_plot": 0.0,
+       "text_only": 0.0
+      },
+      "n_rows": {
+       "line_plot": 20,
+       "heatmap": 20,
+       "gaf": 20,
+       "recurrence_plot": 20,
+       "text_only": 20
+      },
+      "best": [
+       "line_plot",
+       "heatmap",
+       "gaf",
+       "recurrence_plot",
+       "text_only"
+      ]
+     },
+     "half_change_intensity": {
+      "n": 20,
+      "em": {
+       "line_plot": 40.0,
+       "heatmap": 50.0,
+       "gaf": 60.0,
+       "recurrence_plot": 60.0,
+       "text_only": 55.0
+      },
+      "n_rows": {
+       "line_plot": 20,
+       "heatmap": 20,
+       "gaf": 20,
+       "recurrence_plot": 20,
+       "text_only": 20
+      },
+      "best": [
+       "gaf",
+       "recurrence_plot"
+      ]
+     },
+     "mean_shift_magnitude": {
+      "n": 20,
+      "em": {
+       "line_plot": 0.0,
+       "heatmap": 0.0,
+       "gaf": 0.0,
+       "recurrence_plot": 0.0,
+       "text_only": 0.0
+      },
+      "n_rows": {
+       "line_plot": 20,
+       "heatmap": 20,
+       "gaf": 20,
+       "recurrence_plot": 20,
+       "text_only": 20
+      },
+      "best": [
+       "line_plot",
+       "heatmap",
+       "gaf",
+       "recurrence_plot",
+       "text_only"
+      ]
+     },
+     "median_mean_relation": {
+      "n": 20,
+      "em": {
+       "line_plot": 50.0,
+       "heatmap": 50.0,
+       "gaf": 45.0,
+       "recurrence_plot": 10.0,
+       "text_only": 45.0
+      },
+      "n_rows": {
+       "line_plot": 20,
+       "heatmap": 20,
+       "gaf": 20,
+       "recurrence_plot": 20,
+       "text_only": 20
+      },
+      "best": [
+       "line_plot",
+       "heatmap"
+      ]
+     },
+     "normalized_amplitude": {
+      "n": 20,
+      "em": {
+       "line_plot": 35.0,
+       "heatmap": 40.0,
+       "gaf": 20.0,
+       "recurrence_plot": 0.0,
+       "text_only": 55.0
+      },
+      "n_rows": {
+       "line_plot": 20,
+       "heatmap": 20,
+       "gaf": 20,
+       "recurrence_plot": 20,
+       "text_only": 20
+      },
+      "best": [
+       "text_only"
+      ]
+     },
+     "pattern_classification": {
+      "n": 20,
+      "em": {
+       "line_plot": 100.0,
+       "heatmap": 95.0,
+       "gaf": 95.0,
+       "recurrence_plot": 25.0,
+       "text_only": 100.0
+      },
+      "n_rows": {
+       "line_plot": 20,
+       "heatmap": 20,
+       "gaf": 20,
+       "recurrence_plot": 20,
+       "text_only": 20
+      },
+      "best": [
+       "line_plot",
+       "text_only"
+      ]
+     },
+     "peak_trough_order": {
+      "n": 20,
+      "em": {
+       "line_plot": 85.0,
+       "heatmap": 55.0,
+       "gaf": 60.0,
+       "recurrence_plot": 0.0,
+       "text_only": 65.0
+      },
+      "n_rows": {
+       "line_plot": 20,
+       "heatmap": 20,
+       "gaf": 20,
+       "recurrence_plot": 20,
+       "text_only": 20
+      },
+      "best": [
+       "line_plot"
+      ]
+     },
+     "split_trend_consistency": {
+      "n": 20,
+      "em": {
+       "line_plot": 70.0,
+       "heatmap": 65.0,
+       "gaf": 35.0,
+       "recurrence_plot": 50.0,
+       "text_only": 60.0
+      },
+      "n_rows": {
+       "line_plot": 20,
+       "heatmap": 20,
+       "gaf": 20,
+       "recurrence_plot": 20,
+       "text_only": 20
+      },
+      "best": [
+       "line_plot"
+      ]
+     },
+     "threshold_count": {
+      "n": 20,
+      "em": {
+       "line_plot": 5.0,
+       "heatmap": 5.0,
+       "gaf": 0.0,
+       "recurrence_plot": 0.0,
+       "text_only": 0.0
+      },
+      "n_rows": {
+       "line_plot": 20,
+       "heatmap": 20,
+       "gaf": 20,
+       "recurrence_plot": 20,
+       "text_only": 20
+      },
+      "best": [
+       "line_plot",
+       "heatmap"
+      ]
+     },
+     "counterfactual_sign_flip": {
+      "n": 15,
+      "em": {
+       "line_plot": 100.0,
+       "heatmap": 100.0,
+       "gaf": 100.0,
+       "recurrence_plot": 20.0,
+       "text_only": 100.0
+      },
+      "n_rows": {
+       "line_plot": 15,
+       "heatmap": 15,
+       "gaf": 15,
+       "recurrence_plot": 15,
+       "text_only": 15
+      },
+      "best": [
+       "line_plot",
+       "heatmap",
+       "gaf",
+       "text_only"
+      ]
+     },
+     "oscillation_count": {
+      "n": 10,
+      "em": {
+       "line_plot": 0.0,
+       "heatmap": 0.0,
+       "gaf": 0.0,
+       "recurrence_plot": 0.0,
+       "text_only": 0.0
+      },
+      "n_rows": {
+       "line_plot": 10,
+       "heatmap": 10,
+       "gaf": 10,
+       "recurrence_plot": 10,
+       "text_only": 10
+      },
+      "best": [
+       "line_plot",
+       "heatmap",
+       "gaf",
+       "recurrence_plot",
+       "text_only"
+      ]
+     },
+     "local_peak_median_relation": {
+      "n": 5,
+      "em": {
+       "line_plot": 100.0,
+       "heatmap": 20.0,
+       "gaf": 100.0,
+       "recurrence_plot": 0.0,
+       "text_only": 100.0
+      },
+      "n_rows": {
+       "line_plot": 5,
+       "heatmap": 5,
+       "gaf": 5,
+       "recurrence_plot": 5,
+       "text_only": 5
+      },
+      "best": [
+       "line_plot",
+       "gaf",
+       "text_only"
+      ]
+     }
+    },
+    "gemini20": {
+     "peak_identification": {
+      "n": 214,
+      "em": {
+       "line_plot": 25.700934579439252,
+       "heatmap": 5.140186915887851,
+       "gaf": 3.7383177570093458,
+       "recurrence_plot": 0.0,
+       "text_only": 29.906542056074766
+      },
+      "n_rows": {
+       "line_plot": 214,
+       "heatmap": 214,
+       "gaf": 214,
+       "recurrence_plot": 214,
+       "text_only": 214
+      },
+      "best": [
+       "text_only"
+      ]
+     },
+     "value_lookup": {
+      "n": 214,
+      "em": {
+       "line_plot": 4.672897196261682,
+       "heatmap": 3.7383177570093458,
+       "gaf": 1.8691588785046729,
+       "recurrence_plot": 1.4018691588785046,
+       "text_only": 41.58878504672897
+      },
+      "n_rows": {
+       "line_plot": 214,
+       "heatmap": 214,
+       "gaf": 214,
+       "recurrence_plot": 214,
+       "text_only": 214
+      },
+      "best": [
+       "text_only"
+      ]
+     },
+     "change_point": {
+      "n": 107,
+      "em": {
+       "line_plot": 0.0,
+       "heatmap": 13.08411214953271,
+       "gaf": 1.8691588785046729,
+       "recurrence_plot": 6.542056074766355,
+       "text_only": 3.7383177570093458
+      },
+      "n_rows": {
+       "line_plot": 107,
+       "heatmap": 107,
+       "gaf": 107,
+       "recurrence_plot": 107,
+       "text_only": 107
+      },
+      "best": [
+       "heatmap"
+      ]
+     },
+     "pattern_label_lookup": {
+      "n": 107,
+      "em": {
+       "line_plot": 0.0,
+       "heatmap": 0.0,
+       "gaf": 0.0,
+       "recurrence_plot": 0.0,
+       "text_only": 0.0
+      },
+      "n_rows": {
+       "line_plot": 107,
+       "heatmap": 107,
+       "gaf": 107,
+       "recurrence_plot": 107,
+       "text_only": 107
+      },
+      "best": [
+       "line_plot",
+       "heatmap",
+       "gaf",
+       "recurrence_plot",
+       "text_only"
+      ]
+     },
+     "range_query": {
+      "n": 107,
+      "em": {
+       "line_plot": 0.9345794392523364,
+       "heatmap": 0.9345794392523364,
+       "gaf": 0.0,
+       "recurrence_plot": 0.0,
+       "text_only": 5.607476635514018
+      },
+      "n_rows": {
+       "line_plot": 107,
+       "heatmap": 107,
+       "gaf": 107,
+       "recurrence_plot": 107,
+       "text_only": 107
+      },
+      "best": [
+       "text_only"
+      ]
+     },
+     "seasonality_detection": {
+      "n": 107,
+      "em": {
+       "line_plot": 64.48598130841121,
+       "heatmap": 21.49532710280374,
+       "gaf": 7.4766355140186915,
+       "recurrence_plot": 13.08411214953271,
+       "text_only": 80.37383177570094
+      },
+      "n_rows": {
+       "line_plot": 107,
+       "heatmap": 107,
+       "gaf": 107,
+       "recurrence_plot": 107,
+       "text_only": 107
+      },
+      "best": [
+       "text_only"
+      ]
+     },
+     "volatility": {
+      "n": 107,
+      "em": {
+       "line_plot": 64.48598130841121,
+       "heatmap": 64.48598130841121,
+       "gaf": 47.66355140186916,
+       "recurrence_plot": 47.66355140186916,
+       "text_only": 53.271028037383175
+      },
+      "n_rows": {
+       "line_plot": 107,
+       "heatmap": 107,
+       "gaf": 107,
+       "recurrence_plot": 107,
+       "text_only": 107
+      },
+      "best": [
+       "line_plot",
+       "heatmap"
+      ]
+     },
+     "mean_half_comparison": {
+      "n": 62,
+      "em": {
+       "line_plot": 80.64516129032258,
+       "heatmap": 53.225806451612904,
+       "gaf": 50.0,
+       "recurrence_plot": 62.903225806451616,
+       "text_only": 53.225806451612904
+      },
+      "n_rows": {
+       "line_plot": 62,
+       "heatmap": 62,
+       "gaf": 62,
+       "recurrence_plot": 62,
+       "text_only": 62
+      },
+      "best": [
+       "line_plot"
+      ]
+     },
+     "endpoint_comparison": {
+      "n": 55,
+      "em": {
+       "line_plot": 96.36363636363636,
+       "heatmap": 63.63636363636363,
+       "gaf": 54.54545454545455,
+       "recurrence_plot": 49.09090909090909,
+       "text_only": 80.0
+      },
+      "n_rows": {
+       "line_plot": 55,
+       "heatmap": 55,
+       "gaf": 55,
+       "recurrence_plot": 55,
+       "text_only": 55
+      },
+      "best": [
+       "line_plot"
+      ]
+     },
+     "anomaly_detection": {
+      "n": 20,
+      "em": {
+       "line_plot": 10.0,
+       "heatmap": 15.0,
+       "gaf": 5.0,
+       "recurrence_plot": 0.0,
+       "text_only": 20.0
+      },
+      "n_rows": {
+       "line_plot": 20,
+       "heatmap": 20,
+       "gaf": 20,
+       "recurrence_plot": 20,
+       "text_only": 20
+      },
+      "best": [
+       "text_only"
+      ]
+     },
+     "change_volatility": {
+      "n": 20,
+      "em": {
+       "line_plot": 45.0,
+       "heatmap": 50.0,
+       "gaf": 55.0,
+       "recurrence_plot": 45.0,
+       "text_only": 45.0
+      },
+      "n_rows": {
+       "line_plot": 20,
+       "heatmap": 20,
+       "gaf": 20,
+       "recurrence_plot": 20,
+       "text_only": 20
+      },
+      "best": [
+       "gaf"
+      ]
+     },
+     "counterfactual_half_shift": {
+      "n": 20,
+      "em": {
+       "line_plot": 90.0,
+       "heatmap": 90.0,
+       "gaf": 90.0,
+       "recurrence_plot": 85.0,
+       "text_only": 90.0
+      },
+      "n_rows": {
+       "line_plot": 20,
+       "heatmap": 20,
+       "gaf": 20,
+       "recurrence_plot": 20,
+       "text_only": 20
+      },
+      "best": [
+       "line_plot",
+       "heatmap",
+       "gaf",
+       "text_only"
+      ]
+     },
+     "counterfactual_scale_peak": {
+      "n": 20,
+      "em": {
+       "line_plot": 100.0,
+       "heatmap": 100.0,
+       "gaf": 100.0,
+       "recurrence_plot": 100.0,
+       "text_only": 100.0
+      },
+      "n_rows": {
+       "line_plot": 20,
+       "heatmap": 20,
+       "gaf": 20,
+       "recurrence_plot": 20,
+       "text_only": 20
+      },
+      "best": [
+       "line_plot",
+       "heatmap",
+       "gaf",
+       "recurrence_plot",
+       "text_only"
+      ]
+     },
+     "forecasting": {
+      "n": 20,
+      "em": {
+       "line_plot": 0.0,
+       "heatmap": 0.0,
+       "gaf": 0.0,
+       "recurrence_plot": 0.0,
+       "text_only": 0.0
+      },
+      "n_rows": {
+       "line_plot": 20,
+       "heatmap": 20,
+       "gaf": 20,
+       "recurrence_plot": 20,
+       "text_only": 20
+      },
+      "best": [
+       "line_plot",
+       "heatmap",
+       "gaf",
+       "recurrence_plot",
+       "text_only"
+      ]
+     },
+     "half_change_intensity": {
+      "n": 20,
+      "em": {
+       "line_plot": 35.0,
+       "heatmap": 45.0,
+       "gaf": 65.0,
+       "recurrence_plot": 60.0,
+       "text_only": 45.0
+      },
+      "n_rows": {
+       "line_plot": 20,
+       "heatmap": 20,
+       "gaf": 20,
+       "recurrence_plot": 20,
+       "text_only": 20
+      },
+      "best": [
+       "gaf"
+      ]
+     },
+     "mean_shift_magnitude": {
+      "n": 20,
+      "em": {
+       "line_plot": 0.0,
+       "heatmap": 0.0,
+       "gaf": 0.0,
+       "recurrence_plot": 0.0,
+       "text_only": 0.0
+      },
+      "n_rows": {
+       "line_plot": 20,
+       "heatmap": 20,
+       "gaf": 20,
+       "recurrence_plot": 20,
+       "text_only": 20
+      },
+      "best": [
+       "line_plot",
+       "heatmap",
+       "gaf",
+       "recurrence_plot",
+       "text_only"
+      ]
+     },
+     "median_mean_relation": {
+      "n": 20,
+      "em": {
+       "line_plot": 60.0,
+       "heatmap": 40.0,
+       "gaf": 45.0,
+       "recurrence_plot": 25.0,
+       "text_only": 45.0
+      },
+      "n_rows": {
+       "line_plot": 20,
+       "heatmap": 20,
+       "gaf": 20,
+       "recurrence_plot": 20,
+       "text_only": 20
+      },
+      "best": [
+       "line_plot"
+      ]
+     },
+     "normalized_amplitude": {
+      "n": 20,
+      "em": {
+       "line_plot": 85.0,
+       "heatmap": 65.0,
+       "gaf": 0.0,
+       "recurrence_plot": 60.0,
+       "text_only": 90.0
+      },
+      "n_rows": {
+       "line_plot": 20,
+       "heatmap": 20,
+       "gaf": 20,
+       "recurrence_plot": 20,
+       "text_only": 20
+      },
+      "best": [
+       "text_only"
+      ]
+     },
+     "pattern_classification": {
+      "n": 20,
+      "em": {
+       "line_plot": 100.0,
+       "heatmap": 100.0,
+       "gaf": 100.0,
+       "recurrence_plot": 100.0,
+       "text_only": 100.0
+      },
+      "n_rows": {
+       "line_plot": 20,
+       "heatmap": 20,
+       "gaf": 20,
+       "recurrence_plot": 20,
+       "text_only": 20
+      },
+      "best": [
+       "line_plot",
+       "heatmap",
+       "gaf",
+       "recurrence_plot",
+       "text_only"
+      ]
+     },
+     "peak_trough_order": {
+      "n": 20,
+      "em": {
+       "line_plot": 65.0,
+       "heatmap": 65.0,
+       "gaf": 65.0,
+       "recurrence_plot": 55.0,
+       "text_only": 65.0
+      },
+      "n_rows": {
+       "line_plot": 20,
+       "heatmap": 20,
+       "gaf": 20,
+       "recurrence_plot": 20,
+       "text_only": 20
+      },
+      "best": [
+       "line_plot",
+       "heatmap",
+       "gaf",
+       "text_only"
+      ]
+     },
+     "split_trend_consistency": {
+      "n": 20,
+      "em": {
+       "line_plot": 35.0,
+       "heatmap": 65.0,
+       "gaf": 40.0,
+       "recurrence_plot": 35.0,
+       "text_only": 35.0
+      },
+      "n_rows": {
+       "line_plot": 20,
+       "heatmap": 20,
+       "gaf": 20,
+       "recurrence_plot": 20,
+       "text_only": 20
+      },
+      "best": [
+       "heatmap"
+      ]
+     },
+     "threshold_count": {
+      "n": 20,
+      "em": {
+       "line_plot": 0.0,
+       "heatmap": 5.0,
+       "gaf": 0.0,
+       "recurrence_plot": 0.0,
+       "text_only": 0.0
+      },
+      "n_rows": {
+       "line_plot": 20,
+       "heatmap": 20,
+       "gaf": 20,
+       "recurrence_plot": 20,
+       "text_only": 20
+      },
+      "best": [
+       "heatmap"
+      ]
+     },
+     "counterfactual_sign_flip": {
+      "n": 15,
+      "em": {
+       "line_plot": 100.0,
+       "heatmap": 100.0,
+       "gaf": 100.0,
+       "recurrence_plot": 73.33333333333333,
+       "text_only": 100.0
+      },
+      "n_rows": {
+       "line_plot": 15,
+       "heatmap": 15,
+       "gaf": 15,
+       "recurrence_plot": 15,
+       "text_only": 15
+      },
+      "best": [
+       "line_plot",
+       "heatmap",
+       "gaf",
+       "text_only"
+      ]
+     },
+     "oscillation_count": {
+      "n": 10,
+      "em": {
+       "line_plot": 0.0,
+       "heatmap": 0.0,
+       "gaf": 0.0,
+       "recurrence_plot": 0.0,
+       "text_only": 0.0
+      },
+      "n_rows": {
+       "line_plot": 10,
+       "heatmap": 10,
+       "gaf": 10,
+       "recurrence_plot": 10,
+       "text_only": 10
+      },
+      "best": [
+       "line_plot",
+       "heatmap",
+       "gaf",
+       "recurrence_plot",
+       "text_only"
+      ]
+     },
+     "local_peak_median_relation": {
+      "n": 5,
+      "em": {
+       "line_plot": 100.0,
+       "heatmap": 80.0,
+       "gaf": 100.0,
+       "recurrence_plot": 100.0,
+       "text_only": 100.0
+      },
+      "n_rows": {
+       "line_plot": 5,
+       "heatmap": 5,
+       "gaf": 5,
+       "recurrence_plot": 5,
+       "text_only": 5
+      },
+      "best": [
+       "line_plot",
+       "gaf",
+       "recurrence_plot",
+       "text_only"
+      ]
+     }
+    },
+    "qwen7b": {
+     "peak_identification": {
+      "n": 214,
+      "em": {
+       "line_plot": 12.149532710280374,
+       "heatmap": 6.542056074766355,
+       "gaf": 1.8691588785046729,
+       "recurrence_plot": 1.8691588785046729,
+       "text_only": 16.35514018691589
+      },
+      "n_rows": {
+       "line_plot": 214,
+       "heatmap": 214,
+       "gaf": 214,
+       "recurrence_plot": 214,
+       "text_only": 214
+      },
+      "best": [
+       "text_only"
+      ]
+     },
+     "value_lookup": {
+      "n": 214,
+      "em": {
+       "line_plot": 4.672897196261682,
+       "heatmap": 3.2710280373831777,
+       "gaf": 1.8691588785046729,
+       "recurrence_plot": 1.4018691588785046,
+       "text_only": 41.58878504672897
+      },
+      "n_rows": {
+       "line_plot": 214,
+       "heatmap": 214,
+       "gaf": 214,
+       "recurrence_plot": 214,
+       "text_only": 214
+      },
+      "best": [
+       "text_only"
+      ]
+     },
+     "change_point": {
+      "n": 107,
+      "em": {
+       "line_plot": 0.0,
+       "heatmap": 0.9345794392523364,
+       "gaf": 0.0,
+       "recurrence_plot": 0.0,
+       "text_only": 1.8691588785046729
+      },
+      "n_rows": {
+       "line_plot": 107,
+       "heatmap": 107,
+       "gaf": 107,
+       "recurrence_plot": 107,
+       "text_only": 107
+      },
+      "best": [
+       "text_only"
+      ]
+     },
+     "pattern_label_lookup": {
+      "n": 107,
+      "em": {
+       "line_plot": 0.0,
+       "heatmap": 0.0,
+       "gaf": 0.0,
+       "recurrence_plot": 0.0,
+       "text_only": 0.0
+      },
+      "n_rows": {
+       "line_plot": 107,
+       "heatmap": 107,
+       "gaf": 107,
+       "recurrence_plot": 107,
+       "text_only": 107
+      },
+      "best": [
+       "line_plot",
+       "heatmap",
+       "gaf",
+       "recurrence_plot",
+       "text_only"
+      ]
+     },
+     "range_query": {
+      "n": 107,
+      "em": {
+       "line_plot": 1.8691588785046729,
+       "heatmap": 0.9345794392523364,
+       "gaf": 0.0,
+       "recurrence_plot": 0.0,
+       "text_only": 3.7383177570093458
+      },
+      "n_rows": {
+       "line_plot": 107,
+       "heatmap": 107,
+       "gaf": 107,
+       "recurrence_plot": 107,
+       "text_only": 107
+      },
+      "best": [
+       "text_only"
+      ]
+     },
+     "seasonality_detection": {
+      "n": 107,
+      "em": {
+       "line_plot": 50.467289719626166,
+       "heatmap": 15.88785046728972,
+       "gaf": 47.66355140186916,
+       "recurrence_plot": 14.018691588785046,
+       "text_only": 73.83177570093459
+      },
+      "n_rows": {
+       "line_plot": 107,
+       "heatmap": 107,
+       "gaf": 107,
+       "recurrence_plot": 107,
+       "text_only": 107
+      },
+      "best": [
+       "text_only"
+      ]
+     },
+     "volatility": {
+      "n": 107,
+      "em": {
+       "line_plot": 54.205607476635514,
+       "heatmap": 52.33644859813084,
+       "gaf": 53.271028037383175,
+       "recurrence_plot": 53.271028037383175,
+       "text_only": 49.532710280373834
+      },
+      "n_rows": {
+       "line_plot": 107,
+       "heatmap": 107,
+       "gaf": 107,
+       "recurrence_plot": 107,
+       "text_only": 107
+      },
+      "best": [
+       "line_plot"
+      ]
+     },
+     "mean_half_comparison": {
+      "n": 62,
+      "em": {
+       "line_plot": 67.74193548387096,
+       "heatmap": 43.54838709677419,
+       "gaf": 35.483870967741936,
+       "recurrence_plot": 58.064516129032256,
+       "text_only": 54.83870967741935
+      },
+      "n_rows": {
+       "line_plot": 62,
+       "heatmap": 62,
+       "gaf": 62,
+       "recurrence_plot": 62,
+       "text_only": 62
+      },
+      "best": [
+       "line_plot"
+      ]
+     },
+     "endpoint_comparison": {
+      "n": 55,
+      "em": {
+       "line_plot": 87.27272727272727,
+       "heatmap": 60.0,
+       "gaf": 40.0,
+       "recurrence_plot": 45.45454545454545,
+       "text_only": 65.45454545454545
+      },
+      "n_rows": {
+       "line_plot": 55,
+       "heatmap": 55,
+       "gaf": 55,
+       "recurrence_plot": 55,
+       "text_only": 55
+      },
+      "best": [
+       "line_plot"
+      ]
+     },
+     "anomaly_detection": {
+      "n": 20,
+      "em": {
+       "line_plot": 5.0,
+       "heatmap": 5.0,
+       "gaf": 0.0,
+       "recurrence_plot": 0.0,
+       "text_only": 10.0
+      },
+      "n_rows": {
+       "line_plot": 20,
+       "heatmap": 20,
+       "gaf": 20,
+       "recurrence_plot": 20,
+       "text_only": 20
+      },
+      "best": [
+       "text_only"
+      ]
+     },
+     "change_volatility": {
+      "n": 20,
+      "em": {
+       "line_plot": 40.0,
+       "heatmap": 35.0,
+       "gaf": 0.0,
+       "recurrence_plot": 0.0,
+       "text_only": 25.0
+      },
+      "n_rows": {
+       "line_plot": 20,
+       "heatmap": 20,
+       "gaf": 20,
+       "recurrence_plot": 20,
+       "text_only": 20
+      },
+      "best": [
+       "line_plot"
+      ]
+     },
+     "counterfactual_half_shift": {
+      "n": 20,
+      "em": {
+       "line_plot": 90.0,
+       "heatmap": 90.0,
+       "gaf": 90.0,
+       "recurrence_plot": 90.0,
+       "text_only": 90.0
+      },
+      "n_rows": {
+       "line_plot": 20,
+       "heatmap": 20,
+       "gaf": 20,
+       "recurrence_plot": 20,
+       "text_only": 20
+      },
+      "best": [
+       "line_plot",
+       "heatmap",
+       "gaf",
+       "recurrence_plot",
+       "text_only"
+      ]
+     },
+     "counterfactual_scale_peak": {
+      "n": 20,
+      "em": {
+       "line_plot": 100.0,
+       "heatmap": 100.0,
+       "gaf": 100.0,
+       "recurrence_plot": 100.0,
+       "text_only": 100.0
+      },
+      "n_rows": {
+       "line_plot": 20,
+       "heatmap": 20,
+       "gaf": 20,
+       "recurrence_plot": 20,
+       "text_only": 20
+      },
+      "best": [
+       "line_plot",
+       "heatmap",
+       "gaf",
+       "recurrence_plot",
+       "text_only"
+      ]
+     },
+     "forecasting": {
+      "n": 20,
+      "em": {
+       "line_plot": 0.0,
+       "heatmap": 0.0,
+       "gaf": 0.0,
+       "recurrence_plot": 0.0,
+       "text_only": 0.0
+      },
+      "n_rows": {
+       "line_plot": 20,
+       "heatmap": 20,
+       "gaf": 20,
+       "recurrence_plot": 20,
+       "text_only": 20
+      },
+      "best": [
+       "line_plot",
+       "heatmap",
+       "gaf",
+       "recurrence_plot",
+       "text_only"
+      ]
+     },
+     "half_change_intensity": {
+      "n": 20,
+      "em": {
+       "line_plot": 5.0,
+       "heatmap": 0.0,
+       "gaf": 0.0,
+       "recurrence_plot": 0.0,
+       "text_only": 0.0
+      },
+      "n_rows": {
+       "line_plot": 20,
+       "heatmap": 20,
+       "gaf": 20,
+       "recurrence_plot": 20,
+       "text_only": 20
+      },
+      "best": [
+       "line_plot"
+      ]
+     },
+     "mean_shift_magnitude": {
+      "n": 20,
+      "em": {
+       "line_plot": 0.0,
+       "heatmap": 0.0,
+       "gaf": 0.0,
+       "recurrence_plot": 0.0,
+       "text_only": 0.0
+      },
+      "n_rows": {
+       "line_plot": 20,
+       "heatmap": 20,
+       "gaf": 20,
+       "recurrence_plot": 20,
+       "text_only": 20
+      },
+      "best": [
+       "line_plot",
+       "heatmap",
+       "gaf",
+       "recurrence_plot",
+       "text_only"
+      ]
+     },
+     "median_mean_relation": {
+      "n": 20,
+      "em": {
+       "line_plot": 55.0,
+       "heatmap": 55.0,
+       "gaf": 55.0,
+       "recurrence_plot": 55.0,
+       "text_only": 55.0
+      },
+      "n_rows": {
+       "line_plot": 20,
+       "heatmap": 20,
+       "gaf": 20,
+       "recurrence_plot": 20,
+       "text_only": 20
+      },
+      "best": [
+       "line_plot",
+       "heatmap",
+       "gaf",
+       "recurrence_plot",
+       "text_only"
+      ]
+     },
+     "normalized_amplitude": {
+      "n": 20,
+      "em": {
+       "line_plot": 45.0,
+       "heatmap": 100.0,
+       "gaf": 100.0,
+       "recurrence_plot": 100.0,
+       "text_only": 100.0
+      },
+      "n_rows": {
+       "line_plot": 20,
+       "heatmap": 20,
+       "gaf": 20,
+       "recurrence_plot": 20,
+       "text_only": 20
+      },
+      "best": [
+       "heatmap",
+       "gaf",
+       "recurrence_plot",
+       "text_only"
+      ]
+     },
+     "pattern_classification": {
+      "n": 20,
+      "em": {
+       "line_plot": 100.0,
+       "heatmap": 100.0,
+       "gaf": 100.0,
+       "recurrence_plot": 100.0,
+       "text_only": 10.0
+      },
+      "n_rows": {
+       "line_plot": 20,
+       "heatmap": 20,
+       "gaf": 20,
+       "recurrence_plot": 20,
+       "text_only": 20
+      },
+      "best": [
+       "line_plot",
+       "heatmap",
+       "gaf",
+       "recurrence_plot"
+      ]
+     },
+     "peak_trough_order": {
+      "n": 20,
+      "em": {
+       "line_plot": 95.0,
+       "heatmap": 40.0,
+       "gaf": 65.0,
+       "recurrence_plot": 65.0,
+       "text_only": 70.0
+      },
+      "n_rows": {
+       "line_plot": 20,
+       "heatmap": 20,
+       "gaf": 20,
+       "recurrence_plot": 20,
+       "text_only": 20
+      },
+      "best": [
+       "line_plot"
+      ]
+     },
+     "split_trend_consistency": {
+      "n": 20,
+      "em": {
+       "line_plot": 35.0,
+       "heatmap": 35.0,
+       "gaf": 40.0,
+       "recurrence_plot": 30.0,
+       "text_only": 35.0
+      },
+      "n_rows": {
+       "line_plot": 20,
+       "heatmap": 20,
+       "gaf": 20,
+       "recurrence_plot": 20,
+       "text_only": 20
+      },
+      "best": [
+       "gaf"
+      ]
+     },
+     "threshold_count": {
+      "n": 20,
+      "em": {
+       "line_plot": 0.0,
+       "heatmap": 0.0,
+       "gaf": 5.0,
+       "recurrence_plot": 0.0,
+       "text_only": 0.0
+      },
+      "n_rows": {
+       "line_plot": 20,
+       "heatmap": 20,
+       "gaf": 20,
+       "recurrence_plot": 20,
+       "text_only": 20
+      },
+      "best": [
+       "gaf"
+      ]
+     },
+     "counterfactual_sign_flip": {
+      "n": 15,
+      "em": {
+       "line_plot": 100.0,
+       "heatmap": 100.0,
+       "gaf": 100.0,
+       "recurrence_plot": 100.0,
+       "text_only": 100.0
+      },
+      "n_rows": {
+       "line_plot": 15,
+       "heatmap": 15,
+       "gaf": 15,
+       "recurrence_plot": 15,
+       "text_only": 15
+      },
+      "best": [
+       "line_plot",
+       "heatmap",
+       "gaf",
+       "recurrence_plot",
+       "text_only"
+      ]
+     },
+     "oscillation_count": {
+      "n": 10,
+      "em": {
+       "line_plot": 0.0,
+       "heatmap": 0.0,
+       "gaf": 0.0,
+       "recurrence_plot": 0.0,
+       "text_only": 0.0
+      },
+      "n_rows": {
+       "line_plot": 10,
+       "heatmap": 10,
+       "gaf": 10,
+       "recurrence_plot": 10,
+       "text_only": 10
+      },
+      "best": [
+       "line_plot",
+       "heatmap",
+       "gaf",
+       "recurrence_plot",
+       "text_only"
+      ]
+     },
+     "local_peak_median_relation": {
+      "n": 5,
+      "em": {
+       "line_plot": 100.0,
+       "heatmap": 100.0,
+       "gaf": 100.0,
+       "recurrence_plot": 0.0,
+       "text_only": 80.0
+      },
+      "n_rows": {
+       "line_plot": 5,
+       "heatmap": 5,
+       "gaf": 5,
+       "recurrence_plot": 5,
+       "text_only": 5
+      },
+      "best": [
+       "line_plot",
+       "heatmap",
+       "gaf"
+      ]
+     }
+    },
+    "claude": {
+     "peak_identification": {
+      "n": 214,
+      "em": {
+       "line_plot": 19.1588785046729,
+       "heatmap": 3.7383177570093458,
+       "gaf": 1.8691588785046729,
+       "recurrence_plot": 1.8691588785046729,
+       "text_only": 23.83177570093458
+      },
+      "n_rows": {
+       "line_plot": 214,
+       "heatmap": 214,
+       "gaf": 214,
+       "recurrence_plot": 214,
+       "text_only": 214
+      },
+      "best": [
+       "text_only"
+      ]
+     },
+     "value_lookup": {
+      "n": 214,
+      "em": {
+       "line_plot": 5.140186915887851,
+       "heatmap": 3.2710280373831777,
+       "gaf": 1.4018691588785046,
+       "recurrence_plot": 0.9345794392523364,
+       "text_only": 41.58878504672897
+      },
+      "n_rows": {
+       "line_plot": 214,
+       "heatmap": 214,
+       "gaf": 214,
+       "recurrence_plot": 214,
+       "text_only": 214
+      },
+      "best": [
+       "text_only"
+      ]
+     },
+     "change_point": {
+      "n": 107,
+      "em": {
+       "line_plot": 0.0,
+       "heatmap": 0.9345794392523364,
+       "gaf": 0.0,
+       "recurrence_plot": 0.9345794392523364,
+       "text_only": 2.803738317757009
+      },
+      "n_rows": {
+       "line_plot": 107,
+       "heatmap": 107,
+       "gaf": 107,
+       "recurrence_plot": 107,
+       "text_only": 107
+      },
+      "best": [
+       "text_only"
+      ]
+     },
+     "pattern_label_lookup": {
+      "n": 107,
+      "em": {
+       "line_plot": 0.0,
+       "heatmap": 0.0,
+       "gaf": 0.0,
+       "recurrence_plot": 0.0,
+       "text_only": 0.0
+      },
+      "n_rows": {
+       "line_plot": 107,
+       "heatmap": 107,
+       "gaf": 107,
+       "recurrence_plot": 107,
+       "text_only": 107
+      },
+      "best": [
+       "line_plot",
+       "heatmap",
+       "gaf",
+       "recurrence_plot",
+       "text_only"
+      ]
+     },
+     "range_query": {
+      "n": 107,
+      "em": {
+       "line_plot": 2.803738317757009,
+       "heatmap": 1.8691588785046729,
+       "gaf": 0.0,
+       "recurrence_plot": 0.0,
+       "text_only": 5.607476635514018
+      },
+      "n_rows": {
+       "line_plot": 107,
+       "heatmap": 107,
+       "gaf": 107,
+       "recurrence_plot": 107,
+       "text_only": 107
+      },
+      "best": [
+       "text_only"
+      ]
+     },
+     "seasonality_detection": {
+      "n": 107,
+      "em": {
+       "line_plot": 10.280373831775702,
+       "heatmap": 9.345794392523365,
+       "gaf": 9.345794392523365,
+       "recurrence_plot": 7.4766355140186915,
+       "text_only": 13.08411214953271
+      },
+      "n_rows": {
+       "line_plot": 107,
+       "heatmap": 107,
+       "gaf": 107,
+       "recurrence_plot": 107,
+       "text_only": 107
+      },
+      "best": [
+       "text_only"
+      ]
+     },
+     "volatility": {
+      "n": 107,
+      "em": {
+       "line_plot": 63.55140186915888,
+       "heatmap": 60.74766355140187,
+       "gaf": 54.205607476635514,
+       "recurrence_plot": 42.99065420560748,
+       "text_only": 42.05607476635514
+      },
+      "n_rows": {
+       "line_plot": 107,
+       "heatmap": 107,
+       "gaf": 107,
+       "recurrence_plot": 107,
+       "text_only": 107
+      },
+      "best": [
+       "line_plot"
+      ]
+     },
+     "mean_half_comparison": {
+      "n": 62,
+      "em": {
+       "line_plot": 58.064516129032256,
+       "heatmap": 30.64516129032258,
+       "gaf": 1.6129032258064515,
+       "recurrence_plot": 0.0,
+       "text_only": 1.6129032258064515
+      },
+      "n_rows": {
+       "line_plot": 62,
+       "heatmap": 62,
+       "gaf": 62,
+       "recurrence_plot": 62,
+       "text_only": 62
+      },
+      "best": [
+       "line_plot"
+      ]
+     },
+     "endpoint_comparison": {
+      "n": 55,
+      "em": {
+       "line_plot": 96.36363636363636,
+       "heatmap": 60.0,
+       "gaf": 54.54545454545455,
+       "recurrence_plot": 45.45454545454545,
+       "text_only": 83.63636363636364
+      },
+      "n_rows": {
+       "line_plot": 55,
+       "heatmap": 55,
+       "gaf": 55,
+       "recurrence_plot": 55,
+       "text_only": 55
+      },
+      "best": [
+       "line_plot"
+      ]
+     },
+     "anomaly_detection": {
+      "n": 20,
+      "em": {
+       "line_plot": 10.0,
+       "heatmap": 0.0,
+       "gaf": 0.0,
+       "recurrence_plot": 0.0,
+       "text_only": 35.0
+      },
+      "n_rows": {
+       "line_plot": 20,
+       "heatmap": 20,
+       "gaf": 20,
+       "recurrence_plot": 20,
+       "text_only": 20
+      },
+      "best": [
+       "text_only"
+      ]
+     },
+     "change_volatility": {
+      "n": 20,
+      "em": {
+       "line_plot": 0.0,
+       "heatmap": 0.0,
+       "gaf": 5.0,
+       "recurrence_plot": 0.0,
+       "text_only": 0.0
+      },
+      "n_rows": {
+       "line_plot": 20,
+       "heatmap": 20,
+       "gaf": 20,
+       "recurrence_plot": 20,
+       "text_only": 20
+      },
+      "best": [
+       "gaf"
+      ]
+     },
+     "counterfactual_half_shift": {
+      "n": 20,
+      "em": {
+       "line_plot": 90.0,
+       "heatmap": 95.0,
+       "gaf": 80.0,
+       "recurrence_plot": 60.0,
+       "text_only": 0.0
+      },
+      "n_rows": {
+       "line_plot": 20,
+       "heatmap": 20,
+       "gaf": 20,
+       "recurrence_plot": 20,
+       "text_only": 20
+      },
+      "best": [
+       "heatmap"
+      ]
+     },
+     "counterfactual_scale_peak": {
+      "n": 20,
+      "em": {
+       "line_plot": 95.0,
+       "heatmap": 95.0,
+       "gaf": 100.0,
+       "recurrence_plot": 100.0,
+       "text_only": 0.0
+      },
+      "n_rows": {
+       "line_plot": 20,
+       "heatmap": 20,
+       "gaf": 20,
+       "recurrence_plot": 20,
+       "text_only": 20
+      },
+      "best": [
+       "gaf",
+       "recurrence_plot"
+      ]
+     },
+     "forecasting": {
+      "n": 20,
+      "em": {
+       "line_plot": 0.0,
+       "heatmap": 0.0,
+       "gaf": 0.0,
+       "recurrence_plot": 0.0,
+       "text_only": 0.0
+      },
+      "n_rows": {
+       "line_plot": 20,
+       "heatmap": 20,
+       "gaf": 20,
+       "recurrence_plot": 20,
+       "text_only": 20
+      },
+      "best": [
+       "line_plot",
+       "heatmap",
+       "gaf",
+       "recurrence_plot",
+       "text_only"
+      ]
+     },
+     "half_change_intensity": {
+      "n": 20,
+      "em": {
+       "line_plot": 0.0,
+       "heatmap": 0.0,
+       "gaf": 0.0,
+       "recurrence_plot": 0.0,
+       "text_only": 0.0
+      },
+      "n_rows": {
+       "line_plot": 20,
+       "heatmap": 20,
+       "gaf": 20,
+       "recurrence_plot": 20,
+       "text_only": 20
+      },
+      "best": [
+       "line_plot",
+       "heatmap",
+       "gaf",
+       "recurrence_plot",
+       "text_only"
+      ]
+     },
+     "mean_shift_magnitude": {
+      "n": 20,
+      "em": {
+       "line_plot": 0.0,
+       "heatmap": 0.0,
+       "gaf": 0.0,
+       "recurrence_plot": 0.0,
+       "text_only": 0.0
+      },
+      "n_rows": {
+       "line_plot": 20,
+       "heatmap": 20,
+       "gaf": 20,
+       "recurrence_plot": 20,
+       "text_only": 20
+      },
+      "best": [
+       "line_plot",
+       "heatmap",
+       "gaf",
+       "recurrence_plot",
+       "text_only"
+      ]
+     },
+     "median_mean_relation": {
+      "n": 20,
+      "em": {
+       "line_plot": 0.0,
+       "heatmap": 0.0,
+       "gaf": 0.0,
+       "recurrence_plot": 0.0,
+       "text_only": 0.0
+      },
+      "n_rows": {
+       "line_plot": 20,
+       "heatmap": 20,
+       "gaf": 20,
+       "recurrence_plot": 20,
+       "text_only": 20
+      },
+      "best": [
+       "line_plot",
+       "heatmap",
+       "gaf",
+       "recurrence_plot",
+       "text_only"
+      ]
+     },
+     "normalized_amplitude": {
+      "n": 20,
+      "em": {
+       "line_plot": 0.0,
+       "heatmap": 0.0,
+       "gaf": 0.0,
+       "recurrence_plot": 0.0,
+       "text_only": 0.0
+      },
+      "n_rows": {
+       "line_plot": 20,
+       "heatmap": 20,
+       "gaf": 20,
+       "recurrence_plot": 20,
+       "text_only": 20
+      },
+      "best": [
+       "line_plot",
+       "heatmap",
+       "gaf",
+       "recurrence_plot",
+       "text_only"
+      ]
+     },
+     "pattern_classification": {
+      "n": 20,
+      "em": {
+       "line_plot": 100.0,
+       "heatmap": 100.0,
+       "gaf": 100.0,
+       "recurrence_plot": 100.0,
+       "text_only": 100.0
+      },
+      "n_rows": {
+       "line_plot": 20,
+       "heatmap": 20,
+       "gaf": 20,
+       "recurrence_plot": 20,
+       "text_only": 20
+      },
+      "best": [
+       "line_plot",
+       "heatmap",
+       "gaf",
+       "recurrence_plot",
+       "text_only"
+      ]
+     },
+     "peak_trough_order": {
+      "n": 20,
+      "em": {
+       "line_plot": 75.0,
+       "heatmap": 40.0,
+       "gaf": 30.0,
+       "recurrence_plot": 25.0,
+       "text_only": 0.0
+      },
+      "n_rows": {
+       "line_plot": 20,
+       "heatmap": 20,
+       "gaf": 20,
+       "recurrence_plot": 20,
+       "text_only": 20
+      },
+      "best": [
+       "line_plot"
+      ]
+     },
+     "split_trend_consistency": {
+      "n": 20,
+      "em": {
+       "line_plot": 35.0,
+       "heatmap": 35.0,
+       "gaf": 45.0,
+       "recurrence_plot": 30.0,
+       "text_only": 25.0
+      },
+      "n_rows": {
+       "line_plot": 20,
+       "heatmap": 20,
+       "gaf": 20,
+       "recurrence_plot": 20,
+       "text_only": 20
+      },
+      "best": [
+       "gaf"
+      ]
+     },
+     "threshold_count": {
+      "n": 20,
+      "em": {
+       "line_plot": 0.0,
+       "heatmap": 0.0,
+       "gaf": 0.0,
+       "recurrence_plot": 0.0,
+       "text_only": 0.0
+      },
+      "n_rows": {
+       "line_plot": 20,
+       "heatmap": 20,
+       "gaf": 20,
+       "recurrence_plot": 20,
+       "text_only": 20
+      },
+      "best": [
+       "line_plot",
+       "heatmap",
+       "gaf",
+       "recurrence_plot",
+       "text_only"
+      ]
+     },
+     "counterfactual_sign_flip": {
+      "n": 15,
+      "em": {
+       "line_plot": 100.0,
+       "heatmap": 100.0,
+       "gaf": 100.0,
+       "recurrence_plot": 40.0,
+       "text_only": 100.0
+      },
+      "n_rows": {
+       "line_plot": 15,
+       "heatmap": 15,
+       "gaf": 15,
+       "recurrence_plot": 15,
+       "text_only": 15
+      },
+      "best": [
+       "line_plot",
+       "heatmap",
+       "gaf",
+       "text_only"
+      ]
+     },
+     "oscillation_count": {
+      "n": 10,
+      "em": {
+       "line_plot": 0.0,
+       "heatmap": 0.0,
+       "gaf": 0.0,
+       "recurrence_plot": 0.0,
+       "text_only": 0.0
+      },
+      "n_rows": {
+       "line_plot": 10,
+       "heatmap": 10,
+       "gaf": 10,
+       "recurrence_plot": 10,
+       "text_only": 10
+      },
+      "best": [
+       "line_plot",
+       "heatmap",
+       "gaf",
+       "recurrence_plot",
+       "text_only"
+      ]
+     },
+     "local_peak_median_relation": {
+      "n": 5,
+      "em": {
+       "line_plot": 0.0,
+       "heatmap": 0.0,
+       "gaf": 0.0,
+       "recurrence_plot": 0.0,
+       "text_only": 0.0
+      },
+      "n_rows": {
+       "line_plot": 5,
+       "heatmap": 5,
+       "gaf": 5,
+       "recurrence_plot": 5,
+       "text_only": 5
+      },
+      "best": [
+       "line_plot",
+       "heatmap",
+       "gaf",
+       "recurrence_plot",
+       "text_only"
+      ]
+     }
+    }
+   },
+   "split": true
+  },
+  "graph": {
+   "tasks": [
+    [
+     "degree_query",
+     208
+    ],
+    [
+     "connectivity",
+     96
+    ],
+    [
+     "community",
+     92
+    ],
+    [
+     "counterfactual",
+     76
+    ],
+    [
+     "centrality",
+     36
+    ],
+    [
+     "clustering",
+     36
+    ],
+    [
+     "shortest_path",
+     36
+    ],
+    [
+     "bipartite_check",
+     20
+    ],
+    [
+     "cycle_detection",
+     20
+    ],
+    [
+     "diameter",
+     20
+    ],
+    [
+     "edge_count",
+     20
+    ]
+   ],
+   "models": {
+    "gpt4o": {
+     "degree_query": {
+      "n": 208,
+      "em": {
+       "node_link": 13.942307692307692,
+       "circular_layout": 11.538461538461538,
+       "adjacency_matrix": 13.461538461538462,
+       "text_only": 54.80769230769231
+      },
+      "n_rows": {
+       "node_link": 208,
+       "circular_layout": 208,
+       "adjacency_matrix": 208,
+       "text_only": 208
+      },
+      "best": [
+       "text_only"
+      ]
+     },
+     "connectivity": {
+      "n": 96,
+      "em": {
+       "node_link": 78.125,
+       "circular_layout": 77.08333333333333,
+       "adjacency_matrix": 47.916666666666664,
+       "text_only": 77.08333333333333
+      },
+      "n_rows": {
+       "node_link": 96,
+       "circular_layout": 96,
+       "adjacency_matrix": 96,
+       "text_only": 96
+      },
+      "best": [
+       "node_link"
+      ]
+     },
+     "community": {
+      "n": 92,
+      "em": {
+       "node_link": 61.95652173913044,
+       "circular_layout": 55.43478260869565,
+       "adjacency_matrix": 38.04347826086956,
+       "text_only": 47.82608695652174
+      },
+      "n_rows": {
+       "node_link": 92,
+       "circular_layout": 92,
+       "adjacency_matrix": 92,
+       "text_only": 92
+      },
+      "best": [
+       "node_link"
+      ]
+     },
+     "counterfactual": {
+      "n": 76,
+      "em": {
+       "node_link": 98.6842105263158,
+       "circular_layout": 98.6842105263158,
+       "adjacency_matrix": 93.42105263157895,
+       "text_only": 96.05263157894737
+      },
+      "n_rows": {
+       "node_link": 76,
+       "circular_layout": 76,
+       "adjacency_matrix": 76,
+       "text_only": 76
+      },
+      "best": [
+       "node_link",
+       "circular_layout"
+      ]
+     },
+     "centrality": {
+      "n": 36,
+      "em": {
+       "node_link": 5.555555555555555,
+       "circular_layout": 5.555555555555555,
+       "adjacency_matrix": 0.0,
+       "text_only": 33.333333333333336
+      },
+      "n_rows": {
+       "node_link": 36,
+       "circular_layout": 36,
+       "adjacency_matrix": 36,
+       "text_only": 36
+      },
+      "best": [
+       "text_only"
+      ]
+     },
+     "clustering": {
+      "n": 36,
+      "em": {
+       "node_link": 11.11111111111111,
+       "circular_layout": 8.333333333333334,
+       "adjacency_matrix": 11.11111111111111,
+       "text_only": 11.11111111111111
+      },
+      "n_rows": {
+       "node_link": 36,
+       "circular_layout": 36,
+       "adjacency_matrix": 36,
+       "text_only": 36
+      },
+      "best": [
+       "node_link",
+       "adjacency_matrix",
+       "text_only"
+      ]
+     },
+     "shortest_path": {
+      "n": 36,
+      "em": {
+       "node_link": 16.666666666666668,
+       "circular_layout": 22.22222222222222,
+       "adjacency_matrix": 0.0,
+       "text_only": 38.888888888888886
+      },
+      "n_rows": {
+       "node_link": 36,
+       "circular_layout": 36,
+       "adjacency_matrix": 36,
+       "text_only": 36
+      },
+      "best": [
+       "text_only"
+      ]
+     },
+     "bipartite_check": {
+      "n": 20,
+      "em": {
+       "node_link": 85.0,
+       "circular_layout": 70.0,
+       "adjacency_matrix": 80.0,
+       "text_only": 70.0
+      },
+      "n_rows": {
+       "node_link": 20,
+       "circular_layout": 20,
+       "adjacency_matrix": 20,
+       "text_only": 20
+      },
+      "best": [
+       "node_link"
+      ]
+     },
+     "cycle_detection": {
+      "n": 20,
+      "em": {
+       "node_link": 90.0,
+       "circular_layout": 85.0,
+       "adjacency_matrix": 80.0,
+       "text_only": 90.0
+      },
+      "n_rows": {
+       "node_link": 20,
+       "circular_layout": 20,
+       "adjacency_matrix": 20,
+       "text_only": 20
+      },
+      "best": [
+       "node_link",
+       "text_only"
+      ]
+     },
+     "diameter": {
+      "n": 20,
+      "em": {
+       "node_link": 20.0,
+       "circular_layout": 20.0,
+       "adjacency_matrix": 15.0,
+       "text_only": 10.0
+      },
+      "n_rows": {
+       "node_link": 20,
+       "circular_layout": 20,
+       "adjacency_matrix": 20,
+       "text_only": 20
+      },
+      "best": [
+       "node_link",
+       "circular_layout"
+      ]
+     },
+     "edge_count": {
+      "n": 20,
+      "em": {
+       "node_link": 5.0,
+       "circular_layout": 0.0,
+       "adjacency_matrix": 5.0,
+       "text_only": 15.0
+      },
+      "n_rows": {
+       "node_link": 20,
+       "circular_layout": 20,
+       "adjacency_matrix": 20,
+       "text_only": 20
+      },
+      "best": [
+       "text_only"
+      ]
+     }
+    },
+    "gemini20": {
+     "degree_query": {
+      "n": 208,
+      "em": {
+       "node_link": 6.730769230769231,
+       "circular_layout": 9.134615384615385,
+       "adjacency_matrix": 11.538461538461538,
+       "text_only": 58.17307692307692
+      },
+      "n_rows": {
+       "node_link": 208,
+       "circular_layout": 208,
+       "adjacency_matrix": 208,
+       "text_only": 208
+      },
+      "best": [
+       "text_only"
+      ]
+     },
+     "connectivity": {
+      "n": 96,
+      "em": {
+       "node_link": 64.58333333333333,
+       "circular_layout": 91.66666666666667,
+       "adjacency_matrix": 57.291666666666664,
+       "text_only": 76.04166666666667
+      },
+      "n_rows": {
+       "node_link": 96,
+       "circular_layout": 96,
+       "adjacency_matrix": 96,
+       "text_only": 96
+      },
+      "best": [
+       "circular_layout"
+      ]
+     },
+     "community": {
+      "n": 92,
+      "em": {
+       "node_link": 55.43478260869565,
+       "circular_layout": 47.82608695652174,
+       "adjacency_matrix": 48.91304347826087,
+       "text_only": 47.82608695652174
+      },
+      "n_rows": {
+       "node_link": 92,
+       "circular_layout": 92,
+       "adjacency_matrix": 92,
+       "text_only": 92
+      },
+      "best": [
+       "node_link"
+      ]
+     },
+     "counterfactual": {
+      "n": 76,
+      "em": {
+       "node_link": 81.57894736842105,
+       "circular_layout": 59.21052631578947,
+       "adjacency_matrix": 65.78947368421052,
+       "text_only": 69.73684210526316
+      },
+      "n_rows": {
+       "node_link": 76,
+       "circular_layout": 76,
+       "adjacency_matrix": 76,
+       "text_only": 76
+      },
+      "best": [
+       "node_link"
+      ]
+     },
+     "centrality": {
+      "n": 36,
+      "em": {
+       "node_link": 8.333333333333334,
+       "circular_layout": 5.555555555555555,
+       "adjacency_matrix": 5.555555555555555,
+       "text_only": 25.0
+      },
+      "n_rows": {
+       "node_link": 36,
+       "circular_layout": 36,
+       "adjacency_matrix": 36,
+       "text_only": 36
+      },
+      "best": [
+       "text_only"
+      ]
+     },
+     "clustering": {
+      "n": 36,
+      "em": {
+       "node_link": 8.333333333333334,
+       "circular_layout": 5.555555555555555,
+       "adjacency_matrix": 5.555555555555555,
+       "text_only": 5.555555555555555
+      },
+      "n_rows": {
+       "node_link": 36,
+       "circular_layout": 36,
+       "adjacency_matrix": 36,
+       "text_only": 36
+      },
+      "best": [
+       "node_link"
+      ]
+     },
+     "shortest_path": {
+      "n": 36,
+      "em": {
+       "node_link": 11.11111111111111,
+       "circular_layout": 8.333333333333334,
+       "adjacency_matrix": 2.7777777777777777,
+       "text_only": 47.22222222222222
+      },
+      "n_rows": {
+       "node_link": 36,
+       "circular_layout": 36,
+       "adjacency_matrix": 36,
+       "text_only": 36
+      },
+      "best": [
+       "text_only"
+      ]
+     },
+     "bipartite_check": {
+      "n": 20,
+      "em": {
+       "node_link": 80.0,
+       "circular_layout": 70.0,
+       "adjacency_matrix": 65.0,
+       "text_only": 65.0
+      },
+      "n_rows": {
+       "node_link": 20,
+       "circular_layout": 20,
+       "adjacency_matrix": 20,
+       "text_only": 20
+      },
+      "best": [
+       "node_link"
+      ]
+     },
+     "cycle_detection": {
+      "n": 20,
+      "em": {
+       "node_link": 95.0,
+       "circular_layout": 90.0,
+       "adjacency_matrix": 80.0,
+       "text_only": 90.0
+      },
+      "n_rows": {
+       "node_link": 20,
+       "circular_layout": 20,
+       "adjacency_matrix": 20,
+       "text_only": 20
+      },
+      "best": [
+       "node_link"
+      ]
+     },
+     "diameter": {
+      "n": 20,
+      "em": {
+       "node_link": 10.0,
+       "circular_layout": 20.0,
+       "adjacency_matrix": 10.0,
+       "text_only": 10.0
+      },
+      "n_rows": {
+       "node_link": 20,
+       "circular_layout": 20,
+       "adjacency_matrix": 20,
+       "text_only": 20
+      },
+      "best": [
+       "circular_layout"
+      ]
+     },
+     "edge_count": {
+      "n": 20,
+      "em": {
+       "node_link": 0.0,
+       "circular_layout": 0.0,
+       "adjacency_matrix": 0.0,
+       "text_only": 5.0
+      },
+      "n_rows": {
+       "node_link": 20,
+       "circular_layout": 20,
+       "adjacency_matrix": 20,
+       "text_only": 20
+      },
+      "best": [
+       "text_only"
+      ]
+     }
+    },
+    "qwen7b": {
+     "degree_query": {
+      "n": 208,
+      "em": {
+       "node_link": 9.134615384615385,
+       "circular_layout": 4.326923076923077,
+       "adjacency_matrix": 6.730769230769231,
+       "text_only": 41.34615384615385
+      },
+      "n_rows": {
+       "node_link": 208,
+       "circular_layout": 208,
+       "adjacency_matrix": 208,
+       "text_only": 208
+      },
+      "best": [
+       "text_only"
+      ]
+     },
+     "connectivity": {
+      "n": 96,
+      "em": {
+       "node_link": 93.75,
+       "circular_layout": 94.79166666666667,
+       "adjacency_matrix": 72.91666666666667,
+       "text_only": 71.875
+      },
+      "n_rows": {
+       "node_link": 96,
+       "circular_layout": 96,
+       "adjacency_matrix": 96,
+       "text_only": 96
+      },
+      "best": [
+       "circular_layout"
+      ]
+     },
+     "community": {
+      "n": 92,
+      "em": {
+       "node_link": 40.21739130434783,
+       "circular_layout": 35.869565217391305,
+       "adjacency_matrix": 35.869565217391305,
+       "text_only": 39.130434782608695
+      },
+      "n_rows": {
+       "node_link": 92,
+       "circular_layout": 92,
+       "adjacency_matrix": 92,
+       "text_only": 92
+      },
+      "best": [
+       "node_link"
+      ]
+     },
+     "counterfactual": {
+      "n": 76,
+      "em": {
+       "node_link": 76.3157894736842,
+       "circular_layout": 75.0,
+       "adjacency_matrix": 43.421052631578945,
+       "text_only": 60.526315789473685
+      },
+      "n_rows": {
+       "node_link": 76,
+       "circular_layout": 76,
+       "adjacency_matrix": 76,
+       "text_only": 76
+      },
+      "best": [
+       "node_link"
+      ]
+     },
+     "centrality": {
+      "n": 36,
+      "em": {
+       "node_link": 11.11111111111111,
+       "circular_layout": 5.555555555555555,
+       "adjacency_matrix": 8.333333333333334,
+       "text_only": 33.333333333333336
+      },
+      "n_rows": {
+       "node_link": 36,
+       "circular_layout": 36,
+       "adjacency_matrix": 36,
+       "text_only": 36
+      },
+      "best": [
+       "text_only"
+      ]
+     },
+     "clustering": {
+      "n": 36,
+      "em": {
+       "node_link": 0.0,
+       "circular_layout": 0.0,
+       "adjacency_matrix": 5.555555555555555,
+       "text_only": 2.7777777777777777
+      },
+      "n_rows": {
+       "node_link": 36,
+       "circular_layout": 36,
+       "adjacency_matrix": 36,
+       "text_only": 36
+      },
+      "best": [
+       "adjacency_matrix"
+      ]
+     },
+     "shortest_path": {
+      "n": 36,
+      "em": {
+       "node_link": 0.0,
+       "circular_layout": 2.7777777777777777,
+       "adjacency_matrix": 0.0,
+       "text_only": 13.88888888888889
+      },
+      "n_rows": {
+       "node_link": 36,
+       "circular_layout": 36,
+       "adjacency_matrix": 36,
+       "text_only": 36
+      },
+      "best": [
+       "text_only"
+      ]
+     },
+     "bipartite_check": {
+      "n": 20,
+      "em": {
+       "node_link": 65.0,
+       "circular_layout": 55.0,
+       "adjacency_matrix": 70.0,
+       "text_only": 65.0
+      },
+      "n_rows": {
+       "node_link": 20,
+       "circular_layout": 20,
+       "adjacency_matrix": 20,
+       "text_only": 20
+      },
+      "best": [
+       "adjacency_matrix"
+      ]
+     },
+     "cycle_detection": {
+      "n": 20,
+      "em": {
+       "node_link": 90.0,
+       "circular_layout": 90.0,
+       "adjacency_matrix": 80.0,
+       "text_only": 80.0
+      },
+      "n_rows": {
+       "node_link": 20,
+       "circular_layout": 20,
+       "adjacency_matrix": 20,
+       "text_only": 20
+      },
+      "best": [
+       "node_link",
+       "circular_layout"
+      ]
+     },
+     "diameter": {
+      "n": 20,
+      "em": {
+       "node_link": 0.0,
+       "circular_layout": 10.0,
+       "adjacency_matrix": 5.0,
+       "text_only": 0.0
+      },
+      "n_rows": {
+       "node_link": 20,
+       "circular_layout": 20,
+       "adjacency_matrix": 20,
+       "text_only": 20
+      },
+      "best": [
+       "circular_layout"
+      ]
+     },
+     "edge_count": {
+      "n": 20,
+      "em": {
+       "node_link": 0.0,
+       "circular_layout": 0.0,
+       "adjacency_matrix": 0.0,
+       "text_only": 0.0
+      },
+      "n_rows": {
+       "node_link": 20,
+       "circular_layout": 20,
+       "adjacency_matrix": 20,
+       "text_only": 20
+      },
+      "best": [
+       "node_link",
+       "circular_layout",
+       "adjacency_matrix",
+       "text_only"
+      ]
+     }
+    },
+    "claude": {
+     "degree_query": {
+      "n": 208,
+      "em": {
+       "node_link": 7.6923076923076925,
+       "circular_layout": 6.730769230769231,
+       "adjacency_matrix": 14.423076923076923,
+       "text_only": 45.67307692307692
+      },
+      "n_rows": {
+       "node_link": 208,
+       "circular_layout": 208,
+       "adjacency_matrix": 208,
+       "text_only": 208
+      },
+      "best": [
+       "text_only"
+      ]
+     },
+     "connectivity": {
+      "n": 96,
+      "em": {
+       "node_link": 56.25,
+       "circular_layout": 82.29166666666667,
+       "adjacency_matrix": 66.66666666666667,
+       "text_only": 68.75
+      },
+      "n_rows": {
+       "node_link": 96,
+       "circular_layout": 96,
+       "adjacency_matrix": 96,
+       "text_only": 96
+      },
+      "best": [
+       "circular_layout"
+      ]
+     },
+     "community": {
+      "n": 92,
+      "em": {
+       "node_link": 40.21739130434783,
+       "circular_layout": 33.69565217391305,
+       "adjacency_matrix": 30.434782608695652,
+       "text_only": 42.391304347826086
+      },
+      "n_rows": {
+       "node_link": 92,
+       "circular_layout": 92,
+       "adjacency_matrix": 92,
+       "text_only": 92
+      },
+      "best": [
+       "text_only"
+      ]
+     },
+     "counterfactual": {
+      "n": 76,
+      "em": {
+       "node_link": 97.36842105263158,
+       "circular_layout": 100.0,
+       "adjacency_matrix": 93.42105263157895,
+       "text_only": 96.05263157894737
+      },
+      "n_rows": {
+       "node_link": 76,
+       "circular_layout": 76,
+       "adjacency_matrix": 76,
+       "text_only": 76
+      },
+      "best": [
+       "circular_layout"
+      ]
+     },
+     "centrality": {
+      "n": 36,
+      "em": {
+       "node_link": 8.333333333333334,
+       "circular_layout": 5.555555555555555,
+       "adjacency_matrix": 11.11111111111111,
+       "text_only": 22.22222222222222
+      },
+      "n_rows": {
+       "node_link": 36,
+       "circular_layout": 36,
+       "adjacency_matrix": 36,
+       "text_only": 36
+      },
+      "best": [
+       "text_only"
+      ]
+     },
+     "clustering": {
+      "n": 36,
+      "em": {
+       "node_link": 5.555555555555555,
+       "circular_layout": 2.7777777777777777,
+       "adjacency_matrix": 8.333333333333334,
+       "text_only": 5.555555555555555
+      },
+      "n_rows": {
+       "node_link": 36,
+       "circular_layout": 36,
+       "adjacency_matrix": 36,
+       "text_only": 36
+      },
+      "best": [
+       "adjacency_matrix"
+      ]
+     },
+     "shortest_path": {
+      "n": 36,
+      "em": {
+       "node_link": 19.444444444444443,
+       "circular_layout": 44.44444444444444,
+       "adjacency_matrix": 16.666666666666668,
+       "text_only": 50.0
+      },
+      "n_rows": {
+       "node_link": 36,
+       "circular_layout": 36,
+       "adjacency_matrix": 36,
+       "text_only": 36
+      },
+      "best": [
+       "text_only"
+      ]
+     },
+     "bipartite_check": {
+      "n": 20,
+      "em": {
+       "node_link": 60.0,
+       "circular_layout": 60.0,
+       "adjacency_matrix": 80.0,
+       "text_only": 20.0
+      },
+      "n_rows": {
+       "node_link": 20,
+       "circular_layout": 20,
+       "adjacency_matrix": 20,
+       "text_only": 20
+      },
+      "best": [
+       "adjacency_matrix"
+      ]
+     },
+     "cycle_detection": {
+      "n": 20,
+      "em": {
+       "node_link": 90.0,
+       "circular_layout": 80.0,
+       "adjacency_matrix": 85.0,
+       "text_only": 85.0
+      },
+      "n_rows": {
+       "node_link": 20,
+       "circular_layout": 20,
+       "adjacency_matrix": 20,
+       "text_only": 20
+      },
+      "best": [
+       "node_link"
+      ]
+     },
+     "diameter": {
+      "n": 20,
+      "em": {
+       "node_link": 35.0,
+       "circular_layout": 15.0,
+       "adjacency_matrix": 10.0,
+       "text_only": 25.0
+      },
+      "n_rows": {
+       "node_link": 20,
+       "circular_layout": 20,
+       "adjacency_matrix": 20,
+       "text_only": 20
+      },
+      "best": [
+       "node_link"
+      ]
+     },
+     "edge_count": {
+      "n": 20,
+      "em": {
+       "node_link": 0.0,
+       "circular_layout": 0.0,
+       "adjacency_matrix": 0.0,
+       "text_only": 0.0
+      },
+      "n_rows": {
+       "node_link": 20,
+       "circular_layout": 20,
+       "adjacency_matrix": 20,
+       "text_only": 20
+      },
+      "best": [
+       "node_link",
+       "circular_layout",
+       "adjacency_matrix",
+       "text_only"
+      ]
+     }
+    }
+   },
+   "split": false
+  }
+ },
+ "gap_cis": [
+  {
+   "model": "GPT-4o",
+   "key": "gpt4o",
+   "modality": "tabular",
+   "best": "table_image",
+   "worst": "bar_chart",
+   "best_em": 59.49008498583569,
+   "worst_em": 22.776203966005667,
+   "gap": 36.713881019830026,
+   "n_q": 1765,
+   "n_obj": 156,
+   "ci_lo": 33.60342152856309,
+   "ci_hi": 40.06981977117511,
+   "perm_p": 9.999000099990002e-05,
+   "perm_hits": 0
+  },
+  {
+   "model": "GPT-4o",
+   "key": "gpt4o",
+   "modality": "timeseries",
+   "best": "text_only",
+   "worst": "recurrence_plot",
+   "best_em": 35.839416058394164,
+   "worst_em": 10.145985401459853,
+   "gap": 25.693430656934307,
+   "n_q": 1370,
+   "n_obj": 107,
+   "ci_lo": 23.359375,
+   "ci_hi": 28.11830936330564,
+   "perm_p": 9.999000099990002e-05,
+   "perm_hits": 0
+  },
+  {
+   "model": "GPT-4o",
+   "key": "gpt4o",
+   "modality": "graph",
+   "best": "text_only",
+   "worst": "adjacency_matrix",
+   "best_em": 56.36363636363637,
+   "worst_em": 33.333333333333336,
+   "gap": 23.03030303030303,
+   "n_q": 660,
+   "n_obj": 36,
+   "ci_lo": 18.775510204081634,
+   "ci_hi": 27.555855855855853,
+   "perm_p": 9.999000099990002e-05,
+   "perm_hits": 0
+  },
+  {
+   "model": "Gemini-2.0-Flash",
+   "key": "gemini20",
+   "modality": "tabular",
+   "best": "text_only",
+   "worst": "scatter_plot",
+   "best_em": 61.13314447592068,
+   "worst_em": 20.623229461756374,
+   "gap": 40.50991501416431,
+   "n_q": 1765,
+   "n_obj": 156,
+   "ci_lo": 37.00595991791469,
+   "ci_hi": 44.28664684764935,
+   "perm_p": 9.999000099990002e-05,
+   "perm_hits": 0
+  },
+  {
+   "model": "Gemini-2.0-Flash",
+   "key": "gemini20",
+   "modality": "timeseries",
+   "best": "text_only",
+   "worst": "gaf",
+   "best_em": 38.68613138686131,
+   "worst_em": 19.48905109489051,
+   "gap": 19.197080291970803,
+   "n_q": 1370,
+   "n_obj": 107,
+   "ci_lo": 16.478209888606607,
+   "ci_hi": 22.26280815314695,
+   "perm_p": 9.999000099990002e-05,
+   "perm_hits": 0
+  },
+  {
+   "model": "Gemini-2.0-Flash",
+   "key": "gemini20",
+   "modality": "graph",
+   "best": "text_only",
+   "worst": "adjacency_matrix",
+   "best_em": 53.484848484848484,
+   "worst_em": 31.818181818181817,
+   "gap": 21.666666666666668,
+   "n_q": 660,
+   "n_obj": 36,
+   "ci_lo": 17.925925925925927,
+   "ci_hi": 25.614035087719298,
+   "perm_p": 9.999000099990002e-05,
+   "perm_hits": 0
+  },
+  {
+   "model": "Qwen2.5-VL-7B",
+   "key": "qwen7b",
+   "modality": "tabular",
+   "best": "table_image",
+   "worst": "scatter_plot",
+   "best_em": 54.56090651558074,
+   "worst_em": 17.507082152974505,
+   "gap": 37.053824362606235,
+   "n_q": 1765,
+   "n_obj": 156,
+   "ci_lo": 34.064285192542634,
+   "ci_hi": 40.28492914845715,
+   "perm_p": 9.999000099990002e-05,
+   "perm_hits": 0
+  },
+  {
+   "model": "Qwen2.5-VL-7B",
+   "key": "qwen7b",
+   "modality": "timeseries",
+   "best": "text_only",
+   "worst": "recurrence_plot",
+   "best_em": 32.846715328467155,
+   "worst_em": 19.197080291970803,
+   "gap": 13.64963503649635,
+   "n_q": 1370,
+   "n_obj": 107,
+   "ci_lo": 11.029837755427115,
+   "ci_hi": 16.560062499999997,
+   "perm_p": 9.999000099990002e-05,
+   "perm_hits": 0
+  },
+  {
+   "model": "Qwen2.5-VL-7B",
+   "key": "qwen7b",
+   "modality": "graph",
+   "best": "text_only",
+   "worst": "adjacency_matrix",
+   "best_em": 43.03030303030303,
+   "worst_em": 28.181818181818183,
+   "gap": 14.848484848484848,
+   "n_q": 660,
+   "n_obj": 36,
+   "ci_lo": 12.093023255813954,
+   "ci_hi": 18.29059829059829,
+   "perm_p": 9.999000099990002e-05,
+   "perm_hits": 0
+  },
+  {
+   "model": "Claude Sonnet 4",
+   "key": "claude",
+   "modality": "tabular",
+   "best": "table_image",
+   "worst": "scatter_plot",
+   "best_em": 44.53257790368272,
+   "worst_em": 16.14730878186969,
+   "gap": 28.38526912181303,
+   "n_q": 1765,
+   "n_obj": 156,
+   "ci_lo": 24.829873328641803,
+   "ci_hi": 32.36517198113384,
+   "perm_p": 9.999000099990002e-05,
+   "perm_hits": 0
+  },
+  {
+   "model": "Claude Sonnet 4",
+   "key": "claude",
+   "modality": "timeseries",
+   "best": "line_plot",
+   "worst": "recurrence_plot",
+   "best_em": 23.284671532846716,
+   "worst_em": 11.313868613138686,
+   "gap": 11.97080291970803,
+   "n_q": 1370,
+   "n_obj": 107,
+   "ci_lo": 10.342394675626776,
+   "ci_hi": 13.60332182916307,
+   "perm_p": 9.999000099990002e-05,
+   "perm_hits": 0
+  },
+  {
+   "model": "Claude Sonnet 4",
+   "key": "claude",
+   "modality": "graph",
+   "best": "text_only",
+   "worst": "node_link",
+   "best_em": 49.54545454545455,
+   "worst_em": 34.84848484848485,
+   "gap": 14.696969696969697,
+   "n_q": 660,
+   "n_obj": 36,
+   "ci_lo": 11.317829457364342,
+   "ci_hi": 18.25488400488399,
+   "perm_p": 9.999000099990002e-05,
+   "perm_hits": 0
+  },
+  {
+   "model": "Gemini-2.5-Flash",
+   "key": "gemini25",
+   "modality": "tabular",
+   "best": "text_only",
+   "worst": "bar_chart",
+   "best_em": 59.6600566572238,
+   "worst_em": 21.189801699716714,
+   "gap": 38.47025495750708,
+   "n_q": 1765,
+   "n_obj": 156,
+   "ci_lo": 34.830824357206545,
+   "ci_hi": 42.23748845910169,
+   "perm_p": 9.999000099990002e-05,
+   "perm_hits": 0
+  },
+  {
+   "model": "Gemini-2.5-Flash",
+   "key": "gemini25",
+   "modality": "timeseries",
+   "best": "text_only",
+   "worst": "recurrence_plot",
+   "best_em": 39.48905109489051,
+   "worst_em": 13.211678832116789,
+   "gap": 26.277372262773724,
+   "n_q": 1370,
+   "n_obj": 107,
+   "ci_lo": 23.903979773502794,
+   "ci_hi": 28.726005589811557,
+   "perm_p": 9.999000099990002e-05,
+   "perm_hits": 0
+  },
+  {
+   "model": "Gemini-2.5-Flash",
+   "key": "gemini25",
+   "modality": "graph",
+   "best": "text_only",
+   "worst": "node_link",
+   "best_em": 59.84848484848485,
+   "worst_em": 29.848484848484848,
+   "gap": 30.0,
+   "n_q": 660,
+   "n_obj": 36,
+   "ci_lo": 24.20247724974722,
+   "ci_hi": 34.697066822066816,
+   "perm_p": 9.999000099990002e-05,
+   "perm_hits": 0
+  },
+  {
+   "model": "Qwen2.5-VL-32B",
+   "key": "qwen32b",
+   "modality": "tabular",
+   "best": "table_image",
+   "worst": "scatter_plot",
+   "best_em": 53.257790368271955,
+   "worst_em": 18.58356940509915,
+   "gap": 34.67422096317281,
+   "n_q": 1765,
+   "n_obj": 156,
+   "ci_lo": 31.00481226733282,
+   "ci_hi": 38.61212889241523,
+   "perm_p": 9.999000099990002e-05,
+   "perm_hits": 0
+  },
+  {
+   "model": "Qwen2.5-VL-32B",
+   "key": "qwen32b",
+   "modality": "timeseries",
+   "best": "text_only",
+   "worst": "recurrence_plot",
+   "best_em": 35.18248175182482,
+   "worst_em": 17.153284671532848,
+   "gap": 18.029197080291972,
+   "n_q": 1370,
+   "n_obj": 107,
+   "ci_lo": 15.874125874125873,
+   "ci_hi": 20.150943396226417,
+   "perm_p": 9.999000099990002e-05,
+   "perm_hits": 0
+  },
+  {
+   "model": "Qwen2.5-VL-32B",
+   "key": "qwen32b",
+   "modality": "graph",
+   "best": "text_only",
+   "worst": "adjacency_matrix",
+   "best_em": 57.121212121212125,
+   "worst_em": 34.696969696969695,
+   "gap": 22.424242424242426,
+   "n_q": 660,
+   "n_obj": 36,
+   "ci_lo": 18.194444444444443,
+   "ci_hi": 27.166987179487176,
+   "perm_p": 9.999000099990002e-05,
+   "perm_hits": 0
+  },
+  {
+   "model": "InternVL2.5-8B",
+   "key": "internvl",
+   "modality": "tabular",
+   "best": "table_image",
+   "worst": "scatter_plot",
+   "best_em": 30.93484419263456,
+   "worst_em": 11.728045325779037,
+   "gap": 19.206798866855525,
+   "n_q": 1765,
+   "n_obj": 156,
+   "ci_lo": 16.345412759709003,
+   "ci_hi": 22.195287759817226,
+   "perm_p": 9.999000099990002e-05,
+   "perm_hits": 0
+  },
+  {
+   "model": "InternVL2.5-8B",
+   "key": "internvl",
+   "modality": "timeseries",
+   "best": "line_plot",
+   "worst": "gaf",
+   "best_em": 19.708029197080293,
+   "worst_em": 11.094890510948906,
+   "gap": 8.613138686131387,
+   "n_q": 1370,
+   "n_obj": 107,
+   "ci_lo": 6.714788550799382,
+   "ci_hi": 10.62730627306273,
+   "perm_p": 9.999000099990002e-05,
+   "perm_hits": 0
+  },
+  {
+   "model": "InternVL2.5-8B",
+   "key": "internvl",
+   "modality": "graph",
+   "best": "text_only",
+   "worst": "node_link",
+   "best_em": 30.90909090909091,
+   "worst_em": 23.333333333333332,
+   "gap": 7.575757575757576,
+   "n_q": 660,
+   "n_obj": 36,
+   "ci_lo": 4.0,
+   "ci_hi": 11.527871621621621,
+   "perm_p": 0.00029997000299970003,
+   "perm_hits": 2
+  }
+ ],
+ "flip_rates": [
+  {
+   "model": "GPT-4o",
+   "key": "gpt4o",
+   "modality": "tabular",
+   "n_q": 1765,
+   "n_rows": 8825,
+   "mean_em": 41.405099150141645,
+   "random_em": 41.405099150141645,
+   "oracle_em": 74.39093484419263,
+   "all_correct": 12.974504249291785,
+   "flip": 61.41643059490085
+  },
+  {
+   "model": "GPT-4o",
+   "key": "gpt4o",
+   "modality": "timeseries",
+   "n_q": 1370,
+   "n_rows": 6850,
+   "mean_em": 21.83941605839416,
+   "random_em": 21.83941605839416,
+   "oracle_em": 45.32846715328467,
+   "all_correct": 4.598540145985401,
+   "flip": 40.72992700729927
+  },
+  {
+   "model": "GPT-4o",
+   "key": "gpt4o",
+   "modality": "graph",
+   "n_q": 660,
+   "n_rows": 2640,
+   "mean_em": 43.63636363636363,
+   "random_em": 43.63636363636363,
+   "oracle_em": 68.78787878787878,
+   "all_correct": 24.242424242424242,
+   "flip": 44.54545454545455
+  },
+  {
+   "model": "GPT-4o",
+   "key": "gpt4o",
+   "modality": "all",
+   "n_q": 3795,
+   "n_rows": 18315,
+   "mean_em": 34.40895440895441,
+   "random_em": 34.72990777338603,
+   "oracle_em": 62.92490118577075,
+   "all_correct": 11.910408432147563,
+   "flip": 51.01449275362319
+  },
+  {
+   "model": "Gemini-2.0-Flash",
+   "key": "gemini20",
+   "modality": "tabular",
+   "n_q": 1765,
+   "n_rows": 8825,
+   "mean_em": 42.36827195467422,
+   "random_em": 42.36827195467422,
+   "oracle_em": 77.1671388101983,
+   "all_correct": 9.80169971671388,
+   "flip": 67.36543909348443
+  },
+  {
+   "model": "Gemini-2.0-Flash",
+   "key": "gemini20",
+   "modality": "timeseries",
+   "n_q": 1370,
+   "n_rows": 6850,
+   "mean_em": 27.153284671532848,
+   "random_em": 27.153284671532848,
+   "oracle_em": 53.7956204379562,
+   "all_correct": 8.467153284671532,
+   "flip": 45.32846715328467
+  },
+  {
+   "model": "Gemini-2.0-Flash",
+   "key": "gemini20",
+   "modality": "graph",
+   "n_q": 660,
+   "n_rows": 2640,
+   "mean_em": 39.31818181818182,
+   "random_em": 39.31818181818182,
+   "oracle_em": 66.51515151515152,
+   "all_correct": 19.242424242424242,
+   "flip": 47.27272727272727
+  },
+  {
+   "model": "Gemini-2.0-Flash",
+   "key": "gemini20",
+   "modality": "all",
+   "n_q": 3795,
+   "n_rows": 18315,
+   "mean_em": 36.23805623805624,
+   "random_em": 36.34519104084321,
+   "oracle_em": 66.87747035573122,
+   "all_correct": 10.961791831357049,
+   "flip": 55.91567852437418
+  },
+  {
+   "model": "Qwen2.5-VL-7B",
+   "key": "qwen7b",
+   "modality": "tabular",
+   "n_q": 1765,
+   "n_rows": 8825,
+   "mean_em": 37.74504249291785,
+   "random_em": 37.74504249291785,
+   "oracle_em": 69.06515580736544,
+   "all_correct": 9.008498583569406,
+   "flip": 60.05665722379604
+  },
+  {
+   "model": "Qwen2.5-VL-7B",
+   "key": "qwen7b",
+   "modality": "timeseries",
+   "n_q": 1370,
+   "n_rows": 6850,
+   "mean_em": 24.32116788321168,
+   "random_em": 24.32116788321168,
+   "oracle_em": 43.065693430656935,
+   "all_correct": 10.802919708029197,
+   "flip": 32.262773722627735
+  },
+  {
+   "model": "Qwen2.5-VL-7B",
+   "key": "qwen7b",
+   "modality": "graph",
+   "n_q": 660,
+   "n_rows": 2640,
+   "mean_em": 35.34090909090909,
+   "random_em": 35.34090909090909,
+   "oracle_em": 54.696969696969695,
+   "all_correct": 22.12121212121212,
+   "flip": 32.57575757575758
+  },
+  {
+   "model": "Qwen2.5-VL-7B",
+   "key": "qwen7b",
+   "modality": "all",
+   "n_q": 3795,
+   "n_rows": 18315,
+   "mean_em": 32.37783237783238,
+   "random_em": 32.48089591567853,
+   "oracle_em": 57.18050065876153,
+   "all_correct": 11.936758893280633,
+   "flip": 45.2437417654809
+  },
+  {
+   "model": "Claude Sonnet 4",
+   "key": "claude",
+   "modality": "tabular",
+   "n_q": 1765,
+   "n_rows": 8825,
+   "mean_em": 30.175637393767705,
+   "random_em": 30.175637393767705,
+   "oracle_em": 61.58640226628895,
+   "all_correct": 3.229461756373938,
+   "flip": 58.35694050991501
+  },
+  {
+   "model": "Claude Sonnet 4",
+   "key": "claude",
+   "modality": "timeseries",
+   "n_q": 1370,
+   "n_rows": 6850,
+   "mean_em": 17.547445255474454,
+   "random_em": 17.547445255474454,
+   "oracle_em": 36.715328467153284,
+   "all_correct": 5.62043795620438,
+   "flip": 31.094890510948904
+  },
+  {
+   "model": "Claude Sonnet 4",
+   "key": "claude",
+   "modality": "graph",
+   "n_q": 660,
+   "n_rows": 2640,
+   "mean_em": 39.696969696969695,
+   "random_em": 39.696969696969695,
+   "oracle_em": 63.93939393939394,
+   "all_correct": 20.606060606060606,
+   "flip": 43.333333333333336
+  },
+  {
+   "model": "Claude Sonnet 4",
+   "key": "claude",
+   "modality": "all",
+   "n_q": 3795,
+   "n_rows": 18315,
+   "mean_em": 26.825006825006824,
+   "random_em": 27.272727272727273,
+   "oracle_em": 53.01712779973649,
+   "all_correct": 7.1146245059288535,
+   "flip": 45.90250329380764
+  },
+  {
+   "model": "Gemini-2.5-Flash",
+   "key": "gemini25",
+   "modality": "tabular",
+   "n_q": 1765,
+   "n_rows": 8825,
+   "mean_em": 40.97450424929178,
+   "random_em": 40.97450424929178,
+   "oracle_em": 75.12747875354107,
+   "all_correct": 12.634560906515581,
+   "flip": 62.492917847025495
+  },
+  {
+   "model": "Gemini-2.5-Flash",
+   "key": "gemini25",
+   "modality": "timeseries",
+   "n_q": 1370,
+   "n_rows": 6850,
+   "mean_em": 26.56934306569343,
+   "random_em": 26.56934306569343,
+   "oracle_em": 53.43065693430657,
+   "all_correct": 5.109489051094891,
+   "flip": 48.32116788321168
+  },
+  {
+   "model": "Gemini-2.5-Flash",
+   "key": "gemini25",
+   "modality": "graph",
+   "n_q": 660,
+   "n_rows": 2640,
+   "mean_em": 40.49242424242424,
+   "random_em": 40.49242424242424,
+   "oracle_em": 67.42424242424242,
+   "all_correct": 16.666666666666668,
+   "flip": 50.75757575757576
+  },
+  {
+   "model": "Gemini-2.5-Flash",
+   "key": "gemini25",
+   "modality": "all",
+   "n_q": 3795,
+   "n_rows": 18315,
+   "mean_em": 35.51733551733552,
+   "random_em": 35.69038208168643,
+   "oracle_em": 65.95520421607378,
+   "all_correct": 10.61923583662714,
+   "flip": 55.33596837944664
+  },
+  {
+   "model": "Qwen2.5-VL-32B",
+   "key": "qwen32b",
+   "modality": "tabular",
+   "n_q": 1765,
+   "n_rows": 8825,
+   "mean_em": 36.97450424929178,
+   "random_em": 36.97450424929178,
+   "oracle_em": 68.6685552407932,
+   "all_correct": 8.328611898016996,
+   "flip": 60.3399433427762
+  },
+  {
+   "model": "Qwen2.5-VL-32B",
+   "key": "qwen32b",
+   "modality": "timeseries",
+   "n_q": 1370,
+   "n_rows": 6850,
+   "mean_em": 25.240875912408757,
+   "random_em": 25.240875912408757,
+   "oracle_em": 46.35036496350365,
+   "all_correct": 10.145985401459853,
+   "flip": 36.2043795620438
+  },
+  {
+   "model": "Qwen2.5-VL-32B",
+   "key": "qwen32b",
+   "modality": "graph",
+   "n_q": 660,
+   "n_rows": 2640,
+   "mean_em": 41.81818181818182,
+   "random_em": 41.81818181818182,
+   "oracle_em": 64.39393939393939,
+   "all_correct": 25.454545454545453,
+   "flip": 38.93939393939394
+  },
+  {
+   "model": "Qwen2.5-VL-32B",
+   "key": "qwen32b",
+   "modality": "all",
+   "n_q": 3795,
+   "n_rows": 18315,
+   "mean_em": 33.284193284193286,
+   "random_em": 33.581027667984195,
+   "oracle_em": 59.86824769433465,
+   "all_correct": 11.963109354413703,
+   "flip": 47.905138339920946
+  },
+  {
+   "model": "InternVL2.5-8B",
+   "key": "internvl",
+   "modality": "tabular",
+   "n_q": 1765,
+   "n_rows": 8825,
+   "mean_em": 21.711048158640228,
+   "random_em": 21.711048158640228,
+   "oracle_em": 47.76203966005666,
+   "all_correct": 3.3427762039660056,
+   "flip": 44.419263456090654
+  },
+  {
+   "model": "InternVL2.5-8B",
+   "key": "internvl",
+   "modality": "timeseries",
+   "n_q": 1370,
+   "n_rows": 6850,
+   "mean_em": 16.1021897810219,
+   "random_em": 16.1021897810219,
+   "oracle_em": 29.48905109489051,
+   "all_correct": 3.4306569343065694,
+   "flip": 26.05839416058394
+  },
+  {
+   "model": "InternVL2.5-8B",
+   "key": "internvl",
+   "modality": "graph",
+   "n_q": 660,
+   "n_rows": 2640,
+   "mean_em": 26.21212121212121,
+   "random_em": 26.21212121212121,
+   "oracle_em": 39.696969696969695,
+   "all_correct": 15.454545454545455,
+   "flip": 24.242424242424242
+  },
+  {
+   "model": "InternVL2.5-8B",
+   "key": "internvl",
+   "modality": "all",
+   "n_q": 3795,
+   "n_rows": 18315,
+   "mean_em": 20.26208026208026,
+   "random_em": 20.469038208168644,
+   "oracle_em": 39.762845849802375,
+   "all_correct": 5.480895915678524,
+   "flip": 34.281949934123844
+  }
+ ],
+ "source_split": [
+  {
+   "model": "GPT-4o",
+   "key": "gpt4o",
+   "modality": "tabular",
+   "source": "synthetic",
+   "source_names": [
+    "synthetic"
+   ],
+   "n_q": 500,
+   "best": "table_image",
+   "worst": "scatter_plot",
+   "best_em": 39.8,
+   "worst_em": 16.6,
+   "gap": 23.199999999999996,
+   "em": {
+    "table_image": 39.8,
+    "text_only": 36.2,
+    "heatmap": 21.4,
+    "bar_chart": 17.8,
+    "scatter_plot": 16.6
+   }
+  },
+  {
+   "model": "GPT-4o",
+   "key": "gpt4o",
+   "modality": "tabular",
+   "source": "realworld",
+   "source_names": [
+    "scitabalign"
+   ],
+   "n_q": 1265,
+   "best": "table_image",
+   "worst": "bar_chart",
+   "best_em": 67.27272727272727,
+   "worst_em": 24.74308300395257,
+   "gap": 42.529644268774696,
+   "em": {
+    "table_image": 67.27272727272727,
+    "text_only": 66.00790513833992,
+    "heatmap": 52.41106719367589,
+    "bar_chart": 24.74308300395257,
+    "scatter_plot": 26.324110671936758
+   }
+  },
+  {
+   "model": "GPT-4o",
+   "key": "gpt4o",
+   "modality": "timeseries",
+   "source": "synthetic",
+   "source_names": [
+    "synthetic"
+   ],
+   "n_q": 500,
+   "best": "text_only",
+   "worst": "recurrence_plot",
+   "best_em": 42.6,
+   "worst_em": 16.2,
+   "gap": 26.400000000000002,
+   "em": {
+    "line_plot": 39.6,
+    "heatmap": 31.8,
+    "gaf": 30.0,
+    "recurrence_plot": 16.2,
+    "text_only": 42.6
+   }
+  },
+  {
+   "model": "GPT-4o",
+   "key": "gpt4o",
+   "modality": "timeseries",
+   "source": "realworld",
+   "source_names": [
+    "ett"
+   ],
+   "n_q": 870,
+   "best": "text_only",
+   "worst": "recurrence_plot",
+   "best_em": 31.95402298850575,
+   "worst_em": 6.666666666666667,
+   "gap": 25.28735632183908,
+   "em": {
+    "line_plot": 20.689655172413794,
+    "heatmap": 10.804597701149426,
+    "gaf": 9.770114942528735,
+    "recurrence_plot": 6.666666666666667,
+    "text_only": 31.95402298850575
+   }
+  },
+  {
+   "model": "GPT-4o",
+   "key": "gpt4o",
+   "modality": "graph",
+   "source": "synthetic",
+   "source_names": [
+    "synthetic"
+   ],
+   "n_q": 500,
+   "best": "text_only",
+   "worst": "adjacency_matrix",
+   "best_em": 54.8,
+   "worst_em": 35.8,
+   "gap": 19.0,
+   "em": {
+    "node_link": 44.4,
+    "circular_layout": 42.2,
+    "adjacency_matrix": 35.8,
+    "text_only": 54.8
+   }
+  },
+  {
+   "model": "GPT-4o",
+   "key": "gpt4o",
+   "modality": "graph",
+   "source": "realworld",
+   "source_names": [
+    "networkx_realworld"
+   ],
+   "n_q": 160,
+   "best": "text_only",
+   "worst": "adjacency_matrix",
+   "best_em": 61.25,
+   "worst_em": 25.625,
+   "gap": 35.625,
+   "em": {
+    "node_link": 41.25,
+    "circular_layout": 38.125,
+    "adjacency_matrix": 25.625,
+    "text_only": 61.25
+   }
+  },
+  {
+   "model": "Gemini-2.0-Flash",
+   "key": "gemini20",
+   "modality": "tabular",
+   "source": "synthetic",
+   "source_names": [
+    "synthetic"
+   ],
+   "n_q": 500,
+   "best": "text_only",
+   "worst": "scatter_plot",
+   "best_em": 42.0,
+   "worst_em": 16.6,
+   "gap": 25.4,
+   "em": {
+    "table_image": 37.6,
+    "text_only": 42.0,
+    "heatmap": 21.6,
+    "bar_chart": 21.6,
+    "scatter_plot": 16.6
+   }
+  },
+  {
+   "model": "Gemini-2.0-Flash",
+   "key": "gemini20",
+   "modality": "tabular",
+   "source": "realworld",
+   "source_names": [
+    "scitabalign"
+   ],
+   "n_q": 1265,
+   "best": "table_image",
+   "worst": "scatter_plot",
+   "best_em": 69.32806324110672,
+   "worst_em": 22.213438735177867,
+   "gap": 47.11462450592885,
+   "em": {
+    "table_image": 69.32806324110672,
+    "text_only": 68.69565217391305,
+    "heatmap": 53.83399209486166,
+    "bar_chart": 26.40316205533597,
+    "scatter_plot": 22.213438735177867
+   }
+  },
+  {
+   "model": "Gemini-2.0-Flash",
+   "key": "gemini20",
+   "modality": "timeseries",
+   "source": "synthetic",
+   "source_names": [
+    "synthetic"
+   ],
+   "n_q": 500,
+   "best": "line_plot",
+   "worst": "gaf",
+   "best_em": 42.4,
+   "worst_em": 33.6,
+   "gap": 8.799999999999997,
+   "em": {
+    "line_plot": 42.4,
+    "heatmap": 39.6,
+    "gaf": 33.6,
+    "recurrence_plot": 34.4,
+    "text_only": 42.0
+   }
+  },
+  {
+   "model": "Gemini-2.0-Flash",
+   "key": "gemini20",
+   "modality": "timeseries",
+   "source": "realworld",
+   "source_names": [
+    "ett"
+   ],
+   "n_q": 870,
+   "best": "text_only",
+   "worst": "recurrence_plot",
+   "best_em": 36.7816091954023,
+   "worst_em": 11.264367816091953,
+   "gap": 25.51724137931034,
+   "em": {
+    "line_plot": 27.586206896551722,
+    "heatmap": 16.436781609195403,
+    "gaf": 11.379310344827585,
+    "recurrence_plot": 11.264367816091953,
+    "text_only": 36.7816091954023
+   }
+  },
+  {
+   "model": "Gemini-2.0-Flash",
+   "key": "gemini20",
+   "modality": "graph",
+   "source": "synthetic",
+   "source_names": [
+    "synthetic"
+   ],
+   "n_q": 500,
+   "best": "text_only",
+   "worst": "adjacency_matrix",
+   "best_em": 54.2,
+   "worst_em": 34.4,
+   "gap": 19.800000000000004,
+   "em": {
+    "node_link": 37.6,
+    "circular_layout": 38.4,
+    "adjacency_matrix": 34.4,
+    "text_only": 54.2
+   }
+  },
+  {
+   "model": "Gemini-2.0-Flash",
+   "key": "gemini20",
+   "modality": "graph",
+   "source": "realworld",
+   "source_names": [
+    "networkx_realworld"
+   ],
+   "n_q": 160,
+   "best": "text_only",
+   "worst": "adjacency_matrix",
+   "best_em": 51.25,
+   "worst_em": 23.75,
+   "gap": 27.5,
+   "em": {
+    "node_link": 30.0,
+    "circular_layout": 29.375,
+    "adjacency_matrix": 23.75,
+    "text_only": 51.25
+   }
+  },
+  {
+   "model": "Qwen2.5-VL-7B",
+   "key": "qwen7b",
+   "modality": "tabular",
+   "source": "synthetic",
+   "source_names": [
+    "synthetic"
+   ],
+   "n_q": 500,
+   "best": "text_only",
+   "worst": "scatter_plot",
+   "best_em": 40.0,
+   "worst_em": 11.0,
+   "gap": 29.0,
+   "em": {
+    "table_image": 37.4,
+    "text_only": 40.0,
+    "heatmap": 24.0,
+    "bar_chart": 22.2,
+    "scatter_plot": 11.0
+   }
+  },
+  {
+   "model": "Qwen2.5-VL-7B",
+   "key": "qwen7b",
+   "modality": "tabular",
+   "source": "realworld",
+   "source_names": [
+    "scitabalign"
+   ],
+   "n_q": 1265,
+   "best": "table_image",
+   "worst": "scatter_plot",
+   "best_em": 61.34387351778656,
+   "worst_em": 20.07905138339921,
+   "gap": 41.26482213438735,
+   "em": {
+    "table_image": 61.34387351778656,
+    "text_only": 52.569169960474305,
+    "heatmap": 48.69565217391305,
+    "bar_chart": 27.43083003952569,
+    "scatter_plot": 20.07905138339921
+   }
+  },
+  {
+   "model": "Qwen2.5-VL-7B",
+   "key": "qwen7b",
+   "modality": "timeseries",
+   "source": "synthetic",
+   "source_names": [
+    "synthetic"
+   ],
+   "n_q": 500,
+   "best": "line_plot",
+   "worst": "recurrence_plot",
+   "best_em": 38.4,
+   "worst_em": 31.2,
+   "gap": 7.199999999999999,
+   "em": {
+    "line_plot": 38.4,
+    "heatmap": 34.4,
+    "gaf": 33.6,
+    "recurrence_plot": 31.2,
+    "text_only": 33.8
+   }
+  },
+  {
+   "model": "Qwen2.5-VL-7B",
+   "key": "qwen7b",
+   "modality": "timeseries",
+   "source": "realworld",
+   "source_names": [
+    "ett"
+   ],
+   "n_q": 870,
+   "best": "text_only",
+   "worst": "recurrence_plot",
+   "best_em": 32.298850574712645,
+   "worst_em": 12.298850574712644,
+   "gap": 20.0,
+   "em": {
+    "line_plot": 20.919540229885058,
+    "heatmap": 13.333333333333334,
+    "gaf": 14.137931034482758,
+    "recurrence_plot": 12.298850574712644,
+    "text_only": 32.298850574712645
+   }
+  },
+  {
+   "model": "Qwen2.5-VL-7B",
+   "key": "qwen7b",
+   "modality": "graph",
+   "source": "synthetic",
+   "source_names": [
+    "synthetic"
+   ],
+   "n_q": 500,
+   "best": "text_only",
+   "worst": "adjacency_matrix",
+   "best_em": 43.6,
+   "worst_em": 30.8,
+   "gap": 12.8,
+   "em": {
+    "node_link": 36.0,
+    "circular_layout": 35.0,
+    "adjacency_matrix": 30.8,
+    "text_only": 43.6
+   }
+  },
+  {
+   "model": "Qwen2.5-VL-7B",
+   "key": "qwen7b",
+   "modality": "graph",
+   "source": "realworld",
+   "source_names": [
+    "networkx_realworld"
+   ],
+   "n_q": 160,
+   "best": "text_only",
+   "worst": "adjacency_matrix",
+   "best_em": 41.25,
+   "worst_em": 20.0,
+   "gap": 21.25,
+   "em": {
+    "node_link": 36.875,
+    "circular_layout": 30.625,
+    "adjacency_matrix": 20.0,
+    "text_only": 41.25
+   }
+  },
+  {
+   "model": "Claude Sonnet 4",
+   "key": "claude",
+   "modality": "tabular",
+   "source": "synthetic",
+   "source_names": [
+    "synthetic"
+   ],
+   "n_q": 500,
+   "best": "table_image",
+   "worst": "scatter_plot",
+   "best_em": 21.4,
+   "worst_em": 11.2,
+   "gap": 10.2,
+   "em": {
+    "table_image": 21.4,
+    "text_only": 20.4,
+    "heatmap": 13.6,
+    "bar_chart": 15.4,
+    "scatter_plot": 11.2
+   }
+  },
+  {
+   "model": "Claude Sonnet 4",
+   "key": "claude",
+   "modality": "tabular",
+   "source": "realworld",
+   "source_names": [
+    "scitabalign"
+   ],
+   "n_q": 1265,
+   "best": "table_image",
+   "worst": "scatter_plot",
+   "best_em": 53.67588932806324,
+   "worst_em": 18.102766798418973,
+   "gap": 35.573122529644266,
+   "em": {
+    "table_image": 53.67588932806324,
+    "text_only": 42.84584980237154,
+    "heatmap": 43.241106719367586,
+    "bar_chart": 20.23715415019763,
+    "scatter_plot": 18.102766798418973
+   }
+  },
+  {
+   "model": "Claude Sonnet 4",
+   "key": "claude",
+   "modality": "timeseries",
+   "source": "synthetic",
+   "source_names": [
+    "synthetic"
+   ],
+   "n_q": 500,
+   "best": "line_plot",
+   "worst": "recurrence_plot",
+   "best_em": 29.6,
+   "worst_em": 18.2,
+   "gap": 11.400000000000002,
+   "em": {
+    "line_plot": 29.6,
+    "heatmap": 26.0,
+    "gaf": 23.4,
+    "recurrence_plot": 18.2,
+    "text_only": 18.4
+   }
+  },
+  {
+   "model": "Claude Sonnet 4",
+   "key": "claude",
+   "modality": "timeseries",
+   "source": "realworld",
+   "source_names": [
+    "ett"
+   ],
+   "n_q": 870,
+   "best": "text_only",
+   "worst": "recurrence_plot",
+   "best_em": 24.137931034482758,
+   "worst_em": 7.35632183908046,
+   "gap": 16.781609195402297,
+   "em": {
+    "line_plot": 19.655172413793103,
+    "heatmap": 11.839080459770114,
+    "gaf": 8.735632183908047,
+    "recurrence_plot": 7.35632183908046,
+    "text_only": 24.137931034482758
+   }
+  },
+  {
+   "model": "Claude Sonnet 4",
+   "key": "claude",
+   "modality": "graph",
+   "source": "synthetic",
+   "source_names": [
+    "synthetic"
+   ],
+   "n_q": 500,
+   "best": "text_only",
+   "worst": "node_link",
+   "best_em": 48.8,
+   "worst_em": 36.0,
+   "gap": 12.799999999999997,
+   "em": {
+    "node_link": 36.0,
+    "circular_layout": 38.4,
+    "adjacency_matrix": 39.2,
+    "text_only": 48.8
+   }
+  },
+  {
+   "model": "Claude Sonnet 4",
+   "key": "claude",
+   "modality": "graph",
+   "source": "realworld",
+   "source_names": [
+    "networkx_realworld"
+   ],
+   "n_q": 160,
+   "best": "text_only",
+   "worst": "adjacency_matrix",
+   "best_em": 51.875,
+   "worst_em": 28.125,
+   "gap": 23.75,
+   "em": {
+    "node_link": 31.25,
+    "circular_layout": 36.25,
+    "adjacency_matrix": 28.125,
+    "text_only": 51.875
+   }
+  }
+ ],
+ "task_examples": [
+  {
+   "modality": "tabular",
+   "task": "value_extraction",
+   "n": 468,
+   "question_id": "tabular_000000::difficulty=1-hop",
+   "difficulty": "1-hop",
+   "question": "What is the value of 'ticker' in row 0?",
+   "question_truncated": false,
+   "answer": "BET"
+  },
+  {
+   "modality": "tabular",
+   "task": "trend_analysis",
+   "n": 247,
+   "question_id": "tabular_000008::difficulty=2-hop",
+   "difficulty": "2-hop",
+   "question": "Is 'close_price' generally increasing or decreasing across rows?",
+   "question_truncated": false,
+   "answer": "increasing"
+  },
+  {
+   "modality": "tabular",
+   "task": "outlier_detection",
+   "n": 230,
+   "question_id": "tabular_000016::difficulty=3-hop",
+   "difficulty": "3-hop",
+   "question": "Which 'ticker' entry deviates most from the mean of 'close_price'?",
+   "question_truncated": false,
+   "answer": "BET"
+  },
+  {
+   "modality": "tabular",
+   "task": "comparison",
+   "n": 224,
+   "question_id": "tabular_000015::difficulty=3-hop",
+   "difficulty": "3-hop",
+   "question": "Which column has the higher average value: 'close_price' or 'trade_volume_k'?",
+   "question_truncated": false,
+   "answer": "trade_volume_k"
+  },
+  {
+   "modality": "tabular",
+   "task": "aggregation",
+   "n": 207,
+   "question_id": "tabular_000010::difficulty=2-hop",
+   "difficulty": "2-hop",
+   "question": "What is the sum of 'close_price' across all rows? Round to 2 decimals.",
+   "question_truncated": false,
+   "answer": "2826.23"
+  },
+  {
+   "modality": "tabular",
+   "task": "counterfactual",
+   "n": 146,
+   "question_id": "tabular_000022::difficulty=counterfactual",
+   "difficulty": "counterfactual",
+   "question": "If all values in 'close_price' were multiplied by 1.2, would 'close_price' remain above 't...",
+   "question_truncated": true,
+   "answer": "yes"
+  },
+  {
+   "modality": "tabular",
+   "task": "filtering",
+   "n": 104,
+   "question_id": "tabular_000011::difficulty=2-hop",
+   "difficulty": "2-hop",
+   "question": "How many rows have 'close_price' strictly greater than 119.37?",
+   "question_truncated": false,
+   "answer": "13"
+  },
+  {
+   "modality": "tabular",
+   "task": "ranking",
+   "n": 90,
+   "question_id": "tabular_000003::difficulty=1-hop",
+   "difficulty": "1-hop",
+   "question": "Which 'ticker' has the highest 'close_price' value?",
+   "question_truncated": false,
+   "answer": "BET"
+  },
+  {
+   "modality": "tabular",
+   "task": "correlation",
+   "n": 49,
+   "question_id": "tabular_000017::difficulty=3-hop",
+   "difficulty": "3-hop",
+   "question": "Do 'close_price' and 'trade_volume_k' appear positively or negatively correlated?",
+   "question_truncated": false,
+   "answer": "negative"
+  },
+  {
+   "modality": "timeseries",
+   "task": "peak_identification",
+   "n": 214,
+   "question_id": "timeseries_000001::difficulty=1-hop",
+   "difficulty": "1-hop",
+   "question": "At which timestep does the maximum value occur?",
+   "question_truncated": false,
+   "answer": "4"
+  },
+  {
+   "modality": "timeseries",
+   "task": "value_lookup",
+   "n": 214,
+   "question_id": "timeseries_000004::difficulty=1-hop",
+   "difficulty": "1-hop",
+   "question": "What is the first value in the series?",
+   "question_truncated": false,
+   "answer": "34.778"
+  },
+  {
+   "modality": "timeseries",
+   "task": "change_point",
+   "n": 107,
+   "question_id": "timeseries_000003::difficulty=1-hop",
+   "difficulty": "1-hop",
+   "question": "At approximately which timestep does a significant change occur?",
+   "question_truncated": false,
+   "answer": "none"
+  },
+  {
+   "modality": "timeseries",
+   "task": "pattern_label_lookup",
+   "n": 107,
+   "question_id": "timeseries_000006::difficulty=1-hop",
+   "difficulty": "1-hop",
+   "question": "What is the pattern type label for this dataset?",
+   "question_truncated": false,
+   "answer": "linear_trend"
+  },
+  {
+   "modality": "timeseries",
+   "task": "range_query",
+   "n": 107,
+   "question_id": "timeseries_000008::difficulty=2-hop",
+   "difficulty": "2-hop",
+   "question": "What is the range (max - min) of values?",
+   "question_truncated": false,
+   "answer": "17.038"
+  },
+  {
+   "modality": "timeseries",
+   "task": "seasonality_detection",
+   "n": 107,
+   "question_id": "timeseries_000000::difficulty=1-hop",
+   "difficulty": "1-hop",
+   "question": "Does this series show periodic/seasonal behavior?",
+   "question_truncated": false,
+   "answer": "no"
+  },
+  {
+   "modality": "timeseries",
+   "task": "volatility",
+   "n": 107,
+   "question_id": "timeseries_000009::difficulty=2-hop",
+   "difficulty": "2-hop",
+   "question": "Is this series more volatile in the first or second half?",
+   "question_truncated": false,
+   "answer": "second half"
+  },
+  {
+   "modality": "timeseries",
+   "task": "mean_half_comparison",
+   "n": 62,
+   "question_id": "timeseries_000010::difficulty=2-hop",
+   "difficulty": "2-hop",
+   "question": "Is the mean of the second half higher than the first half?",
+   "question_truncated": false,
+   "answer": "no"
+  },
+  {
+   "modality": "timeseries",
+   "task": "endpoint_comparison",
+   "n": 55,
+   "question_id": "timeseries_000007::difficulty=1-hop",
+   "difficulty": "1-hop",
+   "question": "Is the final value higher or lower than the first value?",
+   "question_truncated": false,
+   "answer": "lower"
+  },
+  {
+   "modality": "timeseries",
+   "task": "anomaly_detection",
+   "n": 20,
+   "question_id": "timeseries_000017::difficulty=3-hop",
+   "difficulty": "3-hop",
+   "question": "Which timestep appears most anomalous relative to the sequence average?",
+   "question_truncated": false,
+   "answer": "4"
+  },
+  {
+   "modality": "timeseries",
+   "task": "change_volatility",
+   "n": 20,
+   "question_id": "timeseries_000014::difficulty=2-hop",
+   "difficulty": "2-hop",
+   "question": "Is the average absolute change larger in first or second half?",
+   "question_truncated": false,
+   "answer": "second half"
+  },
+  {
+   "modality": "timeseries",
+   "task": "counterfactual_half_shift",
+   "n": 20,
+   "question_id": "timeseries_000024::difficulty=counterfactual",
+   "difficulty": "counterfactual",
+   "question": "If we add 5 only to second half, would second-half mean exceed first-half mean?",
+   "question_truncated": false,
+   "answer": "no"
+  },
+  {
+   "modality": "timeseries",
+   "task": "counterfactual_scale_peak",
+   "n": 20,
+   "question_id": "timeseries_000023::difficulty=counterfactual",
+   "difficulty": "counterfactual",
+   "question": "If every value increased by 10%, would max index change?",
+   "question_truncated": false,
+   "answer": "no"
+  },
+  {
+   "modality": "timeseries",
+   "task": "forecasting",
+   "n": 20,
+   "question_id": "timeseries_000016::difficulty=3-hop",
+   "difficulty": "3-hop",
+   "question": "Based on the most recent change, what is the next expected value?",
+   "question_truncated": false,
+   "answer": "17.382"
+  },
+  {
+   "modality": "timeseries",
+   "task": "half_change_intensity",
+   "n": 20,
+   "question_id": "timeseries_000021::difficulty=3-hop",
+   "difficulty": "3-hop",
+   "question": "Which half has larger mean absolute first difference?",
+   "question_truncated": false,
+   "answer": "second half"
+  },
+  {
+   "modality": "timeseries",
+   "task": "mean_shift_magnitude",
+   "n": 20,
+   "question_id": "timeseries_000011::difficulty=2-hop",
+   "difficulty": "2-hop",
+   "question": "By how much does second-half mean exceed first-half mean?",
+   "question_truncated": false,
+   "answer": "-6.330"
+  },
+  {
+   "modality": "timeseries",
+   "task": "median_mean_relation",
+   "n": 20,
+   "question_id": "timeseries_000013::difficulty=2-hop",
+   "difficulty": "2-hop",
+   "question": "Is the median value above or below the overall mean?",
+   "question_truncated": false,
+   "answer": "above"
+  },
+  {
+   "modality": "timeseries",
+   "task": "normalized_amplitude",
+   "n": 20,
+   "question_id": "timeseries_000020::difficulty=3-hop",
+   "difficulty": "3-hop",
+   "question": "Is normalized amplitude (range/|mean|) greater than 1.0?",
+   "question_truncated": false,
+   "answer": "no"
+  },
+  {
+   "modality": "timeseries",
+   "task": "pattern_classification",
+   "n": 20,
+   "question_id": "timeseries_000022::difficulty=counterfactual",
+   "difficulty": "counterfactual",
+   "question": "If each point increased by 5, would the trend direction change?",
+   "question_truncated": false,
+   "answer": "no"
+  },
+  {
+   "modality": "timeseries",
+   "task": "peak_trough_order",
+   "n": 20,
+   "question_id": "timeseries_000019::difficulty=3-hop",
+   "difficulty": "3-hop",
+   "question": "Does the peak occur after the trough?",
+   "question_truncated": false,
+   "answer": "no"
+  },
+  {
+   "modality": "timeseries",
+   "task": "split_trend_consistency",
+   "n": 20,
+   "question_id": "timeseries_000018::difficulty=3-hop",
+   "difficulty": "3-hop",
+   "question": "Do both halves move in the same trend direction?",
+   "question_truncated": false,
+   "answer": "yes"
+  },
+  {
+   "modality": "timeseries",
+   "task": "threshold_count",
+   "n": 20,
+   "question_id": "timeseries_000012::difficulty=2-hop",
+   "difficulty": "2-hop",
+   "question": "How many timesteps are above mean plus one standard deviation?",
+   "question_truncated": false,
+   "answer": "10"
+  },
+  {
+   "modality": "timeseries",
+   "task": "counterfactual_sign_flip",
+   "n": 15,
+   "question_id": "timeseries_000149::difficulty=counterfactual",
+   "difficulty": "counterfactual",
+   "question": "If the series were multiplied by -1, would max and min indices swap?",
+   "question_truncated": false,
+   "answer": "yes"
+  },
+  {
+   "modality": "timeseries",
+   "task": "oscillation_count",
+   "n": 10,
+   "question_id": "timeseries_000015::difficulty=2-hop",
+   "difficulty": "2-hop",
+   "question": "How many sign changes are in first-order differences?",
+   "question_truncated": false,
+   "answer": "40"
+  },
+  {
+   "modality": "timeseries",
+   "task": "local_peak_median_relation",
+   "n": 5,
+   "question_id": "timeseries_000145::difficulty=3-hop",
+   "difficulty": "3-hop",
+   "question": "Is the median of local maxima greater than overall median?",
+   "question_truncated": false,
+   "answer": "yes"
+  },
+  {
+   "modality": "graph",
+   "task": "degree_query",
+   "n": 208,
+   "question_id": "graph_000001::difficulty=1-hop",
+   "difficulty": "1-hop",
+   "question": "What is the degree of node 0?",
+   "question_truncated": false,
+   "answer": "5"
+  },
+  {
+   "modality": "graph",
+   "task": "connectivity",
+   "n": 96,
+   "question_id": "graph_000000::difficulty=1-hop",
+   "difficulty": "1-hop",
+   "question": "Are node 0 and node 23 connected?",
+   "question_truncated": false,
+   "answer": "yes"
+  },
+  {
+   "modality": "graph",
+   "task": "community",
+   "n": 92,
+   "question_id": "graph_000015::difficulty=3-hop",
+   "difficulty": "3-hop",
+   "question": "What fraction of nodes belong to the largest connected component?",
+   "question_truncated": false,
+   "answer": "0.833"
+  },
+  {
+   "modality": "graph",
+   "task": "counterfactual",
+   "n": 76,
+   "question_id": "graph_000022::difficulty=counterfactual",
+   "difficulty": "counterfactual",
+   "question": "If an edge were added between node 0 and node 23, would they be directly connected?",
+   "question_truncated": false,
+   "answer": "yes"
+  },
+  {
+   "modality": "graph",
+   "task": "centrality",
+   "n": 36,
+   "question_id": "graph_000016::difficulty=3-hop",
+   "difficulty": "3-hop",
+   "question": "Which node has the highest betweenness centrality?",
+   "question_truncated": false,
+   "answer": "4"
+  },
+  {
+   "modality": "graph",
+   "task": "clustering",
+   "n": 36,
+   "question_id": "graph_000009::difficulty=2-hop",
+   "difficulty": "2-hop",
+   "question": "What is the approximate clustering coefficient of the graph?",
+   "question_truncated": false,
+   "answer": "0.096"
+  },
+  {
+   "modality": "graph",
+   "task": "shortest_path",
+   "n": 36,
+   "question_id": "graph_000007::difficulty=2-hop",
+   "difficulty": "2-hop",
+   "question": "What is the shortest path length between node 0 and node 23?",
+   "question_truncated": false,
+   "answer": "2"
+  },
+  {
+   "modality": "graph",
+   "task": "bipartite_check",
+   "n": 20,
+   "question_id": "graph_000010::difficulty=2-hop",
+   "difficulty": "2-hop",
+   "question": "Is this graph bipartite?",
+   "question_truncated": false,
+   "answer": "no"
+  },
+  {
+   "modality": "graph",
+   "task": "cycle_detection",
+   "n": 20,
+   "question_id": "graph_000011::difficulty=2-hop",
+   "difficulty": "2-hop",
+   "question": "Does this graph contain a cycle?",
+   "question_truncated": false,
+   "answer": "yes"
+  },
+  {
+   "modality": "graph",
+   "task": "diameter",
+   "n": 20,
+   "question_id": "graph_000017::difficulty=3-hop",
+   "difficulty": "3-hop",
+   "question": "What is the diameter of the graph (or largest component)?",
+   "question_truncated": false,
+   "answer": "5"
+  },
+  {
+   "modality": "graph",
+   "task": "edge_count",
+   "n": 20,
+   "question_id": "graph_000004::difficulty=1-hop",
+   "difficulty": "1-hop",
+   "question": "How many edges does this graph have?",
+   "question_truncated": false,
+   "answer": "35"
+  }
+ ]
+}

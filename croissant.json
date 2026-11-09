@@ -1,0 +1,247 @@
+{
+  "@context": {
+    "@language": "en",
+    "@vocab": "https://schema.org/",
+    "citeAs": "cr:citeAs",
+    "column": "cr:column",
+    "conformsTo": "dct:conformsTo",
+    "cr": "http://mlcommons.org/croissant/",
+    "rai": "http://mlcommons.org/croissant/RAI/",
+    "data": {
+      "@id": "cr:data",
+      "@type": "@json"
+    },
+    "dataType": {
+      "@id": "cr:dataType",
+      "@type": "@vocab"
+    },
+    "dct": "http://purl.org/dc/terms/",
+    "examples": {
+      "@id": "cr:examples",
+      "@type": "@json"
+    },
+    "extract": "cr:extract",
+    "field": "cr:field",
+    "fileObject": "cr:fileObject",
+    "fileProperty": "cr:fileProperty",
+    "fileSet": "cr:fileSet",
+    "format": "cr:format",
+    "includes": "cr:includes",
+    "isLiveDataset": "cr:isLiveDataset",
+    "jsonPath": "cr:jsonPath",
+    "key": "cr:key",
+    "md5": "cr:md5",
+    "parentField": "cr:parentField",
+    "path": "cr:path",
+    "recordSet": "cr:recordSet",
+    "references": "cr:references",
+    "regex": "cr:regex",
+    "repeated": "cr:repeated",
+    "replace": "cr:replace",
+    "sc": "https://schema.org/",
+    "separator": "cr:separator",
+    "source": "cr:source",
+    "subField": "cr:subField",
+    "transform": "cr:transform"
+  },
+  "@type": "sc:Dataset",
+  "conformsTo": [
+    "http://mlcommons.org/croissant/1.0",
+    "http://mlcommons.org/croissant/RAI/1.0"
+  ],
+  "name": "StructViz-Bench",
+  "description": "StructViz-Bench is a controlled benchmark for evaluating visualization-format dependence in Multimodal Large Language Model (MLLM) performance on structured data. It fixes data and question semantics while varying only the rendering format to measure how visualization choice affects measured accuracy, across tabular, time-series, and graph modalities with 14 distinct visualization types.",
+  "url": "https://anonymous.4open.science/r/StructViz-Bench-ARR",
+  "license": "https://creativecommons.org/licenses/by/4.0/",
+  "datePublished": "2026-04-01",
+  "version": "1.0.0",
+  "isLiveDataset": false,
+  "creator": [
+    {
+      "@type": "sc:Organization",
+      "name": "Anonymous"
+    }
+  ],
+  "citeAs": "@misc{structvizbench2026, title={StructViz-Bench: A Controlled Benchmark for Evaluating Visualization-Format Dependence in MLLM Performance on Structured Data}, author={Anonymous}, note={Under review}, year={2026}}",
+  "rai:dataCollection": "Benchmark items are programmatically generated from parameterized templates over controlled synthetic data generators and from public real-world datasets (SciTabAlign, ETT, NetworkX social networks). Synthetic components use fixed RNG seeds (seed=42) for reproducibility. No web scraping, no personally identifiable information, and no human-subject data collection are performed.",
+  "rai:dataCollectionType": "Programmatic generation from parameterized templates; aggregation of public datasets under upstream licenses.",
+  "rai:dataCollectionRawData": "Raw data sources: SciTabAlign tabular claim-verification dataset; ETT (Electricity Transformer Temperature) time-series dataset (840 items, released as a rebuild script; 30 NetworkX degree-sequence time-series items (Karate Club, Les Misérables, Florentine Families; data_id nx_*_degree) carry the label source 'ett' but are not ETT data); NetworkX canonical social-network graphs (Karate Club, Les Miserables, Florentine Families, Davis Southern Women); synthetic data generators under src/generation/.",
+  "rai:dataPreprocessingProtocol": "Each item is rendered with modality-specific pipelines into predefined visualization families at fixed resolution (1024x768, 150 DPI). Rendering artifacts are validated for dimensional consistency and expected visual primitives. Questions are auto-generated from template families with programmatic ground-truth computation.",
+  "rai:dataAnnotationProtocol": "All ground-truth answers are programmatically computed (no human annotation). A planned human-validation protocol is included in the repository (HUMAN_EVAL_PROTOCOL.md) as future work and is not used to produce the released answers.",
+  "rai:dataAnnotationPlatform": "Not applicable; ground-truth computation is automated via Python solvers.",
+  "rai:dataAnnotationAnalysis": "Question-answer integrity is verified programmatically: answer-type consistency, dimensional validity, and deduplication. An empirical difficulty calibration (Spearman rho between assigned and EM-based difficulty; item discrimination index) is reported in the paper appendix.",
+  "rai:dataReleaseMaintenancePlan": "Versioned releases hosted on Hugging Face Datasets with Croissant metadata; backward-compatible field schema; conversion utilities for schema evolution; documented issue resolution channel.",
+  "rai:dataSocialImpact": "Intended to support reliable, format-aware MLLM evaluation on structured data. Potential misuse risks are (i) benchmark overfitting if used as a training target, (ii) selective reporting of favorable visualization formats, and (iii) over-interpretation of descriptive correlations (e.g., retrievability-EM) as causal. Mitigations: full multi-format splits, fixed evaluation protocol, sensitivity metrics discouraging single-format reporting, explicit exploratory labeling of heuristic analyses.",
+  "rai:dataBiases": "Potential biases: (i) English-only question templates; (ii) synthetic-data distribution bias (500 per modality) vs. real-world bias (SciTabAlign, ETT, NetworkX) which emphasize certain domains (scientific tables, energy time-series, social graphs); (iii) template-based questions may not reflect naturalistic analytic queries; (iv) expert-assigned retrievability scores in the information-retention analysis are subjective heuristics; (v) API model drift can shift longitudinal comparability. These biases are discussed explicitly in the paper's Discussion and Limitations section.",
+  "rai:dataLimitations": "Not intended as a deployment decision tool for safety-critical domains without additional validation. Template-generated questions do not fully capture naturalistic queries. Retrievability scores and failure buckets are heuristic and lack human validation; they should be treated as exploratory. API-based model results may vary across calls due to provider-side updates.",
+  "rai:personalSensitiveInformation": "None. All data are synthetic or from public datasets with no personal or sensitive information. SciTabAlign contains scientific paper tables; ETT contains electricity transformer temperature measurements; NetworkX graphs are classic social-network datasets without personal identifiers.",
+  "rai:dataUseCases": "Primary: benchmarking MLLM visualization-format dependence; secondary: representation-invariance research, evaluation-protocol research, diagnostic analysis of structured-data reasoning.",
+  "rai:hasSyntheticData": true,
+  "keywords": [
+    "multimodal",
+    "benchmark",
+    "visualization",
+    "structured-data",
+    "visual-question-answering",
+    "MLLM"
+  ],
+  "distribution": [
+    {
+      "@type": "cr:FileObject",
+      "@id": "base-items-file",
+      "name": "base_items.jsonl",
+      "description": "Synthetic-only single-modality items: 1,500 questions (500 tabular + 500 time-series + 500 graph) from programmatically generated data.",
+      "contentUrl": "benchmark/base_items.jsonl",
+      "encodingFormat": "application/jsonlines",
+      "sha256": "5d77094f209cb6e4d2fc2cbcd87da1f5dc55679b606f28798ddd26e0d9bc7e5b"
+    },
+    {
+      "@type": "cr:FileObject",
+      "@id": "mixed-items-file",
+      "name": "mixed_items.jsonl",
+      "description": "Cross-modal composite evaluation items (600 items) requiring reasoning across two data modalities simultaneously (tabular+timeseries, tabular+graph, timeseries+graph).",
+      "contentUrl": "benchmark/mixed_items.jsonl",
+      "encodingFormat": "application/jsonlines",
+      "sha256": "06f022e16dda6f35e8dbb01e1c8dd73ad6b981b399a4c7606b1943da78313d91"
+    },
+    {
+      "@type": "cr:FileObject",
+      "@id": "realworld-test-file",
+      "name": "realworld_test.jsonl",
+      "description": "Full benchmark (3,795 items): superset containing all 1,500 synthetic items plus 2,295 real-world items (1,265 SciTabAlign tabular + 840 ETT-derived time-series (released as a rebuild script) + 30 NetworkX degree-sequence time-series labelled source 'ett' + 160 NetworkX graph). This is the primary evaluation file. Use the source field to filter by provenance. The 840 ETT-derived items (CC BY-ND 4.0) ship with data and answer set to null (ett_redacted: true); rebuild them with scripts/data/rebuild_ett.py --download --restore . (raw-text baseline predictions that copy ETT values stay redacted) (the sha256 here is that of the redacted file; data/ett_redaction_manifest.json holds the original's).",
+      "contentUrl": "benchmark/realworld_test.jsonl",
+      "encodingFormat": "application/jsonlines",
+      "sha256": "bb471576c6f28923f96df2f4c93c2dca0f58ce7fe439d041eb954f5d99ab95fe"
+    }
+  ],
+  "recordSet": [
+    {
+      "@type": "cr:RecordSet",
+      "@id": "benchmark-items",
+      "name": "benchmark-items",
+      "description": "Each record represents a single benchmark question item with its associated metadata, ground-truth answer, modality information, and difficulty level.",
+      "field": [
+        {
+          "@type": "cr:Field",
+          "@id": "benchmark-items/question_id",
+          "name": "question_id",
+          "description": "Unique identifier for the question, encoding the modality, item index, and difficulty level.",
+          "dataType": "sc:Text",
+          "source": {
+            "fileObject": {
+              "@id": "base-items-file"
+            },
+            "extract": {
+              "column": "question_id"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "benchmark-items/question",
+          "name": "question",
+          "description": "The natural language question to be answered based on the visualized data.",
+          "dataType": "sc:Text",
+          "source": {
+            "fileObject": {
+              "@id": "base-items-file"
+            },
+            "extract": {
+              "column": "question"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "benchmark-items/answer",
+          "name": "answer",
+          "description": "The ground-truth answer, generated programmatically via validated solvers.",
+          "dataType": "sc:Text",
+          "source": {
+            "fileObject": {
+              "@id": "base-items-file"
+            },
+            "extract": {
+              "column": "answer"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "benchmark-items/modality",
+          "name": "modality",
+          "description": "The structured data modality of the item. One of: tabular, timeseries, graph, mixed_tab_ts, mixed_tab_graph, mixed_ts_graph.",
+          "dataType": "sc:Text",
+          "source": {
+            "fileObject": {
+              "@id": "base-items-file"
+            },
+            "extract": {
+              "column": "modality"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "benchmark-items/source",
+          "name": "source",
+          "description": "The provenance of the underlying data. One of: synthetic, scitabalign, ett, networkx_realworld. 'ett' labels the 840 ETT-derived time-series items and also 30 NetworkX degree-sequence time-series items (Karate Club, Les Misérables, Florentine Families; data_id nx_*_degree), which are not ETT data; the label is kept as released for reproducibility.",
+          "dataType": "sc:Text",
+          "source": {
+            "fileObject": {
+              "@id": "base-items-file"
+            },
+            "extract": {
+              "column": "source"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "benchmark-items/viz_type",
+          "name": "viz_type",
+          "description": "The visualization type(s) applicable to this item, such as bar_chart, heatmap, table_image, scatter_plot, line_plot, gaf, recurrence_plot, node_link, adjacency_matrix, circular_layout, or text_only. Mixed-modality items use compound formats (e.g., bar_chart+line_plot).",
+          "dataType": "sc:Text",
+          "source": {
+            "fileObject": {
+              "@id": "base-items-file"
+            },
+            "extract": {
+              "column": "viz_methods"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "benchmark-items/difficulty",
+          "name": "difficulty",
+          "description": "The reasoning depth required. One of: 1-hop, 2-hop, 3-hop, counterfactual.",
+          "dataType": "sc:Text",
+          "source": {
+            "fileObject": {
+              "@id": "base-items-file"
+            },
+            "extract": {
+              "column": "difficulty"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "benchmark-items/task",
+          "name": "task",
+          "description": "The reasoning task category, such as value_extraction, ranking, comparison, trend_analysis, aggregation, filtering, correlation, forecasting, peak_identification, pattern_classification, anomaly_detection, connectivity, shortest_path, community, degree_query, or cross-modal variants thereof.",
+          "dataType": "sc:Text",
+          "source": {
+            "fileObject": {
+              "@id": "base-items-file"
+            },
+            "extract": {
+              "column": "task"
+            }
+          }
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,107 @@
+Recomputation-based adjudication of the 100 v1 human-audit items (two raters).
+GT_full_ok: answer function re-run on the full data agrees with the released key (None = task not re-implemented here).
+truncated-view answer: the same function on the rows/points visible in that rendering; equals GT? tells whether truncation changes the answer.
+item  mod  task  viz | A1 A2 | GT_full_ok | truncated-view answer | equals GT?
+H000 tab value_extraction table_image  | Cor Amb | True | A                                  | True
+H001 tab ranking          scatter_plot | Inc Amb | True | (first two numeric cols only)      | None
+H002 tab comparison       heatmap      | Cor Cor | True | no2                                | True
+H003 tim pattern_label_lo line_plot    | Inc Cor | None | None                               | None
+H004 gra degree_query     node_link    | Inc Amb | None | None                               | None
+H005 tim normalized_ampli heatmap      | Inc Amb | None | None                               | None
+H006 gra centrality       node_link    | Inc Amb | None | None                               | None
+H007 gra centrality       text_only    | Amb Inc | None | (first 43 edges visible)           | None
+H008 tim range_query      gaf          | Inc Inc | None | None                               | None
+H009 tim median_mean_rela gaf          | Inc Cor | None | None                               | None
+H010 tim range_query      heatmap      | Amb Amb | None | None                               | None
+H011 gra connectivity     circular_lay | Inc Inc | None | None                               | None
+H012 tim counterfactual_s text_only    | Cor Cor | None | (first 43 points visible)          | None
+H013 gra counterfactual   adjacency_ma | Cor Cor | None | None                               | None
+H014 tim peak_trough_orde text_only    | Cor Cor | None | (first 43 points visible)          | None
+H015 gra degree_query     adjacency_ma | Cor Cor | None | None                               | None
+H016 tim value_lookup     gaf          | Inc Inc | None | None                               | None
+H017 tab ranking          scatter_plot | Inc Inc | True | (first two numeric cols only)      | None
+H018 tim oscillation_coun line_plot    | Cor Cor | None | None                               | None
+H019 tim peak_trough_orde line_plot    | Cor Cor | None | None                               | None
+H020 tab aggregation      bar_chart    | Inc Inc | True | (column means only)                | None
+H021 gra community        node_link    | Cor Cor | None | None                               | None
+H022 tab counterfactual   bar_chart    | Cor Cor | True | (column means only)                | None
+H023 tim volatility       line_plot    | Cor Amb | None | None                               | None
+H024 gra cycle_detection  adjacency_ma | Cor Cor | None | None                               | None
+H025 tab aggregation      text_only    | Cor Amb | True | 2.37                               | True
+H026 tab trend_analysis   scatter_plot | Inc Inc | True | (first two numeric cols only)      | None
+H027 gra connectivity     circular_lay | Inc Inc | None | None                               | None
+H028 gra connectivity     text_only    | Inc Cor | None | None                               | None
+H029 gra counterfactual   node_link    | Cor Inc | None | None                               | None
+H030 tab aggregation      heatmap      | Cor Cor | True | None                               | None
+H031 tim half_change_inte recurrence_p | Inc Inc | None | None                               | None
+H032 tab ranking          text_only    | Inc Inc | True | line_c                             | False
+H033 tim forecasting      line_plot    | Inc Amb | None | None                               | None
+H034 tim median_mean_rela recurrence_p | Inc Amb | None | None                               | None
+H035 gra connectivity     circular_lay | Inc Inc | None | None                               | None
+H036 tab ranking          heatmap      | Inc Inc | True | None                               | None
+H037 gra shortest_path    adjacency_ma | Cor Cor | None | None                               | None
+H038 tab filtering        heatmap      | Inc Inc | True | 10                                 | False
+H039 gra degree_query     circular_lay | Inc Inc | None | None                               | None
+H040 tab ranking          bar_chart    | Inc Inc | True | (column means only)                | None
+H041 gra degree_query     text_only    | Inc Inc | None | (first 43 edges visible)           | None
+H042 gra degree_query     node_link    | Amb Amb | None | None                               | None
+H043 tab outlier_detectio table_image  | Inc Cor | True | luxury                             | True
+H044 tab counterfactual   scatter_plot | Inc Inc | True | (first two numeric cols only)      | None
+H045 gra connectivity     node_link    | Inc Inc | None | None                               | None
+H046 tab outlier_detectio table_image  | Inc Inc | True | D2                                 | False
+H047 tab outlier_detectio bar_chart    | Inc Inc | True | (column means only)                | None
+H048 tab correlation      scatter_plot | Inc Cor | True | (first two numeric cols only)      | None
+H049 gra degree_query     text_only    | Cor Amb | None | (first 43 edges visible)           | None
+H050 gra degree_query     adjacency_ma | Cor Cor | None | None                               | None
+H051 tim oscillation_coun gaf          | Inc Inc | None | None                               | None
+H052 gra community        node_link    | Inc Inc | None | None                               | None
+H053 tab ranking          table_image  | Cor Amb | True | CRX                                | True
+H054 tim peak_trough_orde gaf          | Inc Inc | None | None                               | None
+H055 tim value_lookup     heatmap      | Inc Amb | None | None                               | None
+H056 tim split_trend_cons heatmap      | Cor Cor | None | None                               | None
+H057 gra bipartite_check  node_link    | Cor Inc | None | None                               | None
+H058 gra counterfactual   text_only    | Cor Cor | None | None                               | None
+H059 tab correlation      heatmap      | Inc Inc | True | None                               | None
+H060 tab value_extraction scatter_plot | Inc Inc | False | (first two numeric cols only)      | None
+H061 tab counterfactual   bar_chart    | Cor Cor | True | (column means only)                | None
+H062 tim counterfactual_s recurrence_p | Cor Cor | None | None                               | None
+H063 tab counterfactual   text_only    | Cor Cor | True | yes                                | True
+H064 tim counterfactual_s line_plot    | Cor Cor | None | None                               | None
+H065 tab counterfactual   bar_chart    | Cor Cor | True | (column means only)                | None
+H066 tab aggregation      table_image  | Inc Inc | True | 1079.44                            | False
+H067 gra bipartite_check  circular_lay | Cor Cor | None | None                               | None
+H068 tim mean_shift_magni recurrence_p | Inc Inc | None | None                               | None
+H069 tim volatility       heatmap      | Cor Amb | None | None                               | None
+H070 gra counterfactual   text_only    | Cor Cor | None | (first 43 edges visible)           | None
+H071 gra degree_query     circular_lay | Inc Amb | None | None                               | None
+H072 gra diameter         circular_lay | Inc Amb | None | None                               | None
+H073 tab outlier_detectio bar_chart    | Inc Inc | True | (column means only)                | None
+H074 tim counterfactual_h heatmap      | Cor Inc | None | None                               | None
+H075 tim counterfactual_s text_only    | Cor Cor | None | (first 43 points visible)          | None
+H076 tab ranking          table_image  | Inc Amb | True | lynx                               | False
+H077 tim half_change_inte heatmap      | Amb Inc | None | None                               | None
+H078 tab counterfactual   text_only    | Inc Inc | True | yes                                | True
+H079 gra centrality       text_only    | Cor Amb | None | None                               | None
+H080 tim counterfactual_h recurrence_p | Cor Inc | None | None                               | None
+H081 tab filtering        table_image  | Inc Inc | True | 3                                  | False
+H082 tab filtering        heatmap      | Cor Amb | True | None                               | None
+H083 tim seasonality_dete text_only    | Cor Cor | None | (first 43 points visible)          | None
+H084 gra counterfactual   adjacency_ma | Cor Cor | None | None                               | None
+H085 gra centrality       adjacency_ma | Inc Cor | None | None                               | None
+H086 tim change_point     line_plot    | Cor Amb | None | None                               | None
+H087 tab aggregation      scatter_plot | Amb Amb | True | (first two numeric cols only)      | None
+H088 tim anomaly_detectio recurrence_p | Amb Inc | None | None                               | None
+H089 gra counterfactual   adjacency_ma | Cor Cor | None | None                               | None
+H090 tim counterfactual_s gaf          | Cor Cor | None | None                               | None
+H091 tab correlation      heatmap      | Cor Amb | True | None                               | None
+H092 tab ranking          text_only    | Inc Inc | True | north_grid                         | False
+H093 tim change_point     text_only    | Cor Amb | None | (first 43 points visible)          | None
+H094 tab filtering        text_only    | Inc Inc | True | 7                                  | False
+H095 gra community        adjacency_ma | Amb Cor | None | None                               | None
+H096 gra centrality       circular_lay | Inc Amb | None | None                               | None
+H097 tim normalized_ampli gaf          | Inc Inc | None | None                               | None
+H098 tim counterfactual_h text_only    | Cor Inc | None | (first 43 points visible)          | None
+H099 gra degree_query     text_only    | Cor Inc | None | (first 43 edges visible)           | None
+
+SUMMARY {('GTfull_ok', 'trunc_same'): 7, ('GTfull_ok', 'n/a'): 84, ('GTfull_ok', 'trunc_changes_answer'): 8, ('GT_FULL_MISMATCH', 'n/a'): 1}
+Note: one GT_FULL_MISMATCH (H060) is a date-string formatting difference (2024-01-07 00:00:00 vs 2024-01-07T00:00:00), not a key error.

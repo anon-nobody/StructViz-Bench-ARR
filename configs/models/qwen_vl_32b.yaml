@@ -1,0 +1,9 @@
+model_type: qwen_vl
+name: qwen2.5-vl-32b
+checkpoint: Qwen/Qwen2.5-VL-32B-Instruct
+max_tokens: 256
+temperature: 0.0
+system_prompt: "Answer concisely. Give only the final answer."
+device: cuda
+dtype: bfloat16
+use_vllm: true

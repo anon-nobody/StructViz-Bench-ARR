@@ -1,0 +1,21 @@
+\begin{tabular}{lrrrrrr}
+\toprule
+Model & Mixed EM (\%) & Single EM (\%) & Delta (pp) & Tab+TS (\%) & Tab+Graph (\%) & TS+Graph (\%) \\
+\midrule
+claude & 1.33 & 26.83 & -25.49 & 4.00 & 0.00 & 0.00 \\
+gemini & 43.40 & 36.24 & +7.16 & 58.50 & 29.70 & 42.00 \\
+gpt4o & 35.47 & 34.41 & +1.06 & 51.50 & 32.90 & 22.00 \\
+qwen & 55.83 & 32.38 & +23.46 & 84.50 & 36.50 & 46.50 \\
+\bottomrule
+\end{tabular}
+
+\begin{tabular}{lrrrr}
+\toprule
+Model & 1-hop (\%) & 2-hop (\%) & 3-hop (\%) & counterfactual (\%) \\
+\midrule
+claude & 2.22 & 2.22 & 0.00 & 0.00 \\
+gemini & 48.89 & 26.67 & 54.93 & 46.67 \\
+gpt4o & 36.22 & 15.67 & 30.80 & 81.33 \\
+qwen & 62.22 & 31.11 & 63.33 & 80.00 \\
+\bottomrule
+\end{tabular}

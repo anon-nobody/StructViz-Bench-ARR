@@ -1,0 +1,77 @@
+benchmark:
+  name: StructViz-Bench-v1
+  seed: 42
+level_1:  # Single-type
+  tabular:
+    num_datasets: 20
+    items_per_dataset: 25
+    viz_methods: [bar_chart, heatmap, table_image, scatter_plot, text_only]
+    # Note: the generator produces all task types below; this list is
+    # documentation of the actual task space, not a filter.
+    tasks:
+      - value_extraction
+      - trend_analysis
+      - comparison
+      - counterfactual
+      - aggregation
+      - filtering
+      - ranking
+      - outlier_detection
+      - correlation
+  timeseries:
+    num_datasets: 20
+    items_per_dataset: 25
+    viz_methods: [line_plot, gaf, recurrence_plot, heatmap, text_only]
+    tasks:
+      - forecasting
+      - anomaly_detection
+      - pattern_classification
+      - seasonality_detection
+      - peak_identification
+      - range_query
+      - change_point
+      - volatility
+  graph:
+    num_datasets: 20
+    items_per_dataset: 25
+    viz_methods: [node_link, adjacency_matrix, circular_layout, text_only]
+    tasks:
+      - degree_query
+      - centrality
+      - clustering
+      - diameter
+      - bipartite_check
+      - cycle_detection
+      - edge_count
+      - connectivity
+      - shortest_path
+      - community
+      - counterfactual
+level_2:  # Mixed-type
+  tab_ts: {num_items: 200}
+  tab_graph: {num_items: 200}
+  ts_graph: {num_items: 200}
+level_3:  # Reasoning depth
+  distribute: {one_hop: 0.3, two_hop: 0.3, three_hop: 0.25, counterfactual: 0.15}
+rendering:
+  width: 1024
+  height: 768
+  dpi: 150
+real_world:
+  enabled: false
+  tabular:
+    source: scitabalign
+    data_path: data/external/scitabalign/data/scitab_align_plus/data.json
+    items_per_dataset: 10
+    viz_methods: [bar_chart, heatmap, table_image, scatter_plot, text_only]
+  timeseries:
+    source: ett
+    data_dir: data/external/ett/repo/ETT-small
+    window_size: 200
+    windows_per_column: 3
+    items_per_dataset: 10
+    viz_methods: [line_plot, gaf, recurrence_plot, heatmap, text_only]
+  graph:
+    source: networkx_realworld
+    items_per_dataset: 10
+    viz_methods: [node_link, adjacency_matrix, circular_layout, text_only]

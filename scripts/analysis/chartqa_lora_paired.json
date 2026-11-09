@@ -1,0 +1,42 @@
+{
+ "lambda0": {
+  "original": {
+   "diff_pp": 0.81,
+   "ci": [
+    -1.49,
+    3.2
+   ],
+   "n_pairs": 616,
+   "n_charts": 434
+  },
+  "rerendered": {
+   "diff_pp": 3.77,
+   "ci": [
+    1.82,
+    5.79
+   ],
+   "n_pairs": 3080,
+   "n_charts": 434
+  }
+ },
+ "lambda1": {
+  "original": {
+   "diff_pp": -2.6,
+   "ci": [
+    -5.24,
+    0.16
+   ],
+   "n_pairs": 616,
+   "n_charts": 434
+  },
+  "rerendered": {
+   "diff_pp": 1.2,
+   "ci": [
+    -0.83,
+    3.32
+   ],
+   "n_pairs": 3080,
+   "n_charts": 434
+  }
+ }
+}

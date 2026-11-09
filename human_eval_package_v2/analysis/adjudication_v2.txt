@@ -1,0 +1,38 @@
+Second-pass human audit on the corrected (v2) renderings: 30 items (10 tabular / 10 graph / 10 time series),
+22 of them the same (question, format) pairs as v1 items, 8 new time-series items. Two sheets returned.
+
+RATINGS
+  Rater 1: 22 Correct / 2 Ambiguous / 6 Incorrect      Rater 2: 22 / 2 / 6
+  The two sheets carry identical ratings on all 30 items (notes are close paraphrases of each other);
+  they cannot be treated as independent judgements. Report as one judgement, not as inter-rater agreement.
+
+BEFORE -> AFTER on the 22 mapped items (same question, same format, v1 image -> v2 image)
+  Rater 1: v1 6/22 Correct -> v2 17/22 Correct   (Inc->Cor 10, Amb->Cor 2, Cor->Cor 5, Inc->Inc 4, Cor->Amb 1)
+  Rater 2: v1 3/22 Correct -> v2 17/22 Correct   (Inc->Cor 8, Amb->Cor 6, Cor->Cor 3, Inc->Inc 2, Amb->Inc 2, Amb->Amb 1)
+  Per modality (v2, either sheet): tabular 9/10, graph 7/10, time series 6/10 Correct.
+
+RECOMPUTATION of every non-Correct item (answer function re-run on the source object)
+  V006 tabular correlation, heatmap   key "positive"; Pearson r = +0.082 (n=19). Key = sign(r) with no magnitude
+       threshold, so it is correct by definition but the raters (r ~ 0 -> "no correlation") are reasonable: template weakness.
+  V011 graph degree_query, circular_layout   key 6 is CORRECT (neighbours 39,40,41,43,44,45). The graph is a
+       Watts-Strogatz ring lattice (84 nodes, 252 edges); edges to ring-adjacent nodes are drawn as tiny chords between
+       neighbouring circle positions and are hidden under the node discs, so only the ~40 long rewired chords are visible.
+       Answer encoded but not legible -> rendering defect of the circular layout for ring lattices (v1 and v2 alike).
+  V015 graph diameter, circular_layout   key 13 is CORRECT (single component of 45 nodes, 44 edges). Raters computed 3
+       from the visible chords only; the diameter path runs along hidden ring edges. Same defect as V011.
+  V018 graph centrality, circular_layout   key 35 is CORRECT (betweenness 0.134; next 34: 0.109, 46: 0.102). Same defect.
+  V025 ts mean_shift_magnitude, text_only   key 31.833 is CORRECT (n=197, split at n//2: first 98 / second 99 points;
+       a ceil split gives 31.408). Raters' 29.7 matches neither: arithmetic over 197 listed values. Key correct.
+  V029 ts threshold_count, text_only   key 25 uses the population std (numpy default): 25 values > 73.494; with the sample
+       std the count is 24. Raters' 23 matches neither. Key correct under the stated definition; std convention unstated.
+  V020 ts change_point, text_only   key "none" (no known change point); question presupposes one -> template weakness
+       already flagged (near-constant cell). Ambiguous is the fair verdict.
+  V024 ts forecasting, text_only   key = last value + last difference (naive). The question does not state the rule ->
+       Ambiguous is the fair verdict; a definitional weakness, not a rendering one.
+
+SUMMARY
+  - Of the 22 items previously unreadable/uncertain, the corrected renderings make 11 (rater 1) / 14 (rater 2) readable.
+  - No key is wrong. Remaining failures: 3 circular-layout ring-edge legibility (graph), 2 unstated definitions
+    (std convention, forecast rule), 1 sign-of-r template (correlation), 2 arithmetic/presupposition (mean shift, change point).
+  - Action: note the ring-edge legibility limit of circular layouts in the appendix; state std/forecast conventions in the
+    task inventory; keep keys unchanged.

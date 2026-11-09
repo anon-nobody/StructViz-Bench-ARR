@@ -1,0 +1,101 @@
+item_id,modality,task,viz_type,image,question,ground_truth,rating,your_answer,notes
+H000,tabular,value_extraction,table_image,images/H000_tabular_table_image.png,What is the value of 'patient_group' in row 0?,A,Ambiguous,A,(free-text note withheld until de-anonymisation)
+H001,tabular,ranking,scatter_plot,images/H001_tabular_scatter_plot.png,Which 'line' has the lowest 'units_produced' value?,line_b,Ambiguous,Trend line,(free-text note withheld until de-anonymisation)
+H002,tabular,comparison,heatmap,images/H002_tabular_heatmap.png,Which column has the higher average value: 'pm25' or 'no2'?,no2,Correct,no2,
+H003,timeseries,pattern_label_lookup,line_plot,images/H003_timeseries_line_plot.png,What is the pattern type label for this dataset?,linear_trend,Correct,linear_trend,
+H004,graph,degree_query,node_link,images/H004_graph_node_link.png,"What is the average degree among node 0, node 32, and node 63?",2.333,Ambiguous,2.333,(free-text note withheld until de-anonymisation)
+H005,timeseries,normalized_amplitude,heatmap,images/H005_timeseries_heatmap.png,Is normalized amplitude (range/|mean|) greater than 1.0?,no,Ambiguous,no,(free-text note withheld until de-anonymisation)
+H006,graph,centrality,node_link,images/H006_graph_node_link.png,Which node has the highest betweenness centrality?,0,Ambiguous,the largest node near the centre,(free-text note withheld until de-anonymisation)
+H007,graph,centrality,text_only,images/H007_graph_text_only.png,Which node has the highest betweenness centrality?,7,Incorrect,cannot tell,(free-text note withheld until de-anonymisation)
+H008,timeseries,range_query,gaf,images/H008_timeseries_gaf.png,What is the range (max - min) of values?,27.636,Incorrect,2,(free-text note withheld until de-anonymisation)
+H009,timeseries,median_mean_relation,gaf,images/H009_timeseries_gaf.png,Is the median value above or below the overall mean?,above,Correct,above,
+H010,timeseries,range_query,heatmap,images/H010_timeseries_heatmap.png,What is the range (max - min) of values?,7.809,Ambiguous,around 7,(free-text note withheld until de-anonymisation)
+H011,graph,connectivity,circular_layout,images/H011_graph_circular_layout.png,Is there a path between node 0 and node 3?,yes,Incorrect,cannot tell,(free-text note withheld until de-anonymisation)
+H012,timeseries,counterfactual_scale_peak,text_only,images/H012_timeseries_text_only.png,"If every value increased by 10%, would max index change?",no,Correct,no,
+H013,graph,counterfactual,adjacency_matrix,images/H013_graph_adjacency_matrix.png,"If the edge between node 0 and node 37 were removed, would the number of connected components increase?",no,Correct,no,
+H014,timeseries,peak_trough_order,text_only,images/H014_timeseries_text_only.png,Does the peak occur after the trough?,yes,Correct,yes,
+H015,graph,degree_query,adjacency_matrix,images/H015_graph_adjacency_matrix.png,How many immediate neighbors does node 9 have?,4,Correct,4,
+H016,timeseries,value_lookup,gaf,images/H016_timeseries_gaf.png,What is the first value in the series?,82.644,Incorrect,cannot tell,(free-text note withheld until de-anonymisation)
+H017,tabular,ranking,scatter_plot,images/H017_tabular_scatter_plot.png,Which 'hotel_class' has the lowest 'occupancy_pct' value?,midscale,Incorrect,cannot tell,(free-text note withheld until de-anonymisation)
+H018,timeseries,oscillation_count,line_plot,images/H018_timeseries_line_plot.png,How many sign changes are in first-order differences?,54,Correct,54,
+H019,timeseries,peak_trough_order,line_plot,images/H019_timeseries_line_plot.png,Does the peak occur after the trough?,yes,Correct,yes,
+H020,tabular,aggregation,bar_chart,images/H020_tabular_bar_chart.png,What is the sum of 'occupancy_pct' across all rows? Round to 2 decimals.,1150.88,Incorrect,cannot tell,(free-text note withheld until de-anonymisation)
+H021,graph,community,node_link,images/H021_graph_node_link.png,How many nodes are in the largest connected component?,96,Correct,96,
+H022,tabular,counterfactual,bar_chart,images/H022_tabular_bar_chart.png,"If all values in 'points' were multiplied by 1.2, would 'points' remain above 'assists' on average?",yes,Correct,yes,
+H023,timeseries,volatility,line_plot,images/H023_timeseries_line_plot.png,Is this series more volatile in the first or second half?,second half,Ambiguous,second half,(free-text note withheld until de-anonymisation)
+H024,graph,cycle_detection,adjacency_matrix,images/H024_graph_adjacency_matrix.png,Does this graph contain a cycle?,yes,Correct,yes,
+H025,tabular,aggregation,text_only,images/H025_tabular_text_only.png,What is the median of 'conversion_rate_pct' across all rows? Round to 2 decimals.,2.4,Ambiguous,2.37,(free-text note withheld until de-anonymisation)
+H026,tabular,trend_analysis,scatter_plot,images/H026_tabular_scatter_plot.png,Is 'points' generally increasing or decreasing across rows?,decreasing,Incorrect,increasing,(free-text note withheld until de-anonymisation)
+H027,graph,connectivity,circular_layout,images/H027_graph_circular_layout.png,Is there a path between node 0 and node 3?,yes,Incorrect,cannot tell,(free-text note withheld until de-anonymisation)
+H028,graph,connectivity,text_only,images/H028_graph_text_only.png,Are node 0 and node 23 connected?,yes,Correct,yes,
+H029,graph,counterfactual,node_link,images/H029_graph_node_link.png,"If the edge between node 0 and node 83 were removed, would the number of connected components increase?",no,Incorrect,cannot tell,(free-text note withheld until de-anonymisation)
+H030,tabular,aggregation,heatmap,images/H030_tabular_heatmap.png,What is the median of 'opex_musd' across all rows? Round to 2 decimals.,102.62,Correct,102.62,
+H031,timeseries,half_change_intensity,recurrence_plot,images/H031_timeseries_recurrence_plot.png,Which half has larger mean absolute first difference?,first half,Incorrect,second half,(free-text note withheld until de-anonymisation)
+H032,tabular,ranking,text_only,images/H032_tabular_text_only.png,Which 'line' has the highest 'units_produced' value?,line_b,Incorrect,line_c,(free-text note withheld until de-anonymisation)
+H033,timeseries,forecasting,line_plot,images/H033_timeseries_line_plot.png,"Based on the most recent change, what is the next expected value?",82.528,Ambiguous,around 82.5,(free-text note withheld until de-anonymisation)
+H034,timeseries,median_mean_relation,recurrence_plot,images/H034_timeseries_recurrence_plot.png,Is the median value above or below the overall mean?,above,Ambiguous,cannot tell,(free-text note withheld until de-anonymisation)
+H035,graph,connectivity,circular_layout,images/H035_graph_circular_layout.png,Is there a path between node 0 and node 3?,yes,Incorrect,,(free-text note withheld until de-anonymisation)
+H036,tabular,ranking,heatmap,images/H036_tabular_heatmap.png,Which 'team' has the highest 'possession_pct' value?,lynx,Incorrect,,(free-text note withheld until de-anonymisation)
+H037,graph,shortest_path,adjacency_matrix,images/H037_graph_adjacency_matrix.png,What is the shortest path length between node 0 and node 74?,2,Correct,2,
+H038,tabular,filtering,heatmap,images/H038_tabular_heatmap.png,How many rows have 'ozone' strictly greater than 26.77?,13,Incorrect,,(free-text note withheld until de-anonymisation)
+H039,graph,degree_query,circular_layout,images/H039_graph_circular_layout.png,What is the degree of node 42?,6,Incorrect,cannot tell,(free-text note withheld until de-anonymisation)
+H040,tabular,ranking,bar_chart,images/H040_tabular_bar_chart.png,Which 'store' has the highest 'discount_usd' value?,store_04,Incorrect,,(free-text note withheld until de-anonymisation)
+H041,graph,degree_query,text_only,images/H041_graph_text_only.png,What is the average degree of the graph?,8.619,Incorrect,cannot tell,(free-text note withheld until de-anonymisation)
+H042,graph,degree_query,node_link,images/H042_graph_node_link.png,How many immediate neighbors does node 6 have?,6,Ambiguous,5,(free-text note withheld until de-anonymisation)
+H043,tabular,outlier_detection,table_image,images/H043_tabular_table_image.png,Which 'hotel_class' entry deviates most from the mean of 'average_daily_rate_usd'?,luxury,Correct,136.68,
+H044,tabular,counterfactual,scatter_plot,images/H044_tabular_scatter_plot.png,"If all values in 'rainfall_mm' were multiplied by 0.85, would 'rainfall_mm' remain above 'fertilizer_kg' on average?",yes,Incorrect,cannot tell,(free-text note withheld until de-anonymisation)
+H045,graph,connectivity,node_link,images/H045_graph_node_link.png,Are node 0 and node 67 connected?,yes,Incorrect,cannot tell,(free-text note withheld until de-anonymisation)
+H046,tabular,outlier_detection,table_image,images/H046_tabular_table_image.png,Which 'district' entry deviates most from the mean of 'household_size'?,D3,Incorrect,D2,(free-text note withheld until de-anonymisation)
+H047,tabular,outlier_detection,bar_chart,images/H047_tabular_bar_chart.png,Which 'school' entry deviates most from the mean of 'late_arrivals'?,central_high,Incorrect,cannot tell,(free-text note withheld until de-anonymisation)
+H048,tabular,correlation,scatter_plot,images/H048_tabular_scatter_plot.png,Do 'goals_against' and 'possession_pct' appear positively or negatively correlated?,positive,Correct,,
+H049,graph,degree_query,text_only,images/H049_graph_text_only.png,Which node has the highest degree?,14,Ambiguous,"14, 28",(free-text note withheld until de-anonymisation)
+H050,graph,degree_query,adjacency_matrix,images/H050_graph_adjacency_matrix.png,"What is the average degree among node 0, node 34, and node 67?",3.667,Correct,3.6666,
+H051,timeseries,oscillation_count,gaf,images/H051_timeseries_gaf.png,How many sign changes are in first-order differences?,51,Incorrect,hard to tell exactly which one,(free-text note withheld until de-anonymisation)
+H052,graph,community,node_link,images/H052_graph_node_link.png,How many nodes are in the largest connected component?,65,Incorrect,,(free-text note withheld until de-anonymisation)
+H053,tabular,ranking,table_image,images/H053_tabular_table_image.png,Which 'ticker' has the highest 'daily_return_pct' value?,CRX,Ambiguous,CRX,(free-text note withheld until de-anonymisation)
+H054,timeseries,peak_trough_order,gaf,images/H054_timeseries_gaf.png,Does the peak occur after the trough?,no,Incorrect,cannot tell,(free-text note withheld until de-anonymisation)
+H055,timeseries,value_lookup,heatmap,images/H055_timeseries_heatmap.png,What is the last value in the series?,73.710,Ambiguous,around 72.5,(free-text note withheld until de-anonymisation)
+H056,timeseries,split_trend_consistency,heatmap,images/H056_timeseries_heatmap.png,Do both halves move in the same trend direction?,yes,Correct,yes,
+H057,graph,bipartite_check,node_link,images/H057_graph_node_link.png,Is this graph bipartite?,no,Incorrect,edges overlap; cannot distinguish,(free-text note withheld until de-anonymisation)
+H058,graph,counterfactual,text_only,images/H058_graph_text_only.png,"If an edge were added between node 0 and node 23, would they be directly connected?",yes,Correct,yes,
+H059,tabular,correlation,heatmap,images/H059_tabular_heatmap.png,Do 'units_sold' and 'backorder_units' appear positively or negatively correlated?,positive,Incorrect,,(free-text note withheld until de-anonymisation)
+H060,tabular,value_extraction,scatter_plot,images/H060_tabular_scatter_plot.png,What is the value of 'week_start' in row 0?,2024-01-07 00:00:00,Incorrect,,(free-text note withheld until de-anonymisation)
+H061,tabular,counterfactual,bar_chart,images/H061_tabular_bar_chart.png,"If all values in 'average_daily_rate_usd' were multiplied by 0.85, would 'average_daily_rate_usd' remain above 'booking_lead_days' on average?",yes,Correct,yes,
+H062,timeseries,counterfactual_sign_flip,recurrence_plot,images/H062_timeseries_recurrence_plot.png,"If the series were multiplied by -1, would max and min indices swap?",yes,Correct,yes,
+H063,tabular,counterfactual,text_only,images/H063_tabular_text_only.png,"If all values in 'attendance_pct' were multiplied by 1.2, would 'attendance_pct' remain above 'late_arrivals' on average?",yes,Correct,yes,
+H064,timeseries,counterfactual_scale_peak,line_plot,images/H064_timeseries_line_plot.png,"If every value increased by 10%, would max index change?",no,Correct,no,
+H065,tabular,counterfactual,bar_chart,images/H065_tabular_bar_chart.png,"If all values in 'units_produced' were multiplied by 1.2, would 'units_produced' remain above 'defect_rate_pct' on average?",yes,Correct,yes,
+H066,tabular,aggregation,table_image,images/H066_tabular_table_image.png,What is the sum of 'yield_ton' across all rows? Round to 2 decimals.,1570.5,Incorrect,1079.44,(free-text note withheld until de-anonymisation)
+H067,graph,bipartite_check,circular_layout,images/H067_graph_circular_layout.png,Is this graph bipartite?,no,Correct,no,
+H068,timeseries,mean_shift_magnitude,recurrence_plot,images/H068_timeseries_recurrence_plot.png,By how much does second-half mean exceed first-half mean?,1.596,Incorrect,cannot tell,(free-text note withheld until de-anonymisation)
+H069,timeseries,volatility,heatmap,images/H069_timeseries_heatmap.png,Is this series more volatile in the first or second half?,second half,Ambiguous,second half,(free-text note withheld until de-anonymisation)
+H070,graph,counterfactual,text_only,images/H070_graph_text_only.png,"If an edge were added between node 0 and node 41, would they be directly connected?",yes,Correct,yes,
+H071,graph,degree_query,circular_layout,images/H071_graph_circular_layout.png,Which node has the highest degree?,18,Ambiguous,,(free-text note withheld until de-anonymisation)
+H072,graph,diameter,circular_layout,images/H072_graph_circular_layout.png,What is the diameter of the graph (or largest component)?,13,Ambiguous,10,(free-text note withheld until de-anonymisation)
+H073,tabular,outlier_detection,bar_chart,images/H073_tabular_bar_chart.png,Which 'city' entry deviates most from the mean of 'temperature_c'?,lakeside,Incorrect,cannot tell,(free-text note withheld until de-anonymisation)
+H074,timeseries,counterfactual_half_shift,heatmap,images/H074_timeseries_heatmap.png,"If we add 5 only to second half, would second-half mean exceed first-half mean?",yes,Incorrect,,(free-text note withheld until de-anonymisation)
+H075,timeseries,counterfactual_scale_peak,text_only,images/H075_timeseries_text_only.png,"If every value increased by 10%, would max index change?",no,Correct,no,
+H076,tabular,ranking,table_image,images/H076_tabular_table_image.png,Which 'team' has the lowest 'goals_against' value?,hawks,Ambiguous,lynx and rangers,(free-text note withheld until de-anonymisation)
+H077,timeseries,half_change_intensity,heatmap,images/H077_timeseries_heatmap.png,Which half has larger mean absolute first difference?,first half,Incorrect,cannot tell,(free-text note withheld until de-anonymisation)
+H078,tabular,counterfactual,text_only,images/H078_tabular_text_only.png,"If all values in 'downtime_hours' were multiplied by 1.2, would 'downtime_hours' remain above 'units_produced' on average?",yes,Incorrect,no,(free-text note withheld until de-anonymisation)
+H079,graph,centrality,text_only,images/H079_graph_text_only.png,Which node has the highest betweenness centrality?,4,Ambiguous,"4,6",(free-text note withheld until de-anonymisation)
+H080,timeseries,counterfactual_half_shift,recurrence_plot,images/H080_timeseries_recurrence_plot.png,"If we add 5 only to second half, would second-half mean exceed first-half mean?",yes,Incorrect,cannot tell,(free-text note withheld until de-anonymisation)
+H081,tabular,filtering,table_image,images/H081_tabular_table_image.png,How many rows have 'gross_sales_usd' strictly greater than 12391.46?,14,Incorrect,3,(free-text note withheld until de-anonymisation)
+H082,tabular,filtering,heatmap,images/H082_tabular_heatmap.png,How many rows have 'units_in_stock' strictly greater than 758.3?,10,Ambiguous,10,(free-text note withheld until de-anonymisation)
+H083,timeseries,seasonality_detection,text_only,images/H083_timeseries_text_only.png,Does this series show periodic/seasonal behavior?,no,Correct,no,
+H084,graph,counterfactual,adjacency_matrix,images/H084_graph_adjacency_matrix.png,"If one random edge were removed, would the total edge count decrease by one?",yes,Correct,yes,
+H085,graph,centrality,adjacency_matrix,images/H085_graph_adjacency_matrix.png,Which node has the highest betweenness centrality?,18,Correct,18,
+H086,timeseries,change_point,line_plot,images/H086_timeseries_line_plot.png,At approximately which timestep does a significant change occur?,none,Ambiguous,cannot tell,(free-text note withheld until de-anonymisation)
+H087,tabular,aggregation,scatter_plot,images/H087_tabular_scatter_plot.png,What is the average of 'systolic_bp' across all rows? Round to 2 decimals.,122.73,Ambiguous,around 120,(free-text note withheld until de-anonymisation)
+H088,timeseries,anomaly_detection,recurrence_plot,images/H088_timeseries_recurrence_plot.png,Which timestep appears most anomalous relative to the sequence average?,132,Incorrect,cannot tell,(free-text note withheld until de-anonymisation)
+H089,graph,counterfactual,adjacency_matrix,images/H089_graph_adjacency_matrix.png,"If one random edge were removed, would the total edge count decrease by one?",yes,Correct,yes,
+H090,timeseries,counterfactual_scale_peak,gaf,images/H090_timeseries_gaf.png,"If every value increased by 10%, would max index change?",no,Correct,no,
+H091,tabular,correlation,heatmap,images/H091_tabular_heatmap.png,Do 'units_in_stock' and 'units_sold' appear positively or negatively correlated?,negative,Ambiguous,almost no correlation,(free-text note withheld until de-anonymisation)
+H092,tabular,ranking,text_only,images/H092_tabular_text_only.png,Which 'zone' has the highest 'spot_price_usd' value?,east_grid,Incorrect,north_grid,(free-text note withheld until de-anonymisation)
+H093,timeseries,change_point,text_only,images/H093_timeseries_text_only.png,At approximately which timestep does a significant change occur?,none,Ambiguous,32,(free-text note withheld until de-anonymisation)
+H094,tabular,filtering,text_only,images/H094_tabular_text_only.png,How many rows have 'hemoglobin_g_dl' strictly greater than 13.85?,9,Incorrect,7,(free-text note withheld until de-anonymisation)
+H095,graph,community,adjacency_matrix,images/H095_graph_adjacency_matrix.png,How many nodes are in the largest connected component?,42,Correct,42,
+H096,graph,centrality,circular_layout,images/H096_graph_circular_layout.png,Which node has the highest betweenness centrality?,35,Ambiguous,,(free-text note withheld until de-anonymisation)
+H097,timeseries,normalized_amplitude,gaf,images/H097_timeseries_gaf.png,Is normalized amplitude (range/|mean|) greater than 1.0?,no,Incorrect,cannot tell,(free-text note withheld until de-anonymisation)
+H098,timeseries,counterfactual_half_shift,text_only,images/H098_timeseries_text_only.png,"If we add 5 only to second half, would second-half mean exceed first-half mean?",no,Incorrect,yes,(free-text note withheld until de-anonymisation)
+H099,graph,degree_query,text_only,images/H099_graph_text_only.png,How many immediate neighbors does node 7 have?,14,Incorrect,8,(free-text note withheld until de-anonymisation)

@@ -1,0 +1,31 @@
+item_id,modality,task,viz_type,image,question,ground_truth,rating,your_answer,notes
+V000,tabular,aggregation,bar_chart,images/V000_tabular_bar_chart.png,What is the sum of 'occupancy_pct' across all rows? Round to 2 decimals.,1150.88,Correct,,
+V001,tabular,filtering,heatmap,images/V001_tabular_heatmap.png,How many rows have 'units_in_stock' strictly greater than 758.3?,10,Correct,,
+V002,tabular,ranking,scatter_plot,images/V002_tabular_scatter_plot.png,Which 'line' has the lowest 'units_produced' value?,line_b,Correct,,
+V003,tabular,outlier_detection,table_image,images/V003_tabular_table_image.png,Which 'hotel_class' entry deviates most from the mean of 'average_daily_rate_usd'?,luxury,Correct,,
+V004,tabular,aggregation,text_only,images/V004_tabular_text_only.png,What is the median of 'conversion_rate_pct' across all rows? Round to 2 decimals.,2.4,Correct,,
+V005,tabular,outlier_detection,bar_chart,images/V005_tabular_bar_chart.png,Which 'school' entry deviates most from the mean of 'late_arrivals'?,central_high,Correct,,
+V006,tabular,correlation,heatmap,images/V006_tabular_heatmap.png,Do 'units_sold' and 'backorder_units' appear positively or negatively correlated?,positive,Incorrect,,(free-text note withheld until de-anonymisation)
+V007,tabular,ranking,scatter_plot,images/V007_tabular_scatter_plot.png,Which 'hotel_class' has the lowest 'occupancy_pct' value?,midscale,Correct,,
+V008,tabular,outlier_detection,table_image,images/V008_tabular_table_image.png,Which 'district' entry deviates most from the mean of 'household_size'?,D3,Correct,,
+V009,tabular,ranking,text_only,images/V009_tabular_text_only.png,Which 'line' has the highest 'units_produced' value?,line_b,Correct,,
+V010,graph,centrality,adjacency_matrix,images/V010_graph_adjacency_matrix.png,Which node has the highest betweenness centrality?,18,Correct,,
+V011,graph,degree_query,circular_layout,images/V011_graph_circular_layout.png,What is the degree of node 42?,6,Incorrect,,(free-text note withheld until de-anonymisation)
+V012,graph,centrality,node_link,images/V012_graph_node_link.png,Which node has the highest betweenness centrality?,0,Correct,,
+V013,graph,centrality,text_only,images/V013_graph_text_only.png,Which node has the highest betweenness centrality?,4,Correct,,
+V014,graph,community,adjacency_matrix,images/V014_graph_adjacency_matrix.png,How many nodes are in the largest connected component?,42,Correct,,
+V015,graph,diameter,circular_layout,images/V015_graph_circular_layout.png,What is the diameter of the graph (or largest component)?,13,Incorrect,,(free-text note withheld until de-anonymisation)
+V016,graph,counterfactual,node_link,images/V016_graph_node_link.png,"If the edge between node 0 and node 83 were removed, would the number of connected components increase?",no,Correct,,
+V017,graph,centrality,text_only,images/V017_graph_text_only.png,Which node has the highest betweenness centrality?,7,Correct,,
+V018,graph,centrality,circular_layout,images/V018_graph_circular_layout.png,Which node has the highest betweenness centrality?,35,Incorrect,,(free-text note withheld until de-anonymisation)
+V019,graph,degree_query,node_link,images/V019_graph_node_link.png,"What is the average degree among node 0, node 32, and node 63?",2.333,Correct,,
+V020,timeseries,change_point,text_only,images/V020_timeseries_text_only.png,At approximately which timestep does a significant change occur?,none,Ambiguous,,(free-text note withheld until de-anonymisation)
+V021,timeseries,counterfactual_half_shift,text_only,images/V021_timeseries_text_only.png,"If we add 5 only to second half, would second-half mean exceed first-half mean?",no,Correct,,
+V022,timeseries,anomaly_detection,text_only,images/V022_timeseries_text_only.png,Which timestep appears most anomalous relative to the sequence average?,132,Correct,,
+V023,timeseries,endpoint_comparison,text_only,images/V023_timeseries_text_only.png,Is the final value higher or lower than the first value?,,Correct,,
+V024,timeseries,forecasting,text_only,images/V024_timeseries_text_only.png,"Based on the most recent change, what is the next expected value?",73.569,Ambiguous,,(free-text note withheld until de-anonymisation)
+V025,timeseries,mean_shift_magnitude,text_only,images/V025_timeseries_text_only.png,By how much does second-half mean exceed first-half mean?,31.833,Incorrect,,(free-text note withheld until de-anonymisation)
+V026,timeseries,median_mean_relation,text_only,images/V026_timeseries_text_only.png,Is the median value above or below the overall mean?,above,Correct,,
+V027,timeseries,peak_identification,text_only,images/V027_timeseries_text_only.png,At which timestep does the minimum value occur?,,Correct,,
+V028,timeseries,range_query,text_only,images/V028_timeseries_text_only.png,What is the range (max - min) of values?,30.296,Correct,,
+V029,timeseries,threshold_count,text_only,images/V029_timeseries_text_only.png,How many timesteps are above mean plus one standard deviation?,25,Incorrect,,(free-text note withheld until de-anonymisation)

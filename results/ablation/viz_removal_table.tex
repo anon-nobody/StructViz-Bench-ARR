@@ -1,0 +1,62 @@
+\begin{tabular}{lllrrr}
+\toprule
+Model & Modality & Excluded Viz & Baseline EM (\%) & Ablated EM (\%) & Delta (pp) \\
+\midrule
+claude & graph & adjacency\_matrix & 39.70 & 40.76 & +1.06 \\
+claude & graph & circular\_layout & 39.70 & 40.30 & +0.61 \\
+claude & graph & node\_link & 39.70 & 41.31 & +1.62 \\
+claude & graph & text\_only & 39.70 & 36.41 & -3.28 \\
+claude & tabular & bar\_chart & 30.18 & 33.00 & +2.83 \\
+claude & tabular & heatmap & 30.18 & 29.01 & -1.17 \\
+claude & tabular & scatter\_plot & 30.18 & 33.68 & +3.51 \\
+claude & tabular & table\_image & 30.18 & 26.59 & -3.59 \\
+claude & tabular & text\_only & 30.18 & 28.60 & -1.58 \\
+claude & timeseries & gaf & 17.55 & 18.41 & +0.86 \\
+claude & timeseries & heatmap & 17.55 & 17.68 & +0.14 \\
+claude & timeseries & line\_plot & 17.55 & 16.11 & -1.43 \\
+claude & timeseries & recurrence\_plot & 17.55 & 19.11 & +1.56 \\
+claude & timeseries & text\_only & 17.55 & 16.42 & -1.12 \\
+gemini & graph & adjacency\_matrix & 39.32 & 41.82 & +2.50 \\
+gemini & graph & circular\_layout & 39.32 & 40.35 & +1.04 \\
+gemini & graph & node\_link & 39.32 & 40.51 & +1.19 \\
+gemini & graph & text\_only & 39.32 & 34.60 & -4.72 \\
+gemini & tabular & bar\_chart & 42.37 & 46.70 & +4.33 \\
+gemini & tabular & heatmap & 42.37 & 41.78 & -0.58 \\
+gemini & tabular & scatter\_plot & 42.37 & 47.80 & +5.44 \\
+gemini & tabular & table\_image & 42.37 & 37.88 & -4.49 \\
+gemini & tabular & text\_only & 42.37 & 37.68 & -4.69 \\
+gemini & timeseries & gaf & 27.15 & 29.07 & +1.92 \\
+gemini & timeseries & heatmap & 27.15 & 27.72 & +0.57 \\
+gemini & timeseries & line\_plot & 27.15 & 25.69 & -1.46 \\
+gemini & timeseries & recurrence\_plot & 27.15 & 29.01 & +1.86 \\
+gemini & timeseries & text\_only & 27.15 & 24.27 & -2.88 \\
+gpt4o & graph & adjacency\_matrix & 43.64 & 47.07 & +3.43 \\
+gpt4o & graph & circular\_layout & 43.64 & 44.44 & +0.81 \\
+gpt4o & graph & node\_link & 43.64 & 43.64 & +0.00 \\
+gpt4o & graph & text\_only & 43.64 & 39.39 & -4.24 \\
+gpt4o & tabular & bar\_chart & 41.41 & 46.06 & +4.66 \\
+gpt4o & tabular & heatmap & 41.41 & 40.85 & -0.56 \\
+gpt4o & tabular & scatter\_plot & 41.41 & 45.86 & +4.46 \\
+gpt4o & tabular & table\_image & 41.41 & 36.88 & -4.52 \\
+gpt4o & tabular & text\_only & 41.41 & 37.37 & -4.04 \\
+gpt4o & timeseries & gaf & 21.84 & 23.01 & +1.17 \\
+gpt4o & timeseries & heatmap & 21.84 & 22.68 & +0.84 \\
+gpt4o & timeseries & line\_plot & 21.84 & 20.40 & -1.44 \\
+gpt4o & timeseries & recurrence\_plot & 21.84 & 24.76 & +2.92 \\
+gpt4o & timeseries & text\_only & 21.84 & 18.34 & -3.50 \\
+qwen & graph & adjacency\_matrix & 35.34 & 37.73 & +2.39 \\
+qwen & graph & circular\_layout & 35.34 & 35.81 & +0.47 \\
+qwen & graph & node\_link & 35.34 & 35.05 & -0.29 \\
+qwen & graph & text\_only & 35.34 & 32.78 & -2.56 \\
+qwen & tabular & bar\_chart & 37.75 & 40.69 & +2.95 \\
+qwen & tabular & heatmap & 37.75 & 36.76 & -0.99 \\
+qwen & tabular & scatter\_plot & 37.75 & 42.80 & +5.06 \\
+qwen & tabular & table\_image & 37.75 & 33.54 & -4.20 \\
+qwen & tabular & text\_only & 37.75 & 34.93 & -2.82 \\
+qwen & timeseries & gaf & 24.32 & 25.09 & +0.77 \\
+qwen & timeseries & heatmap & 24.32 & 25.15 & +0.82 \\
+qwen & timeseries & line\_plot & 24.32 & 23.58 & -0.74 \\
+qwen & timeseries & recurrence\_plot & 24.32 & 25.60 & +1.28 \\
+qwen & timeseries & text\_only & 24.32 & 22.19 & -2.13 \\
+\bottomrule
+\end{tabular}

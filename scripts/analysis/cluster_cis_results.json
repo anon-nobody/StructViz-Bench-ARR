@@ -1,0 +1,852 @@
+{
+ "config": {
+  "seed": 0,
+  "B_boot": 5000,
+  "B_perm": 10000,
+  "n_questions": 3795,
+  "n_objects": 299,
+  "objects_by_modality": {
+   "tabular": 156,
+   "timeseries": 107,
+   "graph": 36
+  },
+  "models_bc": [
+   "GPT-4o",
+   "Gemini Flash",
+   "Qwen2.5-VL-7B",
+   "Claude Sonnet",
+   "Qwen2.5-VL-32B",
+   "InternVL2.5-8B",
+   "Gemini-2.5"
+  ]
+ },
+ "A_gaps": {
+  "rows": [
+   {
+    "est": 36.713881019830026,
+    "n_obj": 156,
+    "n_units": 1765,
+    "obj_ci": {
+     "lo": 33.60342152856309,
+     "hi": 40.06981977117511,
+     "hw": 3.2331991213060114
+    },
+    "obj_perm_p": 9.999000099990002e-05,
+    "obj_perm_hits": 0,
+    "model": "GPT-4o",
+    "modality": "tabular",
+    "best": "table_image",
+    "worst": "bar_chart",
+    "q_ci": {
+     "lo": 34.107648725212464,
+     "hi": 39.26345609065156,
+     "hw": 2.5779036827195476
+    }
+   },
+   {
+    "est": 25.693430656934307,
+    "n_obj": 107,
+    "n_units": 1370,
+    "obj_ci": {
+     "lo": 23.359375,
+     "hi": 28.11830936330564,
+     "hw": 2.379467181652821
+    },
+    "obj_perm_p": 9.999000099990002e-05,
+    "obj_perm_hits": 0,
+    "model": "GPT-4o",
+    "modality": "timeseries",
+    "best": "text_only",
+    "worst": "recurrence_plot",
+    "q_ci": {
+     "lo": 23.065693430656935,
+     "hi": 28.394160583941606,
+     "hw": 2.664233576642335
+    }
+   },
+   {
+    "est": 23.03030303030303,
+    "n_obj": 36,
+    "n_units": 660,
+    "obj_ci": {
+     "lo": 18.775510204081634,
+     "hi": 27.555855855855853,
+     "hw": 4.3901728258871096
+    },
+    "obj_perm_p": 9.999000099990002e-05,
+    "obj_perm_hits": 0,
+    "model": "GPT-4o",
+    "modality": "graph",
+    "best": "text_only",
+    "worst": "adjacency_matrix",
+    "q_ci": {
+     "lo": 19.242424242424242,
+     "hi": 26.818181818181817,
+     "hw": 3.787878787878787
+    }
+   },
+   {
+    "est": 40.50991501416431,
+    "n_obj": 156,
+    "n_units": 1765,
+    "obj_ci": {
+     "lo": 37.00595991791469,
+     "hi": 44.28664684764935,
+     "hw": 3.640343464867332
+    },
+    "obj_perm_p": 9.999000099990002e-05,
+    "obj_perm_hits": 0,
+    "model": "Gemini Flash",
+    "modality": "tabular",
+    "best": "text_only",
+    "worst": "scatter_plot",
+    "q_ci": {
+     "lo": 37.79036827195468,
+     "hi": 43.11614730878187,
+     "hw": 2.6628895184135963
+    }
+   },
+   {
+    "est": 19.197080291970803,
+    "n_obj": 107,
+    "n_units": 1370,
+    "obj_ci": {
+     "lo": 16.478209888606607,
+     "hi": 22.26280815314695,
+     "hw": 2.892299132270171
+    },
+    "obj_perm_p": 9.999000099990002e-05,
+    "obj_perm_hits": 0,
+    "model": "Gemini Flash",
+    "modality": "timeseries",
+    "best": "text_only",
+    "worst": "gaf",
+    "q_ci": {
+     "lo": 16.423357664233578,
+     "hi": 21.899635036496324,
+     "hw": 2.7381386861313732
+    }
+   },
+   {
+    "est": 21.666666666666668,
+    "n_obj": 36,
+    "n_units": 660,
+    "obj_ci": {
+     "lo": 17.925925925925927,
+     "hi": 25.614035087719298,
+     "hw": 3.8440545808966853
+    },
+    "obj_perm_p": 9.999000099990002e-05,
+    "obj_perm_hits": 0,
+    "model": "Gemini Flash",
+    "modality": "graph",
+    "best": "text_only",
+    "worst": "adjacency_matrix",
+    "q_ci": {
+     "lo": 17.87878787878788,
+     "hi": 25.454545454545453,
+     "hw": 3.787878787878787
+    }
+   },
+   {
+    "est": 37.053824362606235,
+    "n_obj": 156,
+    "n_units": 1765,
+    "obj_ci": {
+     "lo": 34.064285192542634,
+     "hi": 40.28492914845715,
+     "hw": 3.110321977957259
+    },
+    "obj_perm_p": 9.999000099990002e-05,
+    "obj_perm_hits": 0,
+    "model": "Qwen2.5-VL-7B",
+    "modality": "tabular",
+    "best": "table_image",
+    "worst": "scatter_plot",
+    "q_ci": {
+     "lo": 34.390934844192635,
+     "hi": 39.49008498583569,
+     "hw": 2.549575070821529
+    }
+   },
+   {
+    "est": 13.64963503649635,
+    "n_obj": 107,
+    "n_units": 1370,
+    "obj_ci": {
+     "lo": 11.029837755427115,
+     "hi": 16.560062499999997,
+     "hw": 2.765112372286441
+    },
+    "obj_perm_p": 9.999000099990002e-05,
+    "obj_perm_hits": 0,
+    "model": "Qwen2.5-VL-7B",
+    "modality": "timeseries",
+    "best": "text_only",
+    "worst": "recurrence_plot",
+    "q_ci": {
+     "lo": 11.167883211678832,
+     "hi": 16.131386861313867,
+     "hw": 2.4817518248175174
+    }
+   },
+   {
+    "est": 14.848484848484848,
+    "n_obj": 36,
+    "n_units": 660,
+    "obj_ci": {
+     "lo": 12.093023255813954,
+     "hi": 18.29059829059829,
+     "hw": 3.098787517392168
+    },
+    "obj_perm_p": 9.999000099990002e-05,
+    "obj_perm_hits": 0,
+    "model": "Qwen2.5-VL-7B",
+    "modality": "graph",
+    "best": "text_only",
+    "worst": "adjacency_matrix",
+    "q_ci": {
+     "lo": 11.363636363636363,
+     "hi": 18.03030303030303,
+     "hw": 3.333333333333334
+    }
+   },
+   {
+    "est": 28.38526912181303,
+    "n_obj": 156,
+    "n_units": 1765,
+    "obj_ci": {
+     "lo": 24.829873328641803,
+     "hi": 32.36517198113384,
+     "hw": 3.767649326246019
+    },
+    "obj_perm_p": 9.999000099990002e-05,
+    "obj_perm_hits": 0,
+    "model": "Claude Sonnet",
+    "modality": "tabular",
+    "best": "table_image",
+    "worst": "scatter_plot",
+    "q_ci": {
+     "lo": 25.835694050991503,
+     "hi": 30.93484419263456,
+     "hw": 2.549575070821529
+    }
+   },
+   {
+    "est": 11.97080291970803,
+    "n_obj": 107,
+    "n_units": 1370,
+    "obj_ci": {
+     "lo": 10.342394675626776,
+     "hi": 13.60332182916307,
+     "hw": 1.6304635767681468
+    },
+    "obj_perm_p": 9.999000099990002e-05,
+    "obj_perm_hits": 0,
+    "model": "Claude Sonnet",
+    "modality": "timeseries",
+    "best": "line_plot",
+    "worst": "recurrence_plot",
+    "q_ci": {
+     "lo": 10.072992700729927,
+     "hi": 13.86861313868613,
+     "hw": 1.897810218978102
+    }
+   },
+   {
+    "est": 14.696969696969697,
+    "n_obj": 36,
+    "n_units": 660,
+    "obj_ci": {
+     "lo": 11.317829457364342,
+     "hi": 18.25488400488399,
+     "hw": 3.4685272737598245
+    },
+    "obj_perm_p": 9.999000099990002e-05,
+    "obj_perm_hits": 0,
+    "model": "Claude Sonnet",
+    "modality": "graph",
+    "best": "text_only",
+    "worst": "node_link",
+    "q_ci": {
+     "lo": 10.606060606060606,
+     "hi": 18.78787878787879,
+     "hw": 4.090909090909092
+    }
+   }
+  ],
+  "obj_hw_min": 1.6304635767681468,
+  "obj_hw_max": 4.3901728258871096,
+  "q_hw_min": 1.897810218978102,
+  "q_hw_max": 4.090909090909092
+ },
+ "B_selector": {
+  "GPT-4o": {
+   "n_test": 1902,
+   "n_obj": 151,
+   "random": 35.084121976866456,
+   "fixed_mod": 50.630914826498426,
+   "selector": 54.6267087276551,
+   "fixed_formats_train": {
+    "timeseries": "text_only",
+    "tabular": "table_image",
+    "graph": "text_only"
+   },
+   "delta_vs_fixed": 3.995793901156677,
+   "delta_vs_fixed_ci": {
+    "lo": 2.603363424665365,
+    "hi": 5.476404441700723,
+    "hw": 1.4365205085176789
+   },
+   "delta_vs_random": 19.542586750788644,
+   "delta_vs_random_ci": {
+    "lo": 17.762493182183167,
+    "hi": 21.337829968944103,
+    "hw": 1.7876683933804678
+   },
+   "text_only_frac": 37.11882229232387
+  },
+  "Gemini Flash": {
+   "n_test": 1902,
+   "n_obj": 151,
+   "random": 37.07676130389064,
+   "fixed_mod": 52.6813880126183,
+   "selector": 56.256572029442694,
+   "fixed_formats_train": {
+    "timeseries": "text_only",
+    "tabular": "text_only",
+    "graph": "text_only"
+   },
+   "delta_vs_fixed": 3.5751840168243953,
+   "delta_vs_fixed_ci": {
+    "lo": 1.873028852104315,
+    "hi": 5.266227038285008,
+    "hw": 1.6965990930903465
+   },
+   "delta_vs_random": 19.179810725552052,
+   "delta_vs_random_ci": {
+    "lo": 17.233692574052828,
+    "hi": 21.194967641485192,
+    "hw": 1.9806375337161821
+   },
+   "text_only_frac": 40.904311251314404
+  },
+  "Qwen2.5-VL-7B": {
+   "n_test": 1902,
+   "n_obj": 151,
+   "random": 33.380651945320714,
+   "fixed_mod": 45.00525762355415,
+   "selector": 48.948475289169295,
+   "fixed_formats_train": {
+    "timeseries": "text_only",
+    "tabular": "table_image",
+    "graph": "text_only"
+   },
+   "delta_vs_fixed": 3.943217665615142,
+   "delta_vs_fixed_ci": {
+    "lo": 2.5376609995004564,
+    "hi": 5.29973771894277,
+    "hw": 1.3810383597211566
+   },
+   "delta_vs_random": 15.567823343848582,
+   "delta_vs_random_ci": {
+    "lo": 13.787472034217076,
+    "hi": 17.460083048122,
+    "hw": 1.8363055069524625
+   },
+   "text_only_frac": 41.27234490010515
+  },
+  "Claude Sonnet": {
+   "n_test": 1902,
+   "n_obj": 151,
+   "random": 26.56677181913775,
+   "fixed_mod": 36.277602523659304,
+   "selector": 44.37434279705573,
+   "fixed_formats_train": {
+    "timeseries": "text_only",
+    "tabular": "table_image",
+    "graph": "text_only"
+   },
+   "delta_vs_fixed": 8.096740273396424,
+   "delta_vs_fixed_ci": {
+    "lo": 6.546981855009444,
+    "hi": 9.610416168698377,
+    "hw": 1.5317171568444663
+   },
+   "delta_vs_random": 17.80757097791798,
+   "delta_vs_random_ci": {
+    "lo": 16.051258700519778,
+    "hi": 19.630323554898567,
+    "hw": 1.7895324271893944
+   },
+   "text_only_frac": 26.393270241850683
+  },
+  "Qwen2.5-VL-32B": {
+   "n_test": 1902,
+   "n_obj": 151,
+   "random": 34.25604626708728,
+   "fixed_mod": 48.527865404837016,
+   "selector": 51.472134595162984,
+   "fixed_formats_train": {
+    "tabular": "table_image",
+    "timeseries": "text_only",
+    "graph": "text_only"
+   },
+   "delta_vs_fixed": 2.9442691903259726,
+   "delta_vs_fixed_ci": {
+    "lo": 1.4029535658935928,
+    "hi": 4.431250460993777,
+    "hw": 1.5141484475500921
+   },
+   "delta_vs_random": 17.21608832807571,
+   "delta_vs_random_ci": {
+    "lo": 15.603740821884118,
+    "hi": 18.944040758482206,
+    "hw": 1.670149968299044
+   },
+   "text_only_frac": 37.11882229232387
+  },
+  "InternVL2.5-8B": {
+   "n_test": 1902,
+   "n_obj": 151,
+   "random": 20.502103049421663,
+   "fixed_mod": 25.341745531019978,
+   "selector": 31.125131440588852,
+   "fixed_formats_train": {
+    "tabular": "table_image",
+    "timeseries": "recurrence_plot",
+    "graph": "text_only"
+   },
+   "delta_vs_fixed": 5.783385909568874,
+   "delta_vs_fixed_ci": {
+    "lo": 4.4808546714057735,
+    "hi": 7.030939781010437,
+    "hw": 1.2750425548023316
+   },
+   "delta_vs_random": 10.623028391167193,
+   "delta_vs_random_ci": {
+    "lo": 9.226923002428762,
+    "hi": 12.063557362297006,
+    "hw": 1.4183171799341219
+   },
+   "text_only_frac": 6.624605678233438
+  },
+  "Gemini-2.5": {
+   "n_test": 1902,
+   "n_obj": 151,
+   "random": 36.30914826498423,
+   "fixed_mod": 51.7875920084122,
+   "selector": 53.83806519453207,
+   "fixed_formats_train": {
+    "tabular": "text_only",
+    "timeseries": "text_only",
+    "graph": "text_only"
+   },
+   "delta_vs_fixed": 2.050473186119874,
+   "delta_vs_fixed_ci": {
+    "lo": 0.9296207452024093,
+    "hi": 3.1796688886641653,
+    "hw": 1.125024071730878
+   },
+   "delta_vs_random": 17.528916929547844,
+   "delta_vs_random_ci": {
+    "lo": 15.789316142553231,
+    "hi": 19.3238551898959,
+    "hw": 1.7672695236713354
+   },
+   "text_only_frac": 51.52471083070452
+  }
+ },
+ "C_ensemble": {
+  "GPT-4o": {
+   "n_q": 3795,
+   "n_obj": 299,
+   "random": 34.72990777338635,
+   "fixed_mod": 50.408432147562586,
+   "fixed_formats_full": {
+    "tabular": "table_image",
+    "timeseries": "text_only",
+    "graph": "text_only"
+   },
+   "ensemble": 37.04874835309618,
+   "oracle": 62.92490118577075,
+   "ens_minus_fixed": -13.359683794466402,
+   "ens_minus_fixed_ci": {
+    "lo": -14.799159842544842,
+    "hi": -11.974762273330386,
+    "hw": 1.4121987846072281
+   },
+   "ens_minus_random": 2.3188405797101446,
+   "ens_minus_random_ci": {
+    "lo": 1.3461500132872701,
+    "hi": 3.3099553257226537,
+    "hw": 0.9819026562176918
+   }
+  },
+  "Gemini Flash": {
+   "n_q": 3795,
+   "n_obj": 299,
+   "random": 36.34519104084338,
+   "fixed_mod": 51.69960474308301,
+   "fixed_formats_full": {
+    "tabular": "text_only",
+    "timeseries": "text_only",
+    "graph": "text_only"
+   },
+   "ensemble": 41.3965744400527,
+   "oracle": 66.87747035573122,
+   "ens_minus_fixed": -10.303030303030303,
+   "ens_minus_fixed_ci": {
+    "lo": -11.761615043091027,
+    "hi": -8.876954793824405,
+    "hw": 1.442330124633311
+   },
+   "ens_minus_random": 5.051383399209486,
+   "ens_minus_random_ci": {
+    "lo": 4.034418902021415,
+    "hi": 6.1557614970481564,
+    "hw": 1.0606712975133705
+   }
+  },
+  "Qwen2.5-VL-7B": {
+   "n_q": 3795,
+   "n_obj": 299,
+   "random": 32.48089591567872,
+   "fixed_mod": 44.7167325428195,
+   "fixed_formats_full": {
+    "tabular": "table_image",
+    "timeseries": "text_only",
+    "graph": "text_only"
+   },
+   "ensemble": 36.100131752305664,
+   "oracle": 57.18050065876153,
+   "ens_minus_fixed": -8.616600790513834,
+   "ens_minus_fixed_ci": {
+    "lo": -10.14453480597111,
+    "hi": -7.261962454752429,
+    "hw": 1.4412861756093407
+   },
+   "ens_minus_random": 3.619235836627141,
+   "ens_minus_random_ci": {
+    "lo": 2.71857343149414,
+    "hi": 4.545466650526569,
+    "hw": 0.9134466095162144
+   }
+  },
+  "Claude Sonnet": {
+   "n_q": 3795,
+   "n_obj": 299,
+   "random": 27.27272727272744,
+   "fixed_mod": 37.73386034255599,
+   "fixed_formats_full": {
+    "tabular": "table_image",
+    "timeseries": "line_plot",
+    "graph": "text_only"
+   },
+   "ensemble": 34.308300395256914,
+   "oracle": 53.01712779973649,
+   "ens_minus_fixed": -3.4255599472990776,
+   "ens_minus_fixed_ci": {
+    "lo": -4.649996123101705,
+    "hi": -2.207321465511661,
+    "hw": 1.2213373287950218
+   },
+   "ens_minus_random": 7.0355731225296445,
+   "ens_minus_random_ci": {
+    "lo": 6.044165584769142,
+    "hi": 8.044013090520156,
+    "hw": 0.9999237528755072
+   }
+  },
+  "Qwen2.5-VL-32B": {
+   "n_q": 3795,
+   "n_obj": 299,
+   "random": 33.581027667984465,
+   "fixed_mod": 47.404479578392625,
+   "fixed_formats_full": {
+    "tabular": "table_image",
+    "timeseries": "text_only",
+    "graph": "text_only"
+   },
+   "ensemble": 35.36231884057971,
+   "oracle": 59.86824769433465,
+   "ens_minus_fixed": -12.042160737812912,
+   "ens_minus_fixed_ci": {
+    "lo": -13.552089335124252,
+    "hi": -10.520971431418431,
+    "hw": 1.5155589518529107
+   },
+   "ens_minus_random": 1.7812911725955198,
+   "ens_minus_random_ci": {
+    "lo": 0.909863989230188,
+    "hi": 2.673773455092104,
+    "hw": 0.881954732930958
+   }
+  },
+  "InternVL2.5-8B": {
+   "n_q": 3795,
+   "n_obj": 299,
+   "random": 20.469038208168683,
+   "fixed_mod": 26.877470355731226,
+   "fixed_formats_full": {
+    "tabular": "table_image",
+    "timeseries": "line_plot",
+    "graph": "text_only"
+   },
+   "ensemble": 20.632411067193676,
+   "oracle": 39.762845849802375,
+   "ens_minus_fixed": -6.24505928853755,
+   "ens_minus_fixed_ci": {
+    "lo": -7.574577220891078,
+    "hi": -4.942943758533112,
+    "hw": 1.315816731178983
+   },
+   "ens_minus_random": 0.1633728590250327,
+   "ens_minus_random_ci": {
+    "lo": -0.5568846358320041,
+    "hi": 0.887134094327119,
+    "hw": 0.7220093650795616
+   }
+  },
+  "Gemini-2.5": {
+   "n_q": 3795,
+   "n_obj": 299,
+   "random": 35.69038208168671,
+   "fixed_mod": 52.41106719367589,
+   "fixed_formats_full": {
+    "tabular": "text_only",
+    "timeseries": "text_only",
+    "graph": "text_only"
+   },
+   "ensemble": 38.57707509881423,
+   "oracle": 65.95520421607378,
+   "ens_minus_fixed": -13.83399209486166,
+   "ens_minus_fixed_ci": {
+    "lo": -15.610427360212695,
+    "hi": -12.079260830494398,
+    "hw": 1.7655832648591483
+   },
+   "ens_minus_random": 2.8866930171277994,
+   "ens_minus_random_ci": {
+    "lo": 1.8536527248966448,
+    "hi": 3.913072164468775,
+    "hw": 1.0297097197860652
+   }
+  }
+ },
+ "D_scale": {
+  "overall": {
+   "est": 0.9063609063609064,
+   "n_obj": 299,
+   "n_units": 18315,
+   "obj_ci": {
+    "lo": 0.05989791216207882,
+    "hi": 1.7389233298493159,
+    "hw": 0.8395127088436185
+   },
+   "obj_perm_p": 0.040195980401959805,
+   "obj_perm_hits": 401,
+   "em_7b": 32.37783237783238,
+   "em_32b": 33.284193284193286
+  },
+  "tabular_gap_change": {
+   "est": -2.3796033994334276,
+   "n_obj": 156,
+   "n_units": 1765,
+   "obj_ci": {
+    "lo": -4.703591222919396,
+    "hi": 0.11434742723709358,
+    "hw": 2.4089693250782447
+   },
+   "obj_perm_p": 0.0720927907209279,
+   "obj_perm_hits": 720,
+   "gap_7b": 37.053824362606235,
+   "gap_32b": 34.67422096317281,
+   "fmt_7b": [
+    "table_image",
+    "scatter_plot"
+   ],
+   "fmt_32b": [
+    "table_image",
+    "scatter_plot"
+   ]
+  }
+ },
+ "E_prompt": {
+  "GPT-4o": {
+   "em": {
+    "minimal": 19.2706174886034,
+    "concise": 23.580605055946954,
+    "detailed": 35.3916286779942,
+    "cot": 21.96435971819312
+   },
+   "best_non_cot": "detailed",
+   "cot_minus_best": -13.427268959801077,
+   "ci": {
+    "lo": -16.058509109718948,
+    "hi": -10.9843375516603,
+    "hw": 2.537085779029324
+   },
+   "n_obj": 237,
+   "n_rows": 2413,
+   "n_q": 500,
+   "tabular_gap": {
+    "minimal": 20.171673819742487,
+    "concise": 25.32188841201717,
+    "detailed": 36.48068669527897,
+    "cot": 21.888412017167383
+   }
+  },
+  "Gemini Flash": {
+   "em": {
+    "minimal": 22.13012847078326,
+    "concise": 36.38624119353502,
+    "detailed": 36.17903025279735,
+    "cot": 25.8184832159138
+   },
+   "best_non_cot": "concise",
+   "cot_minus_best": -10.567757977621218,
+   "ci": {
+    "lo": -13.224639392678379,
+    "hi": -8.006991601076365,
+    "hw": 2.608823895801007
+   },
+   "n_obj": 237,
+   "n_rows": 2413,
+   "n_q": 500,
+   "tabular_gap": {
+    "minimal": 19.74248927038627,
+    "concise": 33.47639484978541,
+    "detailed": 36.9098712446352,
+    "cot": 15.450643776824037
+   }
+  },
+  "Qwen2.5-VL-7B": {
+   "em": {
+    "minimal": 19.229175300455864,
+    "concise": 34.065478657273104,
+    "detailed": 32.44923331951927,
+    "cot": 19.47782842934107
+   },
+   "best_non_cot": "concise",
+   "cot_minus_best": -14.587650227932034,
+   "ci": {
+    "lo": -17.400169406385672,
+    "hi": -11.786341955932949,
+    "hw": 2.8069137252263614
+   },
+   "n_obj": 237,
+   "n_rows": 2413,
+   "n_q": 500,
+   "tabular_gap": {
+    "minimal": 17.59656652360515,
+    "concise": 32.618025751072956,
+    "detailed": 33.47639484978541,
+    "cot": 17.167381974248926
+   }
+  },
+  "Claude Sonnet": {
+   "em": {
+    "minimal": 19.353501864898465,
+    "concise": 22.917530045586407,
+    "detailed": 23.62204724409449,
+    "cot": 19.229175300455864
+   },
+   "best_non_cot": "detailed",
+   "cot_minus_best": -4.3928719436386245,
+   "ci": {
+    "lo": -5.960037673506083,
+    "hi": -2.894783405227583,
+    "hw": 1.53262713413925
+   },
+   "n_obj": 237,
+   "n_rows": 2413,
+   "n_q": 500,
+   "tabular_gap": {
+    "minimal": 18.4549356223176,
+    "concise": 21.030042918454935,
+    "detailed": 22.746781115879827,
+    "cot": 20.600858369098717
+   }
+  }
+ },
+ "F_holm": {
+  "rows": [
+   {
+    "model": "Claude Sonnet",
+    "modality": "graph",
+    "p_raw": 9.999000099990002e-05,
+    "p_holm": 0.0011998800119988001
+   },
+   {
+    "model": "Claude Sonnet",
+    "modality": "tabular",
+    "p_raw": 9.999000099990002e-05,
+    "p_holm": 0.0011998800119988001
+   },
+   {
+    "model": "Claude Sonnet",
+    "modality": "timeseries",
+    "p_raw": 9.999000099990002e-05,
+    "p_holm": 0.0011998800119988001
+   },
+   {
+    "model": "GPT-4o",
+    "modality": "graph",
+    "p_raw": 9.999000099990002e-05,
+    "p_holm": 0.0011998800119988001
+   },
+   {
+    "model": "GPT-4o",
+    "modality": "tabular",
+    "p_raw": 9.999000099990002e-05,
+    "p_holm": 0.0011998800119988001
+   },
+   {
+    "model": "GPT-4o",
+    "modality": "timeseries",
+    "p_raw": 9.999000099990002e-05,
+    "p_holm": 0.0011998800119988001
+   },
+   {
+    "model": "Gemini Flash",
+    "modality": "graph",
+    "p_raw": 9.999000099990002e-05,
+    "p_holm": 0.0011998800119988001
+   },
+   {
+    "model": "Gemini Flash",
+    "modality": "tabular",
+    "p_raw": 9.999000099990002e-05,
+    "p_holm": 0.0011998800119988001
+   },
+   {
+    "model": "Gemini Flash",
+    "modality": "timeseries",
+    "p_raw": 9.999000099990002e-05,
+    "p_holm": 0.0011998800119988001
+   },
+   {
+    "model": "Qwen2.5-VL-7B",
+    "modality": "graph",
+    "p_raw": 9.999000099990002e-05,
+    "p_holm": 0.0011998800119988001
+   },
+   {
+    "model": "Qwen2.5-VL-7B",
+    "modality": "tabular",
+    "p_raw": 9.999000099990002e-05,
+    "p_holm": 0.0011998800119988001
+   },
+   {
+    "model": "Qwen2.5-VL-7B",
+    "modality": "timeseries",
+    "p_raw": 9.999000099990002e-05,
+    "p_holm": 0.0011998800119988001
+   }
+  ],
+  "n_sig_05": 12,
+  "n_sig_01": 12,
+  "m": 12
+ }
+}

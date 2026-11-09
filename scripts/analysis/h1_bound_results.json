@@ -1,0 +1,912 @@
+{
+ "definition": "H1, the information upper bound: on absent (A) pairs no model should beat the question-only\nprior. Every cell where accuracy is significantly ABOVE the prior is an audit error or a leak.\n\nStdlib only; no inference.\n\n    python scripts/analysis/h1_bound.py\n\nPairs: v1 = the seven default-suite models (results/full_*.jsonl) with the v1 answerability\nclasses (scripts/analysis/answerability.py, default rules: the paper's \"absent\" pairs);\nv2 = the seven expressive-suite entries of v2_multimodel.MODELS with the strict v2 classes\n(v2_analysis.classify_v2 + strictify_v2), subset models on their 1,096 subset questions.\nScore: canonical_em (scoring.py). Prior: the question-only cross-validated prior per question\n(review_common.cv_prior_per_question: template majority answer learned on half of the objects,\n20 seeds), so EM and prior are compared on identical (question, format) pairs.\n\nPer model x modality x suite: d = mean(EM - prior) over A pairs; object-cluster bootstrap\n(cluster = data_id, B=10000, random.Random(0)) two-sided 95% CI and one-sided p =\n(#{d* <= 0} + 1) / (B + 1); \"significantly above\" = one-sided p < 0.05, also reported after\nHolm correction over all cells. For every cell above the prior (raw p < 0.05): EM - prior by\n(task, format) on its A pairs and up to five correct examples.\n\nWrites scripts/analysis/h1_bound_results.json and paper_tables/tab_h1_bound.tex.\n",
+ "cells": [
+  {
+   "suite": "v1",
+   "model": "GPT-4o",
+   "modality": "tabular",
+   "n": 5017,
+   "n_obj": 156,
+   "em": 19.73290811241778,
+   "prior": 20.25313932629061,
+   "diff": -0.5202312138728323,
+   "lo": -2.0223112780970487,
+   "hi": 0.9455742592956707,
+   "p_one_sided": 0.7513248675132487,
+   "p_holm": 1.0
+  },
+  {
+   "suite": "v1",
+   "model": "GPT-4o",
+   "modality": "timeseries",
+   "n": 3519,
+   "n_obj": 107,
+   "em": 18.584825234441603,
+   "prior": 25.902244955953396,
+   "diff": -7.3174197215117935,
+   "lo": -9.136899776529434,
+   "hi": -5.38409965077589,
+   "p_one_sided": 1.0,
+   "p_holm": 1.0
+  },
+  {
+   "suite": "v1",
+   "model": "GPT-4o",
+   "modality": "graph",
+   "n": 1241,
+   "n_obj": 34,
+   "em": 26.67203867848509,
+   "prior": 23.207091055600323,
+   "diff": 3.4649476228847704,
+   "lo": 0.007746490423606641,
+   "hi": 6.724632704187723,
+   "p_one_sided": 0.024997500249975,
+   "by_task_format": [
+    {
+     "task": "degree_query",
+     "format": "text_only",
+     "n": 91,
+     "em": 26.373626373626372,
+     "em_minus_prior": 18.57142857142857
+    },
+    {
+     "task": "counterfactual",
+     "format": "node_link",
+     "n": 38,
+     "em": 97.36842105263158,
+     "em_minus_prior": 42.10526315789474
+    },
+    {
+     "task": "counterfactual",
+     "format": "circular_layout",
+     "n": 38,
+     "em": 97.36842105263158,
+     "em_minus_prior": 42.10526315789474
+    },
+    {
+     "task": "counterfactual",
+     "format": "text_only",
+     "n": 36,
+     "em": 94.44444444444444,
+     "em_minus_prior": 41.666666666666664
+    },
+    {
+     "task": "counterfactual",
+     "format": "adjacency_matrix",
+     "n": 38,
+     "em": 89.47368421052632,
+     "em_minus_prior": 34.21052631578947
+    },
+    {
+     "task": "community",
+     "format": "text_only",
+     "n": 84,
+     "em": 47.61904761904762,
+     "em_minus_prior": 10.17857142857143
+    },
+    {
+     "task": "centrality",
+     "format": "text_only",
+     "n": 33,
+     "em": 30.303030303030305,
+     "em_minus_prior": 9.090909090909092
+    },
+    {
+     "task": "shortest_path",
+     "format": "text_only",
+     "n": 33,
+     "em": 39.39393939393939,
+     "em_minus_prior": 8.333333333333334
+    },
+    {
+     "task": "bipartite_check",
+     "format": "text_only",
+     "n": 18,
+     "em": 66.66666666666667,
+     "em_minus_prior": 11.388888888888888
+    },
+    {
+     "task": "edge_count",
+     "format": "text_only",
+     "n": 18,
+     "em": 11.11111111111111,
+     "em_minus_prior": 8.88888888888889
+    },
+    {
+     "task": "cycle_detection",
+     "format": "text_only",
+     "n": 18,
+     "em": 88.88888888888889,
+     "em_minus_prior": 5.555555555555555
+    },
+    {
+     "task": "degree_query",
+     "format": "adjacency_matrix",
+     "n": 191,
+     "em": 12.565445026178011,
+     "em_minus_prior": 0.2617801047120418
+    },
+    {
+     "task": "diameter",
+     "format": "text_only",
+     "n": 18,
+     "em": 5.555555555555555,
+     "em_minus_prior": -4.444444444444445
+    },
+    {
+     "task": "degree_query",
+     "format": "node_link",
+     "n": 185,
+     "em": 11.35135135135135,
+     "em_minus_prior": -0.864864864864865
+    },
+    {
+     "task": "shortest_path",
+     "format": "circular_layout",
+     "n": 30,
+     "em": 20.0,
+     "em_minus_prior": -10.166666666666666
+    },
+    {
+     "task": "clustering",
+     "format": "text_only",
+     "n": 33,
+     "em": 9.090909090909092,
+     "em_minus_prior": -12.121212121212121
+    },
+    {
+     "task": "shortest_path",
+     "format": "node_link",
+     "n": 30,
+     "em": 10.0,
+     "em_minus_prior": -20.166666666666668
+    },
+    {
+     "task": "centrality",
+     "format": "node_link",
+     "n": 30,
+     "em": 0.0,
+     "em_minus_prior": -20.666666666666668
+    },
+    {
+     "task": "centrality",
+     "format": "circular_layout",
+     "n": 30,
+     "em": 0.0,
+     "em_minus_prior": -20.666666666666668
+    },
+    {
+     "task": "centrality",
+     "format": "adjacency_matrix",
+     "n": 32,
+     "em": 0.0,
+     "em_minus_prior": -22.1875
+    },
+    {
+     "task": "degree_query",
+     "format": "circular_layout",
+     "n": 185,
+     "em": 7.5675675675675675,
+     "em_minus_prior": -4.648648648648648
+    },
+    {
+     "task": "shortest_path",
+     "format": "adjacency_matrix",
+     "n": 32,
+     "em": 0.0,
+     "em_minus_prior": -30.46875
+    }
+   ],
+   "examples": [
+    {
+     "question_id": "graph_001624::difficulty=2-hop",
+     "format": "text_only",
+     "question": "Which node has the highest degree?",
+     "key": "6",
+     "prediction": "6",
+     "prior_hit": 0.05
+    },
+    {
+     "question_id": "graph_000128::difficulty=1-hop",
+     "format": "text_only",
+     "question": "What is the degree of node 55?",
+     "key": "4",
+     "prediction": "4",
+     "prior_hit": 0.9
+    },
+    {
+     "question_id": "graph_001514::difficulty=2-hop",
+     "format": "text_only",
+     "question": "Which node has the highest degree?",
+     "key": "10",
+     "prediction": "10",
+     "prior_hit": 0.0
+    },
+    {
+     "question_id": "graph_000083::difficulty=2-hop",
+     "format": "text_only",
+     "question": "Which node has the highest degree?",
+     "key": "4",
+     "prediction": "4",
+     "prior_hit": 0.85
+    },
+    {
+     "question_id": "graph_000108::difficulty=2-hop",
+     "format": "text_only",
+     "question": "Which node has the highest degree?",
+     "key": "0",
+     "prediction": "0",
+     "prior_hit": 0.0
+    },
+    {
+     "question_id": "graph_000133::difficulty=2-hop",
+     "format": "text_only",
+     "question": "Which node has the highest degree?",
+     "key": "0",
+     "prediction": "0",
+     "prior_hit": 0.0
+    }
+   ],
+   "p_holm": 0.6999300069993001
+  },
+  {
+   "suite": "v1",
+   "model": "Gemini-2.0-Flash",
+   "modality": "tabular",
+   "n": 5017,
+   "n_obj": 156,
+   "em": 20.370739485748455,
+   "prior": 20.25313932629061,
+   "diff": 0.11760015945784344,
+   "lo": -1.5553968097540063,
+   "hi": 1.6880959249899257,
+   "p_one_sided": 0.4520547945205479,
+   "p_holm": 1.0
+  },
+  {
+   "suite": "v1",
+   "model": "Gemini-2.0-Flash",
+   "modality": "timeseries",
+   "n": 3519,
+   "n_obj": 107,
+   "em": 23.529411764705884,
+   "prior": 25.902244955953396,
+   "diff": -2.3728331912475134,
+   "lo": -3.597838262912462,
+   "hi": -1.0786733978542524,
+   "p_one_sided": 0.9997000299970003,
+   "p_holm": 1.0
+  },
+  {
+   "suite": "v1",
+   "model": "Gemini-2.0-Flash",
+   "modality": "graph",
+   "n": 1241,
+   "n_obj": 34,
+   "em": 23.771152296535053,
+   "prior": 23.207091055600323,
+   "diff": 0.5640612409347303,
+   "lo": -2.8170160982817376,
+   "hi": 3.508231252258234,
+   "p_one_sided": 0.36436356364363565,
+   "p_holm": 1.0
+  },
+  {
+   "suite": "v1",
+   "model": "Qwen2.5-VL-7B",
+   "modality": "tabular",
+   "n": 5017,
+   "n_obj": 156,
+   "em": 18.457245365756428,
+   "prior": 20.25313932629061,
+   "diff": -1.7958939605341835,
+   "lo": -3.4060388657884566,
+   "hi": -0.23001772665322567,
+   "p_one_sided": 0.9879012098790121,
+   "p_holm": 1.0
+  },
+  {
+   "suite": "v1",
+   "model": "Qwen2.5-VL-7B",
+   "modality": "timeseries",
+   "n": 3519,
+   "n_obj": 107,
+   "em": 22.904234157431087,
+   "prior": 25.902244955953396,
+   "diff": -2.9980107985223077,
+   "lo": -4.4722878094121175,
+   "hi": -1.5169743358624384,
+   "p_one_sided": 0.9999000099990001,
+   "p_holm": 1.0
+  },
+  {
+   "suite": "v1",
+   "model": "Qwen2.5-VL-7B",
+   "modality": "graph",
+   "n": 1241,
+   "n_obj": 34,
+   "em": 17.00241740531829,
+   "prior": 23.207091055600323,
+   "diff": -6.2046736502820306,
+   "lo": -9.512419191937944,
+   "hi": -3.275354669819288,
+   "p_one_sided": 1.0,
+   "p_holm": 1.0
+  },
+  {
+   "suite": "v1",
+   "model": "Claude Sonnet 4",
+   "modality": "tabular",
+   "n": 5017,
+   "n_obj": 156,
+   "em": 12.098863862866255,
+   "prior": 20.25313932629061,
+   "diff": -8.154275463424357,
+   "lo": -9.618593689385182,
+   "hi": -6.5543300154903585,
+   "p_one_sided": 1.0,
+   "p_holm": 1.0
+  },
+  {
+   "suite": "v1",
+   "model": "Claude Sonnet 4",
+   "modality": "timeseries",
+   "n": 3519,
+   "n_obj": 107,
+   "em": 12.105711849957375,
+   "prior": 25.902244955953396,
+   "diff": -13.796533105996021,
+   "lo": -16.203557502342818,
+   "hi": -11.225019283372209,
+   "p_one_sided": 1.0,
+   "p_holm": 1.0
+  },
+  {
+   "suite": "v1",
+   "model": "Claude Sonnet 4",
+   "modality": "graph",
+   "n": 1241,
+   "n_obj": 34,
+   "em": 24.49637389202256,
+   "prior": 23.207091055600323,
+   "diff": 1.2892828364222402,
+   "lo": -2.06782586483725,
+   "hi": 4.20868338468856,
+   "p_one_sided": 0.21607839216078392,
+   "p_holm": 1.0
+  },
+  {
+   "suite": "v1",
+   "model": "Gemini-2.5-Flash",
+   "modality": "tabular",
+   "n": 5017,
+   "n_obj": 156,
+   "em": 18.35758421367351,
+   "prior": 20.25313932629061,
+   "diff": -1.8955551126171017,
+   "lo": -3.5799490180098497,
+   "hi": -0.24415562864228443,
+   "p_one_sided": 0.9891010898910109,
+   "p_holm": 1.0
+  },
+  {
+   "suite": "v1",
+   "model": "Gemini-2.5-Flash",
+   "modality": "timeseries",
+   "n": 3519,
+   "n_obj": 107,
+   "em": 20.829781187837455,
+   "prior": 25.902244955953396,
+   "diff": -5.072463768115942,
+   "lo": -6.64033531847655,
+   "hi": -3.4104417159282217,
+   "p_one_sided": 1.0,
+   "p_holm": 1.0
+  },
+  {
+   "suite": "v1",
+   "model": "Gemini-2.5-Flash",
+   "modality": "graph",
+   "n": 1241,
+   "n_obj": 34,
+   "em": 24.979854955680903,
+   "prior": 23.207091055600323,
+   "diff": 1.7727639000805806,
+   "lo": -1.3213830379037872,
+   "hi": 4.577135140867732,
+   "p_one_sided": 0.11988801119888011,
+   "p_holm": 1.0
+  },
+  {
+   "suite": "v1",
+   "model": "Qwen2.5-VL-32B",
+   "modality": "tabular",
+   "n": 5017,
+   "n_obj": 156,
+   "em": 16.005581024516644,
+   "prior": 20.25313932629061,
+   "diff": -4.247558301773968,
+   "lo": -5.620878859096947,
+   "hi": -2.9366683433048064,
+   "p_one_sided": 1.0,
+   "p_holm": 1.0
+  },
+  {
+   "suite": "v1",
+   "model": "Qwen2.5-VL-32B",
+   "modality": "timeseries",
+   "n": 3519,
+   "n_obj": 107,
+   "em": 22.25063938618926,
+   "prior": 25.902244955953396,
+   "diff": -3.6516055697641376,
+   "lo": -5.373113279337226,
+   "hi": -1.9880851868509277,
+   "p_one_sided": 1.0,
+   "p_holm": 1.0
+  },
+  {
+   "suite": "v1",
+   "model": "Qwen2.5-VL-32B",
+   "modality": "graph",
+   "n": 1241,
+   "n_obj": 34,
+   "em": 25.785656728444803,
+   "prior": 23.207091055600323,
+   "diff": 2.5785656728444803,
+   "lo": -0.5952388186679628,
+   "hi": 5.81543743608023,
+   "p_one_sided": 0.054894510548945105,
+   "p_holm": 1.0
+  },
+  {
+   "suite": "v1",
+   "model": "InternVL2.5-8B",
+   "modality": "tabular",
+   "n": 5017,
+   "n_obj": 156,
+   "em": 12.138728323699421,
+   "prior": 20.25313932629061,
+   "diff": -8.11441100259119,
+   "lo": -10.015174589084092,
+   "hi": -6.178577527396739,
+   "p_one_sided": 1.0,
+   "p_holm": 1.0
+  },
+  {
+   "suite": "v1",
+   "model": "InternVL2.5-8B",
+   "modality": "timeseries",
+   "n": 3519,
+   "n_obj": 107,
+   "em": 14.720090934924695,
+   "prior": 25.902244955953396,
+   "diff": -11.182154021028701,
+   "lo": -13.295234220985007,
+   "hi": -8.943568069685972,
+   "p_one_sided": 1.0,
+   "p_holm": 1.0
+  },
+  {
+   "suite": "v1",
+   "model": "InternVL2.5-8B",
+   "modality": "graph",
+   "n": 1241,
+   "n_obj": 34,
+   "em": 12.167606768734892,
+   "prior": 23.207091055600323,
+   "diff": -11.03948428686543,
+   "lo": -14.950956415619638,
+   "hi": -7.483521131460349,
+   "p_one_sided": 1.0,
+   "p_holm": 1.0
+  },
+  {
+   "suite": "v2",
+   "model": "Qwen2.5-VL-7B",
+   "modality": "tabular",
+   "n": 1594,
+   "n_obj": 156,
+   "em": 16.813048933500628,
+   "prior": 17.644291091593477,
+   "diff": -0.8312421580928482,
+   "lo": -2.63231699751861,
+   "hi": 0.9383061657061819,
+   "p_one_sided": 0.8228177182281772,
+   "p_holm": 1.0
+  },
+  {
+   "suite": "v2",
+   "model": "Qwen2.5-VL-7B",
+   "modality": "timeseries",
+   "n": 2855,
+   "n_obj": 107,
+   "em": 17.302977232924693,
+   "prior": 17.591943957968475,
+   "diff": -0.2889667250437829,
+   "lo": -1.6199125075004663,
+   "hi": 1.1365419780411563,
+   "p_one_sided": 0.6642335766423357,
+   "p_holm": 1.0
+  },
+  {
+   "suite": "v2",
+   "model": "Qwen2.5-VL-7B",
+   "modality": "graph",
+   "n": 0
+  },
+  {
+   "suite": "v2",
+   "model": "Qwen2.5-VL-32B",
+   "modality": "tabular",
+   "n": 1594,
+   "n_obj": 156,
+   "em": 17.44040150564617,
+   "prior": 17.644291091593477,
+   "diff": -0.20388958594730242,
+   "lo": -1.898164775487543,
+   "hi": 1.5085612760015743,
+   "p_one_sided": 0.5964403559644036,
+   "p_holm": 1.0
+  },
+  {
+   "suite": "v2",
+   "model": "Qwen2.5-VL-32B",
+   "modality": "timeseries",
+   "n": 2855,
+   "n_obj": 107,
+   "em": 16.07705779334501,
+   "prior": 17.591943957968475,
+   "diff": -1.5148861646234673,
+   "lo": -3.263314934271456,
+   "hi": 0.2687812935173118,
+   "p_one_sided": 0.9531046895310469,
+   "p_holm": 1.0
+  },
+  {
+   "suite": "v2",
+   "model": "Qwen2.5-VL-32B",
+   "modality": "graph",
+   "n": 0
+  },
+  {
+   "suite": "v2",
+   "model": "Qwen3-VL-8B",
+   "modality": "tabular",
+   "n": 1594,
+   "n_obj": 156,
+   "em": 17.754077791718945,
+   "prior": 17.644291091593477,
+   "diff": 0.10978670012547048,
+   "lo": -1.6882629657448305,
+   "hi": 1.9950255567725437,
+   "p_one_sided": 0.45425457454254575,
+   "p_holm": 1.0
+  },
+  {
+   "suite": "v2",
+   "model": "Qwen3-VL-8B",
+   "modality": "timeseries",
+   "n": 2855,
+   "n_obj": 107,
+   "em": 10.507880910683012,
+   "prior": 17.591943957968475,
+   "diff": -7.084063047285464,
+   "lo": -9.21960389397127,
+   "hi": -4.760201911369902,
+   "p_one_sided": 1.0,
+   "p_holm": 1.0
+  },
+  {
+   "suite": "v2",
+   "model": "Qwen3-VL-8B",
+   "modality": "graph",
+   "n": 0
+  },
+  {
+   "suite": "v2",
+   "model": "InternVL2-4B",
+   "modality": "tabular",
+   "n": 169,
+   "n_obj": 104,
+   "em": 5.325443786982248,
+   "prior": 0.9467455621301775,
+   "diff": 4.378698224852071,
+   "lo": 1.2352852586817857,
+   "hi": 8.160992596921878,
+   "p_one_sided": 0.0012998700129987,
+   "by_task_format": [
+    {
+     "task": "value_extraction",
+     "format": "scatter_plot",
+     "n": 168,
+     "em": 4.761904761904762,
+     "em_minus_prior": 4.375
+    },
+    {
+     "task": "correlation",
+     "format": "scatter_plot",
+     "n": 1,
+     "em": 100.0,
+     "em_minus_prior": 5.000000000000004
+    }
+   ],
+   "examples": [
+    {
+     "question_id": "tabular_000979::difficulty=1-hop",
+     "format": "scatter_plot",
+     "question": "What is the value of 'caption' in row 0?",
+     "key": "3.5",
+     "prediction": "3.5",
+     "prior_hit": 0.0
+    },
+    {
+     "question_id": "tabular_000706::difficulty=1-hop",
+     "format": "scatter_plot",
+     "question": "What is the value of 'En\u2192It avg' in row 0?",
+     "key": "48.13",
+     "prediction": "48.13",
+     "prior_hit": 0.0
+    },
+    {
+     "question_id": "tabular_001184::difficulty=1-hop",
+     "format": "scatter_plot",
+     "question": "What is the value of 'Hyper parameters Num. Feature maps' in row 0?",
+     "key": "1000.0",
+     "prediction": "1000",
+     "prior_hit": 0.0
+    },
+    {
+     "question_id": "tabular_000858::difficulty=1-hop",
+     "format": "scatter_plot",
+     "question": "What is the value of 'MUC P' in row 0?",
+     "key": "83.0",
+     "prediction": "83.0",
+     "prior_hit": 0.0
+    },
+    {
+     "question_id": "tabular_000511::difficulty=1-hop",
+     "format": "scatter_plot",
+     "question": "What is the value of 'Add' in row 0?",
+     "key": "0.0",
+     "prediction": "0.00",
+     "prior_hit": 0.0
+    },
+    {
+     "question_id": "tabular_001165::difficulty=1-hop",
+     "format": "scatter_plot",
+     "question": "What is the value of 'Accuracy' in row 0?",
+     "key": "100.0",
+     "prediction": "100.0",
+     "prior_hit": 0.0
+    }
+   ],
+   "p_holm": 0.0402959704029597
+  },
+  {
+   "suite": "v2",
+   "model": "InternVL2-4B",
+   "modality": "timeseries",
+   "n": 0
+  },
+  {
+   "suite": "v2",
+   "model": "InternVL2-4B",
+   "modality": "graph",
+   "n": 0
+  },
+  {
+   "suite": "v2",
+   "model": "InternVL2-8B",
+   "modality": "tabular",
+   "n": 169,
+   "n_obj": 104,
+   "em": 4.1420118343195265,
+   "prior": 0.9467455621301775,
+   "diff": 3.195266272189349,
+   "lo": 0.28895751260999236,
+   "hi": 6.382432671863924,
+   "p_one_sided": 0.0170982901709829,
+   "by_task_format": [
+    {
+     "task": "value_extraction",
+     "format": "scatter_plot",
+     "n": 168,
+     "em": 4.166666666666667,
+     "em_minus_prior": 3.7797619047619047
+    },
+    {
+     "task": "correlation",
+     "format": "scatter_plot",
+     "n": 1,
+     "em": 0.0,
+     "em_minus_prior": -95.0
+    }
+   ],
+   "examples": [
+    {
+     "question_id": "tabular_001078::difficulty=1-hop",
+     "format": "scatter_plot",
+     "question": "What is the value of 'Good' in row 0?",
+     "key": "26.0",
+     "prediction": "26",
+     "prior_hit": 0.0
+    },
+    {
+     "question_id": "tabular_001025::difficulty=1-hop",
+     "format": "scatter_plot",
+     "question": "What is the value of 'Efficiency W' in row 0?",
+     "key": "55.0",
+     "prediction": "55.0",
+     "prior_hit": 0.0
+    },
+    {
+     "question_id": "tabular_001663::difficulty=1-hop",
+     "format": "scatter_plot",
+     "question": "What is the value of '[EMPTY]' in row 0?",
+     "key": "1.0",
+     "prediction": "1",
+     "prior_hit": 0.15
+    },
+    {
+     "question_id": "tabular_001203::difficulty=1-hop",
+     "format": "scatter_plot",
+     "question": "What is the value of 'App' in row 0?",
+     "key": "2.5",
+     "prediction": "2.50",
+     "prior_hit": 0.0
+    },
+    {
+     "question_id": "tabular_000858::difficulty=1-hop",
+     "format": "scatter_plot",
+     "question": "What is the value of 'MUC P' in row 0?",
+     "key": "83.0",
+     "prediction": "83.0",
+     "prior_hit": 0.0
+    },
+    {
+     "question_id": "tabular_000511::difficulty=1-hop",
+     "format": "scatter_plot",
+     "question": "What is the value of 'Add' in row 0?",
+     "key": "0.0",
+     "prediction": "0.00",
+     "prior_hit": 0.0
+    }
+   ],
+   "p_holm": 0.4958504149585041
+  },
+  {
+   "suite": "v2",
+   "model": "InternVL2-8B",
+   "modality": "timeseries",
+   "n": 0
+  },
+  {
+   "suite": "v2",
+   "model": "InternVL2-8B",
+   "modality": "graph",
+   "n": 0
+  },
+  {
+   "suite": "v2",
+   "model": "InternVL2.5-8B (6 tiles)",
+   "modality": "tabular",
+   "n": 169,
+   "n_obj": 104,
+   "em": 5.9171597633136095,
+   "prior": 0.9467455621301775,
+   "diff": 4.970414201183432,
+   "lo": 1.347305389221557,
+   "hi": 9.058823529411764,
+   "p_one_sided": 0.0030996900309969004,
+   "by_task_format": [
+    {
+     "task": "value_extraction",
+     "format": "scatter_plot",
+     "n": 168,
+     "em": 5.9523809523809526,
+     "em_minus_prior": 5.565476190476191
+    },
+    {
+     "task": "correlation",
+     "format": "scatter_plot",
+     "n": 1,
+     "em": 0.0,
+     "em_minus_prior": -95.0
+    }
+   ],
+   "examples": [
+    {
+     "question_id": "tabular_001078::difficulty=1-hop",
+     "format": "scatter_plot",
+     "question": "What is the value of 'Good' in row 0?",
+     "key": "26.0",
+     "prediction": "26",
+     "prior_hit": 0.0
+    },
+    {
+     "question_id": "tabular_001155::difficulty=1-hop",
+     "format": "scatter_plot",
+     "question": "What is the value of 'Ours Better(%)' in row 0?",
+     "key": "62.0",
+     "prediction": "62",
+     "prior_hit": 0.0
+    },
+    {
+     "question_id": "tabular_000706::difficulty=1-hop",
+     "format": "scatter_plot",
+     "question": "What is the value of 'En\u2192It avg' in row 0?",
+     "key": "48.13",
+     "prediction": "48.13",
+     "prior_hit": 0.0
+    },
+    {
+     "question_id": "tabular_001025::difficulty=1-hop",
+     "format": "scatter_plot",
+     "question": "What is the value of 'Efficiency W' in row 0?",
+     "key": "55.0",
+     "prediction": "55.0",
+     "prior_hit": 0.0
+    },
+    {
+     "question_id": "tabular_000887::difficulty=1-hop",
+     "format": "scatter_plot",
+     "question": "What is the value of 'MSCOCO spice' in row 0?",
+     "key": "18.4",
+     "prediction": "18.4",
+     "prior_hit": 0.0
+    },
+    {
+     "question_id": "tabular_000858::difficulty=1-hop",
+     "format": "scatter_plot",
+     "question": "What is the value of 'MUC P' in row 0?",
+     "key": "83.0",
+     "prediction": "83.0",
+     "prior_hit": 0.0
+    }
+   ],
+   "p_holm": 0.09299070092990701
+  },
+  {
+   "suite": "v2",
+   "model": "InternVL2.5-8B (6 tiles)",
+   "modality": "timeseries",
+   "n": 0
+  },
+  {
+   "suite": "v2",
+   "model": "InternVL2.5-8B (6 tiles)",
+   "modality": "graph",
+   "n": 0
+  },
+  {
+   "suite": "v2",
+   "model": "InternVL2.5-8B (1 tile)",
+   "modality": "tabular",
+   "n": 169,
+   "n_obj": 104,
+   "em": 2.366863905325444,
+   "prior": 0.9467455621301775,
+   "diff": 1.4201183431952662,
+   "lo": -0.2453987730061349,
+   "hi": 3.562890792999636,
+   "p_one_sided": 0.05469453054694531,
+   "p_holm": 1.0
+  },
+  {
+   "suite": "v2",
+   "model": "InternVL2.5-8B (1 tile)",
+   "modality": "timeseries",
+   "n": 0
+  },
+  {
+   "suite": "v2",
+   "model": "InternVL2.5-8B (1 tile)",
+   "modality": "graph",
+   "n": 0
+  }
+ ],
+ "n_cells_tested": 31,
+ "n_above_raw": 4,
+ "n_above_holm": 1
+}

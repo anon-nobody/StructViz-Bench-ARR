@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>StructViz-Bench Human Evaluation Instructions</title>
+<style>
+  body { font-family: Arial, sans-serif; max-width: 800px; margin: 40px auto;
+         line-height: 1.6; color: #333; }
+  h1 { color: #1a5276; border-bottom: 2px solid #1a5276; padding-bottom: 8px; }
+  h2 { color: #2c3e50; margin-top: 32px; }
+  .highlight { background: #fef9e7; padding: 12px; border-left: 4px solid #f39c12;
+                margin: 16px 0; }
+  table { border-collapse: collapse; width: 100%; margin: 16px 0; }
+  th, td { border: 1px solid #bdc3c7; padding: 8px 12px; text-align: left; }
+  th { background: #ecf0f1; }
+  code { background: #f4f4f4; padding: 2px 6px; border-radius: 3px; }
+  ol li { margin-bottom: 8px; }
+</style>
+</head>
+<body>
+
+<h1>StructViz-Bench Human Evaluation</h1>
+
+<h2>1. Overview</h2>
+<p>You will evaluate <strong>100 benchmark items</strong>, each rendered as
+a data visualization image. Your task is to answer a question about the
+visualized data as accurately as possible.</p>
+
+<h2>2. Materials</h2>
+<ul>
+  <li><strong>Images:</strong> Located in the <code>images/</code> subdirectory,
+      organized by data modality (tabular, timeseries, graph).</li>
+  <li><strong>Annotation sheet:</strong> <code>annotation_sheet.csv</code> with one
+      row per (item, visualization type) pair.</li>
+</ul>
+
+<h2>3. Annotation Workflow</h2>
+<ol>
+  <li>Open the annotation CSV in your preferred spreadsheet editor.</li>
+  <li>For each row, locate the image referenced in <code>image_path</code>.</li>
+  <li>Read the <code>question</code> and study the visualization carefully.</li>
+  <li>Write your answer in the <code>human_answer</code> column.</li>
+  <li>Rate your confidence (1-5) in the <code>human_confidence</code> column.</li>
+  <li>Record the time you spent (in seconds) in <code>time_seconds</code>.</li>
+</ol>
+
+<h2>4. Confidence Scale</h2>
+<table>
+  <tr><th>Score</th><th>Meaning</th></tr>
+  <tr><td>1</td><td>Very uncertain -- guessing</td></tr>
+  <tr><td>2</td><td>Somewhat uncertain</td></tr>
+  <tr><td>3</td><td>Moderately confident</td></tr>
+  <tr><td>4</td><td>Fairly confident</td></tr>
+  <tr><td>5</td><td>Very confident -- certain of the answer</td></tr>
+</table>
+
+<h2>5. Answer Format Guidelines</h2>
+<div class="highlight">
+  <p><strong>Important:</strong> Provide concise, exact answers. For numerical
+  questions, give the number only (e.g., <code>42</code> or <code>3.14</code>).
+  For categorical questions, use the exact label shown in the visualization.
+  Do not include units unless the question specifically asks for them.</p>
+</div>
+
+<h2>6. Data Modalities</h2>
+<table>
+  <tr><th>Modality</th><th>Description</th></tr>
+  <tr><td>Tabular</td><td>Tables rendered as heatmaps, bar charts, HTML tables, etc.</td></tr>
+  <tr><td>Time series</td><td>Temporal data shown as line plots, area charts, etc.</td></tr>
+  <tr><td>Graph</td><td>Network/graph structures displayed as node-link diagrams, etc.</td></tr>
+</table>
+
+<h2>7. Tips</h2>
+<ul>
+  <li>Take breaks to avoid fatigue -- annotation quality matters more than speed.</li>
+  <li>If the visualization is genuinely unreadable, write <code>UNREADABLE</code>
+      and set confidence to 1.</li>
+  <li>Do not consult external resources or other annotators during evaluation.</li>
+</ul>
+
+</body>
+</html>

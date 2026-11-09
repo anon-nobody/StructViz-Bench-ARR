@@ -1,0 +1,18 @@
+benchmark_name: StructViz-Bench-v1
+seed: 42
+batch_size: 1
+max_samples: null
+metrics:
+  exact_match: true
+  f1: true
+  numerical_tolerance: 0.001
+  viz_sensitivity: true
+  hallucination_rate: true
+outputs:
+  predictions_jsonl: results/predictions.jsonl
+  summary_json: results/summary.json
+  leaderboard_md: results/leaderboard.md
+models:
+  - configs/models/gpt4o.yaml
+  - configs/models/qwen_vl.yaml
+  - configs/models/llava.yaml

@@ -1,0 +1,2806 @@
+{
+ "definitions": "Expressive (v2) suite, multi-model: the paper's Qwen2.5-VL-7B v2 statistics for any\nprediction file.\n\nStdlib only, no inference.\n\n    python scripts/analysis/v2_multimodel.py\n\nDefinitions are the ones v2_analysis.py uses for the paper (run with --strict-answerable\n--exclude-near-constant), computed with v2_analysis's own functions (classify_v2 +\nstrictify_v2, dedupe, gap_block, contrast; B_boot=5000, B_perm=10000, random.Random(0),\nobject = data_id):\n  per-format EM     per modality, on every analysed question with that format.\n  tab / graph gap   s3b \"v2_all_answerable_exclNC\": questions answerable (V/D, strict\n                    categories) in every main format, near-constant cells excluded; best and\n                    worst format chosen on that sample; object-cluster CI and sign-flip p.\n  series gap        s3b \"v2_nonlossy3_all_exclNC\": line_plot / heatmap / text_only on all\n                    non-near-constant time-series questions (what the paper's 21.4 is); the\n                    answerable-only variant is also reported.\n  best vs prior     s5b: EM of the modality's best format (highest EM on the analysed\n                    questions) minus the cross-validated question-only prior (prior_cv mean,\n                    prior_and_subsets_results.json, a constant); CI = EM object CI shifted.\n  degree effect     s7: text_only_deg minus text_only, paired, on degree_query vs other graph\n                    tasks.\n  recovery          s2: paired v2 - v1 per format on the analysed questions, where a v1 file\n                    exists (v1 error-only keys kept as EM 0, as in the released scoring).\nSubset models (InternVL family, 1,096-question strict subset, manifest_subset32b) are\nanalysed on the questions present in their file only; for them the prior is additionally\ngiven as the per-question CV prior averaged over the subset questions (review_common), since\nthe full-benchmark constant describes a different question mix.\n\nWrites scripts/analysis/v2_multimodel_results.json and paper_tables/tab_v2_multimodel.tex.\n",
+ "prior_cv_const": {
+  "tabular": 23.98300283286119,
+  "timeseries": 40.81751824817518,
+  "graph": 40.86363636363636
+ },
+ "models": {
+  "Qwen2.5-VL-7B": {
+   "file": "results/v2/v2_qwen.jsonl",
+   "subset": false,
+   "dedupe": {
+    "rows_read": 18975,
+    "keys_ok": 18975,
+    "duplicates_replaced": 0,
+    "keys_error_only": 0,
+    "error_rows_total": 0
+   },
+   "n_questions": {
+    "tabular": 1765,
+    "timeseries": 1370,
+    "graph": 660
+   },
+   "n_rows_main": 18315,
+   "per_format": {
+    "tabular|table_image": {
+     "em": 57.903682719546744,
+     "n": 1765
+    },
+    "tabular|text_only": {
+     "em": 54.73087818696884,
+     "n": 1765
+    },
+    "tabular|heatmap": {
+     "em": 49.17847025495751,
+     "n": 1765
+    },
+    "tabular|bar_chart": {
+     "em": 48.89518413597734,
+     "n": 1765
+    },
+    "tabular|scatter_plot": {
+     "em": 33.654390934844194,
+     "n": 1765
+    },
+    "timeseries|line_plot": {
+     "em": 27.226277372262775,
+     "n": 1370
+    },
+    "timeseries|heatmap": {
+     "em": 21.021897810218977,
+     "n": 1370
+    },
+    "timeseries|gaf": {
+     "em": 21.386861313868614,
+     "n": 1370
+    },
+    "timeseries|recurrence_plot": {
+     "em": 19.124087591240876,
+     "n": 1370
+    },
+    "timeseries|text_only": {
+     "em": 43.13868613138686,
+     "n": 1370
+    },
+    "graph|node_link": {
+     "em": 38.93939393939394,
+     "n": 660
+    },
+    "graph|circular_layout": {
+     "em": 34.24242424242424,
+     "n": 660
+    },
+    "graph|adjacency_matrix": {
+     "em": 31.060606060606062,
+     "n": 660
+    },
+    "graph|text_only": {
+     "em": 33.18181818181818,
+     "n": 660
+    }
+   },
+   "gaps": {
+    "tabular": {
+     "all_answerable_exclNC": {
+      "est": 8.976377952755906,
+      "lo": 5.15003065603924,
+      "hi": 12.913991387844943,
+      "p": 9.999000099990002e-05,
+      "n_q": 635,
+      "n_obj": 151,
+      "best": "table_image",
+      "worst": "scatter_plot",
+      "per_format": {
+       "table_image": 61.574803149606296,
+       "text_only": 60.31496062992126,
+       "heatmap": 57.48031496062992,
+       "bar_chart": 57.00787401574803,
+       "scatter_plot": 52.59842519685039
+      }
+     },
+     "n_q_exclNC": 1619
+    },
+    "timeseries": {
+     "all_answerable_exclNC": {
+      "n_q": 0
+     },
+     "n_q_exclNC": 1056,
+     "nonlossy3_all_exclNC": {
+      "est": 21.401515151515152,
+      "lo": 18.43711422980431,
+      "hi": 24.46316911380633,
+      "p": 9.999000099990002e-05,
+      "n_q": 1056,
+      "n_obj": 107,
+      "best": "text_only",
+      "worst": "heatmap",
+      "per_format": {
+       "line_plot": 21.875,
+       "heatmap": 16.28787878787879,
+       "text_only": 37.68939393939394
+      }
+     },
+     "nonlossy3_answerable_exclNC": {
+      "est": 10.416666666666666,
+      "lo": 7.142522112034308,
+      "hi": 13.603104333449354,
+      "p": 9.999000099990002e-05,
+      "n_q": 528,
+      "n_obj": 107,
+      "best": "line_plot",
+      "worst": "heatmap",
+      "per_format": {
+       "line_plot": 39.20454545454545,
+       "heatmap": 28.78787878787879,
+       "text_only": 39.20454545454545
+      }
+     }
+    },
+    "graph": {
+     "all_answerable_exclNC": {
+      "est": 4.924242424242424,
+      "lo": 1.73532196969697,
+      "hi": 8.11965811965812,
+      "p": 0.0051994800519948,
+      "n_q": 528,
+      "n_obj": 36,
+      "best": "node_link",
+      "worst": "adjacency_matrix",
+      "per_format": {
+       "node_link": 25.757575757575758,
+       "circular_layout": 21.59090909090909,
+       "adjacency_matrix": 20.833333333333332,
+       "text_only": 23.863636363636363
+      }
+     },
+     "n_q_exclNC": 564
+    }
+   },
+   "best_vs_prior": {
+    "tabular": {
+     "best": "table_image",
+     "em": 57.903682719546744,
+     "prior_cv_const": 23.98300283286119,
+     "diff": 33.920679886685555,
+     "lo": 31.081444277192418,
+     "hi": 36.8088714745231,
+     "n_q": 1765,
+     "n_obj": 156,
+     "prior_cv_same_q": 23.98300283286119,
+     "diff_same_q": 33.920679886685555,
+     "lo_same_q": 30.848396913598684,
+     "hi_same_q": 37.22582968080318
+    },
+    "timeseries": {
+     "best": "text_only",
+     "em": 43.13868613138686,
+     "prior_cv_const": 40.81751824817518,
+     "diff": 2.321167883211679,
+     "lo": 0.7449817518248167,
+     "hi": 3.9918510057391146,
+     "n_q": 1370,
+     "n_obj": 107,
+     "prior_cv_same_q": 40.81751824817519,
+     "diff_same_q": 2.3211678832116784,
+     "lo_same_q": 0.608989017601926,
+     "hi_same_q": 4.1265850834759
+    },
+    "graph": {
+     "best": "node_link",
+     "em": 38.93939393939394,
+     "prior_cv_const": 40.86363636363636,
+     "diff": -1.924242424242422,
+     "lo": -4.429527836504576,
+     "hi": 0.5000000000000071,
+     "n_q": 660,
+     "n_obj": 36,
+     "prior_cv_same_q": 40.86363636363637,
+     "diff_same_q": -1.9242424242424239,
+     "lo_same_q": -5.088045695634435,
+     "hi_same_q": 1.0667730496453889
+    }
+   },
+   "formats_vs_prior": {
+    "tabular": {
+     "table_image": {
+      "diff": 33.920679886685555,
+      "lo": 31.081444277192418,
+      "hi": 36.8088714745231,
+      "exceeds": true,
+      "diff_same_q": 33.920679886685555,
+      "exceeds_same_q": true
+     },
+     "text_only": {
+      "diff": 30.74787535410765,
+      "lo": 27.64553855491416,
+      "hi": 33.791013927082034,
+      "exceeds": true,
+      "diff_same_q": 30.747875354107652,
+      "exceeds_same_q": true
+     },
+     "heatmap": {
+      "diff": 25.19546742209632,
+      "lo": 22.524632317780203,
+      "hi": 27.94849398984234,
+      "exceeds": true,
+      "diff_same_q": 25.195467422096318,
+      "exceeds_same_q": true
+     },
+     "bar_chart": {
+      "diff": 24.91218130311615,
+      "lo": 22.01359760738795,
+      "hi": 27.959966370179323,
+      "exceeds": true,
+      "diff_same_q": 24.912181303116146,
+      "exceeds_same_q": true
+     },
+     "scatter_plot": {
+      "diff": 9.671388101983005,
+      "lo": 7.379526415930748,
+      "hi": 11.965106924745434,
+      "exceeds": true,
+      "diff_same_q": 9.671388101983004,
+      "exceeds_same_q": true
+     }
+    },
+    "timeseries": {
+     "line_plot": {
+      "diff": -13.591240875912408,
+      "lo": -16.309431025049168,
+      "hi": -11.027308457965393,
+      "exceeds": false,
+      "diff_same_q": -13.591240875912408,
+      "exceeds_same_q": false
+     },
+     "heatmap": {
+      "diff": -19.795620437956206,
+      "lo": -22.715030543380806,
+      "hi": -16.872881569974492,
+      "exceeds": false,
+      "diff_same_q": -19.795620437956206,
+      "exceeds_same_q": false
+     },
+     "gaf": {
+      "diff": -19.43065693430657,
+      "lo": -22.207479638136572,
+      "hi": -16.79063703774997,
+      "exceeds": false,
+      "diff_same_q": -19.43065693430657,
+      "exceeds_same_q": false
+     },
+     "recurrence_plot": {
+      "diff": -21.693430656934307,
+      "lo": -24.418251838908777,
+      "hi": -19.156612846342767,
+      "exceeds": false,
+      "diff_same_q": -21.693430656934307,
+      "exceeds_same_q": false
+     },
+     "text_only": {
+      "diff": 2.321167883211679,
+      "lo": 0.7449817518248167,
+      "hi": 3.9918510057391146,
+      "exceeds": true,
+      "diff_same_q": 2.3211678832116784,
+      "exceeds_same_q": true
+     }
+    },
+    "graph": {
+     "node_link": {
+      "diff": -1.924242424242422,
+      "lo": -4.429527836504576,
+      "hi": 0.5000000000000071,
+      "exceeds": false,
+      "diff_same_q": -1.9242424242424239,
+      "exceeds_same_q": false
+     },
+     "circular_layout": {
+      "diff": -6.6212121212121176,
+      "lo": -8.726884226884223,
+      "hi": -4.5841359329731475,
+      "exceeds": false,
+      "diff_same_q": -6.621212121212121,
+      "exceeds_same_q": false
+     },
+     "adjacency_matrix": {
+      "diff": -9.803030303030297,
+      "lo": -12.196969696969692,
+      "hi": -7.530303030303024,
+      "exceeds": false,
+      "diff_same_q": -9.803030303030303,
+      "exceeds_same_q": false
+     },
+     "text_only": {
+      "diff": -7.68181818181818,
+      "lo": -10.86363636363636,
+      "hi": -4.348484848484844,
+      "exceeds": false,
+      "diff_same_q": -7.681818181818182,
+      "exceeds_same_q": false
+     }
+    }
+   },
+   "degree_effect": {
+    "degree_query": {
+     "est": 10.576923076923077,
+     "lo": 1.7937219730941705,
+     "hi": 19.126264387861866,
+     "p": 0.0370962903709629,
+     "n": 208,
+     "n_obj": 36,
+     "em_text_only": 16.826923076923077,
+     "em_text_only_deg": 27.403846153846153
+    },
+    "other_tasks": {
+     "est": 0.4424778761061947,
+     "lo": -2.132701421800948,
+     "hi": 3.1127663965588304,
+     "p": 0.8713128687131287,
+     "n": 452,
+     "n_obj": 36,
+     "em_text_only": 40.70796460176991,
+     "em_text_only_deg": 41.150442477876105
+    }
+   },
+   "v1_dedupe": {
+    "rows_read": 18315,
+    "keys_ok": 18315,
+    "duplicates_replaced": 0,
+    "keys_error_only": 0,
+    "error_rows_total": 0
+   },
+   "recovery": {
+    "tabular|table_image": {
+     "v1": 54.56090651558074,
+     "v2": 57.903682719546744,
+     "d": 3.3427762039660056,
+     "lo": 1.3102723963331564,
+     "hi": 5.358234068872219,
+     "n": 1765
+    },
+    "tabular|text_only": {
+     "v1": 49.008498583569406,
+     "v2": 54.73087818696884,
+     "d": 5.722379603399434,
+     "lo": 3.8251290392933734,
+     "hi": 7.6430168875225934,
+     "n": 1765
+    },
+    "tabular|heatmap": {
+     "v1": 41.69971671388102,
+     "v2": 49.17847025495751,
+     "d": 7.478753541076487,
+     "lo": 5.188056449892159,
+     "hi": 9.734116223553084,
+     "n": 1765
+    },
+    "tabular|bar_chart": {
+     "v1": 25.94900849858357,
+     "v2": 48.89518413597734,
+     "d": 22.946175637393768,
+     "lo": 20.505313843966537,
+     "hi": 25.435550545695303,
+     "n": 1765
+    },
+    "tabular|scatter_plot": {
+     "v1": 17.507082152974505,
+     "v2": 33.654390934844194,
+     "d": 16.14730878186969,
+     "lo": 13.648141084720828,
+     "hi": 18.61218648018648,
+     "n": 1765
+    },
+    "timeseries|line_plot": {
+     "v1": 27.2992700729927,
+     "v2": 27.226277372262775,
+     "d": -0.072992700729927,
+     "lo": -0.5343511450381679,
+     "hi": 0.410958904109589,
+     "n": 1370
+    },
+    "timeseries|heatmap": {
+     "v1": 21.021897810218977,
+     "v2": 21.021897810218977,
+     "d": 0.0,
+     "lo": -0.35714285714285715,
+     "hi": 0.35714285714285715,
+     "n": 1370
+    },
+    "timeseries|gaf": {
+     "v1": 21.240875912408757,
+     "v2": 21.386861313868614,
+     "d": 0.145985401459854,
+     "lo": -0.21428571428571427,
+     "hi": 0.4895804195804186,
+     "n": 1370
+    },
+    "timeseries|recurrence_plot": {
+     "v1": 19.197080291970803,
+     "v2": 19.124087591240876,
+     "d": -0.072992700729927,
+     "lo": -0.3240131578947368,
+     "hi": 0.1509433962264151,
+     "n": 1370
+    },
+    "timeseries|text_only": {
+     "v1": 32.846715328467155,
+     "v2": 43.13868613138686,
+     "d": 10.291970802919709,
+     "lo": 8.447653429602887,
+     "hi": 12.199245022993841,
+     "n": 1370
+    },
+    "graph|node_link": {
+     "v1": 36.21212121212121,
+     "v2": 38.93939393939394,
+     "d": 2.727272727272727,
+     "lo": 0.4878048780487805,
+     "hi": 5.0,
+     "n": 660
+    },
+    "graph|circular_layout": {
+     "v1": 33.93939393939394,
+     "v2": 34.24242424242424,
+     "d": 0.30303030303030304,
+     "lo": -1.9047619047619047,
+     "hi": 2.6984126984126986,
+     "n": 660
+    },
+    "graph|adjacency_matrix": {
+     "v1": 28.181818181818183,
+     "v2": 31.060606060606062,
+     "d": 2.878787878787879,
+     "lo": 0.33313008130081306,
+     "hi": 5.5,
+     "n": 660
+    },
+    "graph|text_only": {
+     "v1": 43.03030303030303,
+     "v2": 33.18181818181818,
+     "d": -9.848484848484848,
+     "lo": -13.008323654665118,
+     "hi": -6.666666666666667,
+     "n": 660
+    }
+   }
+  },
+  "Qwen2.5-VL-32B": {
+   "file": "results/review/v2_qwen32b.jsonl",
+   "subset": false,
+   "dedupe": {
+    "rows_read": 18975,
+    "keys_ok": 18975,
+    "duplicates_replaced": 0,
+    "keys_error_only": 0,
+    "error_rows_total": 0
+   },
+   "n_questions": {
+    "tabular": 1765,
+    "timeseries": 1370,
+    "graph": 660
+   },
+   "n_rows_main": 18315,
+   "per_format": {
+    "tabular|table_image": {
+     "em": 57.84702549575071,
+     "n": 1765
+    },
+    "tabular|text_only": {
+     "em": 55.80736543909349,
+     "n": 1765
+    },
+    "tabular|heatmap": {
+     "em": 49.29178470254958,
+     "n": 1765
+    },
+    "tabular|bar_chart": {
+     "em": 44.87252124645892,
+     "n": 1765
+    },
+    "tabular|scatter_plot": {
+     "em": 30.141643059490086,
+     "n": 1765
+    },
+    "timeseries|line_plot": {
+     "em": 30.072992700729927,
+     "n": 1370
+    },
+    "timeseries|heatmap": {
+     "em": 23.94160583941606,
+     "n": 1370
+    },
+    "timeseries|gaf": {
+     "em": 19.343065693430656,
+     "n": 1370
+    },
+    "timeseries|recurrence_plot": {
+     "em": 17.226277372262775,
+     "n": 1370
+    },
+    "timeseries|text_only": {
+     "em": 41.605839416058394,
+     "n": 1370
+    },
+    "graph|node_link": {
+     "em": 45.90909090909091,
+     "n": 660
+    },
+    "graph|circular_layout": {
+     "em": 45.60606060606061,
+     "n": 660
+    },
+    "graph|adjacency_matrix": {
+     "em": 36.515151515151516,
+     "n": 660
+    },
+    "graph|text_only": {
+     "em": 47.57575757575758,
+     "n": 660
+    }
+   },
+   "gaps": {
+    "tabular": {
+     "all_answerable_exclNC": {
+      "est": 21.25984251968504,
+      "lo": 17.110661031962795,
+      "hi": 25.645027392940897,
+      "p": 9.999000099990002e-05,
+      "n_q": 635,
+      "n_obj": 151,
+      "best": "table_image",
+      "worst": "scatter_plot",
+      "per_format": {
+       "table_image": 63.46456692913386,
+       "text_only": 61.889763779527556,
+       "heatmap": 57.63779527559055,
+       "bar_chart": 47.71653543307087,
+       "scatter_plot": 42.20472440944882
+      }
+     },
+     "n_q_exclNC": 1619
+    },
+    "timeseries": {
+     "all_answerable_exclNC": {
+      "n_q": 0
+     },
+     "n_q_exclNC": 1056,
+     "nonlossy3_all_exclNC": {
+      "est": 20.549242424242426,
+      "lo": 17.104846768820785,
+      "hi": 24.26335317172592,
+      "p": 9.999000099990002e-05,
+      "n_q": 1056,
+      "n_obj": 107,
+      "best": "text_only",
+      "worst": "heatmap",
+      "per_format": {
+       "line_plot": 22.348484848484848,
+       "heatmap": 17.708333333333332,
+       "text_only": 38.25757575757576
+      }
+     },
+     "nonlossy3_answerable_exclNC": {
+      "est": 10.795454545454545,
+      "lo": 6.260935678442902,
+      "hi": 15.44569066281628,
+      "p": 9.999000099990002e-05,
+      "n_q": 528,
+      "n_obj": 107,
+      "best": "text_only",
+      "worst": "heatmap",
+      "per_format": {
+       "line_plot": 40.71969696969697,
+       "heatmap": 32.00757575757576,
+       "text_only": 42.803030303030305
+      }
+     }
+    },
+    "graph": {
+     "all_answerable_exclNC": {
+      "est": 13.068181818181818,
+      "lo": 9.280303030303031,
+      "hi": 16.856060606060606,
+      "p": 9.999000099990002e-05,
+      "n_q": 528,
+      "n_obj": 36,
+      "best": "text_only",
+      "worst": "adjacency_matrix",
+      "per_format": {
+       "node_link": 36.553030303030305,
+       "circular_layout": 33.333333333333336,
+       "adjacency_matrix": 25.37878787878788,
+       "text_only": 38.446969696969695
+      }
+     },
+     "n_q_exclNC": 564
+    }
+   },
+   "best_vs_prior": {
+    "tabular": {
+     "best": "table_image",
+     "em": 57.84702549575071,
+     "prior_cv_const": 23.98300283286119,
+     "diff": 33.86402266288952,
+     "lo": 30.721363726391495,
+     "hi": 37.18206060153038,
+     "n_q": 1765,
+     "n_obj": 156,
+     "prior_cv_same_q": 23.98300283286119,
+     "diff_same_q": 33.864022662889525,
+     "lo_same_q": 30.588913879816456,
+     "hi_same_q": 37.4424973028221
+    },
+    "timeseries": {
+     "best": "text_only",
+     "em": 41.605839416058394,
+     "prior_cv_const": 40.81751824817518,
+     "diff": 0.7883211678832112,
+     "lo": -1.3712966497044476,
+     "hi": 2.9138250354069086,
+     "n_q": 1370,
+     "n_obj": 107,
+     "prior_cv_same_q": 40.81751824817519,
+     "diff_same_q": 0.7883211678832117,
+     "lo_same_q": -1.3357407309810545,
+     "hi_same_q": 2.9564342181698726
+    },
+    "graph": {
+     "best": "text_only",
+     "em": 47.57575757575758,
+     "prior_cv_const": 40.86363636363636,
+     "diff": 6.712121212121218,
+     "lo": 3.787526427061316,
+     "hi": 9.834712136532147,
+     "n_q": 660,
+     "n_obj": 36,
+     "prior_cv_same_q": 40.86363636363637,
+     "diff_same_q": 6.712121212121212,
+     "lo_same_q": 2.9583111702127667,
+     "hi_same_q": 10.430767276422763
+    }
+   },
+   "formats_vs_prior": {
+    "tabular": {
+     "table_image": {
+      "diff": 33.86402266288952,
+      "lo": 30.721363726391495,
+      "hi": 37.18206060153038,
+      "exceeds": true,
+      "diff_same_q": 33.864022662889525,
+      "exceeds_same_q": true
+     },
+     "text_only": {
+      "diff": 31.8243626062323,
+      "lo": 29.005419517400526,
+      "hi": 34.937202951199396,
+      "exceeds": true,
+      "diff_same_q": 31.8243626062323,
+      "exceeds_same_q": true
+     },
+     "heatmap": {
+      "diff": 25.30878186968839,
+      "lo": 22.364775782368895,
+      "hi": 28.372471059196734,
+      "exceeds": true,
+      "diff_same_q": 25.308781869688385,
+      "exceeds_same_q": true
+     },
+     "bar_chart": {
+      "diff": 20.889518413597735,
+      "lo": 17.49520189256961,
+      "hi": 24.43555268000857,
+      "exceeds": true,
+      "diff_same_q": 20.889518413597735,
+      "exceeds_same_q": true
+     },
+     "scatter_plot": {
+      "diff": 6.158640226628897,
+      "lo": 4.021586996746983,
+      "hi": 8.39378001442769,
+      "exceeds": true,
+      "diff_same_q": 6.158640226628895,
+      "exceeds_same_q": true
+     }
+    },
+    "timeseries": {
+     "line_plot": {
+      "diff": -10.744525547445257,
+      "lo": -13.08345243012499,
+      "hi": -8.535639053544308,
+      "exceeds": false,
+      "diff_same_q": -10.744525547445255,
+      "exceeds_same_q": false
+     },
+     "heatmap": {
+      "diff": -16.875912408759124,
+      "lo": -20.276977707634643,
+      "hi": -13.631077570209083,
+      "exceeds": false,
+      "diff_same_q": -16.875912408759124,
+      "exceeds_same_q": false
+     },
+     "gaf": {
+      "diff": -21.474452554744527,
+      "lo": -25.007460317390404,
+      "hi": -18.009299070092993,
+      "exceeds": false,
+      "diff_same_q": -21.474452554744527,
+      "exceeds_same_q": false
+     },
+     "recurrence_plot": {
+      "diff": -23.59124087591241,
+      "lo": -26.402477380403433,
+      "hi": -20.88529779543943,
+      "exceeds": false,
+      "diff_same_q": -23.59124087591241,
+      "exceeds_same_q": false
+     },
+     "text_only": {
+      "diff": 0.7883211678832112,
+      "lo": -1.3712966497044476,
+      "hi": 2.9138250354069086,
+      "exceeds": false,
+      "diff_same_q": 0.7883211678832117,
+      "exceeds_same_q": false
+     }
+    },
+    "graph": {
+     "node_link": {
+      "diff": 5.045454545454547,
+      "lo": 2.31818181818182,
+      "hi": 7.924242424242429,
+      "exceeds": true,
+      "diff_same_q": 5.045454545454545,
+      "exceeds_same_q": true
+     },
+     "circular_layout": {
+      "diff": 4.742424242424249,
+      "lo": 2.0151515151515156,
+      "hi": 7.231923481923481,
+      "exceeds": true,
+      "diff_same_q": 4.742424242424242,
+      "exceeds_same_q": true
+     },
+     "adjacency_matrix": {
+      "diff": -4.348484848484844,
+      "lo": -6.755109231853417,
+      "hi": -2.0225264307979103,
+      "exceeds": false,
+      "diff_same_q": -4.348484848484849,
+      "exceeds_same_q": false
+     },
+     "text_only": {
+      "diff": 6.712121212121218,
+      "lo": 3.787526427061316,
+      "hi": 9.834712136532147,
+      "exceeds": true,
+      "diff_same_q": 6.712121212121212,
+      "exceeds_same_q": true
+     }
+    }
+   },
+   "degree_effect": {
+    "degree_query": {
+     "est": 15.865384615384615,
+     "lo": 7.253886010362694,
+     "hi": 24.278318396351473,
+     "p": 0.0021997800219978004,
+     "n": 208,
+     "n_obj": 36,
+     "em_text_only": 19.23076923076923,
+     "em_text_only_deg": 35.09615384615385
+    },
+    "other_tasks": {
+     "est": -3.3185840707964602,
+     "lo": -5.664641032286729,
+     "hi": -0.9049773755656109,
+     "p": 0.0187981201879812,
+     "n": 452,
+     "n_obj": 36,
+     "em_text_only": 60.61946902654867,
+     "em_text_only_deg": 57.30088495575221
+    }
+   },
+   "v1_dedupe": {
+    "rows_read": 18315,
+    "keys_ok": 18315,
+    "duplicates_replaced": 0,
+    "keys_error_only": 0,
+    "error_rows_total": 0
+   },
+   "recovery": {
+    "tabular|table_image": {
+     "v1": 53.257790368271955,
+     "v2": 57.84702549575071,
+     "d": 4.589235127478753,
+     "lo": 1.7936320101865693,
+     "hi": 7.390378127223937,
+     "n": 1765
+    },
+    "tabular|text_only": {
+     "v1": 50.36827195467422,
+     "v2": 55.80736543909349,
+     "d": 5.4390934844192635,
+     "lo": 3.3389926428975665,
+     "hi": 7.642949780377409,
+     "n": 1765
+    },
+    "tabular|heatmap": {
+     "v1": 41.813031161473084,
+     "v2": 49.29178470254958,
+     "d": 7.478753541076487,
+     "lo": 5.464084942899843,
+     "hi": 9.411927651947204,
+     "n": 1765
+    },
+    "tabular|bar_chart": {
+     "v1": 20.84985835694051,
+     "v2": 44.87252124645892,
+     "d": 24.022662889518415,
+     "lo": 21.337820054633003,
+     "hi": 26.75051495457714,
+     "n": 1765
+    },
+    "tabular|scatter_plot": {
+     "v1": 18.58356940509915,
+     "v2": 30.141643059490086,
+     "d": 11.558073654390935,
+     "lo": 9.533779547009196,
+     "hi": 13.589441360111973,
+     "n": 1765
+    },
+    "timeseries|line_plot": {
+     "v1": 29.854014598540147,
+     "v2": 30.072992700729927,
+     "d": 0.21897810218978103,
+     "lo": -0.43795620437956206,
+     "hi": 0.8664259927797834,
+     "n": 1370
+    },
+    "timeseries|heatmap": {
+     "v1": 24.087591240875913,
+     "v2": 23.94160583941606,
+     "d": -0.145985401459854,
+     "lo": -0.656934306569343,
+     "hi": 0.35723955647240707,
+     "n": 1370
+    },
+    "timeseries|gaf": {
+     "v1": 19.927007299270073,
+     "v2": 19.343065693430656,
+     "d": -0.583941605839416,
+     "lo": -1.2720848056537102,
+     "hi": 0.07547169811320754,
+     "n": 1370
+    },
+    "timeseries|recurrence_plot": {
+     "v1": 17.153284671532848,
+     "v2": 17.226277372262775,
+     "d": 0.072992700729927,
+     "lo": -0.2952855647959464,
+     "hi": 0.44776119402985076,
+     "n": 1370
+    },
+    "timeseries|text_only": {
+     "v1": 35.18248175182482,
+     "v2": 41.605839416058394,
+     "d": 6.423357664233577,
+     "lo": 3.857142857142857,
+     "hi": 9.225380975183795,
+     "n": 1370
+    },
+    "graph|node_link": {
+     "v1": 37.121212121212125,
+     "v2": 45.90909090909091,
+     "d": 8.787878787878787,
+     "lo": 6.016260162601626,
+     "hi": 11.544715447154472,
+     "n": 660
+    },
+    "graph|circular_layout": {
+     "v1": 38.333333333333336,
+     "v2": 45.60606060606061,
+     "d": 7.2727272727272725,
+     "lo": 4.7407407407407405,
+     "hi": 9.65986394557823,
+     "n": 660
+    },
+    "graph|adjacency_matrix": {
+     "v1": 34.696969696969695,
+     "v2": 36.515151515151516,
+     "d": 1.8181818181818181,
+     "lo": -1.9861702127659573,
+     "hi": 5.333333333333333,
+     "n": 660
+    },
+    "graph|text_only": {
+     "v1": 57.121212121212125,
+     "v2": 47.57575757575758,
+     "d": -9.545454545454545,
+     "lo": -13.658536585365853,
+     "hi": -5.777272727272734,
+     "n": 660
+    }
+   }
+  },
+  "Qwen3-VL-8B": {
+   "file": "results/review/v2_qwen3vl8b.jsonl",
+   "subset": false,
+   "dedupe": {
+    "rows_read": 18975,
+    "keys_ok": 18975,
+    "duplicates_replaced": 0,
+    "keys_error_only": 0,
+    "error_rows_total": 0
+   },
+   "n_questions": {
+    "tabular": 1765,
+    "timeseries": 1370,
+    "graph": 660
+   },
+   "n_rows_main": 18315,
+   "per_format": {
+    "tabular|table_image": {
+     "em": 60.3399433427762,
+     "n": 1765
+    },
+    "tabular|text_only": {
+     "em": 55.920679886685555,
+     "n": 1765
+    },
+    "tabular|heatmap": {
+     "em": 46.51558073654391,
+     "n": 1765
+    },
+    "tabular|bar_chart": {
+     "em": 43.90934844192635,
+     "n": 1765
+    },
+    "tabular|scatter_plot": {
+     "em": 30.254957507082153,
+     "n": 1765
+    },
+    "timeseries|line_plot": {
+     "em": 25.547445255474454,
+     "n": 1370
+    },
+    "timeseries|heatmap": {
+     "em": 20.364963503649633,
+     "n": 1370
+    },
+    "timeseries|gaf": {
+     "em": 17.51824817518248,
+     "n": 1370
+    },
+    "timeseries|recurrence_plot": {
+     "em": 12.18978102189781,
+     "n": 1370
+    },
+    "timeseries|text_only": {
+     "em": 36.934306569343065,
+     "n": 1370
+    },
+    "graph|node_link": {
+     "em": 50.15151515151515,
+     "n": 660
+    },
+    "graph|circular_layout": {
+     "em": 46.36363636363637,
+     "n": 660
+    },
+    "graph|adjacency_matrix": {
+     "em": 34.84848484848485,
+     "n": 660
+    },
+    "graph|text_only": {
+     "em": 39.696969696969695,
+     "n": 660
+    }
+   },
+   "gaps": {
+    "tabular": {
+     "all_answerable_exclNC": {
+      "est": 27.244094488188978,
+      "lo": 22.172619047619047,
+      "hi": 32.21897143960748,
+      "p": 9.999000099990002e-05,
+      "n_q": 635,
+      "n_obj": 151,
+      "best": "table_image",
+      "worst": "scatter_plot",
+      "per_format": {
+       "table_image": 67.55905511811024,
+       "text_only": 62.83464566929134,
+       "heatmap": 55.275590551181104,
+       "bar_chart": 49.44881889763779,
+       "scatter_plot": 40.31496062992126
+      }
+     },
+     "n_q_exclNC": 1619
+    },
+    "timeseries": {
+     "all_answerable_exclNC": {
+      "n_q": 0
+     },
+     "n_q_exclNC": 1056,
+     "nonlossy3_all_exclNC": {
+      "est": 19.03409090909091,
+      "lo": 16.26873563218391,
+      "hi": 21.99004975124378,
+      "p": 9.999000099990002e-05,
+      "n_q": 1056,
+      "n_obj": 107,
+      "best": "text_only",
+      "worst": "heatmap",
+      "per_format": {
+       "line_plot": 22.348484848484848,
+       "heatmap": 18.37121212121212,
+       "text_only": 37.40530303030303
+      }
+     },
+     "nonlossy3_answerable_exclNC": {
+      "est": 5.871212121212121,
+      "lo": 2.4946929688309,
+      "hi": 9.197973529714693,
+      "p": 0.0007999200079992001,
+      "n_q": 528,
+      "n_obj": 107,
+      "best": "line_plot",
+      "worst": "heatmap",
+      "per_format": {
+       "line_plot": 41.666666666666664,
+       "heatmap": 35.79545454545455,
+       "text_only": 41.09848484848485
+      }
+     }
+    },
+    "graph": {
+     "all_answerable_exclNC": {
+      "est": 17.803030303030305,
+      "lo": 14.534883720930232,
+      "hi": 21.54471544715447,
+      "p": 9.999000099990002e-05,
+      "n_q": 528,
+      "n_obj": 36,
+      "best": "node_link",
+      "worst": "adjacency_matrix",
+      "per_format": {
+       "node_link": 38.82575757575758,
+       "circular_layout": 33.14393939393939,
+       "adjacency_matrix": 21.022727272727273,
+       "text_only": 28.03030303030303
+      }
+     },
+     "n_q_exclNC": 564
+    }
+   },
+   "best_vs_prior": {
+    "tabular": {
+     "best": "table_image",
+     "em": 60.3399433427762,
+     "prior_cv_const": 23.98300283286119,
+     "diff": 36.35694050991501,
+     "lo": 32.92627986756075,
+     "hi": 40.02909222388725,
+     "n_q": 1765,
+     "n_obj": 156,
+     "prior_cv_same_q": 23.98300283286119,
+     "diff_same_q": 36.35694050991502,
+     "lo_same_q": 32.77146314835843,
+     "hi_same_q": 40.39800155468179
+    },
+    "timeseries": {
+     "best": "text_only",
+     "em": 36.934306569343065,
+     "prior_cv_const": 40.81751824817518,
+     "diff": -3.8832116788321187,
+     "lo": -5.746163062265204,
+     "hi": -1.9482602976451489,
+     "n_q": 1370,
+     "n_obj": 107,
+     "prior_cv_same_q": 40.81751824817519,
+     "diff_same_q": -3.883211678832117,
+     "lo_same_q": -5.86791643947655,
+     "hi_same_q": -1.8705617495711846
+    },
+    "graph": {
+     "best": "node_link",
+     "em": 50.15151515151515,
+     "prior_cv_const": 40.86363636363636,
+     "diff": 9.287878787878789,
+     "lo": 5.536227581941873,
+     "hi": 13.506734006734014,
+     "n_q": 660,
+     "n_obj": 36,
+     "prior_cv_same_q": 40.86363636363637,
+     "diff_same_q": 9.287878787878787,
+     "lo_same_q": 5.613480639730639,
+     "hi_same_q": 13.479698430705247
+    }
+   },
+   "formats_vs_prior": {
+    "tabular": {
+     "table_image": {
+      "diff": 36.35694050991501,
+      "lo": 32.92627986756075,
+      "hi": 40.02909222388725,
+      "exceeds": true,
+      "diff_same_q": 36.35694050991502,
+      "exceeds_same_q": true
+     },
+     "text_only": {
+      "diff": 31.937677053824366,
+      "lo": 28.63413252661647,
+      "hi": 35.467044444301266,
+      "exceeds": true,
+      "diff_same_q": 31.937677053824366,
+      "exceeds_same_q": true
+     },
+     "heatmap": {
+      "diff": 22.53257790368272,
+      "lo": 19.735198184082456,
+      "hi": 25.523196845077614,
+      "exceeds": true,
+      "diff_same_q": 22.532577903682718,
+      "exceeds_same_q": true
+     },
+     "bar_chart": {
+      "diff": 19.92634560906516,
+      "lo": 16.95464985178978,
+      "hi": 23.207420251158652,
+      "exceeds": true,
+      "diff_same_q": 19.926345609065155,
+      "exceeds_same_q": true
+     },
+     "scatter_plot": {
+      "diff": 6.271954674220964,
+      "lo": 3.8575919615294154,
+      "hi": 8.906985312473239,
+      "exceeds": true,
+      "diff_same_q": 6.2719546742209635,
+      "exceeds_same_q": true
+     }
+    },
+    "timeseries": {
+     "line_plot": {
+      "diff": -15.27007299270073,
+      "lo": -17.770643248175183,
+      "hi": -12.91542034607728,
+      "exceeds": false,
+      "diff_same_q": -15.27007299270073,
+      "exceeds_same_q": false
+     },
+     "heatmap": {
+      "diff": -20.45255474452555,
+      "lo": -23.1341205647775,
+      "hi": -18.020315450972387,
+      "exceeds": false,
+      "diff_same_q": -20.452554744525546,
+      "exceeds_same_q": false
+     },
+     "gaf": {
+      "diff": -23.2992700729927,
+      "lo": -25.60516303581997,
+      "hi": -21.15998400159984,
+      "exceeds": false,
+      "diff_same_q": -23.2992700729927,
+      "exceeds_same_q": false
+     },
+     "recurrence_plot": {
+      "diff": -28.627737226277375,
+      "lo": -30.24394107527076,
+      "hi": -27.08131541798651,
+      "exceeds": false,
+      "diff_same_q": -28.62773722627737,
+      "exceeds_same_q": false
+     },
+     "text_only": {
+      "diff": -3.8832116788321187,
+      "lo": -5.746163062265204,
+      "hi": -1.9482602976451489,
+      "exceeds": false,
+      "diff_same_q": -3.883211678832117,
+      "exceeds_same_q": false
+     }
+    },
+    "graph": {
+     "node_link": {
+      "diff": 9.287878787878789,
+      "lo": 5.536227581941873,
+      "hi": 13.506734006734014,
+      "exceeds": true,
+      "diff_same_q": 9.287878787878787,
+      "exceeds_same_q": true
+     },
+     "circular_layout": {
+      "diff": 5.500000000000007,
+      "lo": 1.951178451178457,
+      "hi": 9.63290618955513,
+      "exceeds": true,
+      "diff_same_q": 5.499999999999999,
+      "exceeds_same_q": true
+     },
+     "adjacency_matrix": {
+      "diff": -6.0151515151515085,
+      "lo": -8.696969696969695,
+      "hi": -2.7933634591529284,
+      "exceeds": false,
+      "diff_same_q": -6.015151515151515,
+      "exceeds_same_q": false
+     },
+     "text_only": {
+      "diff": -1.1666666666666643,
+      "lo": -4.514430014430012,
+      "hi": 2.3956228956228998,
+      "exceeds": false,
+      "diff_same_q": -1.1666666666666665,
+      "exceeds_same_q": false
+     }
+    }
+   },
+   "degree_effect": {
+    "degree_query": {
+     "est": 20.192307692307693,
+     "lo": 12.874748986100721,
+     "hi": 27.311211369793813,
+     "p": 9.999000099990002e-05,
+     "n": 208,
+     "n_obj": 36,
+     "em_text_only": 21.634615384615383,
+     "em_text_only_deg": 41.82692307692308
+    },
+    "other_tasks": {
+     "est": -4.424778761061947,
+     "lo": -6.561253738783649,
+     "hi": -2.355997230442371,
+     "p": 0.0005999400059994001,
+     "n": 452,
+     "n_obj": 36,
+     "em_text_only": 48.008849557522126,
+     "em_text_only_deg": 43.584070796460175
+    }
+   }
+  },
+  "InternVL2-4B": {
+   "file": "results/review/v2sub_internvl2_4b.jsonl",
+   "subset": true,
+   "dedupe": {
+    "rows_read": 5480,
+    "keys_ok": 5480,
+    "duplicates_replaced": 0,
+    "keys_error_only": 0,
+    "error_rows_total": 0
+   },
+   "n_questions": {
+    "tabular": 354,
+    "timeseries": 214,
+    "graph": 528
+   },
+   "n_rows_main": 4952,
+   "per_format": {
+    "tabular|table_image": {
+     "em": 46.32768361581921,
+     "n": 354
+    },
+    "tabular|text_only": {
+     "em": 45.19774011299435,
+     "n": 354
+    },
+    "tabular|heatmap": {
+     "em": 48.0225988700565,
+     "n": 354
+    },
+    "tabular|bar_chart": {
+     "em": 27.11864406779661,
+     "n": 354
+    },
+    "tabular|scatter_plot": {
+     "em": 9.322033898305085,
+     "n": 354
+    },
+    "timeseries|line_plot": {
+     "em": 45.794392523364486,
+     "n": 214
+    },
+    "timeseries|heatmap": {
+     "em": 7.009345794392523,
+     "n": 214
+    },
+    "timeseries|gaf": {
+     "em": 10.280373831775702,
+     "n": 214
+    },
+    "timeseries|recurrence_plot": {
+     "em": 29.906542056074766,
+     "n": 214
+    },
+    "timeseries|text_only": {
+     "em": 7.009345794392523,
+     "n": 214
+    },
+    "graph|node_link": {
+     "em": 18.75,
+     "n": 528
+    },
+    "graph|circular_layout": {
+     "em": 18.75,
+     "n": 528
+    },
+    "graph|adjacency_matrix": {
+     "em": 16.856060606060606,
+     "n": 528
+    },
+    "graph|text_only": {
+     "em": 18.560606060606062,
+     "n": 528
+    }
+   },
+   "gaps": {
+    "tabular": {
+     "all_answerable_exclNC": {
+      "est": 12.972972972972974,
+      "lo": 6.802144586648218,
+      "hi": 19.535338443549428,
+      "p": 0.0012998700129987,
+      "n_q": 185,
+      "n_obj": 68,
+      "best": "text_only",
+      "worst": "bar_chart",
+      "per_format": {
+       "table_image": 10.81081081081081,
+       "text_only": 14.594594594594595,
+       "heatmap": 14.594594594594595,
+       "bar_chart": 1.6216216216216217,
+       "scatter_plot": 13.513513513513514
+      }
+     },
+     "n_q_exclNC": 354
+    },
+    "timeseries": {
+     "all_answerable_exclNC": {
+      "n_q": 0
+     },
+     "n_q_exclNC": 0,
+     "nonlossy3_all_exclNC": {
+      "n_q": 0
+     },
+     "nonlossy3_answerable_exclNC": {
+      "n_q": 0
+     }
+    },
+    "graph": {
+     "all_answerable_exclNC": {
+      "est": 1.893939393939394,
+      "lo": -0.8774262784621126,
+      "hi": 4.3478260869565215,
+      "p": 0.23757624237576241,
+      "n_q": 528,
+      "n_obj": 36,
+      "best": "node_link",
+      "worst": "adjacency_matrix",
+      "per_format": {
+       "node_link": 18.75,
+       "circular_layout": 18.75,
+       "adjacency_matrix": 16.856060606060606,
+       "text_only": 18.560606060606062
+      }
+     },
+     "n_q_exclNC": 528
+    }
+   },
+   "best_vs_prior": {
+    "tabular": {
+     "best": "heatmap",
+     "em": 48.0225988700565,
+     "prior_cv_const": 23.98300283286119,
+     "diff": 24.03959603719531,
+     "lo": 18.109454588063386,
+     "hi": 30.481347208308016,
+     "n_q": 354,
+     "n_obj": 107,
+     "prior_cv_same_q": 9.279661016949152,
+     "diff_same_q": 38.74293785310734,
+     "lo_same_q": 31.765493186242697,
+     "hi_same_q": 46.84604821051042
+    },
+    "timeseries": {
+     "best": "line_plot",
+     "em": 45.794392523364486,
+     "prior_cv_const": 40.81751824817518,
+     "diff": 4.976874275189303,
+     "lo": 2.1731359574322937,
+     "hi": 7.313322873320146,
+     "n_q": 214,
+     "n_obj": 107,
+     "prior_cv_same_q": 92.99065420560747,
+     "diff_same_q": -47.19626168224299,
+     "lo_same_q": -50.0,
+     "hi_same_q": -44.39252336448598
+    },
+    "graph": {
+     "best": "node_link",
+     "em": 18.75,
+     "prior_cv_const": 40.86363636363636,
+     "diff": -22.11363636363636,
+     "lo": -24.196969696969692,
+     "hi": -20.11895551257253,
+     "n_q": 528,
+     "n_obj": 36,
+     "prior_cv_same_q": 26.07954545454545,
+     "diff_same_q": -7.329545454545453,
+     "lo_same_q": -10.283698017408122,
+     "hi_same_q": -4.424933712121213
+    }
+   },
+   "formats_vs_prior": {
+    "tabular": {
+     "table_image": {
+      "diff": 22.344680782958022,
+      "lo": 16.066122307283372,
+      "hi": 29.55598021798626,
+      "exceeds": true,
+      "diff_same_q": 37.048022598870055,
+      "exceeds_same_q": true
+     },
+     "text_only": {
+      "diff": 21.214737280133164,
+      "lo": 15.649420939965076,
+      "hi": 27.44579680200873,
+      "exceeds": true,
+      "diff_same_q": 35.9180790960452,
+      "exceeds_same_q": true
+     },
+     "heatmap": {
+      "diff": 24.03959603719531,
+      "lo": 18.109454588063386,
+      "hi": 30.481347208308016,
+      "exceeds": true,
+      "diff_same_q": 38.74293785310734,
+      "exceeds_same_q": true
+     },
+     "bar_chart": {
+      "diff": 3.13564123493542,
+      "lo": -2.293448842250857,
+      "hi": 9.543093732932753,
+      "exceeds": false,
+      "diff_same_q": 17.838983050847457,
+      "exceeds_same_q": true
+     },
+     "scatter_plot": {
+      "diff": -14.660968934556104,
+      "lo": -18.219314072054274,
+      "hi": -10.95021914491794,
+      "exceeds": false,
+      "diff_same_q": 0.04237288135593246,
+      "exceeds_same_q": false
+     }
+    },
+    "timeseries": {
+     "line_plot": {
+      "diff": 4.976874275189303,
+      "lo": 2.1731359574322937,
+      "hi": 7.313322873320146,
+      "exceeds": true,
+      "diff_same_q": -47.19626168224299,
+      "exceeds_same_q": false
+     },
+     "heatmap": {
+      "diff": -33.80817245378266,
+      "lo": -37.079200491165835,
+      "hi": -30.069854696773312,
+      "exceeds": false,
+      "diff_same_q": -85.98130841121495,
+      "exceeds_same_q": false
+     },
+     "gaf": {
+      "diff": -30.53714441639948,
+      "lo": -34.275462173408826,
+      "hi": -26.798826659390137,
+      "exceeds": false,
+      "diff_same_q": -82.71028037383178,
+      "exceeds_same_q": false
+     },
+     "recurrence_plot": {
+      "diff": -10.910976192100417,
+      "lo": -15.5838733883621,
+      "hi": -6.238078995838734,
+      "exceeds": false,
+      "diff_same_q": -63.08411214953271,
+      "exceeds_same_q": false
+     },
+     "text_only": {
+      "diff": -33.80817245378266,
+      "lo": -37.079200491165835,
+      "hi": -30.53714441639948,
+      "exceeds": false,
+      "diff_same_q": -85.98130841121495,
+      "exceeds_same_q": false
+     }
+    },
+    "graph": {
+     "node_link": {
+      "diff": -22.11363636363636,
+      "lo": -24.196969696969692,
+      "hi": -20.11895551257253,
+      "exceeds": false,
+      "diff_same_q": -7.329545454545453,
+      "exceeds_same_q": false
+     },
+     "circular_layout": {
+      "diff": -22.11363636363636,
+      "lo": -24.196969696969692,
+      "hi": -20.030303030303028,
+      "exceeds": false,
+      "diff_same_q": -7.329545454545453,
+      "exceeds_same_q": false
+     },
+     "adjacency_matrix": {
+      "diff": -24.007575757575754,
+      "lo": -26.280303030303024,
+      "hi": -21.554462305986696,
+      "exceeds": false,
+      "diff_same_q": -9.223484848484848,
+      "exceeds_same_q": false
+     },
+     "text_only": {
+      "diff": -22.303030303030297,
+      "lo": -24.196969696969692,
+      "hi": -20.211462450592883,
+      "exceeds": false,
+      "diff_same_q": -7.518939393939393,
+      "exceeds_same_q": false
+     }
+    }
+   },
+   "degree_effect": {
+    "degree_query": {
+     "est": 12.01923076923077,
+     "lo": 6.437768240343348,
+     "hi": 18.181818181818183,
+     "p": 0.0005999400059994001,
+     "n": 208,
+     "n_obj": 36,
+     "em_text_only": 10.096153846153847,
+     "em_text_only_deg": 22.115384615384617
+    },
+    "other_tasks": {
+     "est": 0.625,
+     "lo": -2.3972602739726026,
+     "hi": 3.892949395326982,
+     "p": 0.8652134786521348,
+     "n": 320,
+     "n_obj": 36,
+     "em_text_only": 24.0625,
+     "em_text_only_deg": 24.6875
+    }
+   },
+   "subset_matches_manifest": true
+  },
+  "InternVL2-8B": {
+   "file": "results/review/v2sub_internvl2_8b.jsonl",
+   "subset": true,
+   "dedupe": {
+    "rows_read": 5480,
+    "keys_ok": 5480,
+    "duplicates_replaced": 0,
+    "keys_error_only": 0,
+    "error_rows_total": 0
+   },
+   "n_questions": {
+    "tabular": 354,
+    "timeseries": 214,
+    "graph": 528
+   },
+   "n_rows_main": 4952,
+   "per_format": {
+    "tabular|table_image": {
+     "em": 42.655367231638415,
+     "n": 354
+    },
+    "tabular|text_only": {
+     "em": 38.983050847457626,
+     "n": 354
+    },
+    "tabular|heatmap": {
+     "em": 45.48022598870057,
+     "n": 354
+    },
+    "tabular|bar_chart": {
+     "em": 33.61581920903955,
+     "n": 354
+    },
+    "tabular|scatter_plot": {
+     "em": 9.6045197740113,
+     "n": 354
+    },
+    "timeseries|line_plot": {
+     "em": 46.26168224299065,
+     "n": 214
+    },
+    "timeseries|heatmap": {
+     "em": 46.26168224299065,
+     "n": 214
+    },
+    "timeseries|gaf": {
+     "em": 46.728971962616825,
+     "n": 214
+    },
+    "timeseries|recurrence_plot": {
+     "em": 45.794392523364486,
+     "n": 214
+    },
+    "timeseries|text_only": {
+     "em": 46.26168224299065,
+     "n": 214
+    },
+    "graph|node_link": {
+     "em": 14.962121212121213,
+     "n": 528
+    },
+    "graph|circular_layout": {
+     "em": 16.098484848484848,
+     "n": 528
+    },
+    "graph|adjacency_matrix": {
+     "em": 11.553030303030303,
+     "n": 528
+    },
+    "graph|text_only": {
+     "em": 12.878787878787879,
+     "n": 528
+    }
+   },
+   "gaps": {
+    "tabular": {
+     "all_answerable_exclNC": {
+      "est": 10.81081081081081,
+      "lo": 3.251376868607396,
+      "hi": 18.065164532339107,
+      "p": 0.017198280171982803,
+      "n_q": 185,
+      "n_obj": 68,
+      "best": "scatter_plot",
+      "worst": "text_only",
+      "per_format": {
+       "table_image": 4.324324324324325,
+       "text_only": 3.7837837837837838,
+       "heatmap": 6.486486486486487,
+       "bar_chart": 5.405405405405405,
+       "scatter_plot": 14.594594594594595
+      }
+     },
+     "n_q_exclNC": 354
+    },
+    "timeseries": {
+     "all_answerable_exclNC": {
+      "n_q": 0
+     },
+     "n_q_exclNC": 0,
+     "nonlossy3_all_exclNC": {
+      "n_q": 0
+     },
+     "nonlossy3_answerable_exclNC": {
+      "n_q": 0
+     }
+    },
+    "graph": {
+     "all_answerable_exclNC": {
+      "est": 4.545454545454546,
+      "lo": 0.7246376811594203,
+      "hi": 8.558558558558559,
+      "p": 0.035396460353964605,
+      "n_q": 528,
+      "n_obj": 36,
+      "best": "circular_layout",
+      "worst": "adjacency_matrix",
+      "per_format": {
+       "node_link": 14.962121212121213,
+       "circular_layout": 16.098484848484848,
+       "adjacency_matrix": 11.553030303030303,
+       "text_only": 12.878787878787879
+      }
+     },
+     "n_q_exclNC": 528
+    }
+   },
+   "best_vs_prior": {
+    "tabular": {
+     "best": "heatmap",
+     "em": 45.48022598870057,
+     "prior_cv_const": 23.98300283286119,
+     "diff": 21.49722315583938,
+     "lo": 14.51532658365118,
+     "hi": 29.76758678978031,
+     "n_q": 354,
+     "n_obj": 107,
+     "prior_cv_same_q": 9.279661016949152,
+     "diff_same_q": 36.20056497175141,
+     "lo_same_q": 27.45654236449138,
+     "hi_same_q": 46.639778666455484
+    },
+    "timeseries": {
+     "best": "gaf",
+     "em": 46.728971962616825,
+     "prior_cv_const": 40.81751824817518,
+     "diff": 5.911453714441642,
+     "lo": 3.1077153966846325,
+     "hi": 8.247902312572478,
+     "n_q": 214,
+     "n_obj": 107,
+     "prior_cv_same_q": 92.99065420560747,
+     "diff_same_q": -46.26168224299065,
+     "lo_same_q": -48.598130841121495,
+     "hi_same_q": -43.45794392523364
+    },
+    "graph": {
+     "best": "circular_layout",
+     "em": 16.098484848484848,
+     "prior_cv_const": 40.86363636363636,
+     "diff": -24.765151515151512,
+     "lo": -27.743068987749837,
+     "hi": -21.494126228501226,
+     "n_q": 528,
+     "n_obj": 36,
+     "prior_cv_same_q": 26.07954545454545,
+     "diff_same_q": -9.981060606060606,
+     "lo_same_q": -14.000532945736433,
+     "hi_same_q": -5.90900856389987
+    }
+   },
+   "formats_vs_prior": {
+    "tabular": {
+     "table_image": {
+      "diff": 18.672364398777226,
+      "lo": 12.28840612765891,
+      "hi": 26.35038642888378,
+      "exceeds": true,
+      "diff_same_q": 33.37570621468927,
+      "exceeds_same_q": true
+     },
+     "text_only": {
+      "diff": 15.000048014596437,
+      "lo": 8.6852010293426,
+      "hi": 22.198154345356627,
+      "exceeds": true,
+      "diff_same_q": 29.703389830508474,
+      "exceeds_same_q": true
+     },
+     "heatmap": {
+      "diff": 21.49722315583938,
+      "lo": 14.51532658365118,
+      "hi": 29.76758678978031,
+      "exceeds": true,
+      "diff_same_q": 36.20056497175141,
+      "exceeds_same_q": true
+     },
+     "bar_chart": {
+      "diff": 9.632816376178361,
+      "lo": 3.413922511279214,
+      "hi": 16.632381782523424,
+      "exceeds": true,
+      "diff_same_q": 24.336158192090394,
+      "exceeds_same_q": true
+     },
+     "scatter_plot": {
+      "diff": -14.37848305884989,
+      "lo": -18.138902774843604,
+      "hi": -10.438076279355439,
+      "exceeds": false,
+      "diff_same_q": 0.3248587570621472,
+      "exceeds_same_q": false
+     }
+    },
+    "timeseries": {
+     "line_plot": {
+      "diff": 5.444163994815469,
+      "lo": 2.6404256770584595,
+      "hi": 7.780612592946312,
+      "exceeds": true,
+      "diff_same_q": -46.728971962616825,
+      "exceeds_same_q": false
+     },
+     "heatmap": {
+      "diff": 5.444163994815469,
+      "lo": 2.6404256770584595,
+      "hi": 7.780612592946312,
+      "exceeds": true,
+      "diff_same_q": -46.728971962616825,
+      "exceeds_same_q": false
+     },
+     "gaf": {
+      "diff": 5.911453714441642,
+      "lo": 3.1077153966846325,
+      "hi": 8.247902312572478,
+      "exceeds": true,
+      "diff_same_q": -46.26168224299065,
+      "exceeds_same_q": false
+     },
+     "recurrence_plot": {
+      "diff": 4.976874275189303,
+      "lo": 2.1731359574322937,
+      "hi": 7.313322873320146,
+      "exceeds": true,
+      "diff_same_q": -47.19626168224299,
+      "exceeds_same_q": false
+     },
+     "text_only": {
+      "diff": 5.444163994815469,
+      "lo": 2.6404256770584595,
+      "hi": 7.780612592946312,
+      "exceeds": true,
+      "diff_same_q": -46.728971962616825,
+      "exceeds_same_q": false
+     }
+    },
+    "graph": {
+     "node_link": {
+      "diff": -25.90151515151515,
+      "lo": -28.72595520421607,
+      "hi": -22.808080808080803,
+      "exceeds": false,
+      "diff_same_q": -11.117424242424242,
+      "exceeds_same_q": false
+     },
+     "circular_layout": {
+      "diff": -24.765151515151512,
+      "lo": -27.743068987749837,
+      "hi": -21.494126228501226,
+      "exceeds": false,
+      "diff_same_q": -9.981060606060606,
+      "exceeds_same_q": false
+     },
+     "adjacency_matrix": {
+      "diff": -29.310606060606055,
+      "lo": -31.962121212121207,
+      "hi": -26.775953213453214,
+      "exceeds": false,
+      "diff_same_q": -14.526515151515152,
+      "exceeds_same_q": false
+     },
+     "text_only": {
+      "diff": -27.98484848484848,
+      "lo": -31.419191919191917,
+      "hi": -24.196969696969692,
+      "exceeds": false,
+      "diff_same_q": -13.200757575757576,
+      "exceeds_same_q": false
+     }
+    }
+   },
+   "degree_effect": {
+    "degree_query": {
+     "est": 14.903846153846153,
+     "lo": 7.894412756028001,
+     "hi": 22.167487684729064,
+     "p": 0.00039996000399960006,
+     "n": 208,
+     "n_obj": 36,
+     "em_text_only": 13.942307692307692,
+     "em_text_only_deg": 28.846153846153847
+    },
+    "other_tasks": {
+     "est": 0.3125,
+     "lo": -2.4464831804281344,
+     "hi": 3.1578947368421053,
+     "p": 1.0,
+     "n": 320,
+     "n_obj": 36,
+     "em_text_only": 12.1875,
+     "em_text_only_deg": 12.5
+    }
+   },
+   "subset_matches_manifest": true
+  },
+  "InternVL2.5-8B (6 tiles)": {
+   "file": "results/review/v2sub_internvl25_8b_tiles6.jsonl",
+   "subset": true,
+   "dedupe": {
+    "rows_read": 5480,
+    "keys_ok": 5480,
+    "duplicates_replaced": 0,
+    "keys_error_only": 0,
+    "error_rows_total": 0
+   },
+   "n_questions": {
+    "tabular": 354,
+    "timeseries": 214,
+    "graph": 528
+   },
+   "n_rows_main": 4952,
+   "per_format": {
+    "tabular|table_image": {
+     "em": 50.847457627118644,
+     "n": 354
+    },
+    "tabular|text_only": {
+     "em": 46.610169491525426,
+     "n": 354
+    },
+    "tabular|heatmap": {
+     "em": 49.717514124293785,
+     "n": 354
+    },
+    "tabular|bar_chart": {
+     "em": 37.005649717514125,
+     "n": 354
+    },
+    "tabular|scatter_plot": {
+     "em": 9.6045197740113,
+     "n": 354
+    },
+    "timeseries|line_plot": {
+     "em": 41.58878504672897,
+     "n": 214
+    },
+    "timeseries|heatmap": {
+     "em": 6.074766355140187,
+     "n": 214
+    },
+    "timeseries|gaf": {
+     "em": 20.560747663551403,
+     "n": 214
+    },
+    "timeseries|recurrence_plot": {
+     "em": 47.19626168224299,
+     "n": 214
+    },
+    "timeseries|text_only": {
+     "em": 42.99065420560748,
+     "n": 214
+    },
+    "graph|node_link": {
+     "em": 15.719696969696969,
+     "n": 528
+    },
+    "graph|circular_layout": {
+     "em": 14.772727272727273,
+     "n": 528
+    },
+    "graph|adjacency_matrix": {
+     "em": 9.848484848484848,
+     "n": 528
+    },
+    "graph|text_only": {
+     "em": 12.5,
+     "n": 528
+    }
+   },
+   "gaps": {
+    "tabular": {
+     "all_answerable_exclNC": {
+      "est": 8.108108108108109,
+      "lo": 1.6572308906563051,
+      "hi": 14.705882352941176,
+      "p": 0.0461953804619538,
+      "n_q": 185,
+      "n_obj": 68,
+      "best": "table_image",
+      "worst": "bar_chart",
+      "per_format": {
+       "table_image": 13.513513513513514,
+       "text_only": 9.18918918918919,
+       "heatmap": 11.35135135135135,
+       "bar_chart": 5.405405405405405,
+       "scatter_plot": 12.972972972972974
+      }
+     },
+     "n_q_exclNC": 354
+    },
+    "timeseries": {
+     "all_answerable_exclNC": {
+      "n_q": 0
+     },
+     "n_q_exclNC": 0,
+     "nonlossy3_all_exclNC": {
+      "n_q": 0
+     },
+     "nonlossy3_answerable_exclNC": {
+      "n_q": 0
+     }
+    },
+    "graph": {
+     "all_answerable_exclNC": {
+      "est": 5.871212121212121,
+      "lo": 3.4722222222222223,
+      "hi": 8.333333333333334,
+      "p": 0.00039996000399960006,
+      "n_q": 528,
+      "n_obj": 36,
+      "best": "node_link",
+      "worst": "adjacency_matrix",
+      "per_format": {
+       "node_link": 15.719696969696969,
+       "circular_layout": 14.772727272727273,
+       "adjacency_matrix": 9.848484848484848,
+       "text_only": 12.5
+      }
+     },
+     "n_q_exclNC": 528
+    }
+   },
+   "best_vs_prior": {
+    "tabular": {
+     "best": "table_image",
+     "em": 50.847457627118644,
+     "prior_cv_const": 23.98300283286119,
+     "diff": 26.864454794257455,
+     "lo": 20.488726873243515,
+     "hi": 34.134446578192865,
+     "n_q": 354,
+     "n_obj": 107,
+     "prior_cv_same_q": 9.279661016949152,
+     "diff_same_q": 41.567796610169495,
+     "lo_same_q": 33.72718986742424,
+     "hi_same_q": 50.733497091805404
+    },
+    "timeseries": {
+     "best": "recurrence_plot",
+     "em": 47.19626168224299,
+     "prior_cv_const": 40.81751824817518,
+     "diff": 6.3787434340678075,
+     "lo": 4.042294835936964,
+     "hi": 8.247902312572478,
+     "n_q": 214,
+     "n_obj": 107,
+     "prior_cv_same_q": 92.99065420560747,
+     "diff_same_q": -45.794392523364486,
+     "lo_same_q": -48.13084112149533,
+     "hi_same_q": -42.99065420560748
+    },
+    "graph": {
+     "best": "node_link",
+     "em": 15.719696969696969,
+     "prior_cv_const": 40.86363636363636,
+     "diff": -25.14393939393939,
+     "lo": -27.92082626087185,
+     "hi": -21.961197339246116,
+     "n_q": 528,
+     "n_obj": 36,
+     "prior_cv_same_q": 26.07954545454545,
+     "diff_same_q": -10.359848484848484,
+     "lo_same_q": -13.93541666666667,
+     "hi_same_q": -6.686927002248747
+    }
+   },
+   "formats_vs_prior": {
+    "tabular": {
+     "table_image": {
+      "diff": 26.864454794257455,
+      "lo": 20.488726873243515,
+      "hi": 34.134446578192865,
+      "exceeds": true,
+      "diff_same_q": 41.567796610169495,
+      "exceeds_same_q": true
+     },
+     "text_only": {
+      "diff": 22.627166658664237,
+      "lo": 15.532402460769909,
+      "hi": 30.80259923033914,
+      "exceeds": true,
+      "diff_same_q": 37.33050847457627,
+      "exceeds_same_q": true
+     },
+     "heatmap": {
+      "diff": 25.734511291432597,
+      "lo": 18.804283230708492,
+      "hi": 33.62071931033462,
+      "exceeds": true,
+      "diff_same_q": 40.43785310734463,
+      "exceeds_same_q": true
+     },
+     "bar_chart": {
+      "diff": 13.022646884652936,
+      "lo": 6.5292710689475975,
+      "hi": 20.428626906640034,
+      "exceeds": true,
+      "diff_same_q": 27.725988700564972,
+      "exceeds_same_q": true
+     },
+     "scatter_plot": {
+      "diff": -14.37848305884989,
+      "lo": -17.854869128125813,
+      "hi": -10.863373653855504,
+      "exceeds": false,
+      "diff_same_q": 0.3248587570621472,
+      "exceeds_same_q": false
+     }
+    },
+    "timeseries": {
+     "line_plot": {
+      "diff": 0.7712667985537891,
+      "lo": -2.967050958455559,
+      "hi": 4.042294835936964,
+      "exceeds": false,
+      "diff_same_q": -51.401869158878505,
+      "exceeds_same_q": false
+     },
+     "heatmap": {
+      "diff": -34.742751893035,
+      "lo": -37.54649021079201,
+      "hi": -31.471723855651817,
+      "exceeds": false,
+      "diff_same_q": -86.91588785046729,
+      "exceeds_same_q": false
+     },
+     "gaf": {
+      "diff": -20.25677058462378,
+      "lo": -24.929667780885463,
+      "hi": -15.5838733883621,
+      "exceeds": false,
+      "diff_same_q": -72.42990654205607,
+      "exceeds_same_q": false
+     },
+     "recurrence_plot": {
+      "diff": 6.3787434340678075,
+      "lo": 4.042294835936964,
+      "hi": 8.247902312572478,
+      "exceeds": true,
+      "diff_same_q": -45.794392523364486,
+      "exceeds_same_q": false
+     },
+     "text_only": {
+      "diff": 2.1731359574322937,
+      "lo": -1.5651817995770543,
+      "hi": 5.911453714441642,
+      "exceeds": false,
+      "diff_same_q": -50.0,
+      "exceeds_same_q": false
+     }
+    },
+    "graph": {
+     "node_link": {
+      "diff": -25.14393939393939,
+      "lo": -27.92082626087185,
+      "hi": -21.961197339246116,
+      "exceeds": false,
+      "diff_same_q": -10.359848484848484,
+      "exceeds_same_q": false
+     },
+     "circular_layout": {
+      "diff": -26.090909090909086,
+      "lo": -29.430054462726346,
+      "hi": -21.871388301620854,
+      "exceeds": false,
+      "diff_same_q": -11.306818181818182,
+      "exceeds_same_q": false
+     },
+     "adjacency_matrix": {
+      "diff": -31.015151515151512,
+      "lo": -33.82659932659932,
+      "hi": -27.15964330808081,
+      "exceeds": false,
+      "diff_same_q": -16.231060606060606,
+      "exceeds_same_q": false
+     },
+     "text_only": {
+      "diff": -28.36363636363636,
+      "lo": -31.367987328828637,
+      "hi": -24.765151515151512,
+      "exceeds": false,
+      "diff_same_q": -13.579545454545455,
+      "exceeds_same_q": false
+     }
+    }
+   },
+   "degree_effect": {
+    "degree_query": {
+     "est": 24.03846153846154,
+     "lo": 16.666666666666668,
+     "hi": 31.60621761658031,
+     "p": 9.999000099990002e-05,
+     "n": 208,
+     "n_obj": 36,
+     "em_text_only": 15.384615384615385,
+     "em_text_only_deg": 39.42307692307692
+    },
+    "other_tasks": {
+     "est": 0.3125,
+     "lo": -2.095808383233533,
+     "hi": 2.6392961876832843,
+     "p": 1.0,
+     "n": 320,
+     "n_obj": 36,
+     "em_text_only": 10.625,
+     "em_text_only_deg": 10.9375
+    }
+   },
+   "v1_dedupe": {
+    "rows_read": 18315,
+    "keys_ok": 18096,
+    "duplicates_replaced": 0,
+    "keys_error_only": 219,
+    "error_rows_total": 219
+   },
+   "recovery": {
+    "tabular|table_image": {
+     "v1": 33.898305084745765,
+     "v2": 50.847457627118644,
+     "d": 16.949152542372882,
+     "lo": 11.58686336548504,
+     "hi": 22.442267664266428,
+     "n": 354
+    },
+    "tabular|text_only": {
+     "v1": 7.344632768361582,
+     "v2": 46.610169491525426,
+     "d": 39.26553672316384,
+     "lo": 31.297257696899532,
+     "hi": 47.9593319886094,
+     "n": 354
+    },
+    "tabular|heatmap": {
+     "v1": 30.225988700564972,
+     "v2": 49.717514124293785,
+     "d": 19.491525423728813,
+     "lo": 14.444225721784777,
+     "hi": 25.0,
+     "n": 354
+    },
+    "tabular|bar_chart": {
+     "v1": 1.9774011299435028,
+     "v2": 37.005649717514125,
+     "d": 35.02824858757062,
+     "lo": 28.808339628976746,
+     "hi": 42.201983796020485,
+     "n": 354
+    },
+    "tabular|scatter_plot": {
+     "v1": 1.694915254237288,
+     "v2": 9.6045197740113,
+     "d": 7.909604519774011,
+     "lo": 4.372860024408435,
+     "hi": 11.51685393258427,
+     "n": 354
+    },
+    "timeseries|line_plot": {
+     "v1": 35.981308411214954,
+     "v2": 41.58878504672897,
+     "d": 5.607476635514018,
+     "lo": 2.336448598130841,
+     "hi": 9.345794392523365,
+     "n": 214
+    },
+    "timeseries|heatmap": {
+     "v1": 3.7383177570093458,
+     "v2": 6.074766355140187,
+     "d": 2.336448598130841,
+     "lo": 0.0,
+     "hi": 4.672897196261682,
+     "n": 214
+    },
+    "timeseries|gaf": {
+     "v1": 5.140186915887851,
+     "v2": 20.560747663551403,
+     "d": 15.42056074766355,
+     "lo": 10.74766355140187,
+     "hi": 20.093457943925234,
+     "n": 214
+    },
+    "timeseries|recurrence_plot": {
+     "v1": 46.26168224299065,
+     "v2": 47.19626168224299,
+     "d": 0.9345794392523364,
+     "lo": 0.0,
+     "hi": 2.336448598130841,
+     "n": 214
+    },
+    "timeseries|text_only": {
+     "v1": 46.26168224299065,
+     "v2": 42.99065420560748,
+     "d": -3.2710280373831777,
+     "lo": -6.074766355140187,
+     "hi": -0.9345794392523364,
+     "n": 214
+    },
+    "graph|node_link": {
+     "v1": 8.333333333333334,
+     "v2": 15.719696969696969,
+     "d": 7.386363636363637,
+     "lo": 4.347637379227053,
+     "hi": 10.975609756097562,
+     "n": 528
+    },
+    "graph|circular_layout": {
+     "v1": 8.143939393939394,
+     "v2": 14.772727272727273,
+     "d": 6.628787878787879,
+     "lo": 3.368794326241135,
+     "hi": 10.625,
+     "n": 528
+    },
+    "graph|adjacency_matrix": {
+     "v1": 8.143939393939394,
+     "v2": 9.848484848484848,
+     "d": 1.7045454545454546,
+     "lo": -1.3257575757575757,
+     "hi": 5.342261904761899,
+     "n": 528
+    },
+    "graph|text_only": {
+     "v1": 19.507575757575758,
+     "v2": 12.5,
+     "d": -7.007575757575758,
+     "lo": -9.959349593495935,
+     "hi": -4.166666666666667,
+     "n": 528
+    }
+   },
+   "subset_matches_manifest": true
+  },
+  "InternVL2.5-8B (1 tile)": {
+   "file": "results/v2/v2_internvl_subset.jsonl",
+   "subset": true,
+   "dedupe": {
+    "rows_read": 5480,
+    "keys_ok": 5480,
+    "duplicates_replaced": 0,
+    "keys_error_only": 0,
+    "error_rows_total": 0
+   },
+   "n_questions": {
+    "tabular": 354,
+    "timeseries": 214,
+    "graph": 528
+   },
+   "n_rows_main": 4952,
+   "per_format": {
+    "tabular|table_image": {
+     "em": 7.344632768361582,
+     "n": 354
+    },
+    "tabular|text_only": {
+     "em": 3.672316384180791,
+     "n": 354
+    },
+    "tabular|heatmap": {
+     "em": 40.3954802259887,
+     "n": 354
+    },
+    "tabular|bar_chart": {
+     "em": 11.299435028248588,
+     "n": 354
+    },
+    "tabular|scatter_plot": {
+     "em": 5.367231638418079,
+     "n": 354
+    },
+    "timeseries|line_plot": {
+     "em": 35.981308411214954,
+     "n": 214
+    },
+    "timeseries|heatmap": {
+     "em": 3.7383177570093458,
+     "n": 214
+    },
+    "timeseries|gaf": {
+     "em": 5.140186915887851,
+     "n": 214
+    },
+    "timeseries|recurrence_plot": {
+     "em": 46.26168224299065,
+     "n": 214
+    },
+    "timeseries|text_only": {
+     "em": 46.26168224299065,
+     "n": 214
+    },
+    "graph|node_link": {
+     "em": 11.174242424242424,
+     "n": 528
+    },
+    "graph|circular_layout": {
+     "em": 9.848484848484848,
+     "n": 528
+    },
+    "graph|adjacency_matrix": {
+     "em": 9.469696969696969,
+     "n": 528
+    },
+    "graph|text_only": {
+     "em": 10.227272727272727,
+     "n": 528
+    }
+   },
+   "gaps": {
+    "tabular": {
+     "all_answerable_exclNC": {
+      "est": 6.486486486486487,
+      "lo": 2.5314857435110603,
+      "hi": 10.95890410958904,
+      "p": 0.007099290070992901,
+      "n_q": 185,
+      "n_obj": 68,
+      "best": "heatmap",
+      "worst": "text_only",
+      "per_format": {
+       "table_image": 3.7837837837837838,
+       "text_only": 3.2432432432432434,
+       "heatmap": 9.72972972972973,
+       "bar_chart": 3.7837837837837838,
+       "scatter_plot": 8.64864864864865
+      }
+     },
+     "n_q_exclNC": 354
+    },
+    "timeseries": {
+     "all_answerable_exclNC": {
+      "n_q": 0
+     },
+     "n_q_exclNC": 0,
+     "nonlossy3_all_exclNC": {
+      "n_q": 0
+     },
+     "nonlossy3_answerable_exclNC": {
+      "n_q": 0
+     }
+    },
+    "graph": {
+     "all_answerable_exclNC": {
+      "est": 1.7045454545454546,
+      "lo": -1.596501470333852,
+      "hi": 4.924435683364251,
+      "p": 0.37006299370062995,
+      "n_q": 528,
+      "n_obj": 36,
+      "best": "node_link",
+      "worst": "adjacency_matrix",
+      "per_format": {
+       "node_link": 11.174242424242424,
+       "circular_layout": 9.848484848484848,
+       "adjacency_matrix": 9.469696969696969,
+       "text_only": 10.227272727272727
+      }
+     },
+     "n_q_exclNC": 528
+    }
+   },
+   "best_vs_prior": {
+    "tabular": {
+     "best": "heatmap",
+     "em": 40.3954802259887,
+     "prior_cv_const": 23.98300283286119,
+     "diff": 16.41247739312751,
+     "lo": 10.090935075635542,
+     "hi": 23.66626620296924,
+     "n_q": 354,
+     "n_obj": 107,
+     "prior_cv_same_q": 9.279661016949152,
+     "diff_same_q": 31.115819209039547,
+     "lo_same_q": 23.195402002512516,
+     "hi_same_q": 40.176149029719646
+    },
+    "timeseries": {
+     "best": "recurrence_plot",
+     "em": 46.26168224299065,
+     "prior_cv_const": 40.81751824817518,
+     "diff": 5.444163994815469,
+     "lo": 2.6404256770584595,
+     "hi": 7.780612592946312,
+     "n_q": 214,
+     "n_obj": 107,
+     "prior_cv_same_q": 92.99065420560747,
+     "diff_same_q": -46.728971962616825,
+     "lo_same_q": -48.598130841121495,
+     "hi_same_q": -44.39252336448598
+    },
+    "graph": {
+     "best": "node_link",
+     "em": 11.174242424242424,
+     "prior_cv_const": 40.86363636363636,
+     "diff": -29.689393939393938,
+     "lo": -32.9688995215311,
+     "hi": -26.067245585102732,
+     "n_q": 528,
+     "n_obj": 36,
+     "prior_cv_same_q": 26.07954545454545,
+     "diff_same_q": -14.905303030303031,
+     "lo_same_q": -18.895435354374307,
+     "hi_same_q": -10.781943698532046
+    }
+   },
+   "formats_vs_prior": {
+    "tabular": {
+     "table_image": {
+      "diff": -16.638370064499608,
+      "lo": -19.348906335220462,
+      "hi": -13.394321905944974,
+      "exceeds": false,
+      "diff_same_q": -1.9350282485875703,
+      "exceeds_same_q": false
+     },
+     "text_only": {
+      "diff": -20.310686448680396,
+      "lo": -22.31633616619452,
+      "hi": -17.989290492201565,
+      "exceeds": false,
+      "diff_same_q": -5.607344632768361,
+      "exceeds_same_q": false
+     },
+     "heatmap": {
+      "diff": 16.41247739312751,
+      "lo": 10.090935075635542,
+      "hi": 23.66626620296924,
+      "exceeds": true,
+      "diff_same_q": 31.115819209039547,
+      "exceeds_same_q": true
+     },
+     "bar_chart": {
+      "diff": -12.6835678046126,
+      "lo": -16.31106328078465,
+      "hi": -8.476520312436213,
+      "exceeds": false,
+      "diff_same_q": 2.0197740112994356,
+      "exceeds_same_q": false
+     },
+     "scatter_plot": {
+      "diff": -18.61577119444311,
+      "lo": -21.16981136184191,
+      "hi": -15.82588325900207,
+      "exceeds": false,
+      "diff_same_q": -3.9124293785310735,
+      "exceeds_same_q": false
+     }
+    },
+    "timeseries": {
+     "line_plot": {
+      "diff": -4.836209836960229,
+      "lo": -9.041817313595743,
+      "hi": -0.6306023603247155,
+      "exceeds": false,
+      "diff_same_q": -57.00934579439252,
+      "exceeds_same_q": false
+     },
+     "heatmap": {
+      "diff": -37.079200491165835,
+      "lo": -39.41564908929668,
+      "hi": -34.275462173408826,
+      "exceeds": false,
+      "diff_same_q": -89.25233644859813,
+      "exceeds_same_q": false
+     },
+     "gaf": {
+      "diff": -35.67733133228733,
+      "lo": -38.48106965004434,
+      "hi": -32.406303294904156,
+      "exceeds": false,
+      "diff_same_q": -87.85046728971963,
+      "exceeds_same_q": false
+     },
+     "recurrence_plot": {
+      "diff": 5.444163994815469,
+      "lo": 2.6404256770584595,
+      "hi": 7.780612592946312,
+      "exceeds": true,
+      "diff_same_q": -46.728971962616825,
+      "exceeds_same_q": false
+     },
+     "text_only": {
+      "diff": 5.444163994815469,
+      "lo": 2.6404256770584595,
+      "hi": 7.780612592946312,
+      "exceeds": true,
+      "diff_same_q": -46.728971962616825,
+      "exceeds_same_q": false
+     }
+    },
+    "graph": {
+     "node_link": {
+      "diff": -29.689393939393938,
+      "lo": -32.9688995215311,
+      "hi": -26.067245585102732,
+      "exceeds": false,
+      "diff_same_q": -14.905303030303031,
+      "exceeds_same_q": false
+     },
+     "circular_layout": {
+      "diff": -31.015151515151512,
+      "lo": -33.32395382395382,
+      "hi": -28.562049062049056,
+      "exceeds": false,
+      "diff_same_q": -16.231060606060606,
+      "exceeds_same_q": false
+     },
+     "adjacency_matrix": {
+      "diff": -31.39393939393939,
+      "lo": -33.64141414141414,
+      "hi": -28.80678212698089,
+      "exceeds": false,
+      "diff_same_q": -16.609848484848484,
+      "exceeds_same_q": false
+     },
+     "text_only": {
+      "diff": -30.636363636363633,
+      "lo": -33.244847543760585,
+      "hi": -27.79545454545454,
+      "exceeds": false,
+      "diff_same_q": -15.852272727272727,
+      "exceeds_same_q": false
+     }
+    }
+   },
+   "degree_effect": {
+    "degree_query": {
+     "est": 6.730769230769231,
+     "lo": 1.408450704225352,
+     "hi": 12.435233160621761,
+     "p": 0.0306969303069693,
+     "n": 208,
+     "n_obj": 36,
+     "em_text_only": 12.5,
+     "em_text_only_deg": 19.23076923076923
+    },
+    "other_tasks": {
+     "est": 0.0,
+     "lo": -1.6901408450704225,
+     "hi": 1.6901408450704225,
+     "p": 1.0,
+     "n": 320,
+     "n_obj": 36,
+     "em_text_only": 8.75,
+     "em_text_only_deg": 8.75
+    }
+   },
+   "v1_dedupe": {
+    "rows_read": 18315,
+    "keys_ok": 18096,
+    "duplicates_replaced": 0,
+    "keys_error_only": 219,
+    "error_rows_total": 219
+   },
+   "recovery": {
+    "tabular|table_image": {
+     "v1": 33.898305084745765,
+     "v2": 7.344632768361582,
+     "d": -26.55367231638418,
+     "lo": -33.439490445859875,
+     "hi": -20.535654761904762,
+     "n": 354
+    },
+    "tabular|text_only": {
+     "v1": 7.344632768361582,
+     "v2": 3.672316384180791,
+     "d": -3.672316384180791,
+     "lo": -7.031348146984924,
+     "hi": -0.6041388820845027,
+     "n": 354
+    },
+    "tabular|heatmap": {
+     "v1": 30.225988700564972,
+     "v2": 40.3954802259887,
+     "d": 10.169491525423728,
+     "lo": 4.970714830554647,
+     "hi": 15.743837035428164,
+     "n": 354
+    },
+    "tabular|bar_chart": {
+     "v1": 1.9774011299435028,
+     "v2": 11.299435028248588,
+     "d": 9.322033898305085,
+     "lo": 5.449591280653951,
+     "hi": 13.636363636363637,
+     "n": 354
+    },
+    "tabular|scatter_plot": {
+     "v1": 1.694915254237288,
+     "v2": 5.367231638418079,
+     "d": 3.672316384180791,
+     "lo": 0.7770522263809156,
+     "hi": 6.748585770058161,
+     "n": 354
+    },
+    "timeseries|line_plot": {
+     "v1": 35.981308411214954,
+     "v2": 35.981308411214954,
+     "d": 0.0,
+     "lo": 0.0,
+     "hi": 0.0,
+     "n": 214
+    },
+    "timeseries|heatmap": {
+     "v1": 3.7383177570093458,
+     "v2": 3.7383177570093458,
+     "d": 0.0,
+     "lo": 0.0,
+     "hi": 0.0,
+     "n": 214
+    },
+    "timeseries|gaf": {
+     "v1": 5.140186915887851,
+     "v2": 5.140186915887851,
+     "d": 0.0,
+     "lo": 0.0,
+     "hi": 0.0,
+     "n": 214
+    },
+    "timeseries|recurrence_plot": {
+     "v1": 46.26168224299065,
+     "v2": 46.26168224299065,
+     "d": 0.0,
+     "lo": 0.0,
+     "hi": 0.0,
+     "n": 214
+    },
+    "timeseries|text_only": {
+     "v1": 46.26168224299065,
+     "v2": 46.26168224299065,
+     "d": 0.0,
+     "lo": 0.0,
+     "hi": 0.0,
+     "n": 214
+    },
+    "graph|node_link": {
+     "v1": 8.333333333333334,
+     "v2": 11.174242424242424,
+     "d": 2.840909090909091,
+     "lo": 0.3470450680272109,
+     "hi": 5.978260869565218,
+     "n": 528
+    },
+    "graph|circular_layout": {
+     "v1": 8.143939393939394,
+     "v2": 9.848484848484848,
+     "d": 1.7045454545454546,
+     "lo": -0.5813953488372093,
+     "hi": 4.166666666666667,
+     "n": 528
+    },
+    "graph|adjacency_matrix": {
+     "v1": 8.143939393939394,
+     "v2": 9.469696969696969,
+     "d": 1.3257575757575757,
+     "lo": -0.68062641723356,
+     "hi": 3.682170542635659,
+     "n": 528
+    },
+    "graph|text_only": {
+     "v1": 19.507575757575758,
+     "v2": 10.227272727272727,
+     "d": -9.280303030303031,
+     "lo": -12.5,
+     "hi": -6.25,
+     "n": 528
+    }
+   },
+   "subset_matches_manifest": true
+  }
+ },
+ "subset_manifest_questions": 1096,
+ "reproduction_7b": {
+  "paper": {
+   "tab_gap": [
+    11.3,
+    2.7,
+    19.9,
+    186,
+    0.02
+   ],
+   "graph_gap": [
+    4.9,
+    1.7,
+    8.1,
+    528
+   ],
+   "series": 21.4,
+   "graph_best_prior": -1.9
+  },
+  "got": {
+   "tab_gap": [
+    9.0,
+    5.2,
+    12.9,
+    635,
+    0.0
+   ],
+   "graph_gap": [
+    4.9,
+    1.7,
+    8.1,
+    528
+   ],
+   "series": 21.4,
+   "graph_best_prior": -1.9
+  },
+  "match": false
+ }
+}

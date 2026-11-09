@@ -1,0 +1,351 @@
+StructViz-Bench v2 analysis, InternVL2.5-8B  (seed 0, B_boot=5000, B_perm=10000)
+questions 3795  objects 299
+  NOTE v1: kept 219 error-only keys as EM 0 (released scoring); questions affected 44
+v2 shard files: 1 (v2_internvl_subset.jsonl)
+dedupe v1 {'rows_read': 18315, 'keys_ok': 18096, 'duplicates_replaced': 0, 'keys_error_only': 219, 'error_rows_total': 219}
+       v2 {'rows_read': 5480, 'keys_ok': 5480, 'duplicates_replaced': 0, 'keys_error_only': 0, 'error_rows_total': 0}
+       noimage {'rows_read': 1096, 'keys_ok': 1096, 'duplicates_replaced': 0, 'keys_error_only': 0, 'error_rows_total': 0}
+       assist {'rows_read': 1020, 'keys_ok': 1020, 'duplicates_replaced': 0, 'keys_error_only': 0, 'error_rows_total': 0}
+v2 coverage per format (rows kept / manifest rows): adjacency_matrix 528/528, bar_chart 354/354, circular_layout 528/528, gaf 214/214, heatmap 568/568, line_plot 214/214, node_link 528/528, recurrence_plot 214/214, scatter_plot 354/354, table_image 354/354, text_only 1096/1096, text_only_deg 528/528
+v2 covers a SUBSET of questions; every section (incl. v1 comparisons and all-answerable subsets) is restricted to it: tabular 354/1765, timeseries 214/1370, graph 528/660
+tabular renderer constants used (question counts): {'V2_BAR_ANNOTATE_MAX_ROWS': '35', 'V2_BAR_MAX_PANELS': '6', 'V2_ROW_LABEL_MAX_CHARS': '12', 'V2_SCATTER_MAX_PAIR_PANELS': '4'} x1765
+
+[v2 rule branches] (question counts)
+    168  strict.tab scatter value_extraction -> A
+     20  strict.ts anomaly_detection drawings->A changed=line_plot,heatmap
+     20  strict.ts forecasting drawings->A changed=line_plot
+     20  strict.ts mean_shift_magnitude drawings->A changed=line_plot
+    107  strict.ts range_query drawings->A changed=line_plot
+     20  strict.ts threshold_count drawings->A changed=line_plot
+    214  strict.ts value_lookup drawings->A changed=line_plot
+    170  v2tab.aggregation col_numeric=True row_index=False bar_annotated=True
+     37  v2tab.aggregation col_numeric=True row_index=True bar_annotated=True
+    224  v2tab.comparison-rule[comparison] both_numeric=True
+      1  v2tab.correlation first_pair=False pair_panel=False
+     22  v2tab.correlation first_pair=False pair_panel=True
+     26  v2tab.correlation first_pair=True pair_panel=False
+    146  v2tab.counterfactual cols_numeric=True
+     68  v2tab.filtering col_numeric=True row_index=False bar_annotated=True
+     36  v2tab.filtering col_numeric=True row_index=True bar_annotated=True
+     52  v2tab.outlier_detection value_numeric=True label_visible=False
+    178  v2tab.outlier_detection value_numeric=True label_visible=True
+     90  v2tab.ranking value_numeric=True label_visible=True
+    212  v2tab.trend_analysis col_numeric=True row_index=False bar_annotated=True
+     35  v2tab.trend_analysis col_numeric=True row_index=True bar_annotated=True
+    180  v2tab.value_extraction col_numeric=False label_visible=False
+    109  v2tab.value_extraction col_numeric=False label_visible=True
+    179  v2tab.value_extraction col_numeric=True label_visible=True
+flags: strict_answerable=True exclude_near_constant=True
+near-constant cells excluded: graph/connectivity, tabular/counterfactual, timeseries/change_point, timeseries/counterfactual_half_shift, timeseries/counterfactual_scale_peak, timeseries/counterfactual_sign_flip, timeseries/local_peak_median_relation, timeseries/normalized_amplitude, timeseries/pattern_classification, timeseries/seasonality_detection
+
+1. Answerability categories per modality: share of (question, format) pairs, v1 vs v2 (main formats)
+----------------------------------------------------------------------------------------------------
+  modality   suite  pairs      V      D      A      C
+  tabular    v1      1770   29.9    6.1   64.0    0.0
+  tabular    v2      1770   40.7   49.8    9.5    0.0
+  tabular    A share change v2-v1 -54.5 pp;  fully answerable questions v1 0/354, v2 186/354
+  timeseries v1      1070    0.0   80.4   19.6    0.0
+  timeseries v2      1070    0.0  100.0    0.0    0.0
+  timeseries A share change v2-v1 -19.6 pp;  fully answerable questions v1 4/214, v2 214/214
+  graph      v1      2112    5.5   35.7   58.8    0.0
+  graph      v2      2112    0.0  100.0    0.0    0.0
+  graph      A share change v2-v1 -58.8 pp;  fully answerable questions v1 40/528, v2 528/528
+
+2. Per-format EM v1 vs v2 (each on all available questions) and paired v2-v1 change (object-cluster 95% CI)
+----------------------------------------------------------------------------------------------------
+  modality   format               v1    n1     v2    n2 d(v2-v1)          obj CI n_pair n_obj
+  tabular    table_image        33.9   354    7.3   354    -26.6  [-33.4, -20.5]    354   107
+  tabular    text_only           7.3   354    3.7   354     -3.7    [-7.0, -0.6]    354   107
+  tabular    heatmap            30.2   354   40.4   354    +10.2   [+5.0, +15.7]    354   107
+  tabular    bar_chart           2.0   354   11.3   354     +9.3   [+5.4, +13.6]    354   107
+  tabular    scatter_plot        1.7   354    5.4   354     +3.7    [+0.8, +6.7]    354   107
+  timeseries line_plot          36.0   214   36.0   214      0.0    [+0.0, +0.0]    214   107
+  timeseries heatmap             3.7   214    3.7   214      0.0    [+0.0, +0.0]    214   107
+  timeseries gaf                 5.1   214    5.1   214      0.0    [+0.0, +0.0]    214   107
+  timeseries recurrence_plot    46.3   214   46.3   214      0.0    [+0.0, +0.0]    214   107
+  timeseries text_only          46.3   214   46.3   214      0.0    [+0.0, +0.0]    214   107
+  graph      node_link           8.3   528   11.2   528     +2.8    [+0.3, +6.0]    528    36
+  graph      circular_layout     8.1   528    9.8   528     +1.7    [-0.6, +4.2]    528    36
+  graph      adjacency_matrix    8.1   528    9.5   528     +1.3    [-0.7, +3.7]    528    36
+  graph      text_only          19.5   528   10.2   528     -9.3   [-12.5, -6.2]    528    36
+
+1b. All-answerable question counts (every main format V or D)
+----------------------------------------------------------------------------------------------------
+  modality   categories   all q  excl NC   n_q n_q excl NC
+  tabular    default        354      354   354         354   tasks(excl NC) {'value_extraction': 168, 'ranking': 60, 'outlier_detection': 78, 'correlation': 48}
+  tabular    strict         186      186   354         354   tasks(excl NC) {'ranking': 60, 'outlier_detection': 78, 'correlation': 48}
+  timeseries default        214        0   214           0   tasks(excl NC) {}
+  timeseries strict         214        0   214           0   tasks(excl NC) {}
+  graph      default        528      528   528         528   tasks(excl NC) {'degree_query': 208, 'edge_count': 20, 'shortest_path': 36, 'clustering': 36, 'bipartite_check': 20, 'cycle_detection': 20, 'community': 92, 'centrality': 36, 'diameter': 20, 'counterfactual': 40}
+  graph      strict         528      528   528         528   tasks(excl NC) {'degree_query': 208, 'edge_count': 20, 'shortest_path': 36, 'clustering': 36, 'bipartite_check': 20, 'cycle_detection': 20, 'community': 92, 'centrality': 36, 'diameter': 20, 'counterfactual': 40}
+
+3. Best-worst gap per modality (object sign-flip p, object-cluster CI)
+----------------------------------------------------------------------------------------------------
+  sample                                         best            worst    gap          obj CI   p_obj   n_q nobj
+ tabular
+  v1_all                                  table_image     scatter_plot   32.2  [+26.5, +39.0]   <1e-4   354  107
+  v2_all                                      heatmap        text_only   36.7  [+30.4, +43.9]   <1e-4   354  107
+  v1_on_v2_complete                       table_image     scatter_plot   32.2  [+26.5, +39.0]   <1e-4   354  107
+  v2_fully_answerable                         heatmap        text_only    6.5   [+2.5, +10.9]  0.0071   186   68
+  v1_on_v2_fully_answerable               table_image        bar_chart   10.8   [+6.1, +16.5]   <1e-4   186   68
+  v1_fully_answerable_v1cats         (no complete questions)
+ tabular  [near-constant cells excluded: n_q 354/354]
+  v1_all                                  table_image     scatter_plot   32.2  [+26.5, +39.0]   <1e-4   354  107
+  v2_all                                      heatmap        text_only   36.7  [+30.4, +43.9]   <1e-4   354  107
+  v1_on_v2_complete                       table_image     scatter_plot   32.2  [+26.5, +39.0]   <1e-4   354  107
+  v2_fully_answerable                         heatmap        text_only    6.5   [+2.5, +10.9]  0.0071   186   68
+  v1_on_v2_fully_answerable               table_image        bar_chart   10.8   [+6.1, +16.5]   <1e-4   186   68
+  v1_fully_answerable_v1cats         (no complete questions)
+ timeseries
+  v1_all                              recurrence_plot          heatmap   42.5  [+36.9, +47.2]   <1e-4   214  107
+  v2_all                              recurrence_plot          heatmap   42.5  [+36.9, +47.2]   <1e-4   214  107
+  v1_on_v2_complete                   recurrence_plot          heatmap   42.5  [+36.9, +47.2]   <1e-4   214  107
+  v2_excl_gaf_rp                            text_only          heatmap   42.5  [+36.9, +47.2]   <1e-4   214  107
+  v1_excl_gaf_rp                            text_only          heatmap   42.5  [+36.9, +47.2]   <1e-4   214  107
+  v2_fully_answerable                 recurrence_plot          heatmap   42.5  [+36.9, +47.2]   <1e-4   214  107
+  v1_on_v2_fully_answerable           recurrence_plot          heatmap   42.5  [+36.9, +47.2]   <1e-4   214  107
+  v1_fully_answerable_v1cats                line_plot          heatmap   50.0  [+50.0, +50.0]  0.5053     4    2
+ timeseries  [near-constant cells excluded: n_q 0/214]
+  v1_all                             (no complete questions)
+  v2_all                             (no complete questions)
+  v1_on_v2_complete                  (no complete questions)
+  v2_excl_gaf_rp                     (no complete questions)
+  v1_excl_gaf_rp                     (no complete questions)
+  v2_fully_answerable                (no complete questions)
+  v1_on_v2_fully_answerable          (no complete questions)
+  v1_fully_answerable_v1cats         (no complete questions)
+ graph
+  v1_all                                    text_only  circular_layout   11.4   [+8.0, +14.9]   <1e-4   528   36
+  v2_all                                    node_link adjacency_matrix    1.7    [-1.6, +4.9]  0.3701   528   36
+  v1_on_v2_complete                         text_only  circular_layout   11.4   [+8.0, +14.9]   <1e-4   528   36
+  v2_fully_answerable                       node_link adjacency_matrix    1.7    [-1.6, +4.9]  0.3701   528   36
+  v1_on_v2_fully_answerable                 text_only  circular_layout   11.4   [+8.0, +14.9]   <1e-4   528   36
+  v1_fully_answerable_v1cats                text_only  circular_layout   12.5   [+0.0, +45.5]  0.5007    40    5
+ graph  [near-constant cells excluded: n_q 528/528]
+  v1_all                                    text_only  circular_layout   11.4   [+8.0, +14.9]   <1e-4   528   36
+  v2_all                                    node_link adjacency_matrix    1.7    [-1.6, +4.9]  0.3701   528   36
+  v1_on_v2_complete                         text_only  circular_layout   11.4   [+8.0, +14.9]   <1e-4   528   36
+  v2_fully_answerable                       node_link adjacency_matrix    1.7    [-1.6, +4.9]  0.3701   528   36
+  v1_on_v2_fully_answerable                 text_only  circular_layout   11.4   [+8.0, +14.9]   <1e-4   528   36
+  v1_fully_answerable_v1cats                text_only  circular_layout   12.5   [+0.0, +45.5]  0.5007    40    5
+
+  HEADLINE (same information, different rendering) = v2_fully_answerable rows: every main v2 format V or D, C questions excluded.
+
+3b. Identification checks (categories: strict; NC = near-constant (modality, task) cells, one answer >= 90%)
+----------------------------------------------------------------------------------------------------
+  sample                                         best            worst    gap          obj CI   p_obj   n_q nobj
+ tabular  (n_q all 354, excl NC 354; all-answerable 186, excl NC 186)
+  v2_all_answerable                           heatmap        text_only    6.5   [+2.5, +10.9]  0.0071   186   68
+  v2_all_answerable_exclNC                    heatmap        text_only    6.5   [+2.5, +10.9]  0.0071   186   68
+  v1_on_v2_all_answerable_exclNC          table_image        bar_chart   10.8   [+6.1, +16.5]   <1e-4   186   68
+  v2_all_exclNC_excl_value_extraction          heatmap        text_only    6.5   [+2.5, +10.9]  0.0071   186   68
+  v2_all_answerable_exclNC_excl_value_extraction          heatmap        text_only    6.5   [+2.5, +10.9]  0.0071   186   68
+  v2_tol1pct_all_exclNC                       heatmap        text_only   35.0  [+28.9, +42.2]   <1e-4   354  107
+  v2_tol1pct_all_answerable_exclNC            heatmap        text_only    6.5   [+2.5, +10.9]  0.0071   186   68
+  v2_tol1pct_all_exclNC_excl_value_extraction          heatmap        text_only    6.5   [+2.5, +10.9]  0.0071   186   68
+  v1_tol1pct_all_exclNC                       heatmap        bar_chart   29.7  [+23.9, +36.5]   <1e-4   354  107
+    v2_tol1pct_all_exclNC per-format: table_image 14.1  text_only 7.9  heatmap 42.9  bar_chart 15.8  scatter_plot 15.8
+    v2_tol1pct_all_answerable_exclNC per-format: table_image 3.8  text_only 3.2  heatmap 9.7  bar_chart 3.8  scatter_plot 8.6
+ timeseries  (n_q all 214, excl NC 0; all-answerable 214, excl NC 0)
+  v2_all_answerable                   recurrence_plot          heatmap   42.5  [+36.9, +47.2]   <1e-4   214  107
+  v2_all_answerable_exclNC           (no complete questions)
+  v1_on_v2_all_answerable_exclNC     (no complete questions)
+  v2_nonlossy3_all_exclNC            (no complete questions)
+  v2_nonlossy3_answerable_exclNC     (no complete questions)
+  v1_nonlossy3_all_exclNC            (no complete questions)
+  v1_nonlossy3_answerable_exclNC     (no complete questions)
+ graph  (n_q all 528, excl NC 528; all-answerable 528, excl NC 528)
+  v2_all_answerable                         node_link adjacency_matrix    1.7    [-1.6, +4.9]  0.3701   528   36
+  v2_all_answerable_exclNC                  node_link adjacency_matrix    1.7    [-1.6, +4.9]  0.3701   528   36
+  v1_on_v2_all_answerable_exclNC            text_only  circular_layout   11.4   [+8.0, +14.9]   <1e-4   528   36
+
+4. Flip rate (% questions whose EM differs across formats) and Consistency Rate (mean share of agreeing format pairs), main formats
+----------------------------------------------------------------------------------------------------
+  modality   sample             flip v1 flip v2      d          obj CI  CR v1  CR v2      d          obj CI   n_q
+  tabular    all (unpaired)        48.3    47.2                          12.8   13.3                          354/354
+  tabular    paired                48.3    47.2   -1.1    [-6.5, +4.1]   12.8   13.3   +0.5    [-5.4, +4.9]   354
+  tabular    excl-NC all (unpaired)    48.3    47.2                          12.8   13.3                          354/354
+  tabular    excl-NC paired        48.3    47.2   -1.1    [-6.5, +4.1]   12.8   13.3   +0.5    [-5.4, +4.9]   354
+  timeseries all (unpaired)        50.0    50.0                          27.7   29.3                          214/214
+  timeseries paired                50.0    50.0    0.0    [+0.0, +0.0]   27.7   29.3   +1.6    [+0.9, +2.3]   214
+  timeseries excl-NC all (unpaired)     nan     nan                           nan    nan                            0/0
+  timeseries excl-NC paired         nan     nan    nan           [nan]    nan    nan    nan           [nan]     0
+  graph      all (unpaired)        20.3    14.8                          35.3   45.3                          528/528
+  graph      paired                20.3    14.8   -5.5    [-9.0, -2.1]   35.3   45.3  +10.0   [+7.8, +12.3]   528
+  graph      excl-NC all (unpaired)    20.3    14.8                          35.3   45.3                          528/528
+  graph      excl-NC paired        20.3    14.8   -5.5    [-9.0, -2.1]   35.3   45.3  +10.0   [+7.8, +12.3]   528
+
+5. No-image baseline (question text only)
+----------------------------------------------------------------------------------------------------
+  modality    noimg     n prior_in prior_cv taskMaj | formats beating no-image (obj CI lo>0) / total
+  tabular       2.0   354     25.3     24.0    13.6 | 5/5
+      table_image      v2   7.3 vs noimg   2.0  d   +5.4    [+2.4, +8.5] n   354 BEATS
+      text_only        v2   3.7 vs noimg   2.0  d   +1.7    [+0.2, +3.4] n   354 BEATS
+      heatmap          v2  40.4 vs noimg   2.0  d  +38.4  [+32.2, +45.6] n   354 BEATS
+      bar_chart        v2  11.3 vs noimg   2.0  d   +9.3   [+5.9, +13.4] n   354 BEATS
+      scatter_plot     v2   5.4 vs noimg   2.0  d   +3.4    [+0.8, +6.1] n   354 BEATS
+      no-image correct on 7 complete questions; every v2 format also correct on 0 (0.0%)
+  timeseries    3.7   214     42.9     40.8    93.0 | 3/5
+      line_plot        v2  36.0 vs noimg   3.7  d  +32.2  [+27.6, +36.9] n   214 BEATS
+      heatmap          v2   3.7 vs noimg   3.7  d    0.0    [+0.0, +0.0] n   214 
+      gaf              v2   5.1 vs noimg   3.7  d   +1.4    [+0.0, +3.3] n   214 
+      recurrence_plot  v2  46.3 vs noimg   3.7  d  +42.5  [+36.9, +47.2] n   214 BEATS
+      text_only        v2  46.3 vs noimg   3.7  d  +42.5  [+36.9, +47.2] n   214 BEATS
+      no-image correct on 8 complete questions; every v2 format also correct on 0 (0.0%)
+  graph        12.5   528     42.6     40.9    28.2 | 0/4
+      node_link        v2  11.2 vs noimg  12.5  d   -1.3    [-4.6, +2.2] n   528 
+      circular_layout  v2   9.8 vs noimg  12.5  d   -2.7    [-5.7, +0.5] n   528 
+      adjacency_matrix v2   9.5 vs noimg  12.5  d   -3.0    [-5.6, -0.2] n   528 
+      text_only        v2  10.2 vs noimg  12.5  d   -2.3    [-5.0, +0.8] n   528 
+      no-image correct on 66 complete questions; every v2 format also correct on 24 (36.4%)
+
+  per task: modality   task                          noimg taskMaj    n
+            graph      bipartite_check                 0.0    60.0   20
+            graph      centrality                      0.0    25.0   36
+            graph      clustering                      0.0    22.2   36
+            graph      community                      34.8    37.0   92
+            graph      counterfactual                 55.0    55.0   40
+            graph      cycle_detection                 0.0    80.0   20
+            graph      degree_query                    4.8    13.9  208
+            graph      diameter                        5.0    20.0   20
+            graph      edge_count                      0.0    10.0   20
+            graph      shortest_path                   2.8    36.1   36
+            tabular    correlation                     0.0    68.8   48
+            tabular    outlier_detection               2.6     5.1   78
+            tabular    ranking                         1.7     6.7   60
+            tabular    value_extraction                2.4     4.2  168
+            timeseries change_point                    0.0    93.5  107
+            timeseries seasonality_detection           7.5    92.5  107
+
+5b. v2 format EM vs the CROSS-VALIDATED majority prior (prior_and_subsets_results.json prior_cv mean; prior treated as a constant)
+----------------------------------------------------------------------------------------------------
+  modality   format               EM       EM obj CI  prior EM-prior      CI of diff   n_q nobj  exceeds
+  tabular    table_image         7.3   [+4.6, +10.6]   24.0    -16.6  [-19.3, -13.4]   354  107  no
+  tabular    text_only           3.7    [+1.7, +6.0]   24.0    -20.3  [-22.3, -18.0]   354  107  no
+  tabular    heatmap            40.4  [+34.1, +47.6]   24.0    +16.4  [+10.1, +23.7]   354  107  YES
+  tabular    bar_chart          11.3   [+7.7, +15.5]   24.0    -12.7   [-16.3, -8.5]   354  107  no
+  tabular    scatter_plot        5.4    [+2.8, +8.2]   24.0    -18.6  [-21.2, -15.8]   354  107  no
+  tabular    formats whose EM CI lies above the prior: 1/5
+      vs in-sample majority prior on these 354 subset questions (13.6): table_image      EM-prior   -6.2 CI [-8.9, -3.0]  no
+      vs in-sample majority prior on these 354 subset questions (13.6): text_only        EM-prior   -9.9 CI [-11.9, -7.6]  no
+      vs in-sample majority prior on these 354 subset questions (13.6): heatmap          EM-prior  +26.8 CI [+20.5, +34.1]  YES
+      vs in-sample majority prior on these 354 subset questions (13.6): bar_chart        EM-prior   -2.3 CI [-5.9, +1.9]  no
+      vs in-sample majority prior on these 354 subset questions (13.6): scatter_plot     EM-prior   -8.2 CI [-10.7, -5.4]  no
+  tabular    formats whose EM CI lies above the subset in-sample prior: 1/5
+  timeseries line_plot          36.0  [+31.8, +40.2]   40.8     -4.8    [-9.0, -0.6]   214  107  no
+  timeseries heatmap             3.7    [+1.4, +6.5]   40.8    -37.1  [-39.4, -34.3]   214  107  no
+  timeseries gaf                 5.1    [+2.3, +8.4]   40.8    -35.7  [-38.5, -32.4]   214  107  no
+  timeseries recurrence_plot    46.3  [+43.5, +48.6]   40.8     +5.4    [+2.6, +7.8]   214  107  YES
+  timeseries text_only          46.3  [+43.5, +48.6]   40.8     +5.4    [+2.6, +7.8]   214  107  YES
+  timeseries formats whose EM CI lies above the prior: 2/5
+      vs in-sample majority prior on these 214 subset questions (93.0): line_plot        EM-prior  -57.0 CI [-61.2, -52.8]  no
+      vs in-sample majority prior on these 214 subset questions (93.0): heatmap          EM-prior  -89.3 CI [-91.6, -86.4]  no
+      vs in-sample majority prior on these 214 subset questions (93.0): gaf              EM-prior  -87.9 CI [-90.7, -84.6]  no
+      vs in-sample majority prior on these 214 subset questions (93.0): recurrence_plot  EM-prior  -46.7 CI [-49.5, -44.4]  no
+      vs in-sample majority prior on these 214 subset questions (93.0): text_only        EM-prior  -46.7 CI [-49.5, -44.4]  no
+  timeseries formats whose EM CI lies above the subset in-sample prior: 0/5
+  graph      node_link          11.2   [+7.9, +14.8]   40.9    -29.7  [-33.0, -26.1]   528   36  no
+  graph      circular_layout     9.8   [+7.5, +12.3]   40.9    -31.0  [-33.3, -28.6]   528   36  no
+  graph      adjacency_matrix    9.5   [+7.2, +12.1]   40.9    -31.4  [-33.6, -28.8]   528   36  no
+  graph      text_only          10.2   [+7.6, +13.1]   40.9    -30.6  [-33.2, -27.8]   528   36  no
+  graph      formats whose EM CI lies above the prior: 0/4
+      vs in-sample majority prior on these 528 subset questions (28.2): node_link        EM-prior  -17.0 CI [-20.3, -13.4]  no
+      vs in-sample majority prior on these 528 subset questions (28.2): circular_layout  EM-prior  -18.4 CI [-20.7, -15.9]  no
+      vs in-sample majority prior on these 528 subset questions (28.2): adjacency_matrix EM-prior  -18.8 CI [-21.0, -16.2]  no
+      vs in-sample majority prior on these 528 subset questions (28.2): text_only        EM-prior  -18.0 CI [-20.6, -15.2]  no
+  graph      formats whose EM CI lies above the subset in-sample prior: 0/4
+
+6. Assist 2x2 (tabular): {table, bar} x {means absent, present}
+----------------------------------------------------------------------------------------------------
+  questions with all 4 conditions: 255 (any condition: 255); tasks {'comparison': 224, 'aggregation': 31}
+
+  [all] n=255  table_full 28.2  table_full_means 32.5  bar_rows 27.1  bar_rows_means 28.2
+    means_effect_table                               +4.3    [+0.0, +8.5] p_obj  0.0610 n 255 n_obj 113
+    means_effect_bar                                 +1.2    [-2.0, +4.5] p_obj  0.6354 n 255 n_obj 113
+    format_effect_no_means(table-bar)                +1.2    [-3.2, +5.6] p_obj  0.7163 n 255 n_obj 113
+    format_effect_with_means(table-bar)              +4.3    [-0.8, +9.2] p_obj  0.1295 n 255 n_obj 113
+    interaction(table_means_eff - bar_means_eff)     +3.1    [-2.3, +8.6] p_obj  0.3297 n 255 n_obj 113
+
+  [comparison] n=224  table_full 31.7  table_full_means 32.1  bar_rows 30.4  bar_rows_means 30.4
+    means_effect_table                               +0.4    [-3.1, +4.5] p_obj  1.0000 n 224 n_obj 112
+    means_effect_bar                                  0.0    [-4.0, +4.0] p_obj  1.0000 n 224 n_obj 112
+    format_effect_no_means(table-bar)                +1.3    [-3.6, +5.8] p_obj  0.7201 n 224 n_obj 112
+    format_effect_with_means(table-bar)              +1.8    [-3.6, +7.1] p_obj  0.6242 n 224 n_obj 112
+    interaction(table_means_eff - bar_means_eff)     +0.4    [-5.4, +6.2] p_obj  1.0000 n 224 n_obj 112
+
+  [aggregation_mean] n=31  table_full 3.2  table_full_means 35.5  bar_rows 3.2  bar_rows_means 12.9
+    means_effect_table                              +32.3  [+16.1, +48.4] p_obj  0.0013 n 31 n_obj 31
+    means_effect_bar                                 +9.7   [+0.0, +22.6] p_obj  0.2501 n 31 n_obj 31
+    format_effect_no_means(table-bar)                 0.0    [+0.0, +0.0] p_obj  1.0000 n 31 n_obj 31
+    format_effect_with_means(table-bar)             +22.6   [+6.5, +38.7] p_obj  0.0379 n 31 n_obj 31
+    interaction(table_means_eff - bar_means_eff)    +22.6   [+6.5, +38.7] p_obj  0.0379 n 31 n_obj 31
+
+7. Graph degree confound: v2 text_only_deg minus text_only (paired)
+----------------------------------------------------------------------------------------------------
+  degree_query  text_only  12.5  text_only_deg  19.2  d   +6.7   [+1.4, +12.4] p_obj 0.0307  n 208 n_obj 36
+  other_tasks   text_only   8.8  text_only_deg   8.8  d    0.0    [-1.7, +1.7] p_obj 1.0000  n 320 n_obj 36
+
+8. Cost: mean image pixels (Mpx) and mean latency (s) per format
+----------------------------------------------------------------------------------------------------
+  modality   format            v1 Mpx     n  v2 Mpx     n v2row Mpx  v2 lat     n   (v1 latency not recorded)
+  tabular    table_image         0.79   500    0.80   354      0.80    0.71   354
+  tabular    text_only           0.79   500    0.79   354      0.79    0.84   354
+  tabular    heatmap             0.79   500    0.79   354      0.79    0.56   354
+  tabular    bar_chart           0.79   500    1.03   354      1.03    0.64   354
+  tabular    scatter_plot        0.79   500    1.03   354      1.03    0.64   354
+  timeseries line_plot           0.79    39    0.79   214      0.79    0.88   214
+  timeseries heatmap             0.79    39    0.79   214      0.79    0.86   214
+  timeseries gaf                 0.79    39    0.79   214      0.79    0.82   214
+  timeseries recurrence_plot     0.79    39    0.79   214      0.79    0.89   214
+  timeseries text_only           0.79    38    0.96   214      0.96    0.96   214
+  graph      node_link            nan     0    0.90   528      0.90    0.91   528
+  graph      circular_layout      nan     0    0.90   528      0.90    0.92   528
+  graph      adjacency_matrix     nan     0    1.05   528      1.05    0.90   528
+  graph      text_only            nan     0    0.80   528      0.80    0.86   528
+  graph      text_only_deg        nan     0    0.80   528      0.80    0.89   528
+  no-image mean latency: 0.9 s (n 1096); v1 pixels from the 2694 v1 PNGs present locally
+
+8b. Model input size from the v2 rows (image as fed to the model)
+----------------------------------------------------------------------------------------------------
+  modality   format            img w  img h   in w   in h vis tok     n
+  tabular    table_image        1024    781    448    448     256   354
+  tabular    text_only          1024    769    448    448     256   354
+  tabular    heatmap            1024    776    448    448     256   354
+  tabular    bar_chart          1024   1002    448    448     256   354
+  tabular    scatter_plot       1024   1002    448    448     256   354
+  timeseries line_plot          1024    768    448    448     256   214
+  timeseries heatmap            1024    768    448    448     256   214
+  timeseries gaf                1024    768    448    448     256   214
+  timeseries recurrence_plot    1024    768    448    448     256   214
+  timeseries text_only          1024    937    448    448     256   214
+  graph      node_link          1024    880    448    448     256   528
+  graph      circular_layout    1024    880    448    448     256   528
+  graph      adjacency_matrix   1024   1024    448    448     256   528
+  graph      text_only          1024    776    448    448     256   528
+  graph      text_only_deg      1024    777    448    448     256   528
+
+9. Hand-rule selector vs learned selector, held-out objects (md5(data_id) parity), v1 predictions
+----------------------------------------------------------------------------------------------------
+  rule: tabular comparison / aggregation-with-'average' -> bar_chart, other tabular -> table_image; timeseries, graph -> text_only
+
+  [all cells]
+  model           n_test nobj  random  fixed   rule  select sel-rule          obj CI rule-fix          obj CI
+  GPT-4o            1902  151    35.1   50.6   51.7    54.6     +2.9    [+1.6, +4.3]     +1.1    [+0.5, +1.6]
+  Gemini Flash      1902  151    37.1   52.7   53.1    56.3     +3.2    [+1.5, +4.8]     +0.4    [-1.5, +2.3]
+  Qwen2.5-VL-7B     1902  151    33.4   45.0   46.6    48.9     +2.3    [+0.9, +3.7]     +1.6    [+1.0, +2.3]
+  Claude Sonnet     1902  151    26.6   36.3   39.0    44.4     +5.4    [+3.9, +6.9]     +2.7    [+1.9, +3.5]
+  Qwen2.5-VL-32B    1902  151    34.3   48.5   49.7    51.5     +1.7    [+0.2, +3.2]     +1.2    [+0.7, +1.7]
+  InternVL2.5-8B    1902  151    20.5   25.3   27.6    31.1     +3.5    [+2.4, +4.6]     +2.3    [+1.2, +3.3]
+  Gemini-2.5        1902  151    36.3   51.8   53.2    53.8     +0.7    [-1.0, +2.3]     +1.4    [-0.2, +2.9]
+
+  [near-constant cells excluded]
+  model           n_test nobj  random  fixed   rule  select sel-rule          obj CI rule-fix          obj CI
+  GPT-4o            1619  151    32.8   49.2   50.4    53.7     +3.3    [+1.8, +4.8]     +1.2    [+0.6, +1.9]
+  Gemini Flash      1619  151    34.1   50.1   51.1    54.5     +3.4    [+1.5, +5.3]     +1.0    [-1.4, +3.4]
+  Qwen2.5-VL-7B     1619  151    29.8   43.2   45.2    46.6     +1.4    [+0.0, +2.9]     +1.9    [+1.2, +2.7]
+  Claude Sonnet     1619  151    25.0   37.4   40.6    44.1     +3.5    [+2.0, +5.0]     +3.2    [+2.3, +4.1]
+  Qwen2.5-VL-32B    1619  151    31.3   46.6   48.0    49.2     +1.2    [-0.4, +2.8]     +1.4    [+0.8, +2.0]
+  InternVL2.5-8B    1619  151    16.6   24.5   24.8    26.6     +1.8    [+0.8, +2.8]     +0.4    [-1.0, +1.7]
+  Gemini-2.5        1619  151    33.6   49.5   51.3    52.1     +0.7    [-1.1, +2.6]     +1.8    [+0.1, +3.6]
+
+wrote scripts/analysis/v2_results_internvl_strict.json
